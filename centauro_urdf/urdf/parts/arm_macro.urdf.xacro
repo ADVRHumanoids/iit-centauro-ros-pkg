@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- mirror_link = -1 for left side, otherwise mirror_link = 1 -->
+<xacro:macro name="arm" params="prefix mirror_link">
+
+<!-- LINKS -->
+
+<link name ="${prefix}_shoulder_pitch">
+    <inertial>
+      <origin xyz="${-7.4457212*mmTom} ${-3.4107960e+01*mmTom*mirror_link} ${1.0978102e-01*mmTom}" rpy="0 0 0"/>
+      <mass value="1.9628675"/>
+      <inertia ixx="${5.3547717e+03*mm2Tom2}"  ixy="${-3.6428926e+02*mm2Tom2*mirror_link}"  ixz="${1.5089568e+01*mm2Tom2}" iyy="${3.3923328e+03*mm2Tom2}" iyz="${-5.5692312e+01*mm2Tom2*mirror_link}" izz="${6.8921413e+03*mm2Tom2}" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="${prefix}_shoulder_pitch_visual">
+        <mesh filename="package://pholus_urdf/meshes/shoulder_pitch_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+      </geometry>
+      <material name="dark"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="${prefix}_shoulder_pitch_collision">
+        <mesh filename="package://pholus_urdf/meshes/simple/shoulder_pitch_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+      </geometry>             
+    </collision>
+</link>
+
+<link name ="${prefix}_shoulder_roll">
+    <inertial>
+      <origin xyz="${5.8142302e+01*mmTom} ${-5.7450803e-02*mmTom*mirror_link} ${-7.7477683e+01*mmTom}" rpy="0 0 0"/>
+      <mass value="1.8595811"/>
+      <inertia ixx="${1.3776643e+04*mm2Tom2}"  ixy="${-3.7788675e+01*mm2Tom2*mirror_link}"  ixz="${3.7690171e+03*mm2Tom2}" iyy="${1.5677464e+04*mm2Tom2}" iyz="${9.4893549*mm2Tom2*mirror_link}" izz="${4.6317657e+03*mm2Tom2}" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="{prefix}_shoulder_roll_visual">
+        <mesh filename="package://pholus_urdf/meshes/shoulder_roll_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="{prefix}_shoulder_roll_collision">
+        <mesh filename="package://pholus_urdf/meshes/simple/shoulder_roll_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+      </geometry>             
+    </collision>
+</link>
+
+<link name ="${prefix}_shoulder_yaw">
+    <inertial>
+      <origin xyz="${1.4625194e+01*mmTom} ${-8.1726720e-01*mmTom*mirror_link} ${-2.8333545e+01*mmTom}" rpy="0 0 0"/>
+      <mass value="1.6678109"/>
+      <inertia ixx="${6.4480435e+03*mm2Tom2}"  ixy="${1.5639093e+02*mm2Tom2*mirror_link}"  ixz="${1.2205359e+03*mm2Tom2}" iyy="${7.3372077e+03*mm2Tom2}" iyz="${-8.9941532e+01*mm2Tom2*mirror_link}" izz="${3.6738448e+03*mm2Tom2}" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="${prefix}_shoulder_yaw_visual">
+        <mesh filename="package://pholus_urdf/meshes/shoulder_yaw_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="${prefix}_shoulder_yaw_collision">
+        <mesh filename="package://pholus_urdf/meshes/simple/shoulder_yaw_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+      </geometry>             
+    </collision>
+</link>
+
+<link name ="${prefix}_elbow">
+ <inertial>
+   <origin xyz="${-7.6833067*mmTom} ${4.0302205e+01*mmTom*mirror_link} ${-4.3492779e+01*mmTom}" rpy="0 0 0"/>
+   <mass value="1.3157289"/>
+   <inertia ixx="${4.3303940e+03*mm2Tom2}"  ixy="${1.1737391e+02*mm2Tom2*mirror_link}"  ixz="${-4.1923199e+02*mm2Tom2}" iyy="${3.8539919e+03*mm2Tom2}" iyz="${7.9573038e+02*mm2Tom2*mirror_link}" izz="${1.7594689e+03*mm2Tom2}" />
+ </inertial>
+ <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_elbow_visual">
+     <mesh filename="package://pholus_urdf/meshes/elbow_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>
+  <material name="black"/>
+ </visual>
+ <collision>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_elbow_collision">
+     <mesh filename="package://pholus_urdf/meshes/simple/elbow_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>             
+ </collision>
+</link>
+
+<link name ="${prefix}_forearm">
+ <inertial>
+   <origin xyz="${-1.1079615e-01*mmTom} ${-1.1590836e+01*mmTom*mirror_link} ${-7.8160260e+01*mmTom}" rpy="0 0 0"/>
+   <mass value="1.4908547"/>
+   <inertia ixx="${8.5692128e+03*mm2Tom2}"  ixy="${-1.7856252e+01*mm2Tom2*mirror_link}"  ixz="${1.9379365e+01*mm2Tom2}" iyy="${7.7454159e+03*mm2Tom2}" iyz="${3.2860094e+02*mm2Tom2*mirror_link}" izz="${2.7441921e+03*mm2Tom2}" />
+ </inertial>
+ <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_forearm_visual">
+     <mesh filename="package://pholus_urdf/meshes/forearm_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>
+  <material name="black"/>
+ </visual>
+ <collision>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_forearm_collision">
+     <mesh filename="package://pholus_urdf/meshes/simple/forearm_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>             
+ </collision>
+</link>
+
+<link name="${prefix}_wrist_pitch">
+ <inertial>
+   <origin xyz="${-4.6502396e-03*mmTom} ${3.8014094e+01*mmTom*mirror_link} ${-6.9926878e+01*mmTom}" rpy="0 0 0"/>
+   <mass value="1.1263612"/>
+   <inertia ixx="${5.1871784e+03*mm2Tom2}"  ixy="${-2.7244370e+01*mm2Tom2*mirror_link}"  ixz="${2.2833496*mm2Tom2}" iyy="${4.8037789e+03*mm2Tom2}" iyz="${7.2165653e+02*mm2Tom2*mirror_link}" izz="${1.2771388e+03*mm2Tom2}" />
+ </inertial>
+ <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_wrist_pitch_visual">
+     <mesh filename="package://pholus_urdf/meshes/wrist_pitch_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>
+  <material name="dark_grey"/>
+ </visual>
+ <collision>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_wrist_pitch_collision">
+     <mesh filename="package://pholus_urdf/meshes/simple/wrist_pitch_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>             
+ </collision>
+</link>
+
+<link name="${prefix}_wrist_yaw">
+ <inertial>
+   <origin xyz="0 0 ${3.1270570e+01*mmTom}" rpy="0 0 0"/>
+   <mass value="2.7966428e-01"/>
+   <inertia ixx="${1.4415192e+02*mm2Tom2}"  ixy="${9.8651826e-02*mm2Tom2*mirror_link}"  ixz="0" iyy="${1.4417010e+02*mm2Tom2}" iyz="0" izz="${6.0500616e+01*mm2Tom2}" />
+ </inertial>
+ <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_wrist_yaw_visual">
+     <mesh filename="package://pholus_urdf/meshes/wrist_yaw_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>
+  <material name="green"/>
+ </visual>
+ <collision>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry name="${prefix}_wrist_yaw_collision">
+     <mesh filename="package://pholus_urdf/meshes/simple/wrist_yaw_right.stl" scale="0.001 ${0.001*mirror_link} 0.001" />
+   </geometry>             
+ </collision>
+</link>
+
+<!-- JOINTS -->
+<joint name="${prefix}_shoulder_pitch_joint" type="revolute">
+    <parent link="torso"/>
+    <child link="${prefix}_shoulder_pitch"/>
+    <origin xyz="${45.7475*mmTom} ${-169.137*mmTom*mirror_link} ${116.626*mmTom}" rpy="${-0.174533*mirror_link} 0 ${0.5235988*mirror_link}" />
+    <axis xyz="0 1 0" />
+    <limit velocity="6.283" effort="${140*torque_scale}" lower="${-191.*toRad}" upper="${91.*toRad}" />
+    <dynamics friction="0" damping="3.0"/>
+</joint>
+
+<joint name="${prefix}_shoulder_roll_joint" type="revolute">
+    <parent link="${prefix}_shoulder_pitch"/>
+    <child link="${prefix}_shoulder_roll"/>
+    <origin xyz="${-90.15*mmTom} ${-62*mmTom*mirror_link} 0" rpy="${0.1745327*mirror_link} 0 0" />
+    <axis xyz="1 0 0" />
+    <limit velocity="6.283" effort="${140*torque_scale}" lower="${((1+mirror_link)*(-196./2.))*toRad}" upper="${((-1+mirror_link)*(-196./2.))*toRad}" />
+    <dynamics friction="0" damping="3.0"/>
+</joint>
+
+<joint name="${prefix}_shoulder_yaw_joint" type="revolute">
+    <parent link="${prefix}_shoulder_roll"/>
+    <child link="${prefix}_shoulder_yaw"/>
+    <origin xyz="${90.15*mmTom} 0 ${-218.15*mmTom}" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit velocity="6.283" effort="${120.*torque_scale}" lower="${-146.*toRad}" upper="${146.*toRad}" />
+    <dynamics friction="0" damping="3.0"/>
+</joint>
+
+<joint name="${prefix}_elbow_joint" type="revolute">
+    <parent link="${prefix}_shoulder_yaw"/>
+    <child link="${prefix}_elbow"/>
+    <origin xyz="${45.*mmTom} ${-55.15*mmTom*mirror_link} ${-74.*mmTom}" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit velocity="6.283" effort="${120*torque_scale}" lower="${-142.*toRad}" upper="${16.*toRad}" />
+    <dynamics friction="0" damping="3.0"/>
+</joint>
+
+<joint name="${prefix}_forearm_joint" type="revolute">
+    <parent link="${prefix}_elbow"/>
+    <child link="${prefix}_forearm"/>
+    <origin xyz="${-15.*mmTom} ${55.15*mmTom*mirror_link} ${-95.*mmTom}" rpy="0 0 0"/>
+    <axis xyz="0 0 1" />
+    <limit velocity="6.283" effort="${35*torque_scale}" lower="${-146.*toRad}" upper="${146.*toRad}" />
+    <dynamics friction="0" damping="0.03"/>
+</joint>
+
+<joint name="${prefix}_wrist_pitch_joint" type="revolute">
+    <parent link="${prefix}_forearm"/>
+    <child link="${prefix}_wrist_pitch"/>
+    <origin xyz="0 ${-49*mmTom*mirror_link} ${-156.*mmTom}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="6.283" effort="${35*torque_scale}" lower="${-88.*toRad}" upper="${86.*toRad}" />
+    <dynamics friction="0" damping="0.03"/>
+</joint>
+
+<joint name="${prefix}_wrist_yaw_joint" type="revolute">
+       <parent link="${prefix}_wrist_pitch"/>
+       <child link="${prefix}_wrist_yaw"/>
+       <origin xyz="0 ${49*mmTom*mirror_link} ${-174.*mmTom}" rpy="0 0 0"/>
+       <axis xyz="0 0 1"/>
+       <limit velocity="6.283" effort="${20*torque_scale}" lower="${-146.*toRad}" upper="${146.*toRad}" />
+       <dynamics friction="0" damping="0.03"/>
+</joint>
+
+</xacro:macro>
+
+</robot>

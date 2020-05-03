@@ -1,0 +1,31 @@
+<launch>
+
+    <arg name="rate" default="100.0"/>
+    <arg name="prefix" default=""/>
+    <arg name="gui" default="false"/>
+    
+    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/pholus.urdf"/>
+
+    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/pholus.srdf"/>
+
+    <param name="cartesian/problem_description" textfile="$(find centauro_cartesio)/centauro_manipulation_stack.yaml"/>
+        
+    <rosparam name="cartesian/velocity_whitelist">
+        <param>[fr_wheel_joint, fl_wheel_joint, hr_wheel_joint, hl_wheel_joint]</param>
+    </rosparam>
+    
+    <include file="$(find cartesian_interface)/launch/cartesio.launch">
+        <arg name="rate" value="$(arg rate)"/>
+        <arg name="prefix" value="$(arg prefix)"/>
+        <arg name="is_model_floating_base" value="true"/>
+    </include>
+
+    <node if="$(arg gui)"
+          type="rviz"
+          name="rviz"
+          pkg="rviz"
+          args="-d $(find pholus_cartesio)/rviz_cartesio.rviz" />
+
+
+
+</launch>

@@ -1,0 +1,17 @@
+<package>
+  <description brief="centauro_cartesio">
+
+     centauro_cartesio contains cartesio files fot the CENTAURO robot
+
+  </description>
+  <author>Enrico Mingo</author>
+  <license>BSD</license>
+  <version>13.11.08</version>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/centauro_cartesio</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+
+</package>
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find pholus_urdf)/urdf/parts/arm_macro.urdf.xacro" />
+<xacro:include filename="$(find pholus_urdf)/urdf/parts/heri_hand_macro.urdf.xacro" />
+
+<xacro:arm prefix="r"  mirror_link="1"/>
+<xacro:heri_hand prefix="r"  mirror_link="1" ft_sensor_roll="0.0" ft_sensor_pitch="0.0" ft_sensor_yaw="0.0"/>
+
+<xacro:arm prefix="l"  mirror_link="-1"/>
+<xacro:heri_hand prefix="l"  mirror_link="-1" ft_sensor_roll="0.0" ft_sensor_pitch="0.0" ft_sensor_yaw="0.0"/>
+
+</robot>

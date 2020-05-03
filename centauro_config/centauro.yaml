@@ -1,0 +1,44 @@
+RobotName: "centauro"
+
+GazeboXBotPlugin:
+  control_rate: 0.001
+  gains:
+    fr_hip_yaw_joint:             {p: 5000, d: 3}
+    fr_hip_pitch_joint:           {p: 5000, d: 3}
+    fr_knee_joint:                 {p: 8000, d: 5}
+    fr_ankle_pitch_joint:         {p: 4000, d: 4}
+    fr_ankle_yaw_joint:           {p: 4000, d: 4}
+    fr_wheel_joint:               &wheel {p: 0, d: 5}
+    fl_hip_yaw_joint:             {p: 5000, d: 3}
+    fl_hip_pitch_joint:           {p: 5000, d: 3}
+    fl_knee_joint:                 {p: 8000, d: 5}
+    fl_ankle_pitch_joint:         {p: 4000, d: 4}
+    fl_ankle_yaw_joint:           {p: 4000, d: 4}
+    fl_wheel_joint:               *wheel
+    hr_hip_yaw_joint:             {p: 5000, d: 3}
+    hr_hip_pitch_joint:           {p: 5000, d: 3}
+    hr_knee_joint:                 {p: 8000, d: 5}
+    hr_ankle_pitch_joint:         {p: 4000, d: 4}
+    hr_ankle_yaw_joint:           {p: 4000, d: 4}
+    hr_wheel_joint:               *wheel
+    hl_hip_yaw_joint:             {p: 5000, d: 3}
+    hl_hip_pitch_joint:           {p: 5000, d: 3}
+    hl_knee_joint:                 {p: 8000, d: 5}
+    hl_ankle_pitch_joint:         {p: 4000, d: 4}
+    hl_ankle_yaw_joint:           {p: 4000, d: 4}
+    hl_wheel_joint:               *wheel
+    torso_yaw_joint:              {p: 1000, d: 2}
+    r_shoulder_pitch_joint:       {p: 1000, d: 2}
+    r_shoulder_roll_joint:        {p: 1000, d: 2}
+    r_shoulder_yaw_joint:         {p: 1000, d: 2}
+    r_elbow_joint:                {p: 1000, d: 2}
+    r_forearm_joint:              {p: 1000, d: 2}
+    r_wrist_pitch_joint:          {p: 1000, d: 2}
+    r_wrist_yaw_joint:            {p: 1000, d: 2}
+    l_shoulder_pitch_joint:       {p: 1000, d: 2}
+    l_shoulder_roll_joint:        {p: 1000, d: 2}
+    l_shoulder_yaw_joint:         {p: 1000, d: 2}
+    l_elbow_joint:                {p: 1000, d: 2}
+    l_forearm_joint:              {p: 1000, d: 2}
+    l_wrist_pitch_joint:          {p: 1000, d: 2}
+    l_wrist_yaw_joint:            {p: 1000, d: 2}

@@ -1,0 +1,45 @@
+VOLUME =  6.2837886e+04  MM^3
+SURFACE AREA =  5.9633137e+04  MM^2
+AVERAGE DENSITY =  6.6577864e-06 KILOGRAM / MM^3
+MASS =  4.1836122e-01 KILOGRAM 
+
+CENTER OF GRAVITY with respect to LINK_FRAME coordinate frame:
+X   Y   Z    -4.7996784e-03  0.0000000e+00 -2.3343015e+01  MM
+
+INERTIA with respect to LINK_FRAME coordinate frame:  (KILOGRAM * MM^2)
+
+INERTIA TENSOR:
+Ixx Ixy Ixz  4.4153783e+02  6.1504409e-01 -3.9155628e-02
+Iyx Iyy Iyz  6.1504409e-01  4.4174998e+02  0.0000000e+00
+Izx Izy Izz -3.9155628e-02  0.0000000e+00  2.8785284e+02
+
+INERTIA at CENTER OF GRAVITY with respect to LINK_FRAME coordinate frame:  (KILOGRAM * MM^2)
+
+INERTIA TENSOR:
+Ixx Ixy Ixz  2.1357432e+02  6.1504409e-01  7.7171309e-03
+Iyx Iyy Iyz  6.1504409e-01  2.1378647e+02  0.0000000e+00
+Izx Izy Izz  7.7171309e-03  0.0000000e+00  2.8785283e+02
+
+PRINCIPAL MOMENTS OF INERTIA:  (KILOGRAM * MM^2)
+I1  I2  I3   2.1305627e+02  2.1430452e+02  2.8785283e+02
+
+ROTATION MATRIX from LINK_FRAME orientation to PRINCIPAL AXES:
+       0.76484        0.64422        0.00010
+      -0.64422        0.76484        0.00000
+      -0.00008       -0.00007        1.00000
+
+ROTATION ANGLES from LINK_FRAME orientation to PRINCIPAL AXES (degrees):
+angles about x  y  z   0.000          0.000        -40.107 
+
+RADII OF GYRATION with respect to PRINCIPAL AXES:
+R1  R2  R3 2.2566876e+01  2.2632887e+01  2.6230679e+01  MM
+
+---------------------------------------------
+
+MASS PROPERTIES OF COMPONENTS OF THE ASSEMBLY
+(in assembly units and the LINK_FRAME coordinate frame)
+
+   DENSITY             MASS          C.G.:  X        Y         Z
+
+                        CE0119A0            MATERIAL:                              UNKNOWN
+         6.65779e-06  4.18361e-01 -4.79968e-03  0.00000e+00 -2.33430e+01

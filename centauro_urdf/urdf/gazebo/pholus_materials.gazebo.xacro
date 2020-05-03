@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<gazebo reference="pelvis">
+	<material>Gazebo/Gray</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="tof_camera"><material>Gazebo/Residential</material></gazebo>
+
+
+
+<gazebo reference="lidar"><material>Gazebo/Residential</material></gazebo>
+
+<gazebo reference="torso">
+        <material>Gazebo/Gray</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+
+<xacro:if value="${ADD_LEGS}">
+
+<xacro:if value="${USE_STICKS}">
+<gazebo reference="fl_stick">
+	<material>Gazebo/Lane_1</material>
+</gazebo>
+
+<gazebo reference="fr_stick">
+	<material>Gazebo/Lane_1 </material>
+</gazebo>
+
+<gazebo reference="hl_stick">
+	<material>Gazebo/Lane_1</material>
+</gazebo>
+
+<gazebo reference="hr_stick">
+	<material>Gazebo/Lane_1</material>
+</gazebo>
+</xacro:if>
+
+
+<gazebo reference="fl_hip_yaw">
+	<material>Gazebo/Lane_1</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fr_hip_yaw">
+	<material>Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hl_hip_yaw">
+	<material>Gazebo/Lane_1</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hr_hip_yaw">
+	<material>Gazebo/Lane_1</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fl_hip_pitch">
+        <material>Gazebo/Gray </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fr_hip_pitch">
+        <material>Gazebo/Gray</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hl_hip_pitch">
+        <material>Gazebo/Gray </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hr_hip_pitch">
+        <material>Gazebo/Gray </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+
+
+<xacro:unless value="${USE_STICKS}">
+
+
+<gazebo reference="fl_knee">
+	<material>Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fr_knee">
+	<material>Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hl_knee">
+	<material>Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hr_knee">
+	<material>Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fl_ankle_pitch">
+        <material>Gazebo/Gray</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fr_ankle_pitch">
+        <material>Gazebo/Gray  </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hl_ankle_pitch">
+        <material>Gazebo/Gray </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hr_ankle_pitch">
+        <material>Gazebo/Gray  </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fl_ankle_yaw">
+	<material> Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="fr_ankle_yaw">
+	<material>Gazebo/Lane_1 </material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hl_ankle_yaw">
+	<material>Gazebo/Lane_1</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="hr_ankle_yaw">
+	<material>Gazebo/Lane_1</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+</gazebo>
+
+
+<gazebo reference="fl_wheel">
+	<material>Gazebo/Residential</material>
+        <collision>
+        	<surface>
+                	<friction>
+   		                <ode>
+                                        <mu>0.5</mu>
+                                        <mu2>0.5</mu2>
+                                </ode>
+         			<bullet>
+			                <friction>0.5</friction>
+			                <friction2>0.5</friction2>
+		                </bullet>
+                        </friction>
+                        <contact>
+		                <ode>
+		                        <kp>2100000</kp>
+		                        <kd>1.</kd>
+		                        <max_vel>100</max_vel>
+		                </ode>
+		                <bullet>
+		                        <soft_cfm>0.007</soft_cfm>
+		                        <soft_erp>0.25</soft_erp>
+		                        <kp>1000000</kp>
+		                        <kd>5.</kd>
+		                        <!--split_impulse>0.01</split_impulse-->
+		                </bullet>
+                        </contact>
+                </surface>
+        </collision>
+</gazebo>
+
+<gazebo reference="fr_wheel">
+        <material>Gazebo/Residential</material>
+        <collision>
+                <surface>
+                        <friction>
+   		                <ode>
+                                        <mu>0.5</mu>
+                                        <mu2>0.5</mu2>
+                                </ode>
+         			<bullet>
+			                <friction>0.5</friction>
+			                <friction2>0.5</friction2>
+		                </bullet>
+                        </friction>
+                        <contact>
+                        <ode>
+                                <kp>2100000</kp>
+                                <kd>1</kd>
+                                <max_vel>100</max_vel>
+                        </ode>
+                                <bullet>
+                                        <soft_cfm>0.007</soft_cfm>
+                                        <soft_erp>0.25</soft_erp>
+                                        <kp>1000000</kp>
+                                        <kd>5</kd>
+                                        <!--split_impulse>0.01</split_impulse-->
+                                </bullet>
+                        </contact>
+                </surface>
+        </collision>
+</gazebo>
+
+<gazebo reference="hl_wheel">
+	<material>Gazebo/Residential </material>
+        <collision>
+
+               <surface>
+                        <friction>
+   		                <ode>
+                                        <mu>0.5</mu>
+                                        <mu2>0.5</mu2>
+                                </ode>
+         			<bullet>
+			                <friction>0.5</friction>
+			                <friction2>0.5</friction2>
+		                </bullet>
+                        </friction>
+                        <contact>
+                        <ode>
+                                <kp>2100000</kp>
+                                <kd>1</kd>
+                                <max_vel>100</max_vel>
+                        </ode>
+                                <bullet>
+                                        <soft_cfm>0.007</soft_cfm>
+                                        <soft_erp>0.25</soft_erp>
+                                        <kp>1000000</kp>
+                                        <kd>5</kd>
+                                        <!--split_impulse>0.01</split_impulse-->
+                                </bullet>
+                        </contact>
+                </surface>
+        </collision>
+</gazebo>
+
+<gazebo reference="hr_wheel">
+	<material>Gazebo/Residential</material>
+        <collision>
+                <surface>
+                        <friction>
+   		                <ode>
+                                        <mu>0.5</mu>
+                                        <mu2>0.5</mu2>
+                                </ode>
+         			<bullet>
+			                <friction>0.5</friction>
+			                <friction2>0.5</friction2>
+		                </bullet>
+                        </friction>
+                        <contact>
+                                <ode>
+                                <kp>2100000</kp>
+                                <kd>1</kd>
+                                <max_vel>100</max_vel>
+                                </ode>
+                                <bullet>
+                                        <soft_cfm>0.007</soft_cfm>
+                                        <soft_erp>0.25</soft_erp>
+                                        <kp>1000000</kp>
+                                        <kd>5</kd>
+                                        <!--split_impulse>0.01</split_impulse-->
+                                </bullet>
+                        </contact>
+                </surface>
+         </collision>
+</gazebo>
+-->
+
+</xacro:unless>
+
+</xacro:if>
+
+<xacro:if value="${ADD_UPPER_BODY}">
+
+<gazebo reference="l_shoulder_pitch">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+<gazebo reference="r_shoulder_pitch">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_shoulder_roll">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="r_shoulder_roll">
+        <material>Gazebo/Gray</material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_shoulder_yaw">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="r_shoulder_yaw">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_elbow">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="r_elbow">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_forearm">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="r_forearm">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_wrist_pitch">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="r_wrist_pitch">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_wrist_yaw">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+
+<gazebo reference="r_wrist_yaw">
+	<material>Gazebo/Lane_1 </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+<gazebo reference="l_heri_hand">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+
+<gazebo reference="r_heri_hand">
+        <material>Gazebo/Gray </material>
+	<mu1>0</mu1>
+	<mu2>0</mu2>
+</gazebo>
+
+</xacro:if>
+
+</robot>

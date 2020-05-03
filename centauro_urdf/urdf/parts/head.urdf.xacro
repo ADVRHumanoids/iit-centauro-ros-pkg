@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- LINKS -->
+
+<link name="tof_camera">
+<inertial>
+	<mass value="1.3821576"/>
+	<origin xyz="${4.7324138e+01*mmTom} ${3.1235337*mmTom} ${-3.1691096e+01*mmTom}" rpy="0.0 0.0 0.0"/>      
+	<inertia ixx="${3.2284354e+03*mm2Tom2}"  ixy="${6.9551181e+01*mm2Tom2}"  ixz="${-1.2721217e+02*mm2Tom2}" iyy="${2.2420795e+03*mm2Tom2}" iyz="${-1.3961831e+02*mm2Tom2}" izz="${1.8844809e+03*mm2Tom2}" />
+</inertial>
+
+<visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="black"/>
+      <geometry name="tof_camera_visual">
+        <mesh filename="package://pholus_urdf/meshes/tof_camera.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+      </geometry>
+</visual> 
+
+<collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="tof_camera_collision">
+        <mesh filename="package://pholus_urdf/meshes/simple/tof_camera.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+      </geometry>             
+</collision>  
+</link>
+
+<link name="lidar">
+<inertial>
+	<mass value="8.7087474e-01"/>
+	<origin xyz="${6.0475783e-02*mmTom} ${-8.1621602e-03*mmTom} ${-7.2175098*mmTom}" rpy="0.0 0.0 0.0"/>      
+	<inertia ixx="${1.1279642e+02*mm2Tom2}"  ixy="${-3.2830282e-04*mm2Tom2}"  ixz="${-3.9329952e-01*mm2Tom2}" iyy="${6.6830231e+01*mm2Tom2}" iyz="${5.1251186e-02*mm2Tom2}" izz="${1.7248379e+02*mm2Tom2}" />
+</inertial>
+
+<visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="black"/>
+      <geometry name="tof_camera_visual">
+        <mesh filename="package://pholus_urdf/meshes/lidar.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+      </geometry>
+</visual> 
+
+<collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="tof_camera_collision">
+        <mesh filename="package://pholus_urdf/meshes/simple/lidar.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+      </geometry>             
+</collision>  
+</link>
+
+
+<!-- JOINTS -->
+
+<joint name="tof_camera_joint" type="revolute">
+    <parent link="torso"/>
+    <child link="tof_camera"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="11.72" effort="${5*torque_scale}" lower="-0.25" upper="0.7" /> <!-- TORQUE AND VELOCITY LIMITS ARE WRONG! -->
+    <dynamics friction="0" damping="0.03"/>
+    <origin xyz="${60*mmTom} 0 ${285.5*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="lidar_joint" type="revolute">
+    <parent link="torso"/>
+    <child link="lidar"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="11.72" effort="${5*torque_scale}" lower="-1.57" upper="1.57" />  <!-- TORQUE AND VELOCITY LIMITS ARE WRONG! -->
+    <dynamics friction="0" damping="0.03"/>
+    <origin xyz="${82.27*mmTom} 0 ${399.5*mmTom}" rpy="0 0 0" />
+</joint>
+
+</robot>

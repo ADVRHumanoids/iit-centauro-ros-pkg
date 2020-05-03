@@ -1,0 +1,18 @@
+<package>
+  <description brief="centauro_srdf">
+
+     centauro_srdf
+
+  </description>
+  <author>Enrico</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/centauro_srdf</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="srdfdom"/>
+  <depend package="urdf"/>
+
+</package>
+
+

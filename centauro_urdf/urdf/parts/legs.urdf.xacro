@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find pholus_urdf)/urdf/parts/leg_macro.urdf.xacro" />
+
+<xacro:leg prefix="fr"  x="${250*mmTom}"  y="${-125*mmTom}" z="${-56.6*mmTom}" mirror_link="1"/>
+<xacro:leg prefix="fl"  x="${250*mmTom}"  y="${125*mmTom}"  z="${-56.6*mmTom}" mirror_link="-1"/>
+<xacro:leg prefix="hr"  x="${-250*mmTom}" y="${-125*mmTom}" z="${-56.6*mmTom}" mirror_link="1"/>
+<xacro:leg prefix="hl"  x="${-250*mmTom}" y="${125*mmTom}"  z="${-56.6*mmTom}" mirror_link="-1"/>
+
+</robot>

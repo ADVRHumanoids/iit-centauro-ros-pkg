@@ -1,0 +1,20 @@
+<package>
+  <description brief="centauro_gazebo">
+
+     centauro_gazebo 
+
+  </description>
+  <author>Enrico Mingo Hoffman</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/centauro_gazebo</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="coman_urdf"/>
+  <depend package="xacro"/>
+  <depend package="gazebo_ros_control"/>
+  
+
+</package>
+
+

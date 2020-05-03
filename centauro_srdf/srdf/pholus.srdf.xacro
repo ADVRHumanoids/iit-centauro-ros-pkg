@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="pholus">
+    
+    <xacro:include filename="$(find pholus_urdf)/urdf/pholus_config.urdf.xacro" />
+    
+    <group name="base">
+        <link name="pelvis"/>
+    </group>
+
+
+<xacro:if value="${ADD_LEGS}">
+    
+<xacro:if value="${USE_STICKS}">
+    <group name="fr_leg">
+        <chain base_link="pelvis" tip_link="fr_stick"/>
+    </group>
+    <group name="fl_leg">
+        <chain base_link="pelvis" tip_link="fl_stick"/>
+    </group>
+    <group name="hr_leg">
+        <chain base_link="pelvis" tip_link="hr_stick"/>
+    </group>
+    <group name="hl_leg">
+        <chain base_link="pelvis" tip_link="hl_stick"/>
+    </group>
+</xacro:if>
+
+<xacro:unless value="${USE_STICKS}">
+    <group name="fr_leg">
+        <chain base_link="pelvis" tip_link="fr_wheel"/>
+    </group>
+    <group name="fl_leg">
+        <chain base_link="pelvis" tip_link="fl_wheel"/>
+    </group>
+    <group name="hr_leg">
+        <chain base_link="pelvis" tip_link="hr_wheel"/>
+    </group>
+    <group name="hl_leg">
+        <chain base_link="pelvis" tip_link="hl_wheel"/>
+    </group> 
+</xacro:unless>   
+</xacro:if>
+
+<xacro:if value="${ADD_UPPER_BODY}">
+    <group name="torso">
+        <chain base_link="pelvis" tip_link="torso"/>
+    </group>
+    <group name="l_arm">
+        <chain base_link="torso" tip_link="l_wrist_yaw"/>
+    </group>
+    <group name="r_arm">
+        <chain base_link="torso" tip_link="r_wrist_yaw"/>
+    </group>
+    <group name="head">
+        <chain base_link="torso" tip_link="tof_camera"/>
+    </group>
+    <group name="lidar">
+        <chain base_link="torso" tip_link="lidar"/>
+    </group>
+</xacro:if>
+
+
+<group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
+<xacro:if value="${ADD_LEGS}">
+	<group name="fr_leg"/>
+        <group name="fl_leg"/>
+        <group name="hr_leg"/>
+        <group name="hl_leg"/>
+</xacro:if>
+
+<xacro:if value="${ADD_UPPER_BODY}">
+	<group name="torso"/>
+        <group name="l_arm"/>
+        <group name="r_arm"/>
+	<group name="head"/>
+        <group name="lidar"/>
+</xacro:if>
+</group>
+
+<group_state name="home" group="chains">
+<xacro:if value="${ADD_UPPER_BODY}">
+	<joint name="torso_yaw_joint" value="0.0"/>
+
+    <joint name="l_shoulder_pitch_joint" value="0.520149"/>
+    <joint name="l_shoulder_roll_joint"  value="0.320865"/>
+    <joint name="l_shoulder_yaw_joint"   value="0.274669"/>
+    <joint name="l_elbow_joint"          value="-2.23604"/>
+    <joint name="l_forearm_joint"        value="0.0500815"/>
+    <joint name="l_wrist_pitch_joint"    value="-0.781461"/>
+    <joint name="l_wrist_yaw_joint"      value="-0.0567608"/>
+
+    <joint name="r_shoulder_pitch_joint" value="0.520149"/>
+    <joint name="r_shoulder_roll_joint"  value="-0.320865"/>
+    <joint name="r_shoulder_yaw_joint"   value="-0.274669"/>
+    <joint name="r_elbow_joint"          value="-2.23604"/>
+    <joint name="r_forearm_joint"        value="-0.0500815"/>
+    <joint name="r_wrist_pitch_joint"    value="-0.781461"/>
+    <joint name="r_wrist_yaw_joint"      value="0.0567608"/>
+
+</xacro:if>
+
+<xacro:if value="${ADD_LEGS}">
+        <joint name="fr_hip_yaw_joint" value="0.0"/>
+        <joint name="fr_hip_pitch_joint" value="1.0"/>
+        <joint name="fr_knee_joint" value="1.0"/>
+<xacro:unless value="${USE_STICKS}">
+        <joint name="fr_ankle_pitch_joint" value="0.0"/>
+        <joint name="fr_ankle_yaw_joint" value="0.0"/>
+</xacro:unless>
+
+        <joint name="fl_hip_yaw_joint" value="0.0"/>
+        <joint name="fl_hip_pitch_joint" value="-1.0"/>
+        <joint name="fl_knee_joint" value="-1.0"/>
+<xacro:unless value="${USE_STICKS}">
+        <joint name="fl_ankle_pitch_joint" value="0.0"/>
+        <joint name="fl_ankle_yaw_joint" value="0.0"/>
+</xacro:unless>
+
+        <joint name="hr_hip_yaw_joint" value="0.0"/>
+        <joint name="hr_hip_pitch_joint" value="-1.0"/>
+        <joint name="hr_knee_joint" value="-1.0"/>
+<xacro:unless value="${USE_STICKS}">
+        <joint name="hr_ankle_pitch_joint" value="0.0"/>
+        <joint name="hr_ankle_yaw_joint" value="0.0"/>
+</xacro:unless>
+
+        <joint name="hl_hip_yaw_joint" value="0.0"/>
+        <joint name="hl_hip_pitch_joint" value="1.0"/>
+        <joint name="hl_knee_joint" value="1.0"/>
+<xacro:unless value="${USE_STICKS}">
+        <joint name="hl_ankle_pitch_joint" value="0.0"/>
+        <joint name="hl_ankle_yaw_joint" value="0.0"/>    
+</xacro:unless>  
+</xacro:if>
+
+</group_state>
+</robot>
