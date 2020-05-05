@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/hip-yaw.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.00414361009459 -0.00942977366404 0.0445" rpy="-0.688008183058 0.341686596351 -2.34221704554"/>
+      <geometry>
+        <cylinder radius="0.0653044" length="0.0345165338408"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
