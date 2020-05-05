@@ -8,28 +8,45 @@
 -->
 
 <xacro:include filename="$(find centauro_urdf)/urdf/utils.urdf.xacro" />
+<xacro:include filename="$(find centauro_urdf)/urdf/parts/kinematics_properties.urdf.xacro" />
+<xacro:include filename="$(find centauro_urdf)/urdf/parts/inertial_properties.urdf.xacro" />
+<xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
+
 
 <link name="base_link"/>
 
 <link name="pelvis">
-    <inertial>
-      <origin xyz="0.0013890071 -0.0015989148 0.063101012"/>
-      <mass value="16.097574"/>
-      <inertia ixx="0.23912627" ixy="-0.0050541269" ixz="-0.019746055" iyy="0.71430078" iyz="0.0002131204" izz="0.81870448"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/pelvis.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-</link>
+
+      <inertial>
+         <origin xyz="${Pelvis_x} ${Pelvis_y} ${Pelvis_z}"/>
+         <mass value="${Pelvis_mass}"/>
+         <inertia ixx="${Pelvis_xx}" ixy="${Pelvis_xy}" ixz="${Pelvis_xz}" iyy="${Pelvis_yy}" iyz="${Pelvis_yz}" izz="${Pelvis_zz}"/>
+      </inertial>
+
+      <visual>
+        <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
+        <geometry>
+         <mesh filename="package://centauro_urdf/meshes/pelvis.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+      </visual>
+
+      <collision>
+         <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
+        <geometry>
+         <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+      </collision>
+
+   </link>
+
+
+    <link name="imu_link"/>
+
+    <joint name="imu_joint" type="fixed">
+        <parent link="pelvis"/>
+        <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}"/>
+        <child link="imu_link"/>
+    </joint>
 
 
 <joint name="base_joint" type="fixed">
@@ -38,15 +55,16 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
 </joint>
 
+
 <!--xacro:if value="${ADD_UPPER_BODY}">
 	<xacro:include filename="$(find pholus_urdf)/urdf/parts/torso.urdf.xacro" />
         <xacro:include filename="$(find pholus_urdf)/urdf/parts/arms.urdf.xacro" />
 	<xacro:include filename="$(find pholus_urdf)/urdf/parts/head.urdf.xacro" />
 </xacro:if-->
 
-<!--xacro:if value="${ADD_LEGS}">
-	<xacro:include filename="$(find pholus_urdf)/urdf/parts/legs.urdf.xacro" />
-</xacro:if-->
+<xacro:if value="${ADD_LEGS}">
+	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
+</xacro:if>
 
 
 
