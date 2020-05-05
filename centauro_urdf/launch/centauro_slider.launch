@@ -2,7 +2,7 @@
      <arg name="gui" default="true" />
 
      <!-- send the pholus robot XML to param server -->
-     <param name="robot_description" command="$(find xacro)/xacro.py '$(find centauro_urdf)/urdf/pholus.urdf'" />
+     <param name="robot_description" command="$(find xacro)/xacro.py '$(find centauro_urdf)/urdf/centauro.urdf'" />
      <!-- param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/cogimon.srdf" /-->   
      <param name="use_gui" value="$(arg gui)"/>
      <param name="rate" value="50.0"/>
