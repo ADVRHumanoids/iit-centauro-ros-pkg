@@ -49,6 +49,44 @@
     <parent link="base_link"/>
     <child link="pelvis"/>
   </joint>
+  <link name="torso_2">
+    <inertial>
+      <origin xyz="-0.019497794 0.0045317835 0.13768283"/>
+      <mass value="11.492689"/>
+      <inertia ixx="0.063643392" ixy="8.939e-05" ixz="-0.00086873" iyy="0.02680235" iyz="-4.657e-05" izz="0.04743015"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-0.000238335444242 0.104581190719 -1.24740737196e-05" xyz="0.013239935 1.50245845e-05 0.1846655"/>
+      <geometry>
+        <cylinder length="0.128018449088" radius="0.200841"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-0.000238335444242 0.104581190719 -1.24740737196e-05" xyz="0.006558 -0.000000 0.121006"/>
+      <geometry>
+        <sphere radius="0.200841"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-0.000238335444242 0.104581190719 -1.24740737196e-05" xyz="0.019922 0.000030 0.248325"/>
+      <geometry>
+        <sphere radius="0.200841"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_yaw" type="revolute">
+    <origin xyz="0.2 0.0 0.256"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="pelvis"/>
+    <child link="torso_2"/>
+    <limit effort="147.0" lower="-2.618" upper="2.618" velocity="5.7"/>
+  </joint>
   <link name="hip1_1">
     <inertial>
       <origin xyz="0.010214199 -0.018348359 0.038090987"/>
@@ -63,19 +101,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="-0.688008183058 0.341686596351 -0.123456638409" xyz="0.0050175575 0.008995235 0.0445"/>
+      <origin rpy="-0.688008183058 0.341686596351 -2.34221704554" xyz="0.00414361009459 -0.00942977366404 0.0445"/>
       <geometry>
         <cylinder length="0.0345165338408" radius="0.0653044"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="-0.688008183058 0.341686596351 -0.123456638409" xyz="-0.000765 -0.001330 0.031939"/>
+      <origin rpy="-0.688008183058 0.341686596351 -2.34221704554" xyz="-0.000599 0.001413 0.031939"/>
       <geometry>
         <sphere radius="0.0653044"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="-0.688008183058 0.341686596351 -0.123456638409" xyz="0.010800 0.019321 0.057061"/>
+      <origin rpy="-0.688008183058 0.341686596351 -2.34221704554" xyz="0.008886 -0.020273 0.057061"/>
       <geometry>
         <sphere radius="0.0653044"/>
       </geometry>

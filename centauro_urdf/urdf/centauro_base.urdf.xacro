@@ -56,11 +56,11 @@
 </joint>
 
 
-<!--xacro:if value="${ADD_UPPER_BODY}">
-	<xacro:include filename="$(find pholus_urdf)/urdf/parts/torso.urdf.xacro" />
-        <xacro:include filename="$(find pholus_urdf)/urdf/parts/arms.urdf.xacro" />
-	<xacro:include filename="$(find pholus_urdf)/urdf/parts/head.urdf.xacro" />
-</xacro:if-->
+<xacro:if value="${ADD_UPPER_BODY}">
+	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
+        <!--xacro:include filename="$(find pholus_urdf)/urdf/parts/arms.urdf.xacro" /-->
+	<!--xacro:include filename="$(find pholus_urdf)/urdf/parts/head.urdf.xacro" /-->
+</xacro:if>
 
 <xacro:if value="${ADD_LEGS}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
