@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-<xacro:include filename="$(find pholus_urdf)/urdf/parts/arm_macro.urdf.xacro" />
-<xacro:include filename="$(find pholus_urdf)/urdf/parts/heri_hand_macro.urdf.xacro" />
+<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_arm.urdf.xacro" />
 
-<xacro:arm prefix="r"  mirror_link="1"/>
-<xacro:heri_hand prefix="r"  mirror_link="1" ft_sensor_roll="0.0" ft_sensor_pitch="0.0" ft_sensor_yaw="0.0"/>
 
-<xacro:arm prefix="l"  mirror_link="-1"/>
-<xacro:heri_hand prefix="l"  mirror_link="-1" ft_sensor_roll="0.0" ft_sensor_pitch="0.0" ft_sensor_yaw="0.0"/>
+<!-- arms -->
+<xacro:centauro_arm arm_num="1"  rot="1"  parent="torso_2">
+      <origin xyz="${Shoulder_1_Ox} ${Shoulder_1_Oy} ${Shoulder_1_Oz}" rpy="${Shoulder_1_roll} ${Shoulder_1_pitch} ${Shoulder_1_yaw}"/>
+   </xacro:centauro_arm>
+
+<xacro:centauro_arm arm_num="2" rot="-1"  parent="torso_2">
+      <origin xyz="${Shoulder_1_Ox} ${-Shoulder_1_Oy} ${Shoulder_1_Oz}" rpy="${-Shoulder_1_roll} ${Shoulder_1_pitch} ${-Shoulder_1_yaw}" />
+</xacro:centauro_arm>
 
 </robot>
