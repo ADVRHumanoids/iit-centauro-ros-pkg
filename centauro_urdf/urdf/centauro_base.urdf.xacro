@@ -50,8 +50,8 @@
 
 
 <joint name="base_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="pelvis"/>
+    <parent link="pelvis"/>
+    <child link="base_link"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
 </joint>
 

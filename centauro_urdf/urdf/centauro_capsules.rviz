@@ -46,8 +46,8 @@
   </joint>
   <joint name="base_joint" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-    <parent link="base_link"/>
-    <child link="pelvis"/>
+    <parent link="pelvis"/>
+    <child link="base_link"/>
   </joint>
   <link name="torso_2">
     <inertial>
@@ -1630,5 +1630,10 @@
     <parent link="ankle2_4"/>
     <child link="wheel_4"/>
     <limit effort="35.0" velocity="20.0"/>
+  </joint>
+  <link name="world"/>
+  <joint name="reference" type="floating">
+    <parent link="world"/>
+    <child link="pelvis"/>
   </joint>
 </robot>
