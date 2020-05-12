@@ -270,19 +270,19 @@
          <mass value="${Ft_arm_mass}"/>
          <inertia ixx="${Ft_arm_xx}" ixy="${rot*Ft_arm_xy}" ixz="${Ft_arm_xz}" iyy="${Ft_arm_yy}" iyz="${rot*Ft_arm_yz}" izz="${Ft_arm_zz}"/>
       </inertial>
-      <visual>
+      <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
       <mesh filename="package://centauro_urdf/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
-      </visual>
+      </visual-->
 	
-      <collision>
+      <!--collision>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
       <mesh filename="package://centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
-      </collision>
+      </collision-->
 
    </link>
 

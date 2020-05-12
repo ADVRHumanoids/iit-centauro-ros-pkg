@@ -9,6 +9,7 @@
 <xacro:property name="ADD_LEGS" value="true" />
 <xacro:property name="ADD_UPPER_BODY" value="true" />
 
+<xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
 
 <xacro:property name="ADD_FLOATING_BASE" value="true" />
 

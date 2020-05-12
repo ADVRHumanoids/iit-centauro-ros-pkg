@@ -13,6 +13,7 @@
 <xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
 
 
+
 <link name="base_link"/>
 
 <link name="pelvis">
@@ -59,6 +60,18 @@
 <xacro:if value="${ADD_UPPER_BODY}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
         <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
+	
+	<xacro:if value="${ADD_BALL_END_EFFECTOR}">
+		<xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />
+
+		<xacro:ball_end_effector arm_num="1"  parent_link="arm1_7">
+      			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+   		</xacro:ball_end_effector>
+
+		<xacro:ball_end_effector arm_num="2"  parent_link="arm2_7">
+      			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+   		</xacro:ball_end_effector>
+	</xacro:if>
 	<!--xacro:include filename="$(find pholus_urdf)/urdf/parts/head.urdf.xacro" /-->
 </xacro:if>
 
