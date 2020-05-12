@@ -9,6 +9,12 @@ stack:
 
 constraints: ["JointLimits", "VelocityLimits"]
 
+JointLimits:
+    type: JointLimits
+    
+VelocityLimits:
+    type: VelocityLimits
+
 Gaze:
     type: "Gaze"
     lambda: 0.05
@@ -16,52 +22,52 @@ Gaze:
 
 Steering_FL:
     type: "CentauroSteering"
-    wheel_name: "fl_wheel"
+    wheel_name: "wheel_1"
     lib_name: "libcentauro_cartesio_addon.so"
     lambda: 0.1
     
 Steering_FR:
     type: "CentauroSteering"
-    wheel_name: "fr_wheel"
+    wheel_name: "wheel_2"
     lib_name: "libcentauro_cartesio_addon.so"
     lambda: 0.1
     
 Steering_HL:
     type: "CentauroSteering"
-    wheel_name: "hl_wheel"
+    wheel_name: "wheel_3"
     lib_name: "libcentauro_cartesio_addon.so"
     lambda: 0.1
     
 Steering_HR:
     type: "CentauroSteering"
-    wheel_name: "hr_wheel"
+    wheel_name: "wheel_3"
     lib_name: "libcentauro_cartesio_addon.so"
     lambda: 0.1
     
 Rolling_FL:
     type: "WheelRolling"
-    wheel_name: "fl_wheel"
+    wheel_name: "wheel_1"
     lib_name: "libcentauro_cartesio_addon.so"
     wheel_radius: 0.078
     weight: 1000.0
     
 Rolling_FR:
     type: "WheelRolling"
-    wheel_name: "fr_wheel"
+    wheel_name: "wheel_2"
     lib_name: "libcentauro_cartesio_addon.so"
     wheel_radius: 0.078
     weight: 1000.0
     
 Rolling_HL:
     type: "WheelRolling"
-    wheel_name: "hl_wheel"
+    wheel_name: "wheel_3"
     lib_name: "libcentauro_cartesio_addon.so"
     wheel_radius: 0.078
     weight: 1000.0
     
 Rolling_HR:
     type: "WheelRolling"
-    wheel_name: "hr_wheel"
+    wheel_name: "wheel_4"
     lib_name: "libcentauro_cartesio_addon.so"
     wheel_radius: 0.078
     weight: 1000.0
@@ -75,39 +81,39 @@ Waist:
     
 Wheel_FL:
     type: "Cartesian"
-    distal_link: "fl_wheel"
+    distal_link: "wheel_1"
     base_link: "pelvis"
     indices: [0, 1, 2]
     lambda: 0.1
-    disabled_joints: ["fl_ankle_yaw_joint", "fl_wheel_joint"]
+    disabled_joints: ["ankle_yaw_1", "j_wheel_1"]
 
 Wheel_FR:
     type: "Cartesian"
-    distal_link: "fr_wheel"
+    distal_link: "wheel_2"
     base_link: "pelvis"
     indices: [0, 1, 2]
     lambda: 0.1
-    disabled_joints: ["fr_ankle_yaw_joint", "fr_wheel_joint"]
+    disabled_joints: ["ankle_yaw_2", "j_wheel_2"]
 
 Wheel_HL:
     type: "Cartesian"
-    distal_link: "hl_wheel"
+    distal_link: "wheel_3"
     base_link: "pelvis"
     indices: [0, 1, 2]
     lambda: 0.1
-    disabled_joints: ["hl_ankle_yaw_joint", "hl_wheel_joint"]
+    disabled_joints: ["ankle_yaw_3", "j_wheel_3"]
 
 Wheel_HR:
     type: "Cartesian"
-    distal_link: "hr_wheel"
+    distal_link: "wheel_4"
     base_link: "pelvis"
     indices: [0, 1, 2]
     lambda: 0.1
-    disabled_joints: ["hr_ankle_yaw_joint", "hr_wheel_joint"]
+    disabled_joints: ["ankle_yaw_4", "j_wheel_4"]
 
 Ankle_FL:
     type: "Cartesian"
-    distal_link: "fl_ankle_pitch"
+    distal_link: "ankle_pitch_1"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -115,7 +121,7 @@ Ankle_FL:
 
 Ankle_FR:
     type: "Cartesian"
-    distal_link: "fr_ankle_pitch"
+    distal_link: "ankle_pitch_2"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -123,7 +129,7 @@ Ankle_FR:
 
 Ankle_HL:
     type: "Cartesian"
-    distal_link: "hl_ankle_pitch"
+    distal_link: "ankle_pitch_3"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -131,7 +137,7 @@ Ankle_HL:
 
 Ankle_HR:
     type: "Cartesian"
-    distal_link: "hr_ankle_pitch"
+    distal_link: "ankle_pitch_4"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -153,14 +159,14 @@ Postural:
     type: "Postural"
     lambda: 0.01
     disabled_joints:
-      - fr_ankle_yaw_joint
-      - hr_ankle_yaw_joint
-      - hl_ankle_yaw_joint
-      - fl_ankle_yaw_joint
-      - fr_wheel_joint
-      - hr_wheel_joint
-      - hl_wheel_joint
-      - fl_wheel_joint
+      - ankle_yaw_1
+      - ankle_yaw_2
+      - ankle_yaw_3
+      - ankle_yaw_4
+      - j_wheel_1
+      - j_wheel_2
+      - j_wheel_3
+      - j_wheel_4
     
 Com:
     type: "Com"

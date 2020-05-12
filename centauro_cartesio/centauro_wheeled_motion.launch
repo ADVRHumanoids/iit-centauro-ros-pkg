@@ -4,9 +4,9 @@
     <arg name="prefix" default=""/>
     <arg name="gui" default="false"/>
     
-    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/pholus.urdf"/>
+    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/centauro.urdf"/>
 
-    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/pholus.srdf"/>
+    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/centauro.srdf"/>
 
     <param name="cartesian/problem_description" textfile="$(find centauro_cartesio)/centauro_wheeled_motion_stack.yaml"/>
         

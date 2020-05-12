@@ -9,27 +9,33 @@ stack:
 
 constraints: ["JointLimits", "VelocityLimits"]
 
+JointLimits:
+    type: JointLimits
+    
+VelocityLimits:
+    type: VelocityLimits
+
 Wheel_FL:
     type: "Cartesian"
-    distal_link: "fl_wheel"
+    distal_link: "wheel_1"
     base_link: "world"
     lambda: 0.1
 
 Wheel_FR:
     type: "Cartesian"
-    distal_link: "fr_wheel"
+    distal_link: "wheel_2"
     base_link: "world"
     lambda: 0.1
 
 Wheel_HL:
     type: "Cartesian"
-    distal_link: "hl_wheel"
+    distal_link: "wheel_3"
     base_link: "world"
     lambda: 0.1
 
 Wheel_HR:
     type: "Cartesian"
-    distal_link: "hr_wheel"
+    distal_link: "wheel_4"
     base_link: "world"
     lambda: 0.1
     

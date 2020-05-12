@@ -4,14 +4,14 @@
     <arg name="prefix" default=""/>
     <arg name="gui" default="false"/>
     
-    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/pholus.urdf"/>
+    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/centauro.urdf"/>
 
-    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/pholus.srdf"/>
+    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/centauro.srdf"/>
 
     <param name="cartesian/problem_description" textfile="$(find centauro_cartesio)/centauro_manipulation_stack.yaml"/>
         
     <rosparam name="cartesian/velocity_whitelist">
-        <param>[fr_wheel_joint, fl_wheel_joint, hr_wheel_joint, hl_wheel_joint]</param>
+        <param>[j_wheel_1, j_wheel_2, j_wheel_3, j_wheel_4]</param>
     </rosparam>
     
     <include file="$(find cartesian_interface)/launch/cartesio.launch">
