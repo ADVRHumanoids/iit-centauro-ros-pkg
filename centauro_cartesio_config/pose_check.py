@@ -142,13 +142,17 @@ for l in old_urdfdom.links:
 
     Told = old_model.getPose(ln)
     Tnew = new_model.getPose(ln)
-
-    err = np.linalg.norm((Told.inverse() * Tnew).matrix() - np.eye(4))
+    Terr = (Told.inverse() * Tnew).matrix()
+    err = np.linalg.norm(Terr - np.eye(4))
+    err_tr = np.linalg.norm(Told.translation - Tnew.translation)
+    err_cos = (np.trace(Terr[0:3, 0:3]) - 1)/2.0
+    err_cos = min(max(err_cos, -1.0), 1.0)
+    err_rot = math.acos(err_cos) / math.pi * 180.
 
     def print_bold(str):
         print('\033[1m' + str + '\033[0m')
 
     if err > 0:
-        print_bold('\>\>\> Pose mismatch in link "{}"'.format(ln))
+        print_bold('\>\>\> Pose mismatch in link "{}": error {} m, {} deg'.format(ln, err_tr, err_rot))
         print('Old: \n{}'.format(Told))
         print('New: \n{}'.format(Tnew))
