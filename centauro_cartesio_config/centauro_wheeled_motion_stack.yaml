@@ -40,7 +40,7 @@ Steering_HL:
     
 Steering_HR:
     type: "CentauroSteering"
-    wheel_name: "wheel_3"
+    wheel_name: "wheel_4"
     lib_name: "libcentauro_cartesio_addon.so"
     lambda: 0.1
     
@@ -113,7 +113,7 @@ Wheel_HR:
 
 Ankle_FL:
     type: "Cartesian"
-    distal_link: "ankle_pitch_1"
+    distal_link: "ankle1_1"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -121,7 +121,7 @@ Ankle_FL:
 
 Ankle_FR:
     type: "Cartesian"
-    distal_link: "ankle_pitch_2"
+    distal_link: "ankle1_2"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -129,7 +129,7 @@ Ankle_FR:
 
 Ankle_HL:
     type: "Cartesian"
-    distal_link: "ankle_pitch_3"
+    distal_link: "ankle1_3"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -137,7 +137,7 @@ Ankle_HL:
 
 Ankle_HR:
     type: "Cartesian"
-    distal_link: "ankle_pitch_4"
+    distal_link: "ankle1_4"
     base_link: "pelvis"
     indices: [3, 4]
     lambda: 0.02
@@ -146,13 +146,13 @@ Ankle_HR:
 LeftArm:
     type: "Cartesian"
     distal_link: "arm1_8"
-    base_link: "torso"
+    base_link: "torso_2"
     lambda: 0.1
 
 RightArm:
     type: "Cartesian"
     distal_link: "arm2_8"
-    base_link: "torso"
+    base_link: "torso_2"
     lambda: 0.1
     
 Postural:
