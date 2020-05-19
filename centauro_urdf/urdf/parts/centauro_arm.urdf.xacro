@@ -255,7 +255,7 @@
 
 <!-- end-effector -->
 <!-- wrist pitch-->
-   <joint name="j_ft_${arm_num}" type="revolute">
+   <joint name="j_ft_${arm_num}" type="fixed">
       <parent link="arm${arm_num}_7"/>
       <child link="ft_arm${arm_num}"/>
       <origin xyz="${Ft_arm_Ox} ${Ft_arm_Oy} ${Ft_arm_Oz}" rpy="${Ft_arm_roll} ${Ft_arm_pitch} ${Ft_arm_yaw}" />
