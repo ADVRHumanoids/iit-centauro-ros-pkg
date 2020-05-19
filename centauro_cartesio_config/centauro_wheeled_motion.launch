@@ -8,7 +8,7 @@
 
     <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/centauro.srdf"/>
 
-    <param name="cartesian/problem_description" textfile="$(find centauro_cartesio)/centauro_wheeled_motion_stack.yaml"/>
+    <param name="cartesian/problem_description" textfile="$(find centauro_cartesio_config)/centauro_wheeled_motion_stack.yaml"/>
         
     <rosparam name="cartesian/velocity_whitelist">
         <param>[fr_wheel_joint, fl_wheel_joint, hr_wheel_joint, hl_wheel_joint]</param>
@@ -25,7 +25,7 @@
       type="rviz"
       name="rviz"
       pkg="rviz"
-      args="-d $(find centauro_cartesio)/rviz_cartesio.rviz" />
+      args="-d $(find centauro_cartesio_config)/rviz_cartesio.rviz" />
 
 
 

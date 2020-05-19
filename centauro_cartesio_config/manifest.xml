@@ -1,14 +1,14 @@
 <package>
-  <description brief="centauro_cartesio">
+  <description brief="centauro_cartesio_config">
 
-     centauro_cartesio contains cartesio files fot the CENTAURO robot
+     centauro_cartesio_config contains cartesio files fot the CENTAURO robot
 
   </description>
   <author>Enrico Mingo</author>
   <license>BSD</license>
   <version>13.11.08</version>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/centauro_cartesio</url>
+  <url>http://ros.org/wiki/centauro_cartesio_config</url>
   <depend package="roscpp"/>
   <depend package="rospy"/>
 
