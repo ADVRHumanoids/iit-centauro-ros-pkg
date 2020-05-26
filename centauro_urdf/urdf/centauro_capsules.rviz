@@ -357,7 +357,7 @@
     <child link="arm1_7"/>
     <limit effort="28.32" lower="-2.565" upper="2.569" velocity="20.35"/>
   </joint>
-  <joint name="j_ft_1" type="revolute">
+  <joint name="j_ft_1" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="arm1_7"/>
@@ -641,7 +641,7 @@
     <child link="arm2_7"/>
     <limit effort="28.32" lower="-2.5554" upper="2.5686" velocity="20.35"/>
   </joint>
-  <joint name="j_ft_2" type="revolute">
+  <joint name="j_ft_2" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="arm2_7"/>
@@ -698,6 +698,16 @@
     <parent link="ball1"/>
     <child link="ball1_tip"/>
   </joint>
+  <joint name="j_ball1_fixed" type="fixed">
+    <parent link="ball1"/>
+    <child link="arm1_8"/>
+  </joint>
+  <link name="arm1_8">
+    <inertial>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <link name="ball2">
     <inertial>
       <origin rpy="0.0 0.0 0.0" xyz="-1.0072498e-05 3.7590658e-05 0.019772332"/>
@@ -741,6 +751,16 @@
     <parent link="ball2"/>
     <child link="ball2_tip"/>
   </joint>
+  <joint name="j_ball2_fixed" type="fixed">
+    <parent link="ball2"/>
+    <child link="arm2_8"/>
+  </joint>
+  <link name="arm2_8">
+    <inertial>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <link name="hip1_1">
     <inertial>
       <origin xyz="0.010214199 -0.018348359 0.038090987"/>
