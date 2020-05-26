@@ -12,7 +12,6 @@
 
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/centauro.gazebo.xacro" />
  
-  <!--xacro:include filename="$(find pholus_urdf)/urdf/gazebo/pholus_materials.gazebo.xacro" /-->
   
   <!--xacro:include filename="$(find cogimon_urdf)/urdf/gazebo/force_torque.gazebo.xacro" />
   
