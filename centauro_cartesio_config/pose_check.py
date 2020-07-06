@@ -119,9 +119,11 @@ print('\nChecking poses... ')
 # random q for old model
 old_q = np.random.uniform(old_qmin, old_qmax)
 old_q[0:6] = np.random.uniform(-3, 3, 6)
+old_qdot = np.ones(old_model.getJointNum())
 
 # same q as old model, unless joint does not exist
 new_q = np.zeros(new_model.getJointNum())
+new_qdot = np.ones(new_model.getJointNum())
 
 for jn in old_model.getEnabledJointNames():
     if jn in new_model.getEnabledJointNames():
@@ -130,8 +132,10 @@ for jn in old_model.getEnabledJointNames():
         new_q[new_idx] = old_q[old_idx]
 
 old_model.setJointPosition(old_q)
+old_model.setJointVelocity(old_qdot)
 old_model.update()
 new_model.setJointPosition(new_q)
+new_model.setJointVelocity(new_qdot)
 new_model.update()
 
 for l in old_urdfdom.links:
@@ -140,8 +144,8 @@ for l in old_urdfdom.links:
     if not new_urdfdom.link_map.has_key(ln):
         continue
 
-    Told = old_model.getPose(ln)
-    Tnew = new_model.getPose(ln)
+    Told = old_model.getPose(ln, 'pelvis')
+    Tnew = new_model.getPose(ln, 'pelvis')
     Terr = (Told.inverse() * Tnew).matrix()
     err = np.linalg.norm(Terr - np.eye(4))
     err_tr = np.linalg.norm(Told.translation - Tnew.translation)
@@ -152,7 +156,16 @@ for l in old_urdfdom.links:
     def print_bold(str):
         print('\033[1m' + str + '\033[0m')
 
-    if err > 0:
+    if err > 1e-9:
         print_bold('\>\>\> Pose mismatch in link "{}": error {} m, {} deg'.format(ln, err_tr, err_rot))
         print('Old: \n{}'.format(Told))
         print('New: \n{}'.format(Tnew))
+
+    vold = old_model.getJacobian(ln).dot(old_qdot)
+    vnew = new_model.getJacobian(ln).dot(new_qdot)
+
+    verr = np.linalg.norm(vold - vnew)
+    if verr > 1e-9:
+        print_bold('\>\>\> Twist mismatch in link "{}": error is {}'.format(ln, verr))
+        print('Old: \n{}'.format(vold))
+        print('New: \n{}'.format(vnew))
