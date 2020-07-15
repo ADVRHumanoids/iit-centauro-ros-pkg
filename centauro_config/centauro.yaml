@@ -3,34 +3,34 @@ RobotName: "centauro"
 GazeboXBotPlugin:
   control_rate: 0.001
   gains:
-    j_arm1_1: {p: 3000, d: 1}
-    j_arm1_2: {p: 3000, d: 1}
-    j_arm1_3: {p: 3000, d: 1}
-    j_arm1_4: {p: 3000, d: 1}
-    j_arm1_6: {p: 3000, d: 1}
-    j_arm2_1: {p: 3000, d: 1}
-    j_arm2_2: {p: 3000, d: 1}
-    j_arm2_3: {p: 3000, d: 1}
-    j_arm2_4: {p: 3000, d: 1}
-    j_arm2_6: {p: 3000, d: 1}
-    torso_yaw: {p: 3000, d: 1}
-    hip_yaw_1:  &hip_yaw {p: 3000, d: 1}
+    j_arm1_1: {p: 2500, d: 10}
+    j_arm1_2: {p: 2500, d: 10}
+    j_arm1_3: {p: 2500, d: 10}
+    j_arm1_4: {p: 2500, d: 10}
+    j_arm1_6: {p: 2500, d: 10}
+    j_arm2_1: {p: 2500, d: 10}
+    j_arm2_2: {p: 2500, d: 10}
+    j_arm2_3: {p: 2500, d: 10}
+    j_arm2_4: {p: 2500, d: 10}
+    j_arm2_6: {p: 2500, d: 10}
+    torso_yaw: {p: 2500, d: 10}
+    hip_yaw_1:  &hip_yaw {p: 2500, d: 10}
     hip_yaw_2: *hip_yaw
     hip_yaw_3: *hip_yaw
     hip_yaw_4: *hip_yaw
-    hip_pitch_1: &hip_pitch {p: 3000, d: 1}
+    hip_pitch_1: &hip_pitch {p: 2500, d: 10}
     hip_pitch_2: *hip_pitch
     hip_pitch_3: *hip_pitch
     hip_pitch_4: *hip_pitch
-    knee_pitch_1: &knee_pitch {p: 3000, d: 1}
+    knee_pitch_1: &knee_pitch {p: 2500, d: 10}
     knee_pitch_2: *knee_pitch
     knee_pitch_3: *knee_pitch
     knee_pitch_4: *knee_pitch
-    ankle_pitch_1: &ankle_pitch {p: 3000, d: 1}
+    ankle_pitch_1: &ankle_pitch {p: 2500, d: 10}
     ankle_pitch_2: *ankle_pitch
     ankle_pitch_3: *ankle_pitch
     ankle_pitch_4: *ankle_pitch
-    ankle_yaw_1: &ankle_yaw {p: 3000, d: 1}
+    ankle_yaw_1: &ankle_yaw {p: 2500, d: 10}
     ankle_yaw_2: *ankle_yaw
     ankle_yaw_3: *ankle_yaw
     ankle_yaw_4: *ankle_yaw
