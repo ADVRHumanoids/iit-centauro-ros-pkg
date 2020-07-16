@@ -83,8 +83,8 @@
 	<joint name="ankle_pitch_4" value="-0.301667"/>
 	<joint name="ankle_yaw_4" value="0.746874"/>
 	<joint name="torso_yaw" value="3.56617e-13"/>
-	<joint name="neck_yaw" value="1.22719e-16"/>
-	<joint name="neck_pitch" value="0.45"/>
+	<!--joint name="neck_yaw" value="1.22719e-16"/>
+	<joint name="neck_pitch" value="0.45"/-->
 	<joint name="j_arm1_1" value="0.520149"/>
 	<joint name="j_arm1_2" value="0.320865"/>
 	<joint name="j_arm1_3" value="0.274669"/>
