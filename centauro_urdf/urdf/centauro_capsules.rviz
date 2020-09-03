@@ -933,21 +933,21 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-4.02799e-06 4.235e-07 2.504545e-06"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.00108743512283" radius="0.08665"/>
+        <cylinder length="0.06" radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="0.000006 0.000544 0.000001"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-0.000014 -0.000543 0.000004"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
   </link>
@@ -1165,21 +1165,21 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-4.02799e-06 4.235e-07 2.504545e-06"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.00108743512283" radius="0.08665"/>
+        <cylinder length="0.06" radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="0.000006 0.000544 0.000001"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-0.000014 -0.000543 0.000004"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
   </link>
@@ -1397,21 +1397,21 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-4.02799e-06 4.235e-07 2.504545e-06"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.00108743512283" radius="0.08665"/>
+        <cylinder length="0.06" radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="0.000006 0.000544 0.000001"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-0.000014 -0.000543 0.000004"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
   </link>
@@ -1629,21 +1629,21 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-4.02799e-06 4.235e-07 2.504545e-06"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.00108743512283" radius="0.08665"/>
+        <cylinder length="0.06" radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="0.000006 0.000544 0.000001"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="1.56769917389 -0.0188362788811 -0.0187780336297" xyz="-0.000014 -0.000543 0.000004"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.08665"/>
+        <sphere radius="0.085"/>
       </geometry>
     </collision>
   </link>
