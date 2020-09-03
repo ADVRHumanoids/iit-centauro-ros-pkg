@@ -3,6 +3,14 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <gazebo>
+
+    <plugin name="xbot2_link_state_sensor" filename="libxbot2_gz_link_state_sensor.so">
+        <links>
+            <link name="pelvis"/>
+            <link name="wheel_1"/>
+        </links>
+    </plugin>
+    
     <plugin name="xbot2_joint_driver" filename="libxbot2_gz_joint_server.so">
         <pid>
             <gain name="small_mot"  p="250"  d="5"/>
