@@ -1,7 +1,7 @@
 RobotName: "centauro"
 
 GazeboXBotPlugin:
-  control_rate: 0.001
+  control_rate: 0.0005
   gains:
     j_arm1_1: {p: 2500, d: 10}
     j_arm1_2: {p: 2500, d: 10}
