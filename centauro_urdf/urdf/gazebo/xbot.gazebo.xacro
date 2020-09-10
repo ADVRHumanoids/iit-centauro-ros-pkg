@@ -11,6 +11,10 @@
         </links>
     </plugin>
     
+    <plugin name="xbot2_ft_driver" filename="libxbot2_gz_ft_server.so"/>
+    
+    <plugin name="xbot2_imu_driver" filename="libxbot2_gz_imu_server.so"/>
+    
     <plugin name="xbot2_joint_driver" filename="libxbot2_gz_joint_server.so">
         <pid>
             <gain name="small_mot"  p="250"  d="5"/>
