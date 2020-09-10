@@ -59,7 +59,7 @@
 
 <xacro:if value="${ADD_UPPER_BODY}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
-        <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
+    <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
 	
 	<xacro:if value="${ADD_BALL_END_EFFECTOR}">
 		<xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />
