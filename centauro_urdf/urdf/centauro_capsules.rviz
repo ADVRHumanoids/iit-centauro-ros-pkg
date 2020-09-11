@@ -761,6 +761,123 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
   </link>
+  <link name="neck_1">
+    <inertial>
+      <origin xyz="0.040479674 0.021377573 -0.014595112"/>
+      <mass value="0.33878686"/>
+      <inertia ixx="0.0003718568" ixy="-9.42983e-05" ixz="-2.80644e-05" iyy="0.0001886879" iyz="-1.54534e-05" izz="0.0005023443"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/neck_yaw.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.57267144283 -0.00154659947237 0.00154950224706" xyz="0.0423438 -0.00223215 -0.0125023"/>
+      <geometry>
+        <cylinder length="0.108366820117" radius="0.0256074"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-1.57267144283 -0.00154659947237 0.00154950224706" xyz="0.042428 -0.056415 -0.012401"/>
+      <geometry>
+        <sphere radius="0.0256074"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-1.57267144283 -0.00154659947237 0.00154950224706" xyz="0.042260 0.051951 -0.012604"/>
+      <geometry>
+        <sphere radius="0.0256074"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="neck_2">
+    <inertial>
+      <origin xyz="0.048466918 -0.059852318 -0.0085314894"/>
+      <mass value="0.78526942"/>
+      <inertia ixx="0.0004682345" ixy="-1.05438e-05" ixz="7.24398e-05" iyy="0.0002635246" iyz="1.6904e-06" izz="0.0003763351"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/neck_pitch.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.59533262848 0.0474825603176 -0.0486616773097" xyz="0.02395555 -0.064118485 0.0181523"/>
+      <geometry>
+        <cylinder length="0.112363456439" radius="0.0421853"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-1.59533262848 0.0474825603176 -0.0486616773097" xyz="0.021289 -0.120220 0.019529"/>
+      <geometry>
+        <sphere radius="0.0421853"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-1.59533262848 0.0474825603176 -0.0486616773097" xyz="0.026622 -0.008017 0.016776"/>
+      <geometry>
+        <sphere radius="0.0421853"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="neck_3">
+    <inertial>
+      <origin xyz="0.048466918 -0.059852318 -0.0085314894"/>
+      <mass value="0.78526942"/>
+      <inertia ixx="0.0004682345" ixy="-1.05438e-05" ixz="7.24398e-05" iyy="0.0002635246" iyz="1.6904e-06" izz="0.0003763351"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-2.90551175335 -0.594683839427 2.40306629733" xyz="0.019732435 -0.006818435 0.029163165"/>
+      <geometry>
+        <cylinder length="0.0482807313495" radius="0.0568348"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-2.90551175335 -0.594683839427 2.40306629733" xyz="0.033257 -0.011495 0.048605"/>
+      <geometry>
+        <sphere radius="0.0568348"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="-2.90551175335 -0.594683839427 2.40306629733" xyz="0.006208 -0.002141 0.009722"/>
+      <geometry>
+        <sphere radius="0.0568348"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_yaw" type="revolute">
+    <origin xyz="0.0 0.0 0.2795"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="torso_2"/>
+    <child link="neck_1"/>
+    <limit effort="35.0" lower="-0.78539816" upper="0.78539816" velocity="5.7"/>
+    <dynamics friction="10.0"/>
+  </joint>
+  <joint name="neck_pitch" type="revolute">
+    <origin xyz="0.054 0.0596 -0.0124975"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="neck_1"/>
+    <child link="neck_2"/>
+    <limit effort="35.0" lower="-0.34906585" upper="0.78539816" velocity="5.7"/>
+    <dynamics friction="10.0"/>
+  </joint>
+  <joint name="neck_velodyne" type="continuous">
+    <origin rpy="0.0 0.0 -1.828" xyz="0.055 0.0 0.473262"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="torso_2"/>
+    <child link="neck_3"/>
+    <limit effort="35.0" velocity="5.7"/>
+    <dynamics damping="0.2" friction="10.0"/>
+  </joint>
   <link name="hip1_1">
     <inertial>
       <origin xyz="0.010214199 -0.018348359 0.038090987"/>
@@ -935,19 +1052,19 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.06" radius="0.085"/>
+        <cylinder length="0.06" radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -1167,19 +1284,19 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.06" radius="0.085"/>
+        <cylinder length="0.06" radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -1399,19 +1516,19 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.06" radius="0.085"/>
+        <cylinder length="0.06" radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -1631,19 +1748,19 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.06" radius="0.085"/>
+        <cylinder length="0.06" radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 -0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.030000"/>
       <geometry>
-        <sphere radius="0.085"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
