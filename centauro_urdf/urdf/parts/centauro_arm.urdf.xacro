@@ -207,7 +207,7 @@
    <joint name="j_arm${arm_num}_3" type="fixed">
       <parent link="arm${arm_num}_2"/>
       <child link="arm${arm_num}_3"/>
-      <origin xyz="${Shoulder_3_Ox} ${Shoulder_3_Oy} ${Shoulder_3_Oz}" rpy="0.0 0.0 ${rot*0.274669}"/>
+      <origin xyz="${Shoulder_3_Ox} ${Shoulder_3_Oy} ${Shoulder_3_Oz}" rpy="0.0 0.0 ${rot*(-0.274669)}"/>
       <axis xyz="0 0 1" />
       <limit lower="${j_arm_3_lower[arm_num-1]}" upper="${j_arm_3_upper[arm_num-1]}" effort="${j_arm_3_torque[arm_num-1]}" velocity="${j_arm_3_velocity[arm_num-1]}"/>
    </joint>
@@ -247,7 +247,7 @@
    <joint name="j_arm${arm_num}_7" type="fixed">
       <parent link="arm${arm_num}_6"/>
       <child link="arm${arm_num}_7"/>
-      <origin xyz="${Wrist_3_Ox} ${rot*Wrist_3_Oy} ${Wrist_3_Oz}" rpy="0.0 0.0 ${-rot*0.0500815}"/>
+      <origin xyz="${Wrist_3_Ox} ${rot*Wrist_3_Oy} ${Wrist_3_Oz}" rpy="0.0 0.0 ${rot*(-0.0500815)}"/>
       <axis xyz="0 0 1"/>
       <limit lower="${j_arm_7_lower[arm_num-1]}" upper="${j_arm_7_upper[arm_num-1]}" effort="${j_arm_7_torque[arm_num-1]}" velocity="${j_arm_7_velocity[arm_num-1]}"/>
    </joint>
