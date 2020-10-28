@@ -185,8 +185,7 @@
       <parent link="${parent}"/>
       <child link="arm${arm_num}_1"/>
       <!--xacro:insert_block name="origin"/-->
-      <origin xyz="${Shoulder_1_Ox} ${rot*Shoulder_1_Oy} ${Shoulder_1_Oz}" rpy="0.0 0.520149 0.0"/>
-      <!--origin xyz="${Shoulder_1_Ox} ${rot*Shoulder_1_Oy} ${Shoulder_1_Oz}" rpy="0.0 1.520149 0.0"/-->
+      <origin xyz="${Shoulder_1_Ox} ${rot*Shoulder_1_Oy} ${Shoulder_1_Oz}" rpy="0.0 0.320865 0.0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${j_arm_1_lower[arm_num-1]}" upper="${j_arm_1_upper[arm_num-1]}" effort="${j_arm_1_torque[arm_num-1]}" velocity="${j_arm_1_velocity[arm_num-1]}"/>
    </joint>
@@ -197,7 +196,7 @@
       <parent link="arm${arm_num}_1"/>
       <child link="arm${arm_num}_2"/>
       <!--origin xyz="${Shoulder_2_Ox} ${rot*Shoulder_2_Oy} ${Shoulder_2_Oz}" rpy="${rot*Shoulder_2_roll} ${Shoulder_2_pitch} ${Shoulder_2_yaw}"/-->
-      <origin xyz="${Shoulder_2_Ox} ${rot*Shoulder_2_Oy} ${Shoulder_2_Oz}" rpy="${rot*0.320865} 0.0 0.0"/>
+      <origin xyz="${Shoulder_2_Ox} ${rot*Shoulder_2_Oy} ${Shoulder_2_Oz}" rpy="${rot*0.520149} ${Shoulder_2_pitch} ${Shoulder_2_yaw}"/>
       <axis xyz="1 0 0" />
       <limit lower="${j_arm_2_lower[arm_num-1]}" upper="${j_arm_2_upper[arm_num-1]}" effort="${j_arm_2_torque[arm_num-1]}" velocity="${j_arm_2_velocity[arm_num-1]}"/>
    </joint>
