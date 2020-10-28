@@ -64,7 +64,7 @@
 </link>
 
 <!--JOINTS -->
-<joint name="neck_yaw" type="revolute">
+<joint name="neck_yaw" type="fixed">
     <parent link="torso_2"/>
     <origin xyz="0.0 0.0 0.2795"/>
     <child link="neck_1"/>
@@ -73,7 +73,7 @@
     <dynamics friction="10.0"/>
 </joint>
 
-<joint name="neck_pitch" type="revolute">
+<joint name="neck_pitch" type="fixed">
     <parent link="neck_1"/>
     <origin xyz="0.054 0.0596 -0.0124975"/>
     <child link="neck_2"/>
@@ -82,7 +82,7 @@
     <dynamics friction="10.0"/>
 </joint>
 
-<joint name="neck_velodyne" type="continuous">
+<joint name="neck_velodyne" type="fixed">
     <parent link="torso_2"/>
     <origin xyz="0.055 0.0 0.473262" rpy="0 0 -1.828"/>
     <!--origin xyz="0.055 0.0 0.473262" rpy="0 0 -1.311481"/-->

@@ -31,7 +31,7 @@
     </group>    
 </xacro:if>
 
-<xacro:if value="${ADD_UPPER_BODY}">
+<!--xacro:if value="${ADD_UPPER_BODY}">
     <group name="left_arm">
         <chain base_link="torso_2" tip_link="arm1_7" />
     </group>
@@ -47,7 +47,7 @@
     <group name="neck">
     	<chain base_link="torso_2" tip_link="neck_2" />
     </group>
-</xacro:if>
+</xacro:if-->
 
 
 <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
@@ -58,13 +58,13 @@
         <group name="rear_left_leg" />
 </xacro:if>
 
-<xacro:if value="${ADD_UPPER_BODY}">
+<!--xacro:if value="${ADD_UPPER_BODY}">
 	<group name="left_arm" />
         <group name="right_arm" />
         <group name="torso" />
         <group name="velodyne" />
         <group name="neck" />
-</xacro:if>
+</xacro:if-->
 </group>
 
 
@@ -91,7 +91,7 @@
 	<joint name="ankle_pitch_4" value="-0.301667"/>
 	<joint name="ankle_yaw_4" value="0.746874"/>
 	<joint name="torso_yaw" value="3.56617e-13"/>
-	<joint name="neck_yaw" value="0."/>
+	<!--joint name="neck_yaw" value="0."/>
 	<joint name="neck_pitch" value="0.2"/>
 	<joint name="j_arm1_1" value="0.520149"/>
 	<joint name="j_arm1_2" value="0.320865"/>
@@ -106,7 +106,7 @@
 	<joint name="j_arm2_4" value="-2.23604"/>
 	<joint name="j_arm2_5" value="-0.0500815"/>
 	<joint name="j_arm2_6" value="-0.781461"/>
-	<joint name="j_arm2_7" value="0.0567608"/>
+	<joint name="j_arm2_7" value="0.0567608"/-->
    </group_state>
 
 <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
@@ -139,7 +139,7 @@
     <disable_collisions link1="ankle2_3" link2="wheel_3" reason="Adjacent" />
     <disable_collisions link1="ankle2_4" link2="knee_4" reason="Never" />
     <disable_collisions link1="ankle2_4" link2="wheel_4" reason="Adjacent" />
-    <disable_collisions link1="arm1_1" link2="arm1_2" reason="Adjacent" />
+    <!--disable_collisions link1="arm1_1" link2="arm1_2" reason="Adjacent" />
     <disable_collisions link1="arm1_1" link2="arm1_3" reason="Never" />
     <disable_collisions link1="arm1_1" link2="arm1_4" reason="Never" />
     <disable_collisions link1="arm1_1" link2="arm1_5" reason="Never" />
@@ -258,7 +258,7 @@
     <disable_collisions link1="arm2_5" link2="ft_arm2" reason="Never" />
     <disable_collisions link1="arm2_6" link2="arm2_7" reason="Adjacent" />
     <disable_collisions link1="arm2_6" link2="ft_arm2" reason="Never" />
-    <disable_collisions link1="arm2_7" link2="ft_arm2" reason="Adjacent" />
+    <disable_collisions link1="arm2_7" link2="ft_arm2" reason="Adjacent" /-->
     <disable_collisions link1="hip1_1" link2="hip1_2" reason="Never" />
     <disable_collisions link1="hip1_1" link2="hip1_3" reason="Never" />
     <disable_collisions link1="hip1_1" link2="hip1_4" reason="Never" />
@@ -267,14 +267,14 @@
     <disable_collisions link1="hip1_1" link2="hip2_4" reason="Never" />
     <disable_collisions link1="hip1_1" link2="knee_1" reason="Never" />
     <disable_collisions link1="hip1_1" link2="pelvis" reason="Adjacent" />
-    <disable_collisions link1="hip1_1" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip1_1" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="hip1_2" link2="hip1_3" reason="Never" />
     <disable_collisions link1="hip1_2" link2="hip1_4" reason="Never" />
     <disable_collisions link1="hip1_2" link2="hip2_2" reason="Adjacent" />
     <disable_collisions link1="hip1_2" link2="hip2_3" reason="Never" />
     <disable_collisions link1="hip1_2" link2="hip2_4" reason="Never" />
     <disable_collisions link1="hip1_2" link2="knee_2" reason="Never" />
-    <disable_collisions link1="hip1_2" link2="pelvis" reason="Adjacent" />
+    <!--disable_collisions link1="hip1_2" link2="pelvis" reason="Adjacent" /-->
     <disable_collisions link1="hip1_2" link2="torso_2" reason="Never" />
     <disable_collisions link1="hip1_3" link2="hip1_4" reason="Never" />
     <disable_collisions link1="hip1_3" link2="hip2_1" reason="Never" />
@@ -282,24 +282,24 @@
     <disable_collisions link1="hip1_3" link2="hip2_3" reason="Adjacent" />
     <disable_collisions link1="hip1_3" link2="knee_3" reason="Never" />
     <disable_collisions link1="hip1_3" link2="pelvis" reason="Adjacent" />
-    <disable_collisions link1="hip1_3" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip1_3" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="hip1_4" link2="hip2_1" reason="Never" />
     <disable_collisions link1="hip1_4" link2="hip2_2" reason="Never" />
     <disable_collisions link1="hip1_4" link2="hip2_4" reason="Adjacent" />
     <disable_collisions link1="hip1_4" link2="knee_4" reason="Never" />
     <disable_collisions link1="hip1_4" link2="pelvis" reason="Adjacent" />
-    <disable_collisions link1="hip1_4" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip1_4" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="hip2_1" link2="knee_1" reason="Adjacent" />
-    <disable_collisions link1="hip2_1" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip2_1" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="hip2_2" link2="knee_2" reason="Adjacent" />
-    <disable_collisions link1="hip2_2" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip2_2" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="hip2_3" link2="knee_3" reason="Adjacent" />
-    <disable_collisions link1="hip2_3" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip2_3" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="hip2_4" link2="knee_4" reason="Adjacent" />
-    <disable_collisions link1="hip2_4" link2="torso_2" reason="Never" />
+    <!--disable_collisions link1="hip2_4" link2="torso_2" reason="Never" /-->
     <disable_collisions link1="knee_1" link2="wheel_1" reason="Never" />
     <disable_collisions link1="knee_2" link2="wheel_2" reason="Never" />
     <disable_collisions link1="knee_3" link2="wheel_3" reason="Never" />
     <disable_collisions link1="knee_4" link2="wheel_4" reason="Never" />
-    <disable_collisions link1="pelvis" link2="torso_2" reason="Adjacent" />
+    <!--disable_collisions link1="pelvis" link2="torso_2" reason="Adjacent" /-->
 </robot>

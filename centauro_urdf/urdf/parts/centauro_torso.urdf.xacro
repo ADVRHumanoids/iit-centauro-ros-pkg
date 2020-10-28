@@ -27,7 +27,7 @@
 <!-- /torso links -->
 
 <!-- torso joints -->
-<joint name="torso_yaw" type="revolute">
+<joint name="torso_yaw" type="fixed">
    <parent link="pelvis"/>
    <origin xyz="${Torso_2_Ox} ${Torso_2_Oy} ${Torso_2_Oz}"/>
    <child link="torso_2"/>
