@@ -11,7 +11,6 @@ ModelInterface:
 xbotcore_device_configs:
     sim: $(rospack find centauro_config)/hal/centauro_gz.yaml
     dummy: $(rospack find centauro_config)/hal/centauro_dummy.yaml
-    ec2: $XBOT_ROOT/config/CentauroConfig/hal/centauro_ec2_pos3b.yaml
 
 
 # threads
