@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/hip-pitch.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="-7.776715e-05 0.138525195 0.0946021" rpy="-1.58451450634 -0.00059286983141 0.000601059225943"/>
+      <geometry>
+        <cylinder radius="0.0847444" length="0.292249159884"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

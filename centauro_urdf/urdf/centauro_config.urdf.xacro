@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="centauro">
+
+<xacro:property name="model_name" value="centauro" />
+<xacro:property name="model_version" value="0.1" />
+
+<!-- ************SELECT PARTS*************-->
+<!-- *************************************-->
+<xacro:property name="ADD_LEGS" value="true" />
+<xacro:property name="ADD_UPPER_BODY" value="true" />
+
+<xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
+
+<xacro:property name="ADD_FLOATING_BASE" value="true" />
+
+<xacro:property name="ADD_VELODYNE" value="true" />
+
+<xacro:property name="ADD_INTEL_D435I" value="false" />
+
+</robot>

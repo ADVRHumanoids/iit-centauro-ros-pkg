@@ -50,21 +50,33 @@
 </xacro:if>
 
 
+<xacro:if value="${ADD_INTEL_D435I}">
+    <group name="sensor_d435i">
+        <chain base_link="base_camera_link" tip_link="camera_gyro_optical_frame" />
+    </group>
+</xacro:if>
+
+
 <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
-<xacro:if value="${ADD_LEGS}">
-	<group name="front_left_leg" />
+    <xacro:if value="${ADD_LEGS}">
+        <group name="front_left_leg" />
         <group name="front_right_leg" />
         <group name="rear_right_leg" />
         <group name="rear_left_leg" />
-</xacro:if>
+    </xacro:if>
 
-<xacro:if value="${ADD_UPPER_BODY}">
-	<group name="left_arm" />
+    <xacro:if value="${ADD_UPPER_BODY}">
+        <group name="left_arm" />
         <group name="right_arm" />
         <group name="torso" />
         <group name="velodyne" />
         <group name="neck" />
-</xacro:if>
+    </xacro:if>
+
+    <xacro:if value="${ADD_INTEL_D435I}">
+        <group name="sensor_d435i" />
+    </xacro:if>
+    
 </group>
 
 

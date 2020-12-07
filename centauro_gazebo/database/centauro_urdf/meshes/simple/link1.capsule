@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/link1.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.013239935 1.50245845e-05 0.1846655" rpy="-0.000238335444242 0.104581190719 -1.24740737196e-05"/>
+      <geometry>
+        <cylinder radius="0.200841" length="0.128018449088"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

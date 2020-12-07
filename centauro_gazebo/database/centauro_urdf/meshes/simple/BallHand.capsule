@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/BallHand.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="-2.6825e-07 1.2015e-06 -0.0105021" rpy="-1.56543904386 -1.18577783239 1.18081773652"/>
+      <geometry>
+        <cylinder radius="0.0709883" length="9.94006756802e-05"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -13,7 +13,6 @@
 <xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
 
 
-
 <link name="base_link"/>
 
 <link name="pelvis">
@@ -41,13 +40,13 @@
    </link>
 
 
-    <link name="imu_link"/>
+<link name="imu_link"/>
 
-    <joint name="imu_joint" type="fixed">
-        <parent link="pelvis"/>
-        <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}"/>
-        <child link="imu_link"/>
-    </joint>
+<joint name="imu_joint" type="fixed">
+    <parent link="pelvis"/>
+    <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}"/>
+    <child link="imu_link"/>
+</joint>
 
 
 <joint name="base_joint" type="fixed">
@@ -77,6 +76,32 @@
 
 <xacro:if value="${ADD_LEGS}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
+</xacro:if>
+
+
+<xacro:if value="${ADD_VELODYNE}">
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+</xacro:if>
+
+
+<xacro:if value="${ADD_INTEL_D435I}">
+    
+    <xacro:arg name="use_nominal_extrinsics" default="false" />
+	<xacro:include filename="$(find centauro_urdf)/urdf/parts/d435i.urdf.xacro" />
+    
+    <link name="base_camera_link" />
+    <joint name="d435i_joint" type="fixed">
+        <parent link="torso_2"/>
+        <origin xyz="0.14 0 0.03" rpy="0 0.3 0"/>
+        <child link="base_camera_link"/>
+    </joint>
+    
+    <xacro:sensor_d435i parent="base_camera_link" name="camera" topics_ns="camera"
+                        enable_pointCloud="true" align_depth="true">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:sensor_d435i>
+  
+    
 </xacro:if>
 
 

@@ -12,6 +12,10 @@
 
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/centauro.gazebo.xacro" />
  
+  <xacro:if value="${ADD_INTEL_D435I}">
+    <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/d435i.gazebo.xacro" parent="base_camera_link" name="camera" topics_ns="camera"
+                        enable_pointCloud="true" align_depth="true"/>
+  </xacro:if>
   
   <!--xacro:include filename="$(find cogimon_urdf)/urdf/gazebo/force_torque.gazebo.xacro" /-->
   
@@ -21,7 +25,7 @@
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/xbot.gazebo.xacro" />
 
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/materials.gazebo.xacro" />
-
+  
 
 
 <origin xyz="0.0 0.0 1.2" rpy="0 0 0" />
