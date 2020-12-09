@@ -76,11 +76,11 @@
     </xacro:if>
     
     <xacro:if value="${ADD_VELODYNE}">
-        <group name="velodyne">
+        <group name="velodyne"/>
     </xacro:if>
     
     <xacro:if value="${ADD_INTEL_D435I}">
-        <group name="intel_d435i">
+        <group name="intel_d435i"/>
     </xacro:if>
 </group>
 
