@@ -76,12 +76,19 @@
         
     <xacro:if value="${ADD_VELODYNE}">
         <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+        <xacro:VLP-16 parent="neck_3" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
+            <origin xyz="0.032768 -0.01 0.048219" rpy="0 1.5709 -0.316519  " />
+        </xacro:VLP-16>
     </xacro:if>
 
 
-    <xacro:if value="${ADD_INTEL_D435I}">    
-        <xacro:include filename="$(find centauro_urdf)/urdf/parts/intel_d435i_frames.urdf.xacro" />
+    <xacro:if value="${ADD_INTEL_D435I}">
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
+        
+        <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="/d435i_camera"
+                            enable_pointCloud="true" align_depth="true">
+            <origin xyz="0.13 0 0.03" rpy="0 0.3 0"/>
+        </xacro:sensor_d435i>
     </xacro:if>
 
     

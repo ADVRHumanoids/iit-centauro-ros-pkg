@@ -212,25 +212,6 @@
     <provideFeedback>true</provideFeedback>
 </gazebo>
 
-
-<!-- SENSORS -->
-<xacro:if value="${ADD_VELODYNE}">
-    <VLP-16 parent="neck_3" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
-        <origin xyz="0.032768 -0.01 0.048219" rpy="0 1.5709 -0.316519  " />
-    </VLP-16>
 </xacro:if>
-
-<xacro:if value="${ADD_INTEL_D435I}">
-    <xacro:sensor_d435i parent="d435i_base_torso" name="d453i_camera" topics_ns="/d453i_camera"
-                        enable_pointCloud="true" align_depth="true">
-        <origin xyz="0.13 0 0.03" rpy="0 0.3 0"/>
-    </xacro:sensor_d435i>
-    
-</xacro:if>
-
-</xacro:if>
-
-
-
 
 </robot>

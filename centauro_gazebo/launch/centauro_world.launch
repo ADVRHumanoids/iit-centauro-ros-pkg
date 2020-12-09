@@ -25,7 +25,7 @@
   <arg     if="$(arg debug)" name="script_type" value="debug"/>
 
   
-  <arg name="velodyne" default="false"/>
+  <arg name="velodyne" default="true"/>
   <arg name="intel_d435i" default="false"/>
   
   

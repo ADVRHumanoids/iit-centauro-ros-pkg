@@ -52,14 +52,6 @@
     </group>
 </xacro:if>
 
-
-<xacro:if value="${ADD_INTEL_D435I}">
-    <group name="intel_d435i">
-        <chain base_link="torso_2" tip_link="d435i_base_torso" />
-    </group>
-</xacro:if>
-
-
 <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
     <xacro:if value="${ADD_LEGS}">
         <group name="front_left_leg" />
@@ -79,9 +71,6 @@
         <group name="velodyne"/>
     </xacro:if>
     
-    <xacro:if value="${ADD_INTEL_D435I}">
-        <group name="intel_d435i"/>
-    </xacro:if>
 </group>
 
 <!-- Homing posture -->
