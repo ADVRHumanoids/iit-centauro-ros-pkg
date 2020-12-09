@@ -72,37 +72,25 @@
    		</xacro:ball_end_effector>
 	</xacro:if>
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/head.urdf.xacro" />
+    
+        
+    <xacro:if value="${ADD_VELODYNE}">
+        <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+    </xacro:if>
+
+
+    <xacro:if value="${ADD_INTEL_D435I}">    
+        <xacro:include filename="$(find centauro_urdf)/urdf/parts/intel_d435i_frames.urdf.xacro" />
+        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
+    </xacro:if>
+
+    
 </xacro:if>
 
 <xacro:if value="${ADD_LEGS}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
 </xacro:if>
 
-
-<xacro:if value="${ADD_VELODYNE}">
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-</xacro:if>
-
-
-<xacro:if value="${ADD_INTEL_D435I}">
-    
-    <xacro:arg name="use_nominal_extrinsics" default="false" />
-	<xacro:include filename="$(find centauro_urdf)/urdf/parts/d435i.urdf.xacro" />
-    
-    <link name="base_camera_link" />
-    <joint name="d435i_joint" type="fixed">
-        <parent link="torso_2"/>
-        <origin xyz="0.14 0 0.03" rpy="0 0.3 0"/>
-        <child link="base_camera_link"/>
-    </joint>
-    
-    <xacro:sensor_d435i parent="base_camera_link" name="camera" topics_ns="camera"
-                        enable_pointCloud="true" align_depth="true">
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:sensor_d435i>
-  
-    
-</xacro:if>
 
 
 

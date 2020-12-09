@@ -25,6 +25,10 @@
   <arg     if="$(arg debug)" name="script_type" value="debug"/>
 
   
+  <arg name="velodyne" default="false"/>
+  <arg name="intel_d435i" default="false"/>
+  
+  
   <!-- from where the simulation enviornment will be loaded:
        WARNING: exactly one parameter has to be true, otherwise simulation behaviour is undefined -->
   <arg name="world_name" default="$(find centauro_gazebo)/worlds/centauro.world"/>
@@ -32,7 +36,8 @@
 
   <!-- Load the URDF/SRDF into the ROS Parameter Server -->
   <param name="robot_description"
-         command="$(find xacro)/xacro --inorder '$(find centauro_urdf)/urdf/centauro_robot.urdf.xacro'"/>
+         command="$(find xacro)/xacro --inorder '$(find centauro_urdf)/urdf/centauro_robot.urdf.xacro'
+                    VELODYNE:=$(arg velodyne) INTEL_D435I:=$(arg intel_d435i)"/>
 
   <param name="robot_semantic_description" textfile="$(find centauro_srdf)/srdf/centauro.srdf"/>
 

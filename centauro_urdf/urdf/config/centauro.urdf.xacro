@@ -13,4 +13,8 @@
 
 <xacro:property name="ADD_FLOATING_BASE" value="true" />
 
+<xacro:property name="ADD_VELODYNE" value="false" />
+
+<xacro:property name="ADD_INTEL_D435I" value="true" />
+
 </robot>

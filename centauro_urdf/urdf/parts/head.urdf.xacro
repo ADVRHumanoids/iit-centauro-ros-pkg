@@ -43,6 +43,7 @@
     </collision>
 </link>
 
+<!-- LINKS -->
 <link name="neck_3">
     <inertial>
       <origin xyz="0.048466918 -0.059852318 -0.0085314894"/>
@@ -62,15 +63,6 @@
       </geometry>
     </collision>
 </link>
-
-<!--
-<link name="velodyne_mount">
-	<inertial>
-		<origin xyz="${Dummy_x} ${Dummy_y} ${Dummy_z}"/>
-		<mass value="${Dummy_mass}"/>
-                <inertia ixx="${Dummy_xx}" ixy="${Dummy_xy}" ixz="${Dummy_xz}" iyy="${Dummy_yy}" iyz="${Dummy_yz}" izz="${Dummy_zz}"/>
-        </inertial>
-</link> -->
 
 <!--JOINTS -->
 <joint name="neck_yaw" type="revolute">
@@ -101,12 +93,5 @@
     <dynamics damping="0.2" friction="10.0"/>
 </joint>
 
-<!--
-<joint name="j_velodyne" type="fixed">
-   <parent link="neck_3"/>
-   <origin xyz="${Velodyne_Ox} ${Velodyne_Oy} ${Velodyne_Oz}" rpy="${Velodyne_roll} ${Velodyne_pitch} ${Velodyne_yaw}"/>
-   <child link="velodyne_mount"/>
-</joint>
--->
 
 </robot>

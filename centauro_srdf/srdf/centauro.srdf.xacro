@@ -41,18 +41,21 @@
     <group name="torso">
         <chain base_link="pelvis" tip_link="torso_2" />
     </group>
-    <group name="velodyne">
-    	<chain base_link="torso_2" tip_link="neck_3" />
-    </group>
     <group name="neck">
     	<chain base_link="torso_2" tip_link="neck_2" />
     </group>
 </xacro:if>
 
+<xacro:if value="${ADD_VELODYNE}">
+    <group name="velodyne">
+    	<chain base_link="torso_2" tip_link="neck_3" />
+    </group>
+</xacro:if>
+
 
 <xacro:if value="${ADD_INTEL_D435I}">
-    <group name="sensor_d435i">
-        <chain base_link="base_camera_link" tip_link="camera_gyro_optical_frame" />
+    <group name="intel_d435i">
+        <chain base_link="torso_2" tip_link="d435i_base_torso" />
     </group>
 </xacro:if>
 
@@ -69,16 +72,17 @@
         <group name="left_arm" />
         <group name="right_arm" />
         <group name="torso" />
-        <group name="velodyne" />
         <group name="neck" />
     </xacro:if>
-
-    <xacro:if value="${ADD_INTEL_D435I}">
-        <group name="sensor_d435i" />
+    
+    <xacro:if value="${ADD_VELODYNE}">
+        <group name="velodyne">
     </xacro:if>
     
+    <xacro:if value="${ADD_INTEL_D435I}">
+        <group name="intel_d435i">
+    </xacro:if>
 </group>
-
 
 <!-- Homing posture -->
 <group_state name="home" group="chains">
