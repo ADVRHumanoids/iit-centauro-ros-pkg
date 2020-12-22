@@ -85,11 +85,24 @@
     <xacro:if value="${ADD_INTEL_D435I}">
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
         
-        <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="/d435i_camera"
+        <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="d435i_camera"
                             enable_pointCloud="true" align_depth="true">
-            <origin xyz="0.13 0 0.03" rpy="0 0.3 0"/>
+            <origin xyz="0.13 0 0.03" rpy="0 0.25 0"/>
         </xacro:sensor_d435i>
     </xacro:if>
+    
+    
+    <xacro:if value="${ADD_INTEL_T265}">
+        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_t265.urdf.xacro" />
+        
+        <xacro:sensor_t265  parent="torso_2" name="T265_camera" topics_ns="T265_camera"
+                      xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"
+                      unite_imu_method="false"> <!-- unite_imu_method can be false, copy or linear_interpolation -->
+            <origin xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"/>
+        </xacro:sensor_t265>
+    </xacro:if>
+    
+    
 
     
 </xacro:if>

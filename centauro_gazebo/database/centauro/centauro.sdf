@@ -1992,15 +1992,15 @@
     <link name='torso_2'>
       <pose frame=''>0.2 0 0.256 0 -0 0</pose>
       <inertial>
-        <pose frame=''>-0.012332 0.005138 0.133204 0 -0 0</pose>
-        <mass>12.0567</mass>
+        <pose frame=''>-0.011589 0.00511 0.132465 0 -0 0</pose>
+        <mass>12.1247</mass>
         <inertia>
-          <ixx>0.0725429</ixx>
-          <ixy>-0.000978652</ixy>
-          <ixz>0.0070158</ixz>
-          <iyy>0.0448459</iyy>
-          <iyz>0.00062093</iyz>
-          <izz>0.0640166</izz>
+          <ixx>0.0737355</ixx>
+          <ixy>-0.000926716</ixy>
+          <ixz>0.00822398</ixz>
+          <iyy>0.0472712</iyy>
+          <iyz>0.000573446</iyz>
+          <izz>0.0652593</izz>
         </inertia>
       </inertial>
       <collision name='torso_2_collision'>
@@ -2020,8 +2020,17 @@
           </friction>
         </surface>
       </collision>
-      <collision name='torso_2_fixed_joint_lump__d435i_camera_link_collision_1'>
-        <pose frame=''>0.133694 0 0.041942 0 0.3 0</pose>
+      <collision name='torso_2_fixed_joint_lump__T265_camera_pose_frame_collision_1'>
+        <pose frame=''>0.125 0 0 1.8208 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://realsense_gazebo_description/meshes/t265_simplified.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='torso_2_fixed_joint_lump__d435i_camera_link_collision_2'>
+        <pose frame=''>0.133093 0 0.042111 0 0.25 0</pose>
         <geometry>
           <box>
             <size>0.02505 0.09 0.025</size>
@@ -2057,8 +2066,17 @@
           </script>
         </material>
       </visual>
-      <visual name='torso_2_fixed_joint_lump__d435i_camera_link_visual_1'>
-        <pose frame=''>0.147929 0 0.037539 1.8708 0 1.5708</pose>
+      <visual name='torso_2_fixed_joint_lump__T265_camera_pose_frame_visual_1'>
+        <pose frame=''>0.125 0 0 1.8208 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://realsense_gazebo_description/meshes/t265_full.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='torso_2_fixed_joint_lump__d435i_camera_link_visual_2'>
+        <pose frame=''>0.147529 0 0.038425 1.8208 0 1.5708</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -2077,13 +2095,125 @@
       <self_collide>0</self_collide>
       <enable_wind>0</enable_wind>
       <kinematic>0</kinematic>
-      <gravity>1</gravity>
+      <sensor name='T265_camerafisheye1' type='wideanglecamera'>
+        <update_rate>30</update_rate>
+        <camera name='__default__'>
+          <horizontal_fov>1.95</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>800</height>
+          </image>
+          <clip>
+            <near>0.2</near>
+            <far>100</far>
+          </clip>
+          <lens>
+            <type>orthographic</type>
+            <scale_to_hfov>1</scale_to_hfov>
+            <cutoff_angle>2.2</cutoff_angle>
+            <env_texture_size>1024</env_texture_size>
+          </lens>
+        </camera>
+        <plugin name='T265_camerafisheye1' filename='libgazebo_ros_camera.so'>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>30.0</updateRate>
+          <cameraName>T265_camera/fisheye1</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>T265_camera_fisheye1_optical_frame</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>-0.00040996368625201285</distortionK1>
+          <distortionK2>0.03653175011277199</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionP1>-0.034823670983314514</distortionP1>
+          <distortionP2>0.0052825710736215115</distortionP2>
+          <Cx>416.22</Cx>
+          <Cy>402.1</Cy>
+          <CxPrime>416.22</CxPrime>
+        </plugin>
+        <pose frame=''>0.125 0.0411 0 0 0.25 0</pose>
+      </sensor>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='T265_camerafisheye2' type='wideanglecamera'>
+        <update_rate>30</update_rate>
+        <camera name='__default__'>
+          <horizontal_fov>2.84</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>800</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <lens>
+            <type>orthographic</type>
+            <scale_to_hfov>1</scale_to_hfov>
+            <cutoff_angle>2.2</cutoff_angle>
+            <env_texture_size>1024</env_texture_size>
+          </lens>
+        </camera>
+        <always_on>1</always_on>
+        <plugin name='T265_camerafisheye2' filename='libgazebo_ros_camera.so'>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>30.0</updateRate>
+          <cameraName>T265_camera/fisheye2</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>T265_camera_fisheye2_optical_frame</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>-0.00040996368625201285</distortionK1>
+          <distortionK2>0.03653175011277199</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionP1>-0.034823670983314514</distortionP1>
+          <distortionP2>0.0052825710736215115</distortionP2>
+        </plugin>
+        <pose frame=''>0.125 -0.0229 -0 0 0.25 0</pose>
+      </sensor>
+      <sensor name='{camera_name}accel' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <plugin name='T265_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
+          <topicName>T265_camera/accel/sample</topicName>
+          <bodyName>T265_camera_pose_frame</bodyName>
+          <updateRateHZ>300.0</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>T265_camera_accel_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.125 -0.0229 -0 0 0.25 0</pose>
+      </sensor>
+      <sensor name='{camera_name}gyro' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>T265_camera/gyro/sample</topic>
+        <plugin name='T265_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
+          <topicName>T265_camera/gyro/sample</topicName>
+          <bodyName>T265_camera_pose_frame</bodyName>
+          <updateRateHZ>300.0</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>T265_camera_gyro_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.125 -0.0229 -0 0 0.25 0</pose>
+      </sensor>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
       <sensor name='d435i_cameracolor' type='camera'>
         <camera name='d435i_camera'>
           <horizontal_fov>1.21126</horizontal_fov>
           <image>
-            <width>1920</width>
-            <height>1080</height>
+            <width>1280</width>
+            <height>720</height>
             <format>RGB_INT8</format>
           </image>
           <clip>
@@ -2099,11 +2229,11 @@
         <always_on>1</always_on>
         <update_rate>30</update_rate>
         <visualize>1</visualize>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
       <sensor name='d435i_cameraired1' type='camera'>
         <camera name='d435i_camera'>
-          <horizontal_fov>1.48702</horizontal_fov>
+          <horizontal_fov>1.21126</horizontal_fov>
           <image>
             <width>1280</width>
             <height>720</height>
@@ -2122,11 +2252,11 @@
         <always_on>1</always_on>
         <update_rate>90</update_rate>
         <visualize>0</visualize>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
       <sensor name='d435i_cameraired2' type='camera'>
         <camera name='d435i_camera'>
-          <horizontal_fov>1.48702</horizontal_fov>
+          <horizontal_fov>1.21126</horizontal_fov>
           <image>
             <width>1280</width>
             <height>720</height>
@@ -2145,11 +2275,11 @@
         <always_on>1</always_on>
         <update_rate>90</update_rate>
         <visualize>0</visualize>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
       <sensor name='d435i_cameradepth' type='depth'>
         <camera name='d435i_camera'>
-          <horizontal_fov>1.48702</horizontal_fov>
+          <horizontal_fov>1.21126</horizontal_fov>
           <image>
             <format>RGB_INT8</format>
             <width>1280</width>
@@ -2162,19 +2292,19 @@
           <noise>
             <type>gaussian</type>
             <mean>0</mean>
-            <stddev>0.1</stddev>
+            <stddev>0.3</stddev>
           </noise>
         </camera>
         <always_on>1</always_on>
         <update_rate>90</update_rate>
         <visualize>0</visualize>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
       <sensor name='{camera_name}accel' type='imu'>
         <always_on>1</always_on>
         <update_rate>300</update_rate>
         <topic>d435i_camera/accel/sample</topic>
-        <plugin name='/d435i_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
+        <plugin name='d435i_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
           <topicName>d435i_camera/accel/sample</topicName>
           <bodyName>d435i_camera_link</bodyName>
           <updateRateHZ>300.0</updateRateHZ>
@@ -2184,13 +2314,13 @@
           <frameName>d435i_camera_accel_optical_frame</frameName>
           <initialOrientationAsReference>0</initialOrientationAsReference>
         </plugin>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
       <sensor name='{camera_name}gyro' type='imu'>
         <always_on>1</always_on>
         <update_rate>300</update_rate>
         <topic>d435i_camera/gyro/sample</topic>
-        <plugin name='/d435i_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
+        <plugin name='d435i_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
           <topicName>d435i_camera/gyro/sample</topicName>
           <bodyName>d435i_camera_link</bodyName>
           <updateRateHZ>300.0</updateRateHZ>
@@ -2200,7 +2330,7 @@
           <frameName>d435i_camera_gyro_optical_frame</frameName>
           <initialOrientationAsReference>0</initialOrientationAsReference>
         </plugin>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
       <gravity>1</gravity>
       <velocity_decay/>
@@ -2208,8 +2338,8 @@
         <camera name='d435i_camera_aligned_depth'>
           <horizontal_fov>1.21126</horizontal_fov>
           <image>
-            <width>1920</width>
-            <height>1080</height>
+            <width>1280</width>
+            <height>720</height>
             <format>RGB_INT8</format>
           </image>
           <clip>
@@ -2239,7 +2369,7 @@
           <distortionT1>0.0</distortionT1>
           <distortionT2>0.0</distortionT2>
         </plugin>
-        <pose frame=''>0.133694 0.0175 0.041942 0 0.3 0</pose>
+        <pose frame=''>0.133093 0.0175 0.042111 0 0.25 0</pose>
       </sensor>
     </link>
     <joint name='torso_yaw' type='revolute'>
@@ -3683,7 +3813,7 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <plugin name='/d435i_camera' filename='librealsense_gazebo_plugin.so'>
+    <plugin name='d435i_camera' filename='librealsense_gazebo_plugin.so'>
       <prefix>d435i_camera</prefix>
       <depthUpdateRate>60.0</depthUpdateRate>
       <colorUpdateRate>60.0</colorUpdateRate>
@@ -3705,6 +3835,18 @@
       <pointCloud>1</pointCloud>
       <pointCloudTopicName>depth/color/points</pointCloudTopicName>
       <pointCloudCutoff>0.5</pointCloudCutoff>
+    </plugin>
+    <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
+      <alwaysOn>1</alwaysOn>
+      <updateRate>200</updateRate>
+      <topicName>T265_camera/odom/sample</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0.125 0.0 0</xyzOffsets>
+      <rpyOffsets>0.0 0.25 0.0</rpyOffsets>
+      <bodyName>torso_2</bodyName>
+      <xyzOffset>-0.125 0 0</xyzOffset>
+      <rpyOffset>0 -0.25 0</rpyOffset>
     </plugin>
     <static>0</static>
     <plugin name='xbot_plugin_handler' filename='libGazeboXBotPlugin.so'/>
