@@ -91,25 +91,28 @@
         </xacro:sensor_d435i>-->
         
         <xacro:sensor_d435i parent="pelvis" name="d435i_camera" topics_ns="d435i_camera"
-                      enable_pointCloud="true" align_depth="true"
-                      unite_imu_method="false">
-<!--
-                      accel_fps="250"
-                      gyro_fps="400"
+                      enable_pointCloud="true" align_depth="false"
+                      unite_imu_method="false"
+                    
+                      visualize="true"
+                            
+                            
+                      accel_fps="300"
+                      gyro_fps="300"
 
                       depth_width="1280"
                       depth_height="720"
-                      depth_fps="30"
+                      depth_fps="90"
 
                       infra_width="1280"
                       infra_height="720"
-                      infra_fps="30"
+                      infra_fps="90"
 
                       color_width="1280"
                       color_height="720"
-                      color_fps="30"> -->
+                      color_fps="30">
             
-            <origin xyz="0.238 0 -0.035" rpy="0.0 0.349 0.0"/> 
+            <origin xyz="0.23 0 -0.061" rpy="0.0 0.28 0.0"/> 
         </xacro:sensor_d435i>
 
         
@@ -127,8 +130,8 @@
                       unite_imu_method="false"> 
             <origin xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"/>  
         </xacro:sensor_t265>-->
-        <xacro:sensor_t265  parent="pelvis" name="T265_camera" topics_ns="T265_camera" xyz="0.238 0 -0.035" rpy="0.0 0.349 0.0"  >                       
-                           <!--
+        <xacro:sensor_t265  parent="pelvis" name="T265_camera" topics_ns="T265_camera"                  
+                           
                       odom_xyz="0.0 0.0 0.25"
                       odom_rpy="0.0 0.0 0.0"
                       odom_fps="262"
@@ -139,10 +142,10 @@
 
                       unite_imu_method="false"
                       accel_fps="62.5"
-                      gyro_fps="200">-->
+                      gyro_fps="200">
             
             
-            <origin xyz="0.238 0 -0.035" rpy="0.0 0.349 0.0" />  
+            <origin xyz="0.24 0.01 -0.019" rpy="0.0 0.15 0.0" />  
         </xacro:sensor_t265>
     </xacro:if>
     
