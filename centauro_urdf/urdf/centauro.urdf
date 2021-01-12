@@ -830,13 +830,17 @@
       </plugin>
     </sensor>
   </gazebo>
+  <!-- <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="d435i_camera" 
+                            enable_pointCloud="true" align_depth="true">
+            <origin xyz="0.13 0 0.03" rpy="0 0.25 0"/> 
+        </xacro:sensor_d435i>-->
   <material name="d435i_camera_aluminum">
     <color rgba="0.5 0.5 0.5 1"/>
   </material>
   <!-- camera body, with origin at bottom screw mount -->
   <joint name="d435i_camera_joint" type="fixed">
-    <origin rpy="0 0.25 0" xyz="0.13 0 0.03"/>
-    <parent link="torso_2"/>
+    <origin rpy="0.0 0.349 0.0" xyz="0.238 0 -0.035"/>
+    <parent link="pelvis"/>
     <child link="d435i_camera_bottom_screw_frame"/>
   </joint>
   <link name="d435i_camera_bottom_screw_frame"/>
@@ -1143,13 +1147,14 @@
       </plugin>
     </sensor>
   </gazebo>
+  <!-- unite_imu_method can be false, copy or linear_interpolation -->
   <material name="T265_camera_aluminum">
     <color rgba="0.5 0.5 0.5 1"/>
   </material>
   <!-- camera body, with origin at camera_pose_frame -->
   <joint name="T265_camera_pose_joint" type="fixed">
-    <origin rpy="0.0 0.25 0.0" xyz="0.125 0.0 0"/>
-    <parent link="torso_2"/>
+    <origin rpy="0.0 0.349 0.0" xyz="0.238 0 -0.035"/>
+    <parent link="pelvis"/>
     <child link="T265_camera_pose_frame"/>
   </joint>
   <link name="T265_camera_pose_frame">
@@ -1385,8 +1390,8 @@
       <topicName>T265_camera/odom/sample</topicName>
       <gaussianNoise>0.01</gaussianNoise>
       <frameName>world</frameName>
-      <xyzOffsets>0.125 0.0 0</xyzOffsets>
-      <rpyOffsets>0.0 0.25 0.0</rpyOffsets>
+      <xyzOffsets>0.238 0 -0.035</xyzOffsets>
+      <rpyOffsets>0.0 0.349 0.0</rpyOffsets>
     </plugin>
   </gazebo>
   <!--

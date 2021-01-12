@@ -85,25 +85,66 @@
     <xacro:if value="${ADD_INTEL_D435I}">
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
         
-        <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="d435i_camera"
+       <!-- <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="d435i_camera" 
                             enable_pointCloud="true" align_depth="true">
-            <origin xyz="0.13 0 0.03" rpy="0 0.25 0"/>
+            <origin xyz="0.13 0 0.03" rpy="0 0.25 0"/> 
+        </xacro:sensor_d435i>-->
+        
+        <xacro:sensor_d435i parent="pelvis" name="d435i_camera" topics_ns="d435i_camera"
+                      enable_pointCloud="true" align_depth="true"
+                      unite_imu_method="false">
+<!--
+                      accel_fps="250"
+                      gyro_fps="400"
+
+                      depth_width="1280"
+                      depth_height="720"
+                      depth_fps="30"
+
+                      infra_width="1280"
+                      infra_height="720"
+                      infra_fps="30"
+
+                      color_width="1280"
+                      color_height="720"
+                      color_fps="30"> -->
+            
+            <origin xyz="0.238 0 -0.035" rpy="0.0 0.349 0.0"/> 
         </xacro:sensor_d435i>
+
+        
+        
     </xacro:if>
     
     
     <xacro:if value="${ADD_INTEL_T265}">
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_t265.urdf.xacro" />
-        
-        <xacro:sensor_t265  parent="torso_2" name="T265_camera" topics_ns="T265_camera"
+
+        <!-- unite_imu_method can be false, copy or linear_interpolation -->
+
+        <!--<xacro:sensor_t265  parent="torso_2" name="T265_camera" topics_ns="T265_camera"
                       xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"
-                      unite_imu_method="false"> <!-- unite_imu_method can be false, copy or linear_interpolation -->
-            <origin xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"/>
+                      unite_imu_method="false"> 
+            <origin xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"/>  
+        </xacro:sensor_t265>-->
+        <xacro:sensor_t265  parent="pelvis" name="T265_camera" topics_ns="T265_camera" xyz="0.238 0 -0.035" rpy="0.0 0.349 0.0"  >                       
+                           <!--
+                      odom_xyz="0.0 0.0 0.25"
+                      odom_rpy="0.0 0.0 0.0"
+                      odom_fps="262"
+
+                      fisheye_width="848"
+                      fisheye_height="800"
+                      fisheye_fps="30"
+
+                      unite_imu_method="false"
+                      accel_fps="62.5"
+                      gyro_fps="200">-->
+            
+            
+            <origin xyz="0.238 0 -0.035" rpy="0.0 0.349 0.0" />  
         </xacro:sensor_t265>
     </xacro:if>
-    
-    
-
     
 </xacro:if>
 
