@@ -12,72 +12,66 @@
 <xacro:include filename="$(find centauro_urdf)/urdf/parts/inertial_properties.urdf.xacro" />
 <xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
 
+<xacro:property name="a" value="0.1"/> <!-- along x -->
+<xacro:property name="b" value="0.1"/> <!-- along y -->
+<xacro:property name="c" value="1.5"/> <!-- along z -->
 
 
-<link name="base_link"/>
+<link name="base_link">
 
+    <visual>
+      <geometry>
+        <box size="${a} ${b} ${c}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="${a} ${b} ${c}"/>
+      </geometry>
+    </collision>
+
+</link>
+
+<xacro:property name="r" value="0.1"/> <!-- along x -->
+<xacro:property name="h" value="0.1"/> <!-- along y -->
+<xacro:property name="m" value="1.0"/>
+ 
 <link name="pelvis">
+    <inertial>
+      <mass value="${m}"/>
+      <inertia ixx="${(m/48)*(6*r*r + 4*h*h)}" ixy="0.0" ixz="0.0" iyy="${(m/48)*(6*r*r + 4*h*h)}" iyz="0.0" izz="${m*h*h/4.}"/>
+    </inertial>
 
-      <inertial>
-         <origin xyz="${Pelvis_x} ${Pelvis_y} ${Pelvis_z}"/>
-         <mass value="${Pelvis_mass}"/>
-         <inertia ixx="${Pelvis_xx}" ixy="${Pelvis_xy}" ixz="${Pelvis_xz}" iyy="${Pelvis_yy}" iyz="${Pelvis_yz}" izz="${Pelvis_zz}"/>
-      </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="${h}" radius="${r}"/>
+      </geometry>
+    </visual>
 
-      <visual>
-        <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
-        <geometry>
-         <mesh filename="package://centauro_urdf/meshes/pelvis.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-      </visual>
+    <visual>
+      <geometry>
+        <cylinder length="${h}" radius="${r}"/>
+      </geometry>
+    </visual>
 
-      <collision>
-         <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
-        <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
+</link>
 
-   </link>
-
-
-    <link name="imu_link"/>
-
-    <joint name="imu_joint" type="fixed">
-        <parent link="pelvis"/>
-        <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}"/>
-        <child link="imu_link"/>
-    </joint>
-
-
-<joint name="base_joint" type="fixed">
-    <parent link="pelvis"/>
-    <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0" />
+<joint name="passive_joint" type="prismatic">
+    <parent link="base_link"/>
+    <child link="pelvis"/>
+    <origin xyz="${r+0.05} 0. ${c/2. + h/2.}"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="${-c}" upper="0." velocity="100."/>
 </joint>
 
 
-<xacro:if value="${ADD_UPPER_BODY}">
-	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
-    <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
-	
-	<xacro:if value="${ADD_BALL_END_EFFECTOR}">
-		<xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />
+<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_leg.urdf.xacro" />
+<xacro:centauro_leg leg_num="1" origin_x="0" origin_y="0" />
 
-		<xacro:ball_end_effector arm_num="1"  parent_link="arm1_7">
-      			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-   		</xacro:ball_end_effector>
-
-		<xacro:ball_end_effector arm_num="2"  parent_link="arm2_7">
-      			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-   		</xacro:ball_end_effector>
-	</xacro:if>
-	<xacro:include filename="$(find centauro_urdf)/urdf/parts/head.urdf.xacro" />
-</xacro:if>
-
-<xacro:if value="${ADD_LEGS}">
+<!-- <xacro:if value="${ADD_LEGS}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
-</xacro:if>
+</xacro:if> -->
 
 
 

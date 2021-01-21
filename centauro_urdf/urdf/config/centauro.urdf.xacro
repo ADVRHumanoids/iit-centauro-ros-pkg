@@ -18,6 +18,6 @@
 
 <xacro:property name="ADD_FLOATING_BASE" value="$(arg add_legs)" />
 
-<xacro:property name="USE_STICKS" value="false" />
+<xacro:property name="USE_STICKS" value="true" />
 
 </robot>

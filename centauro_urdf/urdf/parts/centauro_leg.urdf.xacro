@@ -182,12 +182,12 @@
 </link> 
 </xacro:unless>
 
-<joint name="hip_yaw_${leg_num}" type="revolute">
+<joint name="hip_yaw_${leg_num}" type="fixed">
 	<parent link="pelvis"/>
 	<child link="hip1_${leg_num}"/>
-	<origin xyz="${origin_x*Leg_1_Ox} ${origin_y*Leg_1_Oy} ${Leg_1_Oz}" rpy="${Leg_1_roll} ${Leg_1_pitch} ${PI/2-origin_x*PI/2+origin_x*origin_y*Leg_1_yaw}"/>
-	<axis xyz="0 0 1"/>
-        <limit lower="${hip_yaw_lower[leg_num-1]}" upper="${hip_yaw_upper[leg_num-1]}" effort="${motor_A_effort}" velocity="${motor_A_velocity}"/> <!-- 200 Nm, 1 rad/s-->
+	<origin xyz="${origin_x*Leg_1_Ox} ${origin_y*Leg_1_Oy} ${Leg_1_Oz}" rpy="${Leg_1_roll} ${Leg_1_pitch} ${-origin_x*PI/2+origin_x*origin_y*Leg_1_yaw}"/>
+	<!-- axis xyz="0 0 1"/>
+        <limit lower="${hip_yaw_lower[leg_num-1]}" upper="${hip_yaw_upper[leg_num-1]}" effort="${motor_A_effort}" velocity="${motor_A_velocity}"/--> <!-- 200 Nm, 1 rad/s-->
 </joint>
 
 <joint name="hip_pitch_${leg_num}" type="revolute">
