@@ -91,7 +91,7 @@
         </xacro:sensor_d435i>-->
         
         <xacro:sensor_d435i parent="pelvis" name="D435i_camera" topics_ns="D435i/D435i_camera"
-                      enable_pointCloud="true" align_depth="false"
+                      enable_pointCloud="true" align_depth="true"
                       unite_imu_method="false"
                     
                       visualize="true"
@@ -112,7 +112,7 @@
                       color_height="720"
                       color_fps="30">
             
-            <origin xyz="0.23 0 -0.061" rpy="0.0 0.15 0.0"/>  <!-- 0.6: 32-35 ° -->
+            <origin xyz="0.219831 0 -0.0613293" rpy="0.0 0.5585052 0.0"/>
         </xacro:sensor_d435i>
 
         
@@ -146,7 +146,7 @@
                       gyro_fps="200">
             
             
-            <origin xyz="0.24 0.01 -0.019" rpy="0.0 0.1 0.0" />  
+            <origin xyz="0.252619 0.00775 -0.0206926" rpy="0.0 0.2617993 0.0" />  
         </xacro:sensor_t265>
     </xacro:if>
     

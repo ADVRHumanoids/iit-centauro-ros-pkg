@@ -839,7 +839,7 @@
   </material>
   <!-- camera body, with origin at bottom screw mount -->
   <joint name="D435i_camera_joint" type="fixed">
-    <origin rpy="0.0 0.15 0.0" xyz="0.23 0 -0.061"/>
+    <origin rpy="0.0 0.5585052 0.0" xyz="0.219831 0 -0.0613293"/>
     <parent link="pelvis"/>
     <child link="D435i_camera_bottom_screw_frame"/>
   </joint>
@@ -1032,7 +1032,7 @@
     </sensor>
     <sensor name="D435i_cameradepth" type="depth">
       <camera name="D435i_camera">
-        <horizontal_fov>1.4870205227</horizontal_fov>
+        <horizontal_fov>1.21125850088</horizontal_fov>
         <image>
           <width>1280</width>
           <height>720</height>
@@ -1048,7 +1048,7 @@
         </noise>
       </camera>
       <always_on>1</always_on>
-      <update_rate>90</update_rate>
+      <update_rate>30</update_rate>
       <visualize>false</visualize>
     </sensor>
     <sensor name="{camera_name}accel" type="imu">
@@ -1101,8 +1101,8 @@
       <infrared2OpticalframeName>D435i_camera_right_ir_optical_frame</infrared2OpticalframeName>
       <!-- Depth camera settings -->
       <rangeMinDepth>0.2</rangeMinDepth>
-      <rangeMaxDepth>2.5.0</rangeMaxDepth>
-      <depthUpdateRate>90</depthUpdateRate>
+      <rangeMaxDepth>10.0</rangeMaxDepth>
+      <depthUpdateRate>30</depthUpdateRate>
       <depthTopicName>depth/image_rect_raw</depthTopicName>
       <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
       <depthOpticalframeName>D435i_camera_depth_optical_frame</depthOpticalframeName>
@@ -1123,7 +1123,7 @@
   </material>
   <!-- camera body, with origin at camera_pose_frame -->
   <joint name="T265_camera_pose_joint" type="fixed">
-    <origin rpy="0.0 0.1 0.0" xyz="0.24 0.01 -0.019"/>
+    <origin rpy="0.0 0.2617993 0.0" xyz="0.252619 0.00775 -0.0206926"/>
     <parent link="pelvis"/>
     <child link="T265_camera_pose_frame"/>
   </joint>
