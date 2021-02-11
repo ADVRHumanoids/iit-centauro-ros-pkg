@@ -153,6 +153,20 @@
 	</collision>
 </link> 
 
+<!-- *****************************-->
+<link name="contact_${leg_num}">
+	
+</link> 
+
+<joint name="contact_joint_${leg_num}" type="fixed">
+	<parent link="ankle2_${leg_num}"/>
+	<child link="contact_${leg_num}"/>
+	<origin xyz="0 0 0.315" rpy="3.14159265 0 0"/>
+	<!--axis xyz="0 0 1" /-->
+</joint>
+
+<!-- ******************************** -->
+
 <joint name="hip_yaw_${leg_num}" type="revolute">
 	<parent link="pelvis"/>
 	<child link="hip1_${leg_num}"/>
