@@ -52,6 +52,34 @@
 
 </link>
 
+<xacro:if value="${USE_STICKS}">
+<link name="knee_${leg_num}">
+<inertial> 
+	<mass value="${1.1927236}"/>
+    <origin xyz="${1.9572282e+02*mmTom} ${-1.4549221e+01*mmTom} ${-2.0785942e+01*mmTom}" rpy="0.0 0.0 0.0"/>
+	<!--origin xyz="${1.4549221e+01*mmTom} ${-2.0785942e+01*mmTom} ${-1.9572282e+02*mmTom}" rpy="0.0 0.0 0.0"/-->      
+	<!--inertia ixx="${3.5313402e+04*mm2Tom2}"  ixy="${0.0*mm2Tom2}"  ixz="${1.1029574e-01*mm2Tom2}" iyy="${3.5530025e+04*mm2Tom2}" iyz="${-6.0307457e+02*mm2Tom2}" izz="${1.3302597e+03*mm2Tom2}" /-->
+    <inertia ixx="${1.3302597e+03*mm2Tom2}"  ixy="${6.0307457e+02*mm2Tom2}"  ixz="${0.0*mm2Tom2}" iyy="${3.5313402e+04*mm2Tom2}" iyz="${-1.1029574e-01*mm2Tom2}" izz="${3.5530025e+04*mm2Tom2}" />
+</inertial>
+
+<visual>
+      <origin xyz="0 0 0" rpy="${PI_2} 0 ${-PI_2}"/>
+      <material name="black"/>
+      <geometry name="${leg_num}_stick_visual">
+        <mesh filename="package://centauro_urdf/meshes/front_right_stick.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+      </geometry>
+</visual> 
+
+<collision>
+      <origin xyz="0 0 0" rpy="${PI_2} 0 ${-PI_2}"/>
+      <geometry name="${leg_num}_stick_collision">
+        <mesh filename="package://centauro_urdf/meshes/simple/front_right_stick.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+      </geometry>             
+</collision>  
+</link>
+</xacro:if>
+
+<xacro:unless value="${USE_STICKS}">
 <link name="knee_${leg_num}">
 	<inertial>
 		<origin xyz="${Leg_3_x} ${Leg_3_y} ${Leg_3_z}"/>
@@ -152,6 +180,7 @@
       		</geometry>
 	</collision>
 </link> 
+</xacro:unless>
 
 <!-- *****************************-->
 <link name="contact_${leg_num}">
@@ -183,6 +212,7 @@
         <limit lower="${hip_pitch_lower[leg_num-1]}" upper="${hip_pitch_upper[leg_num-1]}" effort="${motor_A_effort}" velocity="${motor_A_velocity}"/> <!-- 200 Nm, 1 rad/s-->
 </joint>
 
+<xacro:if  value="${USE_STICKS}">
 <joint name="knee_pitch_${leg_num}" type="revolute">
 	<parent link="hip2_${leg_num}"/>
 	<child link="knee_${leg_num}"/>
@@ -190,6 +220,17 @@
 	<axis xyz="0 0 1"/>
         <limit lower="${knee_pitch_lower[leg_num-1]}" upper="${knee_pitch_upper[leg_num-1]}" effort="${motor_A_effort}" velocity="${motor_A_velocity}"/> <!-- 200 Nm, 1 rad/s-->
 </joint>
+</xacro:if>
+
+<xacro:unless value="${USE_STICKS}">
+<joint name="knee_pitch_${leg_num}" type="revolute">
+	<parent link="hip2_${leg_num}"/>
+	<child link="knee_${leg_num}"/>
+	<origin xyz="${Leg_3_Ox} ${Leg_3_Oy} ${Leg_3_Oz}" rpy="${Leg_3_roll} ${Leg_3_pitch} ${Leg_3_yaw}"/>
+	<axis xyz="0 0 1"/>
+        <limit lower="${knee_pitch_lower[leg_num-1]}" upper="${knee_pitch_upper[leg_num-1]}" effort="${motor_A_effort}" velocity="${motor_A_velocity}"/> <!-- 200 Nm, 1 rad/s-->
+</joint>
+
 
 <joint name="ankle_pitch_${leg_num}" type="revolute">
 	<parent link="knee_${leg_num}"/>
@@ -214,6 +255,7 @@
 	<axis xyz="0 0 1"/>
         <limit  effort="${motor_C_effort}" velocity="${motor_C_velocity}"/>  <!-- 23 Nm, 1 rad/s-->
 </joint>
+</xacro:unless>
 
 </xacro:macro>
 <!-- /macro legs -->
