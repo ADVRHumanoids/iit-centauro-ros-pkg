@@ -1,11 +1,11 @@
 XBotCore:
-  config_path: "/home/alessio/perception_ws/src/iit-centauro-ros-pkg/centauro_config/centauro.yaml"
+  config_path: "/home/alessio/perception_ws/src/iit-centauro-ros-pkg/centauro_config/configs/centauro.yaml"
 
 
 XBotInterface:
   urdf_path: "/home/alessio/perception_ws/src/iit-centauro-ros-pkg/centauro_urdf/urdf/centauro.urdf"
   srdf_path: "/home/alessio/perception_ws/src/iit-centauro-ros-pkg/centauro_srdf/srdf/centauro.srdf"
-  joint_map_path: "/home/alessio/perception_ws/src/iit-centauro-ros-pkg/centauro_config/centauro_joint_map.yaml"
+  joint_map_path: "/home/alessio/perception_ws/src/iit-centauro-ros-pkg/centauro_config/configs/centauro_joint_map.yaml"
 
 RobotInterface:
   framework_name: "ROS"

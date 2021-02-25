@@ -145,7 +145,6 @@
                       accel_fps="62.5"
                       gyro_fps="200">
             
-            
             <origin xyz="0.252619 0.00775 -0.0206926" rpy="0.0 0.2617993 0.0" />  
         </xacro:sensor_t265>
     </xacro:if>

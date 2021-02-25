@@ -774,21 +774,31 @@
           </cylinder>
         </geometry>
         <surface>
-          <contact>
-            <ode>
-              <kp>1e+06</kp>
-              <kd>100</kd>
-              <max_vel>1</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-          </contact>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>1 0 0</fdir1>
+              <mu>0.5</mu>
+              <mu2>0.5</mu2>
             </ode>
+            <bullet>
+              <friction>0.5</friction>
+              <friction2>0.5</friction2>
+            </bullet>
           </friction>
+          <contact>
+            <ode>
+              <kp>2.1e+06</kp>
+              <kd>1</kd>
+              <max_vel>100</max_vel>
+            </ode>
+            <bullet>
+              <soft_cfm>0.007</soft_cfm>
+              <soft_erp>0.25</soft_erp>
+              <kp>1e+06</kp>
+              <kd>5</kd>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+            </bullet>
+          </contact>
         </surface>
       </collision>
       <visual name='wheel_1_visual'>
@@ -1256,21 +1266,31 @@
           </cylinder>
         </geometry>
         <surface>
-          <contact>
-            <ode>
-              <kp>1e+06</kp>
-              <kd>100</kd>
-              <max_vel>1</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-          </contact>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>1 0 0</fdir1>
+              <mu>0.5</mu>
+              <mu2>0.5</mu2>
             </ode>
+            <bullet>
+              <friction>0.5</friction>
+              <friction2>0.5</friction2>
+            </bullet>
           </friction>
+          <contact>
+            <ode>
+              <kp>2.1e+06</kp>
+              <kd>1</kd>
+              <max_vel>100</max_vel>
+            </ode>
+            <bullet>
+              <soft_cfm>0.007</soft_cfm>
+              <soft_erp>0.25</soft_erp>
+              <kp>1e+06</kp>
+              <kd>5</kd>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+            </bullet>
+          </contact>
         </surface>
       </collision>
       <visual name='wheel_2_visual'>
@@ -1738,21 +1758,31 @@
           </cylinder>
         </geometry>
         <surface>
-          <contact>
-            <ode>
-              <kp>1e+06</kp>
-              <kd>100</kd>
-              <max_vel>1</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-          </contact>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>1 0 0</fdir1>
+              <mu>0.5</mu>
+              <mu2>0.5</mu2>
             </ode>
+            <bullet>
+              <friction>0.5</friction>
+              <friction2>0.5</friction2>
+            </bullet>
           </friction>
+          <contact>
+            <ode>
+              <kp>2.1e+06</kp>
+              <kd>1</kd>
+              <max_vel>100</max_vel>
+            </ode>
+            <bullet>
+              <soft_cfm>0.007</soft_cfm>
+              <soft_erp>0.25</soft_erp>
+              <kp>1e+06</kp>
+              <kd>5</kd>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+            </bullet>
+          </contact>
         </surface>
       </collision>
       <visual name='wheel_3_visual'>
@@ -2220,21 +2250,31 @@
           </cylinder>
         </geometry>
         <surface>
-          <contact>
-            <ode>
-              <kp>1e+06</kp>
-              <kd>100</kd>
-              <max_vel>1</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-          </contact>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>1 0 0</fdir1>
+              <mu>0.5</mu>
+              <mu2>0.5</mu2>
             </ode>
+            <bullet>
+              <friction>0.5</friction>
+              <friction2>0.5</friction2>
+            </bullet>
           </friction>
+          <contact>
+            <ode>
+              <kp>2.1e+06</kp>
+              <kd>1</kd>
+              <max_vel>100</max_vel>
+            </ode>
+            <bullet>
+              <soft_cfm>0.007</soft_cfm>
+              <soft_erp>0.25</soft_erp>
+              <kp>1e+06</kp>
+              <kd>5</kd>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+            </bullet>
+          </contact>
         </surface>
       </collision>
       <visual name='wheel_4_visual'>
