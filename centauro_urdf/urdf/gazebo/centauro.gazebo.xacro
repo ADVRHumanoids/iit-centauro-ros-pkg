@@ -8,13 +8,18 @@
     <collision>
         <surface>
             <friction>
+		<torsional>
+	            <coefficient> 1.0 </coefficient>
+	            <use_patch_radius>true</use_patch_radius>
+	            <patch_radius>0.2</patch_radius>
+                </torsional>
                 <ode>
-                    <mu>0.5</mu>
-                    <mu2>0.5</mu2>
+                    <mu>1.0</mu>
+                    <mu2>1.0</mu2>
                 </ode>
                 <bullet>
-                    <friction>0.5</friction>
-                    <friction2>0.5</friction2>
+                    <friction>1.0</friction>
+                    <friction2>1.0</friction2>
                 </bullet>
             </friction>
             <contact>
@@ -39,13 +44,18 @@
     <collision>
         <surface>
             <friction>
+		<torsional>
+	            <coefficient> 1.0 </coefficient>
+	            <use_patch_radius>true</use_patch_radius>
+	            <patch_radius>0.2</patch_radius>
+                </torsional>
                 <ode>
-                    <mu>0.5</mu>
-                    <mu2>0.5</mu2>
+                    <mu>1.0</mu>
+                    <mu2>1.0</mu2>
                 </ode>
                 <bullet>
-                    <friction>0.5</friction>
-                    <friction2>0.5</friction2>
+                    <friction>1.0</friction>
+                    <friction2>1.0</friction2>
                 </bullet>
             </friction>
             <contact>
@@ -71,13 +81,18 @@
 
         <surface>
             <friction>
+		<torsional>
+	            <coefficient> 1.0 </coefficient>
+	            <use_patch_radius>true</use_patch_radius>
+	            <patch_radius>0.2</patch_radius>
+                </torsional>
                 <ode>
-                    <mu>0.5</mu>
-                    <mu2>0.5</mu2>
+                    <mu>1.0</mu>
+                    <mu2>1.0</mu2>
                 </ode>
                 <bullet>
-                    <friction>0.5</friction>
-                    <friction2>0.5</friction2>
+                    <friction>1.0</friction>
+                    <friction2>1.0</friction2>
                 </bullet>
             </friction>
             <contact>
@@ -101,13 +116,18 @@
     <collision>
         <surface>
             <friction>
+		<torsional>
+	            <coefficient> 1.0 </coefficient>
+	            <use_patch_radius>true</use_patch_radius>
+	            <patch_radius>0.2</patch_radius>
+                </torsional>
                 <ode>
-                    <mu>0.5</mu>
-                    <mu2>0.5</mu2>
+                    <mu>1.0</mu>
+                    <mu2>1.0</mu2>
                 </ode>
                 <bullet>
-                    <friction>0.5</friction>
-                    <friction2>0.5</friction2>
+                    <friction>1.0</friction>
+                    <friction2>1.0</friction2>
                 </bullet>
             </friction>
             <contact>
