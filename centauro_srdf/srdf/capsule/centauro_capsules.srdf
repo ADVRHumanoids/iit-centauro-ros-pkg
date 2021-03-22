@@ -499,4 +499,19 @@
     <disable_collisions link1="knee_4" link2="torso_2" reason="Never"/>
     <disable_collisions link1="knee_4" link2="wheel_4" reason="Never"/>
     <disable_collisions link1="pelvis" link2="torso_2" reason="Adjacent"/>
+    
+    <disable_collisions link1="neck_1" link2="torso_2" reason="Default"/>
+    <disable_collisions link1="neck_2" link2="torso_2" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_1" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_2" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_3" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_4" reason="Default"/>
+    
+    <disable_collisions link1="neck_1" link2="neck_2" reason="Default"/>
+    <disable_collisions link1="arm1_2" link2="torso_2" reason="Default"/>
+    <disable_collisions link1="arm2_2" link2="torso_2" reason="Default"/>
+    <disable_collisions link1="neck_3" link2="torso_2" reason="Default"/>
+    
+ 
+
 </robot>
