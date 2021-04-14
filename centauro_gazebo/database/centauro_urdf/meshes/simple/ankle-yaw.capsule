@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/ankle-yaw.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="-2.9005e-07 0.000850055 0.197663" rpy="-1.57079632679 0.00488849418735 -0.00488849418735"/>
+      <geometry>
+        <cylinder radius="0.101494" length="0.014473082934"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

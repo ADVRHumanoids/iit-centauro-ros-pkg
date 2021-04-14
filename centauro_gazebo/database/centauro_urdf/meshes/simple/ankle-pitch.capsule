@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/ankle-pitch.stl">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin xyz="0.0211612445 4.557998e-05 -0.0015990485" rpy="0.0221576041577 1.48930565738 0.0204218598272"/>
+      <geometry>
+        <cylinder radius="0.0763963" length="0.0427933218169"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
