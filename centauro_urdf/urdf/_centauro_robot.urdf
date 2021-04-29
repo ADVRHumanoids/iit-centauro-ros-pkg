@@ -824,6 +824,7 @@
       <plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller">
         <topicName>/velodyne_points</topicName>
         <frameName>velodyne_calib</frameName>
+        <organize_cloud>False</organize_cloud>
         <min_range>0.9</min_range>
         <max_range>130.0</max_range>
         <gaussianNoise>0.008</gaussianNoise>
@@ -1051,7 +1052,7 @@
       <update_rate>30</update_rate>
       <visualize>false</visualize>
     </sensor>
-    <sensor name="{camera_name}accel" type="imu">
+    <sensor name="D435i_cameraaccel" type="imu">
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i/D435i_camera/accel/sample</topic>
@@ -1067,7 +1068,7 @@
       </plugin>
       <pose>0 0 0 0 0 0</pose>
     </sensor>
-    <sensor name="{camera_name}gyro" type="imu">
+    <sensor name="D435i_cameragyro" type="imu">
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/gyro/sample</topic>
@@ -1320,7 +1321,7 @@
         <distortionP2>0.0052825710736215115</distortionP2>
       </plugin>
     </sensor>
-    <sensor name="{camera_name}accel" type="imu">
+    <sensor name="T265_cameraaccel" type="imu">
       <always_on>true</always_on>
       <update_rate>62.5</update_rate>
       <plugin filename="librealsense_gazebo_accel_sensor.so" name="T265/T265_camera_accel_plugin">
@@ -1335,7 +1336,7 @@
       </plugin>
       <pose>0 0 0 0 0 0</pose>
     </sensor>
-    <sensor name="{camera_name}gyro" type="imu">
+    <sensor name="T265_cameragyro" type="imu">
       <always_on>true</always_on>
       <update_rate>200</update_rate>
       <topic>T265/T265_camera/gyro/sample</topic>
@@ -1499,6 +1500,17 @@
       </geometry>
     </collision>
   </link>
+  <!-- *****************************-->
+  <link name="contact_1">
+	
+</link>
+  <joint name="contact_joint_1" type="fixed">
+    <parent link="ankle2_1"/>
+    <child link="contact_1"/>
+    <origin rpy="3.14159265 0 0" xyz="0 0 0.315"/>
+    <!--axis xyz="0 0 1" /-->
+  </joint>
+  <!-- ******************************** -->
   <joint name="hip_yaw_1" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_1"/>
@@ -1681,6 +1693,17 @@
       </geometry>
     </collision>
   </link>
+  <!-- *****************************-->
+  <link name="contact_2">
+	
+</link>
+  <joint name="contact_joint_2" type="fixed">
+    <parent link="ankle2_2"/>
+    <child link="contact_2"/>
+    <origin rpy="3.14159265 0 0" xyz="0 0 0.315"/>
+    <!--axis xyz="0 0 1" /-->
+  </joint>
+  <!-- ******************************** -->
   <joint name="hip_yaw_2" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_2"/>
@@ -1863,6 +1886,17 @@
       </geometry>
     </collision>
   </link>
+  <!-- *****************************-->
+  <link name="contact_3">
+	
+</link>
+  <joint name="contact_joint_3" type="fixed">
+    <parent link="ankle2_3"/>
+    <child link="contact_3"/>
+    <origin rpy="3.14159265 0 0" xyz="0 0 0.315"/>
+    <!--axis xyz="0 0 1" /-->
+  </joint>
+  <!-- ******************************** -->
   <joint name="hip_yaw_3" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_3"/>
@@ -2045,6 +2079,17 @@
       </geometry>
     </collision>
   </link>
+  <!-- *****************************-->
+  <link name="contact_4">
+	
+</link>
+  <joint name="contact_joint_4" type="fixed">
+    <parent link="ankle2_4"/>
+    <child link="contact_4"/>
+    <origin rpy="3.14159265 0 0" xyz="0 0 0.315"/>
+    <!--axis xyz="0 0 1" /-->
+  </joint>
+  <!-- ******************************** -->
   <joint name="hip_yaw_4" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_4"/>
@@ -2105,13 +2150,18 @@
     <collision>
       <surface>
         <friction>
+          <torsional>
+            <coefficient> 1.0 </coefficient>
+            <use_patch_radius>true</use_patch_radius>
+            <patch_radius>0.2</patch_radius>
+          </torsional>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
           </ode>
           <bullet>
-            <friction>0.5</friction>
-            <friction2>0.5</friction2>
+            <friction>1.0</friction>
+            <friction2>1.0</friction2>
           </bullet>
         </friction>
         <contact>
@@ -2135,13 +2185,18 @@
     <collision>
       <surface>
         <friction>
+          <torsional>
+            <coefficient> 1.0 </coefficient>
+            <use_patch_radius>true</use_patch_radius>
+            <patch_radius>0.2</patch_radius>
+          </torsional>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
           </ode>
           <bullet>
-            <friction>0.5</friction>
-            <friction2>0.5</friction2>
+            <friction>1.0</friction>
+            <friction2>1.0</friction2>
           </bullet>
         </friction>
         <contact>
@@ -2165,13 +2220,18 @@
     <collision>
       <surface>
         <friction>
+          <torsional>
+            <coefficient> 1.0 </coefficient>
+            <use_patch_radius>true</use_patch_radius>
+            <patch_radius>0.2</patch_radius>
+          </torsional>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
           </ode>
           <bullet>
-            <friction>0.5</friction>
-            <friction2>0.5</friction2>
+            <friction>1.0</friction>
+            <friction2>1.0</friction2>
           </bullet>
         </friction>
         <contact>
@@ -2195,13 +2255,18 @@
     <collision>
       <surface>
         <friction>
+          <torsional>
+            <coefficient> 1.0 </coefficient>
+            <use_patch_radius>true</use_patch_radius>
+            <patch_radius>0.2</patch_radius>
+          </torsional>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
           </ode>
           <bullet>
-            <friction>0.5</friction>
-            <friction2>0.5</friction2>
+            <friction>1.0</friction>
+            <friction2>1.0</friction2>
           </bullet>
         </friction>
         <contact>
@@ -2405,7 +2470,65 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="libGazeboXBotPlugin.so" name="xbot_plugin_handler"/>
+    <plugin filename="libxbot2_gz_link_state_sensor.so" name="xbot2_link_state_sensor">
+      <links>
+        <link name="pelvis"/>
+        <link name="wheel_1"/>
+      </links>
+    </plugin>
+    <plugin filename="libxbot2_gz_ft_server.so" name="xbot2_ft_driver"/>
+    <plugin filename="libxbot2_gz_imu_server.so" name="xbot2_imu_driver"/>
+    <plugin filename="libxbot2_gz_joint_server.so" name="xbot2_joint_driver">
+      <pid>
+        <gain d="5" name="lowpwr_mot" p="50"/>
+        <gain d="5" name="small_mot" p="250"/>
+        <gain d="10" name="medium_mot" p="1000"/>
+        <gain d="10" name="big_mot" p="3000"/>
+        <gain d="10" name="wheel_mot" p="0"/>
+        <pid name="neck_yaw" profile="lowpwr_mot"/>
+        <pid name="neck_pitch" profile="lowpwr_mot"/>
+        <pid d="20" name="neck_velodyne" p="0"/>
+        <pid name="j_arm1_1" profile="medium_mot"/>
+        <pid name="j_arm1_2" profile="medium_mot"/>
+        <pid name="j_arm1_3" profile="medium_mot"/>
+        <pid name="j_arm1_4" profile="medium_mot"/>
+        <pid name="j_arm1_5" profile="small_mot"/>
+        <pid name="j_arm1_6" profile="small_mot"/>
+        <pid name="j_arm1_7" profile="small_mot"/>
+        <pid name="j_arm2_1" profile="medium_mot"/>
+        <pid name="j_arm2_2" profile="medium_mot"/>
+        <pid name="j_arm2_3" profile="medium_mot"/>
+        <pid name="j_arm2_4" profile="medium_mot"/>
+        <pid name="j_arm2_5" profile="small_mot"/>
+        <pid name="j_arm2_6" profile="small_mot"/>
+        <pid name="j_arm2_7" profile="small_mot"/>
+        <pid name="torso_yaw" profile="big_mot"/>
+        <pid name="hip_yaw_1" profile="big_mot"/>
+        <pid name="hip_pitch_1" profile="big_mot"/>
+        <pid name="knee_pitch_1" profile="big_mot"/>
+        <pid name="ankle_pitch_1" profile="medium_mot"/>
+        <pid name="ankle_yaw_1" profile="small_mot"/>
+        <pid name="j_wheel_1" profile="wheel_mot"/>
+        <pid name="hip_yaw_2" profile="big_mot"/>
+        <pid name="hip_pitch_2" profile="big_mot"/>
+        <pid name="knee_pitch_2" profile="big_mot"/>
+        <pid name="ankle_pitch_2" profile="medium_mot"/>
+        <pid name="ankle_yaw_2" profile="small_mot"/>
+        <pid name="j_wheel_2" profile="wheel_mot"/>
+        <pid name="hip_yaw_3" profile="big_mot"/>
+        <pid name="hip_pitch_3" profile="big_mot"/>
+        <pid name="knee_pitch_3" profile="big_mot"/>
+        <pid name="ankle_pitch_3" profile="medium_mot"/>
+        <pid name="ankle_yaw_3" profile="small_mot"/>
+        <pid name="j_wheel_3" profile="wheel_mot"/>
+        <pid name="hip_yaw_4" profile="big_mot"/>
+        <pid name="hip_pitch_4" profile="big_mot"/>
+        <pid name="knee_pitch_4" profile="big_mot"/>
+        <pid name="ankle_pitch_4" profile="medium_mot"/>
+        <pid name="ankle_yaw_4" profile="small_mot"/>
+        <pid name="j_wheel_4" profile="wheel_mot"/>
+      </pid>
+    </plugin>
   </gazebo>
   <gazebo reference="pelvis">
     <material>Gazebo/LightBlueLaser</material>
