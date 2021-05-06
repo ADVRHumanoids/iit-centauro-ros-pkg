@@ -37,4 +37,4 @@
 build/
 build_rt/
 
-./centauro_gazebo/database/
+centauro_gazebo/database/
