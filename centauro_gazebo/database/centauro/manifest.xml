@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <model>
-  <name></name>
-  <version></version>
+  <name>centauro</name>
+  <version>0.1</version>
   <sdf version='1.4'>centauro.sdf</sdf>
 
   <author>

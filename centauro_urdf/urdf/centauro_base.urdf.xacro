@@ -94,7 +94,7 @@
                       enable_pointCloud="true" align_depth="true"
                       unite_imu_method="false"
                     
-                      visualize="true"
+                      visualize="false"
                                                   
                             
                       accel_fps="300"
