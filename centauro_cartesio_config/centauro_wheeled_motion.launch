@@ -10,8 +10,8 @@
 
     <param name="cartesian/problem_description" textfile="$(find centauro_cartesio_config)/centauro_wheeled_motion_stack.yaml"/>
         
-    <rosparam name="cartesian/velocity_whitelist">
-        <param>[fr_wheel_joint, fl_wheel_joint, hr_wheel_joint, hl_wheel_joint]</param>
+    <rosparam param="cartesian/velocity_whitelist">
+        [j_wheel_1, j_wheel_2, j_wheel_3, j_wheel_4]
     </rosparam>
 
 
