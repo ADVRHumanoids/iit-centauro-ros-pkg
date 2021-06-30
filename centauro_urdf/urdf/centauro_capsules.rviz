@@ -943,6 +943,7 @@
   </link>
   <link name="knee_1">
     <inertial>
+<<<<<<< HEAD
       <origin xyz="0.10881667 0.0001089081 -0.022638996" rpy="0 0 0"/>
       <mass value="1.9356754"/>
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
@@ -1046,10 +1047,21 @@
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro_urdf/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
+=======
+      <origin rpy="0.0 0.0 0.0" xyz="0.19572282 -0.014549221 -0.020785942"/>
+      <mass value="1.1927236"/>
+      <inertia ixx="0.0013302597" ixy="0.00060307457" ixz="0.0" iyy="0.035313402" iyz="-1.1029574e-07" izz="0.035530025"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/front_right_stick.stl" scale="0.001 0.001 0.001"/>
+>>>>>>> xbot2-perception
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
+<<<<<<< HEAD
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <cylinder radius="0.078" length="0.06"/>
@@ -1057,14 +1069,27 @@
     </collision>
     <collision>
       <origin xyz="0.000000 0.000000 -0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-2.37087e-06 -0.02329605 -0.192325"/>
       <geometry>
-        <sphere radius="0.078"/>
+        <cylinder length="0.397222000091" radius="0.0634876"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000002 -0.023300 0.006286"/>
+>>>>>>> xbot2-perception
       <geometry>
-        <sphere radius="0.078"/>
+        <sphere radius="0.0634876"/>
+      </geometry>
+    </collision>
+    <collision>
+<<<<<<< HEAD
+      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000003 -0.023292 -0.390936"/>
+>>>>>>> xbot2-perception
+      <geometry>
+        <sphere radius="0.0634876"/>
       </geometry>
     </collision>
   </link>
@@ -1095,6 +1120,7 @@
     <child link="knee_1"/>
     <limit effort="304.0" lower="-2.4056" upper="2.3994" velocity="8.8"/>
   </joint>
+<<<<<<< HEAD
   <joint name="ankle_pitch_1" type="revolute">
     <origin xyz="0.2 0.0 -0.10015" rpy="3.141592653589793 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
@@ -1116,6 +1142,8 @@
     <child link="wheel_1"/>
     <limit effort="35.0" lower="0" upper="0" velocity="20.0"/>
   </joint>
+=======
+>>>>>>> xbot2-perception
   <link name="hip1_2">
     <inertial>
       <origin xyz="0.010214199 0.018348359 0.038090987" rpy="0 0 0"/>
@@ -1181,6 +1209,7 @@
   </link>
   <link name="knee_2">
     <inertial>
+<<<<<<< HEAD
       <origin xyz="0.10881667 0.0001089081 -0.022638996" rpy="0 0 0"/>
       <mass value="1.9356754"/>
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
@@ -1284,10 +1313,21 @@
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro_urdf/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
+=======
+      <origin rpy="0.0 0.0 0.0" xyz="0.19572282 -0.014549221 -0.020785942"/>
+      <mass value="1.1927236"/>
+      <inertia ixx="0.0013302597" ixy="0.00060307457" ixz="0.0" iyy="0.035313402" iyz="-1.1029574e-07" izz="0.035530025"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/front_right_stick.stl" scale="0.001 0.001 0.001"/>
+>>>>>>> xbot2-perception
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
+<<<<<<< HEAD
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <cylinder radius="0.078" length="0.06"/>
@@ -1295,14 +1335,27 @@
     </collision>
     <collision>
       <origin xyz="0.000000 0.000000 -0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-2.37087e-06 -0.02329605 -0.192325"/>
       <geometry>
-        <sphere radius="0.078"/>
+        <cylinder length="0.397222000091" radius="0.0634876"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000002 -0.023300 0.006286"/>
+>>>>>>> xbot2-perception
       <geometry>
-        <sphere radius="0.078"/>
+        <sphere radius="0.0634876"/>
+      </geometry>
+    </collision>
+    <collision>
+<<<<<<< HEAD
+      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000003 -0.023292 -0.390936"/>
+>>>>>>> xbot2-perception
+      <geometry>
+        <sphere radius="0.0634876"/>
       </geometry>
     </collision>
   </link>
@@ -1333,6 +1386,7 @@
     <child link="knee_2"/>
     <limit effort="304.0" lower="-2.4006" upper="2.4034" velocity="8.8"/>
   </joint>
+<<<<<<< HEAD
   <joint name="ankle_pitch_2" type="revolute">
     <origin xyz="0.2 0.0 -0.10015" rpy="3.141592653589793 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
@@ -1354,6 +1408,8 @@
     <child link="wheel_2"/>
     <limit effort="35.0" lower="0" upper="0" velocity="20.0"/>
   </joint>
+=======
+>>>>>>> xbot2-perception
   <link name="hip1_3">
     <inertial>
       <origin xyz="0.010214199 0.018348359 0.038090987" rpy="0 0 0"/>
@@ -1419,6 +1475,7 @@
   </link>
   <link name="knee_3">
     <inertial>
+<<<<<<< HEAD
       <origin xyz="0.10881667 0.0001089081 -0.022638996" rpy="0 0 0"/>
       <mass value="1.9356754"/>
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
@@ -1522,10 +1579,21 @@
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro_urdf/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
+=======
+      <origin rpy="0.0 0.0 0.0" xyz="0.19572282 -0.014549221 -0.020785942"/>
+      <mass value="1.1927236"/>
+      <inertia ixx="0.0013302597" ixy="0.00060307457" ixz="0.0" iyy="0.035313402" iyz="-1.1029574e-07" izz="0.035530025"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/front_right_stick.stl" scale="0.001 0.001 0.001"/>
+>>>>>>> xbot2-perception
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
+<<<<<<< HEAD
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <cylinder radius="0.078" length="0.06"/>
@@ -1533,14 +1601,27 @@
     </collision>
     <collision>
       <origin xyz="0.000000 0.000000 -0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-2.37087e-06 -0.02329605 -0.192325"/>
       <geometry>
-        <sphere radius="0.078"/>
+        <cylinder length="0.397222000091" radius="0.0634876"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000002 -0.023300 0.006286"/>
+>>>>>>> xbot2-perception
       <geometry>
-        <sphere radius="0.078"/>
+        <sphere radius="0.0634876"/>
+      </geometry>
+    </collision>
+    <collision>
+<<<<<<< HEAD
+      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000003 -0.023292 -0.390936"/>
+>>>>>>> xbot2-perception
+      <geometry>
+        <sphere radius="0.0634876"/>
       </geometry>
     </collision>
   </link>
@@ -1571,6 +1652,7 @@
     <child link="knee_3"/>
     <limit effort="304.0" lower="-2.4056" upper="2.4064" velocity="8.8"/>
   </joint>
+<<<<<<< HEAD
   <joint name="ankle_pitch_3" type="revolute">
     <origin xyz="0.2 0.0 -0.10015" rpy="3.141592653589793 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
@@ -1592,6 +1674,8 @@
     <child link="wheel_3"/>
     <limit effort="35.0" lower="0" upper="0" velocity="20.0"/>
   </joint>
+=======
+>>>>>>> xbot2-perception
   <link name="hip1_4">
     <inertial>
       <origin xyz="0.010214199 -0.018348359 0.038090987" rpy="0 0 0"/>
@@ -1657,6 +1741,7 @@
   </link>
   <link name="knee_4">
     <inertial>
+<<<<<<< HEAD
       <origin xyz="0.10881667 0.0001089081 -0.022638996" rpy="0 0 0"/>
       <mass value="1.9356754"/>
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
@@ -1760,10 +1845,21 @@
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro_urdf/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
+=======
+      <origin rpy="0.0 0.0 0.0" xyz="0.19572282 -0.014549221 -0.020785942"/>
+      <mass value="1.1927236"/>
+      <inertia ixx="0.0013302597" ixy="0.00060307457" ixz="0.0" iyy="0.035313402" iyz="-1.1029574e-07" izz="0.035530025"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/front_right_stick.stl" scale="0.001 0.001 0.001"/>
+>>>>>>> xbot2-perception
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
+<<<<<<< HEAD
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <cylinder radius="0.078" length="0.06"/>
@@ -1771,14 +1867,27 @@
     </collision>
     <collision>
       <origin xyz="0.000000 0.000000 -0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-2.37087e-06 -0.02329605 -0.192325"/>
       <geometry>
-        <sphere radius="0.078"/>
+        <cylinder length="0.397222000091" radius="0.0634876"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000002 -0.023300 0.006286"/>
+>>>>>>> xbot2-perception
       <geometry>
-        <sphere radius="0.078"/>
+        <sphere radius="0.0634876"/>
+      </geometry>
+    </collision>
+    <collision>
+<<<<<<< HEAD
+      <origin xyz="0.000000 0.000000 0.030000" rpy="0.0 0.0 0.0"/>
+=======
+      <origin rpy="-3.14157125498 -1.16871673747e-06 0.109124522686" xyz="-0.000003 -0.023292 -0.390936"/>
+>>>>>>> xbot2-perception
+      <geometry>
+        <sphere radius="0.0634876"/>
       </geometry>
     </collision>
   </link>
@@ -1809,6 +1918,7 @@
     <child link="knee_4"/>
     <limit effort="304.0" lower="-2.4176" upper="2.3884" velocity="8.8"/>
   </joint>
+<<<<<<< HEAD
   <joint name="ankle_pitch_4" type="revolute">
     <origin xyz="0.2 0.0 -0.10015" rpy="3.141592653589793 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
@@ -1830,6 +1940,8 @@
     <child link="wheel_4"/>
     <limit effort="35.0" lower="0" upper="0" velocity="20.0"/>
   </joint>
+=======
+>>>>>>> xbot2-perception
   <link name="world"/>
   <joint name="reference" type="floating">
     <parent link="world"/>

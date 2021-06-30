@@ -41,32 +41,37 @@
     <group name="torso">
         <chain base_link="pelvis" tip_link="torso_2" />
     </group>
-    <group name="velodyne">
-    	<chain base_link="torso_2" tip_link="neck_3" />
-    </group>
     <group name="neck">
     	<chain base_link="torso_2" tip_link="neck_2" />
     </group>
 </xacro:if>
 
+<xacro:if value="${ADD_VELODYNE}">
+    <group name="velodyne">
+    	<chain base_link="torso_2" tip_link="neck_3" />
+    </group>
+</xacro:if>
 
 <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
-<xacro:if value="${ADD_LEGS}">
-	<group name="front_left_leg" />
+    <xacro:if value="${ADD_LEGS}">
+        <group name="front_left_leg" />
         <group name="front_right_leg" />
         <group name="rear_right_leg" />
         <group name="rear_left_leg" />
-</xacro:if>
+    </xacro:if>
 
-<xacro:if value="${ADD_UPPER_BODY}">
-	<group name="left_arm" />
+    <xacro:if value="${ADD_UPPER_BODY}">
+        <group name="left_arm" />
         <group name="right_arm" />
         <group name="torso" />
-        <group name="velodyne" />
         <group name="neck" />
-</xacro:if>
+    </xacro:if>
+    
+    <xacro:if value="${ADD_VELODYNE}">
+        <group name="velodyne"/>
+    </xacro:if>
+    
 </group>
-
 
 <!-- Homing posture -->
 <group_state name="home" group="chains">

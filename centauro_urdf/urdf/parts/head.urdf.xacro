@@ -43,6 +43,7 @@
     </collision>
 </link>
 
+<!-- LINKS -->
 <link name="neck_3">
     <inertial>
       <origin xyz="0.048466918 -0.059852318 -0.0085314894"/>
@@ -84,11 +85,12 @@
 
 <joint name="neck_velodyne" type="continuous">
     <parent link="torso_2"/>
-    <origin xyz="0.055 0.0 0.473262" rpy="0 0 -1.828"/>
-    <!--origin xyz="0.055 0.0 0.473262" rpy="0 0 -1.311481"/-->
+    <origin xyz="0.055 0.0 0.473262" rpy="0 0 0"/>
     <child link="neck_3"/>
     <axis xyz="0 0 1"/>
     <limit effort="35" velocity="5.7"/>
     <dynamics damping="0.2" friction="10.0"/>
 </joint>
+
+
 </robot>
