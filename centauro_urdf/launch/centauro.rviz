@@ -6,9 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
-        - /RobotModel1/Links1
-        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 719
   - Class: rviz/Selection
@@ -322,34 +319,18 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         wheel_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         wheel_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         wheel_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wheel_cad_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_cad_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_cad_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_cad_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -365,19 +346,207 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        ankle1_1:
+          Value: true
+        ankle1_2:
+          Value: true
+        ankle1_3:
+          Value: true
+        ankle1_4:
+          Value: true
+        ankle2_1:
+          Value: true
+        ankle2_2:
+          Value: true
+        ankle2_3:
+          Value: true
+        ankle2_4:
+          Value: true
+        arm1_1:
+          Value: true
+        arm1_2:
+          Value: true
+        arm1_3:
+          Value: true
+        arm1_4:
+          Value: true
+        arm1_5:
+          Value: true
+        arm1_6:
+          Value: true
+        arm1_7:
+          Value: true
+        arm1_8:
+          Value: true
+        arm2_1:
+          Value: true
+        arm2_2:
+          Value: true
+        arm2_3:
+          Value: true
+        arm2_4:
+          Value: true
+        arm2_5:
+          Value: true
+        arm2_6:
+          Value: true
+        arm2_7:
+          Value: true
+        arm2_8:
+          Value: true
+        ball1:
+          Value: true
+        ball1_tip:
+          Value: true
+        ball2:
+          Value: true
+        ball2_tip:
+          Value: true
+        base_link:
+          Value: true
+        contact_1:
+          Value: true
+        contact_2:
+          Value: true
+        contact_3:
+          Value: true
+        contact_4:
+          Value: true
+        ft_arm1:
+          Value: true
+        ft_arm2:
+          Value: true
+        hip1_1:
+          Value: true
+        hip1_2:
+          Value: true
+        hip1_3:
+          Value: true
+        hip1_4:
+          Value: true
+        hip2_1:
+          Value: true
+        hip2_2:
+          Value: true
+        hip2_3:
+          Value: true
+        hip2_4:
+          Value: true
+        imu_link:
+          Value: true
+        knee_1:
+          Value: true
+        knee_2:
+          Value: true
+        knee_3:
+          Value: true
+        knee_4:
+          Value: true
+        neck_1:
+          Value: true
+        neck_2:
+          Value: true
+        neck_3:
+          Value: true
+        pelvis:
+          Value: true
+        torso_2:
+          Value: true
+        wheel_1:
+          Value: true
+        wheel_2:
+          Value: true
+        wheel_3:
+          Value: true
+        wheel_4:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: false
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        pelvis:
+          base_link:
+            {}
+          hip1_1:
+            hip2_1:
+              knee_1:
+                ankle1_1:
+                  ankle2_1:
+                    contact_1:
+                      {}
+                    wheel_1:
+                      {}
+          hip1_2:
+            hip2_2:
+              knee_2:
+                ankle1_2:
+                  ankle2_2:
+                    contact_2:
+                      {}
+                    wheel_2:
+                      {}
+          hip1_3:
+            hip2_3:
+              knee_3:
+                ankle1_3:
+                  ankle2_3:
+                    contact_3:
+                      {}
+                    wheel_3:
+                      {}
+          hip1_4:
+            hip2_4:
+              knee_4:
+                ankle1_4:
+                  ankle2_4:
+                    contact_4:
+                      {}
+                    wheel_4:
+                      {}
+          imu_link:
+            {}
+          torso_2:
+            arm1_1:
+              arm1_2:
+                arm1_3:
+                  arm1_4:
+                    arm1_5:
+                      arm1_6:
+                        arm1_7:
+                          ball1:
+                            arm1_8:
+                              {}
+                            ball1_tip:
+                              {}
+                          ft_arm1:
+                            {}
+            arm2_1:
+              arm2_2:
+                arm2_3:
+                  arm2_4:
+                    arm2_5:
+                      arm2_6:
+                        arm2_7:
+                          ball2:
+                            arm2_8:
+                              {}
+                            ball2_tip:
+                              {}
+                          ft_arm2:
+                            {}
+            neck_1:
+              neck_2:
+                {}
+            neck_3:
+              {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 243; 243; 243
@@ -406,25 +575,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.1137630939483643
+      Distance: 3.105340003967285
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.3960803151130676
-        Y: 0.20676447451114655
-        Z: -0.5780628323554993
+        X: -0.11095109581947327
+        Y: 0.5676354169845581
+        Z: -0.23290136456489563
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.46479737758636475
+      Pitch: 0.34979742765426636
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.948535442352295
+      Yaw: 5.643530368804932
     Saved: ~
 Window Geometry:
   Displays:
