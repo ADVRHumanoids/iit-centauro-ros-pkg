@@ -72,7 +72,7 @@
 <xacro:property name="Ankle_2_yaw" value="'0.0'"/>
 
 <xacro:property name="Wheel_Ox" value="${0.0 * mmTom}"/>
-<xacro:property name="Wheel_Oy" value="${-52.3500 * mmTom}"/>
+<xacro:property name="Wheel_Oy" value="${0.0 * mmTom}"/>
 <xacro:property name="Wheel_Oz" value="${-98.3500 * mmTom}"/>
 <xacro:property name="Wheel_roll" value="${PI_2}"/>
 <xacro:property name="Wheel_pitch" value="0.0"/>

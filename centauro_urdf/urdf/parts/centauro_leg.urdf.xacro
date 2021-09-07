@@ -21,9 +21,9 @@
    </visual>
 	
    <collision>
-      <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 ${origin_x*origin_y*(Leg_1_yaw-PI/2)-Leg_1_yaw+PI/2}"/>
+      <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/hip-yaw.stl" scale="0.001 ${0.001} 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
       </geometry>
    </collision>
 
@@ -46,7 +46,7 @@
    <collision>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/hip-pitch.stl" scale="0.001 ${0.001} 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
       </geometry>
    </collision>
 
@@ -98,7 +98,7 @@
    <collision>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/knee.stl" scale="0.001 ${0.001} 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/collision/knee.stl" scale="0.001 0.001 ${mirror*0.001}" />
       </geometry>
    </collision>
 </link>
@@ -120,7 +120,7 @@
    <collision>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/ankle-pitch.stl" scale="0.001 ${0.001} 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
       </geometry>
    </collision>
 </link>
@@ -135,7 +135,7 @@
    <visual>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="package://centauro_urdf/meshes/v2/ankle-yaw.stl" scale="0.001 ${origin_y*0.001} 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/ankle-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
       </geometry>
       <material name="dark_grey"/>
    </visual>
@@ -143,12 +143,12 @@
    <collision>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/ankle-yaw.stl" scale="0.001 ${0.001} 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/collision/ankle-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
       </geometry>
    </collision>
 </link>
 
-<link name="wheel_cad_${leg_num}">
+<link name="wheel_${leg_num}">
 	<inertial>
 		<origin xyz="${Wheel_x} ${Wheel_y} ${mirror*Wheel_z}"/>
 		<mass value="${Wheel_mass}"/>
@@ -182,14 +182,6 @@
 	<parent link="ankle2_${leg_num}"/>
 	<child link="contact_${leg_num}"/>
 	<origin xyz="0 0 -0.176" rpy="0 0 0"/>
-</joint>
-
-<link name="wheel_${leg_num}"/>
-
-<joint name="wheel_fixed_joint_${leg_num}" type="fixed">
-	<parent link="wheel_cad_${leg_num}"/>
-	<child link="wheel_${leg_num}"/>
-	<origin xyz="0 0 ${Wheel_z}" rpy="0 0 0"/>
 </joint>
 
 <!-- ******************************** -->
@@ -248,7 +240,7 @@
 
 <joint name="j_wheel_${leg_num}" type="continuous">
 	<parent link="ankle2_${leg_num}"/>
-	<child link="wheel_cad_${leg_num}"/>
+	<child link="wheel_${leg_num}"/>
 	<origin xyz="${Wheel_Ox} ${mirror*Wheel_Oy} ${Wheel_Oz}" rpy="${Wheel_roll} ${Wheel_pitch} ${Wheel_yaw}"/>
 	<axis xyz="0 0 ${mirror}"/>
    <limit  effort="${motor_C_effort}" velocity="${motor_C_velocity}"/>  <!-- 23 Nm, 1 rad/s-->
