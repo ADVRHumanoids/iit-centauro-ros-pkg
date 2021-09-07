@@ -30,6 +30,8 @@ cfg.set_string_parameter('model_type', 'RBDL')
 
 old_model = xbi.ModelInterface(cfg)
 old_urdfdom = URDF.from_xml_string(old_centauro_urdf)
+old_model.setJointPosition(old_model.getRobotState('home'))
+old_model.update()
 
 
 # Load shiny new Centavero
@@ -52,13 +54,17 @@ cfg.set_string_parameter('model_type', 'RBDL')
 
 new_model = xbi.ModelInterface(cfg)
 new_urdfdom = URDF.from_xml_string(centauro_urdf)
-
+new_model.setJointPosition(old_model.getJointPosition())
+new_model.update()
 
 # start tests
 all_good = True
 
 # mass
 print('\nOld mass = {} kg, new mass = {} kg'.format(old_model.getMass(), new_model.getMass()))
+
+# com
+print('\nOld COM = {} m, new COM = {} m'.format(old_model.getCOM(), new_model.getCOM()))
 
 # check joint names
 print('\nChecking joint names... ')
