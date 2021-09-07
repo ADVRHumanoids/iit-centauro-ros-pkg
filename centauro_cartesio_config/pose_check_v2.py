@@ -11,9 +11,9 @@ from urdf_parser_py.urdf import URDF
 
 
 # Load good ole' Centavero
-old_centauro_cfg_dir = '../../../configs/CentauroConfig/'
-old_centauro_urdf_path = os.path.abspath(old_centauro_cfg_dir + 'urdf/centauro.urdf')
-old_centauro_srdf_path = os.path.abspath(old_centauro_cfg_dir + 'srdf/centauro.srdf')
+old_centauro_cfg_dir = os.path.dirname(os.path.realpath(__file__)) + '/../'
+old_centauro_urdf_path = os.path.abspath(old_centauro_cfg_dir + 'centauro_urdf/urdf/centauro.urdf.old')
+old_centauro_srdf_path = os.path.abspath(old_centauro_cfg_dir + 'centauro_srdf/srdf/centauro.srdf')
 
 with open(old_centauro_urdf_path) as f:
     old_centauro_urdf = f.read()
@@ -33,7 +33,7 @@ old_urdfdom = URDF.from_xml_string(old_centauro_urdf)
 
 
 # Load shiny new Centavero
-centauro_cfg_dir = '../'
+centauro_cfg_dir = old_centauro_cfg_dir
 centauro_urdf_path = os.path.abspath(centauro_cfg_dir + 'centauro_urdf/urdf/centauro.urdf')
 centauro_srdf_path = os.path.abspath(centauro_cfg_dir + 'centauro_srdf/srdf/centauro.srdf')
 
@@ -57,6 +57,8 @@ new_urdfdom = URDF.from_xml_string(centauro_urdf)
 # start tests
 all_good = True
 
+# mass
+print('\nOld mass = {} kg, new mass = {} kg'.format(old_model.getMass(), new_model.getMass()))
 
 # check joint names
 print('\nChecking joint names... ')
@@ -107,8 +109,11 @@ print('Joint limits max error is {}'.format(qlim_max_err))
 # check link names
 print('\nChecking links... ')
 
-for l in old_urdfdom.links:
-    ln = l.name
+links_to_check = ['wheel_' + str(i) for i in range(4)] + \
+    ['contact_' + str(i) for i in range(4)]
+
+
+for ln in links_to_check:
     if not new_urdfdom.link_map.has_key(ln):
         print('Link "{}" missing in new model'.format(ln))
 
@@ -138,8 +143,7 @@ new_model.setJointPosition(new_q)
 new_model.setJointVelocity(new_qdot)
 new_model.update()
 
-for l in old_urdfdom.links:
-    ln = l.name
+for ln in links_to_check:
 
     if not new_urdfdom.link_map.has_key(ln):
         continue
