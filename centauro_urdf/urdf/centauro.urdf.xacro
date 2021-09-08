@@ -18,6 +18,7 @@
     <child link="pelvis"/>
 </joint>
 </xacro:if>
+
 <xacro:unless value="${ADD_FLOATING_BASE}">
 <link name="world"/>
 
@@ -26,5 +27,9 @@
     <child link="pelvis"/>
 </joint>
 </xacro:unless>
+
+<xacro:if value="${ADD_VIRTUAL_FRAME}">
+  <xacro:include filename="$(find centauro_urdf)/urdf/parts/virtual_frame.urdf.xacro"/>
+</xacro:if>
 
 </robot>
