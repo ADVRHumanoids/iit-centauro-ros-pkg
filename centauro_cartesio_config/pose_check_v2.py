@@ -115,8 +115,8 @@ print('Joint limits max error is {}'.format(qlim_max_err))
 # check link names
 print('\nChecking links... ')
 
-links_to_check = ['wheel_' + str(i) for i in range(4)] + \
-    ['contact_' + str(i) for i in range(4)]
+links_to_check = ['wheel_' + str(i+1) for i in range(4)] + \
+    ['contact_' + str(i+1) for i in range(4)]
 
 
 for ln in links_to_check:
