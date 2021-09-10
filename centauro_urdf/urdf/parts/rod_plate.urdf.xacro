@@ -8,7 +8,8 @@
 <link name="rod_plate${arm_num}">
     <inertial>
       <origin xyz="${4.8407693e+01*mmTom} ${2.0035723e+01*mmTom} ${7.7533287e+01*mmTom}" rpy="0 0 0"/>
-      <mass value="3.45345"/>
+      <!--mass value="3.45345"/-->
+      <mass value="0.0"/>
       <inertia ixx="${2.3061092e+03*mm2Tom2}"  ixy="${2.9181758e-01*mm2Tom2}"  ixz="${-2.1246684e-01*mm2Tom2}" iyy="${2.3053155e+03*mm2Tom2}" iyz="${7.9290978e-01*mm2Tom2}" izz="${3.0675616e+03*mm2Tom2}" />
     </inertial>
     <visual>
@@ -28,17 +29,19 @@
 
 <link name="rod_plate${arm_num}_tip"/>
 
-
+<!-- Parent link is arm*_7 -->
 <joint name="j_arm${arm_num}_8" type="fixed">
       <parent link="${parent_link}"/>
       <child link="rod_plate${arm_num}"/>
       <xacro:insert_block name="origin"/>
 </joint>
 
+<!-- <origin xyz="0 -0.174 -0.049" rpy="1.570796 0.0 0.0"/ -->
+
 <joint name="j_rod_plate${arm_num}_tip" type="fixed">
 	<parent link="rod_plate${arm_num}"/>
 	<child link="rod_plate${arm_num}_tip"/>
-	<origin xyz="0 -0.174 -0.049" rpy="0 0 0"/>
+	<origin xyz="0 0 -0.07" rpy="0 0 0"/>
 </joint>
 
 <!-- add armX_8 link for legacy reasons (same as ballX) -->
