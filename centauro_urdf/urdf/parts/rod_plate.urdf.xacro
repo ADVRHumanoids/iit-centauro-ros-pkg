@@ -7,12 +7,12 @@
 
 <link name="rod_plate${arm_num}">
     <inertial>
-      <origin xyz="${-1.0072498e-02*mmTom} ${3.7590658e-02*mmTom} ${1.9772332e+01*mmTom}" rpy="0 0 0"/>
-      <mass value="3"/>
+      <origin xyz="${4.8407693e+01*mmTom} ${2.0035723e+01*mmTom} ${7.7533287e+01*mmTom}" rpy="0 0 0"/>
+      <mass value="3.45345"/>
       <inertia ixx="${2.3061092e+03*mm2Tom2}"  ixy="${2.9181758e-01*mm2Tom2}"  ixz="${-2.1246684e-01*mm2Tom2}" iyy="${2.3053155e+03*mm2Tom2}" iyz="${7.9290978e-01*mm2Tom2}" izz="${3.0675616e+03*mm2Tom2}" />
     </inertial>
     <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="3.14 0.0 0.0"/>
       <geometry name="rod_plate${arm_num}_visual">
         <mesh filename="package://centauro_urdf/meshes/simple/RodPlate.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -38,7 +38,7 @@
 <joint name="j_rod_plate${arm_num}_tip" type="fixed">
 	<parent link="rod_plate${arm_num}"/>
 	<child link="rod_plate${arm_num}_tip"/>
-	<origin xyz="0 0 -0.07" rpy="0 0 0"/>
+	<origin xyz="0 -0.174 -0.049" rpy="0 0 0"/>
 </joint>
 
 <!-- add armX_8 link for legacy reasons (same as ballX) -->
@@ -46,6 +46,7 @@
       <parent link="rod_plate${arm_num}"/>
       <child link="arm${arm_num}_8"/>
 </joint>
+
 <link name="arm${arm_num}_8">
     <inertial>
       <mass value="0"/>
