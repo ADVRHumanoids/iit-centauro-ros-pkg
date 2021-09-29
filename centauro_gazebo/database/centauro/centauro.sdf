@@ -3677,7 +3677,7 @@
         <gain d='5' name='small_mot' p='250'/>
         <gain d='10' name='medium_mot' p='1000'/>
         <gain d='10' name='big_mot' p='3000'/>
-        <gain d='10' name='wheel_mot' p='0'/>
+        <gain d='10' name='wheel_mot' p='250'/>
         <pid name='neck_yaw' profile='lowpwr_mot'/>
         <pid name='neck_pitch' profile='lowpwr_mot'/>
         <pid d='20' name='neck_velodyne' p='0'/>
