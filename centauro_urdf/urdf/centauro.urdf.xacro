@@ -11,20 +11,25 @@
 <!--xacro:include filename="$(find pholus_urdf)/urdf/control_frames.urdf.xacro"/-->
 
 <xacro:if value="${ADD_FLOATING_BASE}">
-  <link name="world"/>
+<link name="world"/>
 
   <joint name="reference" type="floating">
     <parent link="world"/>
     <child link="pelvis"/>
-  </joint>
+</joint>
 </xacro:if>
 
 <xacro:unless value="${ADD_FLOATING_BASE}">
-  <link name="world"/>
+<link name="world"/>
+
   <joint name="reference" type="fixed">
     <parent link="world"/>
     <child link="pelvis"/>
-  </joint>
+</joint>
 </xacro:unless>
+
+<xacro:if value="${ADD_VIRTUAL_FRAME}">
+  <xacro:include filename="$(find centauro_urdf)/urdf/parts/virtual_frame.urdf.xacro"/>
+</xacro:if>
 
 </robot>

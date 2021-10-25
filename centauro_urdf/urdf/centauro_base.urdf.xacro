@@ -13,6 +13,7 @@
 <xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
 
 
+
 <link name="base_link"/>
 
 <link name="pelvis">
@@ -26,14 +27,14 @@
       <visual>
         <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
         <geometry>
-         <mesh filename="package://centauro_urdf/meshes/pelvis.stl" scale="0.001 0.001 0.001" />
+         <mesh filename="package://centauro_urdf/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </visual>
 
       <collision>
          <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
         <geometry>
-         <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
 
@@ -58,7 +59,7 @@
 
 <xacro:if value="${ADD_UPPER_BODY}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
-        <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
+    <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
 	
 	<xacro:if value="${ADD_BALL_END_EFFECTOR}">
 		<xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />

@@ -52,6 +52,12 @@
     </group>
 </xacro:if>
 
+<xacro:if value="${ADD_VIRTUAL_FRAME}">
+        <group name="car_frame_chain">
+            <chain base_link="pelvis" tip_link="car_frame"/>
+        </group>
+    </xacro:if>
+
 <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
     <xacro:if value="${ADD_LEGS}">
         <group name="front_left_leg" />
@@ -69,6 +75,10 @@
     
     <xacro:if value="${ADD_VELODYNE}">
         <group name="velodyne"/>
+    </xacro:if>
+
+    <xacro:if value="${ADD_VIRTUAL_FRAME}">
+        <group name="car_frame_chain"/>
     </xacro:if>
     
 </group>

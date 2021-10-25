@@ -3,15 +3,15 @@
     <link name='pelvis'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.002446 -0.00156 0.062748 0 -0 0</pose>
-        <mass>16.1656</mass>
+        <pose frame=''>0.00373 0.002974 0.076226 0 -0 0</pose>
+        <mass>27.2166</mass>
         <inertia>
-          <ixx>0.239616</ixx>
-          <ixy>-0.00521322</ixy>
-          <ixz>-0.0183042</ixz>
-          <iyy>0.719117</iyy>
-          <iyz>0.000266185</iyz>
-          <izz>0.823049</izz>
+          <ixx>0.405926</ixx>
+          <ixy>0.02283</ixy>
+          <ixz>0.0351314</ixz>
+          <iyy>1.04355</iyy>
+          <iyz>0.00635936</iyz>
+          <izz>1.10502</izz>
         </inertia>
       </inertial>
       <collision name='pelvis_collision'>
@@ -31,7 +31,29 @@
           </friction>
         </surface>
       </collision>
-      <collision name='pelvis_fixed_joint_lump__T265_camera_pose_frame_collision_1'>
+      <collision name='pelvis_fixed_joint_lump__D435i_camera_link_collision_1'>
+        <pose frame=''>0.226455 0 -0.050729 0 0.558505 0</pose>
+        <geometry>
+          <box>
+            <size>0.02505 0.09 0.025</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='pelvis_fixed_joint_lump__T265_camera_pose_frame_collision_2'>
         <pose frame=''>0.252619 0.00775 -0.020693 1.8326 0 1.5708</pose>
         <geometry>
           <mesh>
@@ -45,7 +67,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/pelvis.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/pelvis.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -55,7 +77,22 @@
           </script>
         </material>
       </visual>
-      <visual name='pelvis_fixed_joint_lump__T265_camera_pose_frame_visual_1'>
+      <visual name='pelvis_fixed_joint_lump__D435i_camera_link_visual_1'>
+        <pose frame=''>0.239091 0 -0.058625 2.1293 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://realsense2_description/meshes/d435.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='pelvis_fixed_joint_lump__T265_camera_pose_frame_visual_2'>
         <pose frame=''>0.252619 0.00775 -0.020693 1.8326 0 1.5708</pose>
         <geometry>
           <mesh>
@@ -65,6 +102,133 @@
         </geometry>
       </visual>
       <velocity_decay/>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='D435i_cameracolor' type='camera'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>RGB_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.226455 0.0175 -0.050729 0 0.558505 0</pose>
+      </sensor>
+      <sensor name='D435i_cameraired1' type='camera'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>90</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.226455 0.0175 -0.050729 0 0.558505 0</pose>
+      </sensor>
+      <sensor name='D435i_cameraired2' type='camera'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>90</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.226455 0.0175 -0.050729 0 0.558505 0</pose>
+      </sensor>
+      <sensor name='D435i_cameradepth' type='depth'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.1</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.226455 0.0175 -0.050729 0 0.558505 0</pose>
+      </sensor>
+      <sensor name='D435i_cameraaccel' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>D435i/D435i_camera/accel/sample</topic>
+        <plugin name='D435i/D435i_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
+          <topicName>D435i/D435i_camera/accel/sample</topicName>
+          <bodyName>D435i_camera_link</bodyName>
+          <updateRateHZ>300</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>D435i_camera_accel_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.226455 0.0175 -0.050729 0 0.558505 0</pose>
+      </sensor>
+      <sensor name='D435i_cameragyro' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>D435i_camera/gyro/sample</topic>
+        <plugin name='D435i/D435i_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
+          <topicName>D435i/D435i_camera/gyro/sample</topicName>
+          <bodyName>D435i_camera_link</bodyName>
+          <updateRateHZ>300</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>D435i_camera_gyro_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.226455 0.0175 -0.050729 0 0.558505 0</pose>
+      </sensor>
       <velocity_decay/>
       <self_collide>0</self_collide>
       <enable_wind>0</enable_wind>
@@ -193,25 +357,25 @@
       </sensor>
     </link>
     <link name='hip1_1'>
-      <pose frame=''>0.25 0.125 -0.0566 -3.14159 -0 0.461416</pose>
+      <pose frame=''>0.25 0.125 -0.0566 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.010214 -0.018348 0.038091 0 -0 0</pose>
-        <mass>1.91944</mass>
+        <pose frame=''>0.00036 0.033339 -0.05919 0 -0 0</pose>
+        <mass>2.33492</mass>
         <inertia>
-          <ixx>0.00474396</ixx>
-          <ixy>0.000574705</ixy>
-          <ixz>-0.000378414</ixz>
-          <iyy>0.00405519</iyy>
-          <iyz>0.000740751</iyz>
-          <izz>0.00341462</izz>
+          <ixx>0.00684054</ixx>
+          <ixy>1.85726e-05</ixy>
+          <ixz>-4.8326e-05</ixz>
+          <iyy>0.00262618</iyy>
+          <iyz>0.000156427</iyz>
+          <izz>0.00669334</izz>
         </inertia>
       </inertial>
       <collision name='hip1_1_collision'>
-        <pose frame=''>0 0 0 0 -0 -2.21876</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -224,11 +388,11 @@
         </surface>
       </collision>
       <visual name='hip1_1_visual'>
-        <pose frame=''>0 0 0 0 -0 -2.21876</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -245,7 +409,7 @@
       <child>hip1_1</child>
       <parent>pelvis</parent>
       <axis>
-        <xyz>-0 0 -1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower>-2.03</lower>
           <upper>2.51</upper>
@@ -272,25 +436,25 @@
       </physics>
     </joint>
     <link name='hip2_1'>
-      <pose frame=''>0.25 0.125 -0.1191 -1.5708 0 -0</pose>
+      <pose frame=''>0.25 0.2396 -0.1191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>2.6e-05 0.181027 0.08567 0 -0 0</pose>
-        <mass>2.72645</mass>
+        <pose frame=''>-5e-06 -0.221402 0.033167 0 -0 0</pose>
+        <mass>3.45721</mass>
         <inertia>
-          <ixx>0.0485187</ixx>
-          <ixy>-4.11894e-05</ixy>
-          <ixz>-1.68778e-05</ixz>
-          <iyy>0.00424205</iyy>
-          <iyz>0.00322432</iyz>
-          <izz>0.0482558</izz>
+          <ixx>0.0504699</ixx>
+          <ixy>-7.78494e-06</ixy>
+          <ixz>-9.22058e-06</ixz>
+          <iyy>0.0081816</iyy>
+          <iyz>0.00597968</iyz>
+          <izz>0.0482138</izz>
         </inertia>
       </inertial>
       <collision name='hip2_1_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -306,8 +470,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -351,25 +515,25 @@
       </physics>
     </joint>
     <link name='knee_1'>
-      <pose frame=''>0.25 0.1214 -0.4191 -1.57079 1.57079 3.14159</pose>
+      <pose frame=''>0.25 0.1214 -0.4191 -1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.108817 0.000109 -0.022639 0 -0 0</pose>
-        <mass>1.93568</mass>
+        <pose frame=''>0.000121 0.146207 0.029741 0 -0 0</pose>
+        <mass>2.11993</mass>
         <inertia>
-          <ixx>0.00305342</ixx>
-          <ixy>-4.22079e-05</ixy>
-          <ixz>0.00136793</ixz>
-          <iyy>0.0196033</iyy>
-          <iyz>6.9941e-06</iyz>
-          <izz>0.0198498</izz>
+          <ixx>0.0184264</ixx>
+          <ixy>2.82266e-05</ixy>
+          <ixz>-2.92043e-05</ixz>
+          <iyy>0.00476856</iyy>
+          <iyz>-0.00264077</iyz>
+          <izz>0.0177937</izz>
         </inertia>
       </inertial>
       <collision name='knee_1_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/knee.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/knee.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -385,8 +549,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/knee.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/knee.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -403,7 +567,7 @@
       <child>knee_1</child>
       <parent>hip2_1</parent>
       <axis>
-        <xyz>-0 -1 0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-2.4056</lower>
           <upper>2.3994</upper>
@@ -430,25 +594,25 @@
       </physics>
     </joint>
     <link name='ankle1_1'>
-      <pose frame=''>0.25 0.22155 -0.6191 1.57079 1.57079 3.14159</pose>
+      <pose frame=''>0.25 0.22155 -0.6191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.032137 9.7e-05 -0.004422 0 -0 0</pose>
-        <mass>1.23807</mass>
+        <pose frame=''>0.000124 -0.062747 -0.004907 0 -0 0</pose>
+        <mass>1.40234</mass>
         <inertia>
-          <ixx>0.00156105</ixx>
-          <ixy>3.30597e-05</ixy>
-          <ixz>-0.000131417</ixz>
-          <iyy>0.00374232</iyy>
-          <iyz>-2.12589e-05</iyz>
-          <izz>0.00383124</izz>
+          <ixx>0.00499288</ixx>
+          <ixy>5.76236e-06</ixy>
+          <ixz>1.96064e-05</ixz>
+          <iyy>0.00176215</iyy>
+          <iyz>0.000453151</iyz>
+          <izz>0.00487063</izz>
         </inertia>
       </inertial>
       <collision name='ankle1_1_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -464,8 +628,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -509,25 +673,25 @@
       </physics>
     </joint>
     <link name='ankle2_1'>
-      <pose frame=''>0.25 0.22155 -0.6191 3.14159 0 3.14159</pose>
+      <pose frame=''>0.25 0.2224 -0.7581 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.000444 0.000439 0.193921 0 -0 0</pose>
-        <mass>1.15659</mass>
+        <pose frame=''>0.00185 -0.000513 -0.067309 0 -0 0</pose>
+        <mass>1.76567</mass>
         <inertia>
-          <ixx>0.00490195</ixx>
-          <ixy>4.3032e-06</ixy>
-          <ixz>3.46491e-05</ixz>
-          <iyy>0.00387242</iyy>
-          <iyz>1.7099e-05</iyz>
-          <izz>0.00217832</izz>
+          <ixx>0.00739763</ixx>
+          <ixy>9.75577e-07</ixy>
+          <ixz>-0.000229525</ixz>
+          <iyy>0.00544344</iyy>
+          <iyz>3.63378e-05</iyz>
+          <izz>0.00430551</izz>
         </inertia>
       </inertial>
       <collision name='ankle2_1_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -543,8 +707,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -588,24 +752,24 @@
       </physics>
     </joint>
     <link name='wheel_1'>
-      <pose frame=''>0.25 0.2224 -0.85645 -1.5708 -0 -0</pose>
+      <pose frame=''>0.25 0.2224 -0.85645 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0.002427 0 -0 0</pose>
-        <mass>1.7289</mass>
+        <pose frame=''>0 0 -0.003116 0 -0 0</pose>
+        <mass>1.11164</mass>
         <inertia>
-          <ixx>0.00468643</ixx>
+          <ixx>0.00281741</ixx>
           <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00467135</iyy>
-          <iyz>0</iyz>
-          <izz>0.0053126</izz>
+          <ixz>-0</ixz>
+          <iyy>0.00281756</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00418172</izz>
         </inertia>
       </inertial>
       <collision name='wheel_1_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.06</length>
+            <length>0.11</length>
             <radius>0.078</radius>
           </cylinder>
         </geometry>
@@ -641,8 +805,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/wheel.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -685,17 +849,17 @@
       </physics>
     </joint>
     <link name='hip1_2'>
-      <pose frame=''>0.25 -0.125 -0.0566 -3.14159 -0 -0.461416</pose>
+      <pose frame=''>0.25 -0.125 -0.0566 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.010214 0.018348 0.038091 0 -0 0</pose>
-        <mass>1.91944</mass>
+        <pose frame=''>0.00036 -0.033339 -0.05919 0 -0 0</pose>
+        <mass>2.33492</mass>
         <inertia>
-          <ixx>0.00474396</ixx>
-          <ixy>-0.000574705</ixy>
-          <ixz>-0.000378414</ixz>
-          <iyy>0.00405519</iyy>
-          <iyz>-0.000740751</iyz>
-          <izz>0.00341462</izz>
+          <ixx>0.00684054</ixx>
+          <ixy>-1.85726e-05</ixy>
+          <ixz>-4.8326e-05</ixz>
+          <iyy>0.00262618</iyy>
+          <iyz>-0.000156427</iyz>
+          <izz>0.00669334</izz>
         </inertia>
       </inertial>
       <collision name='hip1_2_collision'>
@@ -703,7 +867,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -720,7 +884,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -764,17 +928,17 @@
       </physics>
     </joint>
     <link name='hip2_2'>
-      <pose frame=''>0.25 -0.125 -0.1191 -1.5708 0 -3.14159</pose>
+      <pose frame=''>0.25 -0.2396 -0.1191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>2.6e-05 0.181027 0.08567 0 -0 0</pose>
-        <mass>2.72645</mass>
+        <pose frame=''>-5e-06 -0.221402 -0.033167 0 -0 0</pose>
+        <mass>3.45721</mass>
         <inertia>
-          <ixx>0.0485187</ixx>
-          <ixy>-4.11894e-05</ixy>
-          <ixz>-1.68778e-05</ixz>
-          <iyy>0.00424205</iyy>
-          <iyz>0.00322432</iyz>
-          <izz>0.0482558</izz>
+          <ixx>0.0504699</ixx>
+          <ixy>-7.78494e-06</ixy>
+          <ixz>9.22058e-06</ixz>
+          <iyy>0.0081816</iyy>
+          <iyz>-0.00597968</iyz>
+          <izz>0.0482138</izz>
         </inertia>
       </inertial>
       <collision name='hip2_2_collision'>
@@ -782,7 +946,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -799,7 +963,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -816,7 +980,7 @@
       <child>hip2_2</child>
       <parent>hip1_2</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-2.0156</lower>
           <upper>2.0354</upper>
@@ -843,17 +1007,17 @@
       </physics>
     </joint>
     <link name='knee_2'>
-      <pose frame=''>0.25 -0.1214 -0.4191 1.57079 1.57079 3.14159</pose>
+      <pose frame=''>0.25 -0.1214 -0.4191 -1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.108817 0.000109 -0.022639 0 -0 0</pose>
-        <mass>1.93568</mass>
+        <pose frame=''>0.000121 0.146207 -0.029741 0 -0 0</pose>
+        <mass>2.11993</mass>
         <inertia>
-          <ixx>0.00305342</ixx>
-          <ixy>-4.22079e-05</ixy>
-          <ixz>0.00136793</ixz>
-          <iyy>0.0196033</iyy>
-          <iyz>6.9941e-06</iyz>
-          <izz>0.0198498</izz>
+          <ixx>0.0184264</ixx>
+          <ixy>2.82266e-05</ixy>
+          <ixz>2.92043e-05</ixz>
+          <iyy>0.00476856</iyy>
+          <iyz>0.00264077</iyz>
+          <izz>0.0177937</izz>
         </inertia>
       </inertial>
       <collision name='knee_2_collision'>
@@ -861,7 +1025,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/knee.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/knee.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -878,7 +1042,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/knee.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/knee.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -895,7 +1059,7 @@
       <child>knee_2</child>
       <parent>hip2_2</parent>
       <axis>
-        <xyz>-0 1 0</xyz>
+        <xyz>0 1 -0</xyz>
         <limit>
           <lower>-2.4006</lower>
           <upper>2.4034</upper>
@@ -922,17 +1086,17 @@
       </physics>
     </joint>
     <link name='ankle1_2'>
-      <pose frame=''>0.25 -0.22155 -0.6191 -1.57079 1.57079 3.14159</pose>
+      <pose frame=''>0.25 -0.22155 -0.6191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.032137 9.7e-05 -0.004422 0 -0 0</pose>
-        <mass>1.23807</mass>
+        <pose frame=''>0.000124 -0.062747 0.004907 0 -0 0</pose>
+        <mass>1.40234</mass>
         <inertia>
-          <ixx>0.00156105</ixx>
-          <ixy>3.30597e-05</ixy>
-          <ixz>-0.000131417</ixz>
-          <iyy>0.00374232</iyy>
-          <iyz>-2.12589e-05</iyz>
-          <izz>0.00383124</izz>
+          <ixx>0.00499288</ixx>
+          <ixy>5.76236e-06</ixy>
+          <ixz>-1.96064e-05</ixz>
+          <iyy>0.00176215</iyy>
+          <iyz>-0.000453151</iyz>
+          <izz>0.00487063</izz>
         </inertia>
       </inertial>
       <collision name='ankle1_2_collision'>
@@ -940,7 +1104,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -957,7 +1121,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -974,7 +1138,7 @@
       <child>ankle1_2</child>
       <parent>knee_2</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>-0 -1 0</xyz>
         <limit>
           <lower>-2.3266</lower>
           <upper>2.3914</upper>
@@ -1001,17 +1165,17 @@
       </physics>
     </joint>
     <link name='ankle2_2'>
-      <pose frame=''>0.25 -0.22155 -0.6191 -3.14159 0 0</pose>
+      <pose frame=''>0.25 -0.2224 -0.7581 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.000444 0.000439 0.193921 0 -0 0</pose>
-        <mass>1.15659</mass>
+        <pose frame=''>0.00185 0.000513 -0.067309 0 -0 0</pose>
+        <mass>1.76567</mass>
         <inertia>
-          <ixx>0.00490195</ixx>
-          <ixy>4.3032e-06</ixy>
-          <ixz>3.46491e-05</ixz>
-          <iyy>0.00387242</iyy>
-          <iyz>1.7099e-05</iyz>
-          <izz>0.00217832</izz>
+          <ixx>0.00739763</ixx>
+          <ixy>-9.75577e-07</ixy>
+          <ixz>-0.000229525</ixz>
+          <iyy>0.00544344</iyy>
+          <iyz>-3.63378e-05</iyz>
+          <izz>0.00430551</izz>
         </inertia>
       </inertial>
       <collision name='ankle2_2_collision'>
@@ -1019,7 +1183,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1036,7 +1200,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1053,7 +1217,7 @@
       <child>ankle2_2</child>
       <parent>ankle1_2</parent>
       <axis>
-        <xyz>-0 0 -1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower>-2.5546</lower>
           <upper>2.5484</upper>
@@ -1080,24 +1244,24 @@
       </physics>
     </joint>
     <link name='wheel_2'>
-      <pose frame=''>0.25 -0.2224 -0.85645 -1.5708 -0 -3.14159</pose>
+      <pose frame=''>0.25 -0.2224 -0.85645 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0.002427 0 -0 0</pose>
-        <mass>1.7289</mass>
+        <pose frame=''>0 0 0.003116 0 -0 0</pose>
+        <mass>1.11164</mass>
         <inertia>
-          <ixx>0.00468643</ixx>
+          <ixx>0.00281741</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00467135</iyy>
+          <iyy>0.00281756</iyy>
           <iyz>0</iyz>
-          <izz>0.0053126</izz>
+          <izz>0.00418172</izz>
         </inertia>
       </inertial>
       <collision name='wheel_2_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.06</length>
+            <length>0.11</length>
             <radius>0.078</radius>
           </cylinder>
         </geometry>
@@ -1134,7 +1298,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/wheel.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1152,7 +1316,7 @@
       <child>wheel_2</child>
       <parent>ankle2_2</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>-0 -1 0</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -1177,25 +1341,25 @@
       </physics>
     </joint>
     <link name='hip1_3'>
-      <pose frame=''>-0.25 0.125 -0.0566 -3.14159 -0 2.68018</pose>
+      <pose frame=''>-0.25 0.125 -0.0566 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.010214 0.018348 0.038091 0 -0 0</pose>
-        <mass>1.91944</mass>
+        <pose frame=''>0.00036 0.033339 -0.05919 0 -0 0</pose>
+        <mass>2.33492</mass>
         <inertia>
-          <ixx>0.00474396</ixx>
-          <ixy>-0.000574705</ixy>
-          <ixz>-0.000378414</ixz>
-          <iyy>0.00405519</iyy>
-          <iyz>-0.000740751</iyz>
-          <izz>0.00341462</izz>
+          <ixx>0.00684054</ixx>
+          <ixy>1.85726e-05</ixy>
+          <ixz>-4.8326e-05</ixz>
+          <iyy>0.00262618</iyy>
+          <iyz>0.000156427</iyz>
+          <izz>0.00669334</izz>
         </inertia>
       </inertial>
       <collision name='hip1_3_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1211,8 +1375,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1229,7 +1393,7 @@
       <child>hip1_3</child>
       <parent>pelvis</parent>
       <axis>
-        <xyz>-0 -0 -1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower>-2.51</lower>
           <upper>2.03</upper>
@@ -1256,25 +1420,25 @@
       </physics>
     </joint>
     <link name='hip2_3'>
-      <pose frame=''>-0.25 0.125 -0.1191 -1.5708 0 0</pose>
+      <pose frame=''>-0.25 0.2396 -0.1191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>2.6e-05 0.181027 0.08567 0 -0 0</pose>
-        <mass>2.72645</mass>
+        <pose frame=''>-5e-06 -0.221402 0.033167 0 -0 0</pose>
+        <mass>3.45721</mass>
         <inertia>
-          <ixx>0.0485187</ixx>
-          <ixy>-4.11894e-05</ixy>
-          <ixz>-1.68778e-05</ixz>
-          <iyy>0.00424205</iyy>
-          <iyz>0.00322432</iyz>
-          <izz>0.0482558</izz>
+          <ixx>0.0504699</ixx>
+          <ixy>-7.78494e-06</ixy>
+          <ixz>-9.22058e-06</ixz>
+          <iyy>0.0081816</iyy>
+          <iyz>0.00597968</iyz>
+          <izz>0.0482138</izz>
         </inertia>
       </inertial>
       <collision name='hip2_3_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1290,8 +1454,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1308,7 +1472,7 @@
       <child>hip2_3</child>
       <parent>hip1_3</parent>
       <axis>
-        <xyz>-0 1 -0</xyz>
+        <xyz>0 1 -0</xyz>
         <limit>
           <lower>-2.0126</lower>
           <upper>2.0384</upper>
@@ -1335,25 +1499,25 @@
       </physics>
     </joint>
     <link name='knee_3'>
-      <pose frame=''>-0.25 0.1214 -0.4191 -1.57079 1.57079 3.14159</pose>
+      <pose frame=''>-0.25 0.1214 -0.4191 -1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.108817 0.000109 -0.022639 0 -0 0</pose>
-        <mass>1.93568</mass>
+        <pose frame=''>0.000121 0.146207 0.029741 0 -0 0</pose>
+        <mass>2.11993</mass>
         <inertia>
-          <ixx>0.00305342</ixx>
-          <ixy>-4.22079e-05</ixy>
-          <ixz>0.00136793</ixz>
-          <iyy>0.0196033</iyy>
-          <iyz>6.9941e-06</iyz>
-          <izz>0.0198498</izz>
+          <ixx>0.0184264</ixx>
+          <ixy>2.82266e-05</ixy>
+          <ixz>-2.92043e-05</ixz>
+          <iyy>0.00476856</iyy>
+          <iyz>-0.00264077</iyz>
+          <izz>0.0177937</izz>
         </inertia>
       </inertial>
       <collision name='knee_3_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/knee.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/knee.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1369,8 +1533,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/knee.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/knee.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1387,7 +1551,7 @@
       <child>knee_3</child>
       <parent>hip2_3</parent>
       <axis>
-        <xyz>-0 -1 0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-2.4056</lower>
           <upper>2.4064</upper>
@@ -1414,25 +1578,25 @@
       </physics>
     </joint>
     <link name='ankle1_3'>
-      <pose frame=''>-0.25 0.22155 -0.6191 1.57079 1.57079 3.14159</pose>
+      <pose frame=''>-0.25 0.22155 -0.6191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.032137 9.7e-05 -0.004422 0 -0 0</pose>
-        <mass>1.23807</mass>
+        <pose frame=''>0.000124 -0.062747 -0.004907 0 -0 0</pose>
+        <mass>1.40234</mass>
         <inertia>
-          <ixx>0.00156105</ixx>
-          <ixy>3.30597e-05</ixy>
-          <ixz>-0.000131417</ixz>
-          <iyy>0.00374232</iyy>
-          <iyz>-2.12589e-05</iyz>
-          <izz>0.00383124</izz>
+          <ixx>0.00499288</ixx>
+          <ixy>5.76236e-06</ixy>
+          <ixz>1.96064e-05</ixz>
+          <iyy>0.00176215</iyy>
+          <iyz>0.000453151</iyz>
+          <izz>0.00487063</izz>
         </inertia>
       </inertial>
       <collision name='ankle1_3_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1448,8 +1612,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-pitch.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1493,25 +1657,25 @@
       </physics>
     </joint>
     <link name='ankle2_3'>
-      <pose frame=''>-0.25 0.22155 -0.6191 -3.14159 0 3.14159</pose>
+      <pose frame=''>-0.25 0.2224 -0.7581 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.000444 0.000439 0.193921 0 -0 0</pose>
-        <mass>1.15659</mass>
+        <pose frame=''>0.00185 -0.000513 -0.067309 0 -0 0</pose>
+        <mass>1.76567</mass>
         <inertia>
-          <ixx>0.00490195</ixx>
-          <ixy>4.3032e-06</ixy>
-          <ixz>3.46491e-05</ixz>
-          <iyy>0.00387242</iyy>
-          <iyz>1.7099e-05</iyz>
-          <izz>0.00217832</izz>
+          <ixx>0.00739763</ixx>
+          <ixy>9.75577e-07</ixy>
+          <ixz>-0.000229525</ixz>
+          <iyy>0.00544344</iyy>
+          <iyz>3.63378e-05</iyz>
+          <izz>0.00430551</izz>
         </inertia>
       </inertial>
       <collision name='ankle2_3_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1527,8 +1691,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-yaw.stl</uri>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1545,7 +1709,7 @@
       <child>ankle2_3</child>
       <parent>ankle1_3</parent>
       <axis>
-        <xyz>0 -0 -1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower>-2.5606</lower>
           <upper>2.5454</upper>
@@ -1572,24 +1736,24 @@
       </physics>
     </joint>
     <link name='wheel_3'>
-      <pose frame=''>-0.25 0.2224 -0.85645 -1.5708 -0 -0</pose>
+      <pose frame=''>-0.25 0.2224 -0.85645 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0.002427 0 -0 0</pose>
-        <mass>1.7289</mass>
+        <pose frame=''>0 0 -0.003116 0 -0 0</pose>
+        <mass>1.11164</mass>
         <inertia>
-          <ixx>0.00468643</ixx>
+          <ixx>0.00281741</ixx>
           <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00467135</iyy>
-          <iyz>0</iyz>
-          <izz>0.0053126</izz>
+          <ixz>-0</ixz>
+          <iyy>0.00281756</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00418172</izz>
         </inertia>
       </inertial>
       <collision name='wheel_3_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.06</length>
+            <length>0.11</length>
             <radius>0.078</radius>
           </cylinder>
         </geometry>
@@ -1625,8 +1789,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/wheel.stl</uri>
+            <scale>0.001 0.001 -0.001</scale>
+            <uri>model://centauro_urdf/meshes/v2/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1669,25 +1833,25 @@
       </physics>
     </joint>
     <link name='hip1_4'>
-      <pose frame=''>-0.25 -0.125 -0.0566 -3.14159 -0 -2.68018</pose>
+      <pose frame=''>-0.25 -0.125 -0.0566 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.010214 -0.018348 0.038091 0 -0 0</pose>
-        <mass>1.91944</mass>
+        <pose frame=''>0.00036 -0.033339 -0.05919 0 -0 0</pose>
+        <mass>2.33492</mass>
         <inertia>
-          <ixx>0.00474396</ixx>
-          <ixy>0.000574705</ixy>
-          <ixz>-0.000378414</ixz>
-          <iyy>0.00405519</iyy>
-          <iyz>0.000740751</iyz>
-          <izz>0.00341462</izz>
+          <ixx>0.00684054</ixx>
+          <ixy>-1.85726e-05</ixy>
+          <ixz>-4.8326e-05</ixz>
+          <iyy>0.00262618</iyy>
+          <iyz>-0.000156427</iyz>
+          <izz>0.00669334</izz>
         </inertia>
       </inertial>
       <collision name='hip1_4_collision'>
-        <pose frame=''>0 0 0 0 -0 -2.21876</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1700,11 +1864,11 @@
         </surface>
       </collision>
       <visual name='hip1_4_visual'>
-        <pose frame=''>0 0 0 0 -0 -2.21876</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1721,7 +1885,7 @@
       <child>hip1_4</child>
       <parent>pelvis</parent>
       <axis>
-        <xyz>0 -0 -1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower>-2.03</lower>
           <upper>2.51</upper>
@@ -1748,17 +1912,17 @@
       </physics>
     </joint>
     <link name='hip2_4'>
-      <pose frame=''>-0.25 -0.125 -0.1191 -1.5708 0 -3.14159</pose>
+      <pose frame=''>-0.25 -0.2396 -0.1191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>2.6e-05 0.181027 0.08567 0 -0 0</pose>
-        <mass>2.72645</mass>
+        <pose frame=''>-5e-06 -0.221402 -0.033167 0 -0 0</pose>
+        <mass>3.45721</mass>
         <inertia>
-          <ixx>0.0485187</ixx>
-          <ixy>-4.11894e-05</ixy>
-          <ixz>-1.68778e-05</ixz>
-          <iyy>0.00424205</iyy>
-          <iyz>0.00322432</iyz>
-          <izz>0.0482558</izz>
+          <ixx>0.0504699</ixx>
+          <ixy>-7.78494e-06</ixy>
+          <ixz>9.22058e-06</ixz>
+          <iyy>0.0081816</iyy>
+          <iyz>-0.00597968</iyz>
+          <izz>0.0482138</izz>
         </inertia>
       </inertial>
       <collision name='hip2_4_collision'>
@@ -1766,7 +1930,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/hip-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1783,7 +1947,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/hip-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1800,7 +1964,7 @@
       <child>hip2_4</child>
       <parent>hip1_4</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-2.0326</lower>
           <upper>2.0524</upper>
@@ -1827,17 +1991,17 @@
       </physics>
     </joint>
     <link name='knee_4'>
-      <pose frame=''>-0.25 -0.1214 -0.4191 1.57079 1.57079 3.14159</pose>
+      <pose frame=''>-0.25 -0.1214 -0.4191 -1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.108817 0.000109 -0.022639 0 -0 0</pose>
-        <mass>1.93568</mass>
+        <pose frame=''>0.000121 0.146207 -0.029741 0 -0 0</pose>
+        <mass>2.11993</mass>
         <inertia>
-          <ixx>0.00305342</ixx>
-          <ixy>-4.22079e-05</ixy>
-          <ixz>0.00136793</ixz>
-          <iyy>0.0196033</iyy>
-          <iyz>6.9941e-06</iyz>
-          <izz>0.0198498</izz>
+          <ixx>0.0184264</ixx>
+          <ixy>2.82266e-05</ixy>
+          <ixz>2.92043e-05</ixz>
+          <iyy>0.00476856</iyy>
+          <iyz>0.00264077</iyz>
+          <izz>0.0177937</izz>
         </inertia>
       </inertial>
       <collision name='knee_4_collision'>
@@ -1845,7 +2009,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/knee.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/knee.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1862,7 +2026,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/knee.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/knee.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1879,7 +2043,7 @@
       <child>knee_4</child>
       <parent>hip2_4</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 1 -0</xyz>
         <limit>
           <lower>-2.4176</lower>
           <upper>2.3884</upper>
@@ -1906,17 +2070,17 @@
       </physics>
     </joint>
     <link name='ankle1_4'>
-      <pose frame=''>-0.25 -0.22155 -0.6191 -1.57079 1.57079 3.14159</pose>
+      <pose frame=''>-0.25 -0.22155 -0.6191 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0.032137 9.7e-05 -0.004422 0 -0 0</pose>
-        <mass>1.23807</mass>
+        <pose frame=''>0.000124 -0.062747 0.004907 0 -0 0</pose>
+        <mass>1.40234</mass>
         <inertia>
-          <ixx>0.00156105</ixx>
-          <ixy>3.30597e-05</ixy>
-          <ixz>-0.000131417</ixz>
-          <iyy>0.00374232</iyy>
-          <iyz>-2.12589e-05</iyz>
-          <izz>0.00383124</izz>
+          <ixx>0.00499288</ixx>
+          <ixy>5.76236e-06</ixy>
+          <ixz>-1.96064e-05</ixz>
+          <iyy>0.00176215</iyy>
+          <iyz>-0.000453151</iyz>
+          <izz>0.00487063</izz>
         </inertia>
       </inertial>
       <collision name='ankle1_4_collision'>
@@ -1924,7 +2088,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1941,7 +2105,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-pitch.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/ankle-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1958,7 +2122,7 @@
       <child>ankle1_4</child>
       <parent>knee_4</parent>
       <axis>
-        <xyz>-0 -1 -0</xyz>
+        <xyz>-0 -1 0</xyz>
         <limit>
           <lower>-2.3426</lower>
           <upper>2.3934</upper>
@@ -1985,17 +2149,17 @@
       </physics>
     </joint>
     <link name='ankle2_4'>
-      <pose frame=''>-0.25 -0.22155 -0.6191 3.14159 0 -0</pose>
+      <pose frame=''>-0.25 -0.2224 -0.7581 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.000444 0.000439 0.193921 0 -0 0</pose>
-        <mass>1.15659</mass>
+        <pose frame=''>0.00185 0.000513 -0.067309 0 -0 0</pose>
+        <mass>1.76567</mass>
         <inertia>
-          <ixx>0.00490195</ixx>
-          <ixy>4.3032e-06</ixy>
-          <ixz>3.46491e-05</ixz>
-          <iyy>0.00387242</iyy>
-          <iyz>1.7099e-05</iyz>
-          <izz>0.00217832</izz>
+          <ixx>0.00739763</ixx>
+          <ixy>-9.75577e-07</ixy>
+          <ixz>-0.000229525</ixz>
+          <iyy>0.00544344</iyy>
+          <iyz>-3.63378e-05</iyz>
+          <izz>0.00430551</izz>
         </inertia>
       </inertial>
       <collision name='ankle2_4_collision'>
@@ -2003,7 +2167,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/ankle-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/collision/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2020,7 +2184,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/ankle-yaw.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/ankle-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2037,7 +2201,7 @@
       <child>ankle2_4</child>
       <parent>ankle1_4</parent>
       <axis>
-        <xyz>-0 -0 -1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower>-2.6046</lower>
           <upper>2.5514</upper>
@@ -2064,24 +2228,24 @@
       </physics>
     </joint>
     <link name='wheel_4'>
-      <pose frame=''>-0.25 -0.2224 -0.85645 -1.5708 -0 3.14159</pose>
+      <pose frame=''>-0.25 -0.2224 -0.85645 1.5708 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0.002427 0 -0 0</pose>
-        <mass>1.7289</mass>
+        <pose frame=''>0 0 0.003116 0 -0 0</pose>
+        <mass>1.11164</mass>
         <inertia>
-          <ixx>0.00468643</ixx>
+          <ixx>0.00281741</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00467135</iyy>
+          <iyy>0.00281756</iyy>
           <iyz>0</iyz>
-          <izz>0.0053126</izz>
+          <izz>0.00418172</izz>
         </inertia>
       </inertial>
       <collision name='wheel_4_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.06</length>
+            <length>0.11</length>
             <radius>0.078</radius>
           </cylinder>
         </geometry>
@@ -2118,7 +2282,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/wheel.stl</uri>
+            <uri>model://centauro_urdf/meshes/v2/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2136,7 +2300,7 @@
       <child>wheel_4</child>
       <parent>ankle2_4</parent>
       <axis>
-        <xyz>-0 -1 -0</xyz>
+        <xyz>-0 -1 0</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -2164,7 +2328,7 @@
       <pose frame=''>0.2 0 0.256 0 -0 0</pose>
       <inertial>
         <pose frame=''>-0.019498 0.004532 0.137683 0 -0 0</pose>
-        <mass>11.4927</mass>
+        <mass>12.5537</mass>
         <inertia>
           <ixx>0.0636434</ixx>
           <ixy>8.939e-05</ixy>
@@ -3412,7 +3576,7 @@
       </physics>
     </joint>
     <link name='neck_3'>
-      <pose frame=''>0.255 0 0.729262 0 -0 0</pose>
+      <pose frame=''>0.255 0 0.729262 0 0 -1.828</pose>
       <inertial>
         <pose frame=''>0.057972 -0.039858 0.020799 0 -0 0</pose>
         <mass>1.62527</mass>
@@ -3650,6 +3814,29 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+    <plugin name='D435i/D435i_camera' filename='librealsense_gazebo_plugin.so'>
+      <prefix>D435i_camera</prefix>
+      <colorUpdateRate>30</colorUpdateRate>
+      <colorTopicName>color/image_raw</colorTopicName>
+      <colorOpticalframeName>D435i_camera_color_optical_frame</colorOpticalframeName>
+      <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
+      <infraredUpdateRate>90</infraredUpdateRate>
+      <infrared1TopicName>infra1/image_rect_raw</infrared1TopicName>
+      <infrared2TopicName>infra2/image_rect_raw</infrared2TopicName>
+      <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+      <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+      <infrared1OpticalframeName>D435i_camera_left_ir_optical_frame</infrared1OpticalframeName>
+      <infrared2OpticalframeName>D435i_camera_right_ir_optical_frame</infrared2OpticalframeName>
+      <rangeMinDepth>0.2</rangeMinDepth>
+      <rangeMaxDepth>10.0</rangeMaxDepth>
+      <depthUpdateRate>30</depthUpdateRate>
+      <depthTopicName>depth/image_rect_raw</depthTopicName>
+      <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
+      <depthOpticalframeName>D435i_camera_depth_optical_frame</depthOpticalframeName>
+      <pointCloud>1</pointCloud>
+      <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+    </plugin>
     <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
       <alwaysOn>1</alwaysOn>
       <updateRate>262</updateRate>

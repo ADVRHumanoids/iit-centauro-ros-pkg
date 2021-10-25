@@ -34,49 +34,49 @@
 <xacro:property name="Neck_3_Oz" value=" 0.473262 "/>
 
 <!-- Origin -->
-<xacro:property name="Leg_1_Ox" value=" 0.250 "/>
-<xacro:property name="Leg_1_Oy" value=" -0.125 "/>
-<xacro:property name="Leg_1_Oz" value="-0.05660000 "/>
-<xacro:property name="Leg_1_roll" value=" 3.141592653589793 "/>
-<xacro:property name="Leg_1_pitch" value=" 0.0 "/>
-<xacro:property name="Leg_1_yaw" value=" -0.461416123228 "/>
+<xacro:property name="Leg_1_Ox" value="${250.000 * mmTom}"/>
+<xacro:property name="Leg_1_Oy" value="${-125.000 * mmTom}"/>
+<xacro:property name="Leg_1_Oz" value="${-56.6000 * mmTom}"/>
+<xacro:property name="Leg_1_roll" value="0.0"/>
+<xacro:property name="Leg_1_pitch" value="0.0"/>
+<xacro:property name="Leg_1_yaw" value="0.0"/>
 
 <!-- Origin -->
-<xacro:property name="Leg_2_Ox" value=" 0.000000 "/>
-<xacro:property name="Leg_2_Oy" value=" 0.000000 "/>
-<xacro:property name="Leg_2_Oz" value=" 0.0625 "/>
-<xacro:property name="Leg_2_roll" value=" 1.57079632679 "/>
-<xacro:property name="Leg_2_pitch" value=" 0.0 "/>
-<xacro:property name="Leg_2_yaw" value=" 2.68017653036 "/>
+<xacro:property name="Leg_2_Ox" value="0.0"/>
+<xacro:property name="Leg_2_Oy" value="${-114.600 * mmTom}"/>
+<xacro:property name="Leg_2_Oz" value="${-62.5000 * mmTom}"/>
+<xacro:property name="Leg_2_roll" value="${PI_2}"/>
+<xacro:property name="Leg_2_pitch" value="0.0"/>
+<xacro:property name="Leg_2_yaw" value="0.0"/>
 
 <!-- Origin -->
-<xacro:property name="Leg_3_Ox" value=" 0.000000 "/>
-<xacro:property name="Leg_3_Oy" value=" 0.3 "/>
-<xacro:property name="Leg_3_Oz" value=" -0.0036 "/>
-<xacro:property name="Leg_3_roll" value=" 3.14159265358979 "/>
-<xacro:property name="Leg_3_pitch" value=" 0.0 "/>
-<xacro:property name="Leg_3_yaw" value=" 1.5707963267948966 "/>
+<xacro:property name="Leg_3_Ox" value="0.0"/>
+<xacro:property name="Leg_3_Oy" value="${-300.000 * mmTom}"/>
+<xacro:property name="Leg_3_Oz" value="${-118.200 * mmTom}"/>
+<xacro:property name="Leg_3_roll" value="${PI}"/>
+<xacro:property name="Leg_3_pitch" value="0.0"/>
+<xacro:property name="Leg_3_yaw" value="0.0"/>
 
-<xacro:property name="Ankle_1_Ox" value=" 0.2 "/>
-<xacro:property name="Ankle_1_Oy" value=" 0.0 "/>
-<xacro:property name="Ankle_1_Oz" value=" -0.10015 "/>
-<xacro:property name="Ankle_1_roll" value=" 3.141592653589793 "/>
+<xacro:property name="Ankle_1_Ox" value="0.0"/>
+<xacro:property name="Ankle_1_Oy" value="${200.000 * mmTom}"/>
+<xacro:property name="Ankle_1_Oz" value="${-100.150 * mmTom}"/>
+<xacro:property name="Ankle_1_roll" value="${PI}"/>
 <xacro:property name="Ankle_1_pitch" value=" 0.0 "/>
 <xacro:property name="Ankle_1_yaw" value=" 0.0 "/>
 
-<xacro:property name="Ankle_2_Ox" value=" 0.0 "/>
-<xacro:property name="Ankle_2_Oy" value=" 0.0 "/>
-<xacro:property name="Ankle_2_Oz" value=" 0.0 "/>
-<xacro:property name="Ankle_2_roll" value=" 1.5707963267948966 "/>
-<xacro:property name="Ankle_2_pitch" value=" 0.0 "/>
-<xacro:property name="Ankle_2_yaw" value=" 1.5707963267948966 "/>
+<xacro:property name="Ankle_2_Ox" value="${0.0 * mmTom}"/>
+<xacro:property name="Ankle_2_Oy" value="${-139.000 * mmTom}"/>
+<xacro:property name="Ankle_2_Oz" value="${0.850000 * mmTom}"/>
+<xacro:property name="Ankle_2_roll" value="${-PI_2}"/>
+<xacro:property name="Ankle_2_pitch" value="0.0"/>
+<xacro:property name="Ankle_2_yaw" value="'0.0'"/>
 
-<xacro:property name="Wheel_Ox" value=" 0.0 "/>
-<xacro:property name="Wheel_Oy" value=" 0.00085 "/>
-<xacro:property name="Wheel_Oz" value=" 0.237350 "/>
-<xacro:property name="Wheel_roll" value=" 1.5707963267948966 "/>
-<xacro:property name="Wheel_pitch" value=" 0.0 "/>
-<xacro:property name="Wheel_yaw" value=" 3.14159265359 "/>
+<xacro:property name="Wheel_Ox" value="${0.0 * mmTom}"/>
+<xacro:property name="Wheel_Oy" value="${0.0 * mmTom}"/>
+<xacro:property name="Wheel_Oz" value="${-98.3500 * mmTom}"/>
+<xacro:property name="Wheel_roll" value="${PI_2}"/>
+<xacro:property name="Wheel_pitch" value="0.0"/>
+<xacro:property name="Wheel_yaw" value="0.0"/>
 
 <!-- Origin -->
 <xacro:property name="Torso_2_Ox" value=" 0.200 "/>
