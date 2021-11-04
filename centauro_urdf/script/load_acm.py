@@ -55,8 +55,10 @@ if __name__ == '__main__':
             robot.appendChild(x)
             robot.appendChild(srdf.createTextNode('\n'))
         new_srdf = srdf.toxml()
-
+    
     if args.output:
-        file(args.srdf_file.name, 'w').write(new_srdf)
+        open(args.srdf_file.name, 'w').write(new_srdf)
+        
+        
     else:
         print(new_srdf)

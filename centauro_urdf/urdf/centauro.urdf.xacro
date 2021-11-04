@@ -21,7 +21,6 @@
 
 <xacro:unless value="${ADD_FLOATING_BASE}">
 <link name="world"/>
-
   <joint name="reference" type="fixed">
     <parent link="world"/>
     <child link="pelvis"/>
