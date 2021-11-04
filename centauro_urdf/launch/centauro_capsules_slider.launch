@@ -15,4 +15,7 @@
         <param name="publish_frequency" type="double" value="250.0" />
     </node> 
 
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" if="$(arg gui)" args="-d $(find centauro_urdf)/launch/centauro.rviz">
+    </node> 
+
 </launch>
