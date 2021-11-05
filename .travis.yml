@@ -67,7 +67,7 @@ before_script:
 - sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-moveit-core 
 - sudo apt install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-interactive-markers ros-$ROS_DISTRO-tf-conversions ros-$ROS_DISTRO-tf2-eigen 
 - sudo apt install qttools5-dev libqt5charts5-dev qtdeclarative5-dev
-
+- sudo pip3 install hhcm-forest
 
   # xbot2 framework install (but xbot2)
 - sudo sh -c 'echo "deb http://xbot.cloud/xbot2/ubuntu/$(lsb_release -sc) /" > /etc/apt/sources.list.d/xbot-latest.list'
@@ -79,10 +79,13 @@ before_script:
 - . /opt/xbot/setup.sh
 - export ROS_PACKAGE_PATH=$PWD:$ROS_PACKAGE_PATH
 
+- echo $PWD
+
 script: 
 
 - mkdir -p build
 - cd build
 - cmake .. 
 - make 
+- make test
 

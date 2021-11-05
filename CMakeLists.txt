@@ -11,4 +11,7 @@ add_subdirectory(centauro_gazebo)
 add_subdirectory(centauro_config)
 add_subdirectory(centauro_cartesio_config)
 
+enable_testing()
+add_subdirectory(centauro_test)
+
 include(GenerateDeb.cmake)
