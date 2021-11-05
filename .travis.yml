@@ -88,5 +88,8 @@ script:
 - cd build
 - cmake .. 
 - make 
+- roscore &
+- ROSCORE_PID=$!
 - python3 ../centauro_test/gz_test.py
+- kill $ROSCORE_PID
 
