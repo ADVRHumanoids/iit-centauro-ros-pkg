@@ -52,10 +52,14 @@ class GzTest(unittest.TestCase):
 
     def _homing(self):
         timeout = 10
-        self.homing.wait_for_service(timeout=timeout)
-        print('homing available')
-        time.sleep(1)
-        return self.homing(True).success
+        try:
+            self.get_model_state.wait_for_service(timeout=timeout)
+            print('homing available')
+            time.sleep(1)
+            return self.homing(True).success
+        except rospy.ROSException as e:
+            print(f'timeout: {e}; exit status {self.xb.poll()}')
+            return False 
 
     def _joint_state(self):
         from xbot_msgs.msg import JointState
@@ -69,14 +73,14 @@ class GzTest(unittest.TestCase):
                   'centauro_gazebo', 
                   'centauro_world.launch', 
                   'gui:=false', f'realsense:={realsense}', f'velodyne:={velodyne}'],
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+            #stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
             )
         return proc
 
     def _launch_xbot2(self):
         proc = subprocess.Popen(
             args=['xbot2-core', '--simtime', '--config', self.config_path],
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+            #stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
         return proc
 
