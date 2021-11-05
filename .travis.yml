@@ -88,5 +88,5 @@ script:
 - cd build
 - cmake .. 
 - make 
-- ctest -VV
+- python3 ../centauro_test/gz_test.py
 
