@@ -55,7 +55,7 @@ before_script:
       sudo apt update && sudo apt install -y \
       ros-melodic-ros-base ros-melodic-orocos-kdl\
       libgazebo9-dev
-
+      
       . /opt/ros/melodic/setup.bash
 
 
@@ -69,6 +69,7 @@ before_script:
 - sudo apt install qttools5-dev libqt5charts5-dev qtdeclarative5-dev python3-pip python3-setuptools
 - sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs  
 - sudo pip3 install hhcm-forest
+- sudo pip3 install rospkg
 
   # xbot2 framework install (but xbot2)
 - sudo sh -c 'echo "deb http://xbot.cloud/xbot2/ubuntu/$(lsb_release -sc) /" > /etc/apt/sources.list.d/xbot-latest.list'
