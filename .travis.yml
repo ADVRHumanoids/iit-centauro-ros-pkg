@@ -67,6 +67,7 @@ before_script:
 - sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-moveit-core 
 - sudo apt install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-interactive-markers ros-$ROS_DISTRO-tf-conversions ros-$ROS_DISTRO-tf2-eigen 
 - sudo apt install qttools5-dev libqt5charts5-dev qtdeclarative5-dev python3-pip
+- sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs  
 - sudo pip3 install hhcm-forest
 
   # xbot2 framework install (but xbot2)
