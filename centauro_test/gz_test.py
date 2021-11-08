@@ -4,6 +4,7 @@ import subprocess
 from os import path
 from gazebo_msgs.srv import GetModelState
 from std_srvs.srv import SetBool
+from xbot_msgs.srv import PluginStatus
 import rospy
 import time
 import signal
@@ -22,7 +23,7 @@ class GzTest(unittest.TestCase):
         self.config_path = path.join(this_dir, '..', 'centauro_config', 'centauro_basic.yaml')
 
         self.get_model_state = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
-        self.homing = rospy.ServiceProxy('/xbotcore/homing/switch', SetBool)
+        self.ros_control = rospy.ServiceProxy('/xbotcore/ros_control/state', PluginStatus)
 
     def tearDown(self) -> None:
         self.get_model_state.close()
@@ -50,16 +51,16 @@ class GzTest(unittest.TestCase):
 
         return False
 
-    def _homing(self):
+    def _ros_control(self):
         timeout = 10
         try:
             self.get_model_state.wait_for_service(timeout=timeout)
-            print('homing available')
+            print('ros_control available')
             time.sleep(1)
-            return self.homing(True).success
+            return self.ros_control().status
         except rospy.ROSException as e:
             print(f'timeout: {e}; exit status {self.xb.poll()}')
-            return False 
+            return '' 
 
     def _joint_state(self):
         from xbot_msgs.msg import JointState
@@ -99,8 +100,8 @@ class GzTest(unittest.TestCase):
         self.xb = self._launch_xbot2()
         print('xbot2 running')
 
-        print('checking homing can be activated')
-        self.assertTrue(self._homing())
+        print('checking ros_control can be activated')
+        self.assertEqual(self._ros_control(), 'Running')
 
         print('checking joint_states can be received')
         self._joint_state()
