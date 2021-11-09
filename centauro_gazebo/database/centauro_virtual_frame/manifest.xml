@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<model>
+  <name>centauro</name>
+  <version>0.1</version>
+  <sdf version='1.4'>centauro.sdf</sdf>
+
+  <author>
+   <name>Enrico Mingo</name>
+   <email>enrico.mingo@iit.it</email>
+  </author>
+
+  <description>
+    Simulation of the centauro Humanoid Robot from IIT.
+  </description>
+</model>
