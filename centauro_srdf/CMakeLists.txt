@@ -20,6 +20,6 @@ generate_srdf(
   ADD_TO_ALL TRUE
 )
 
-generate_srdf_capsule(
+generate_capsule_srdf(
   CONFIG_NAME ${ROBOT_NAME}
 )

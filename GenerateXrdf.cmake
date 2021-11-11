@@ -65,9 +65,9 @@ function(generate_capsule_urdf)
     
     cmake_parse_arguments(GEN_CAPSULE "" "CONFIG_NAME" "" ${ARGN})
     set(CONFIG_NAME ${GEN_CAPSULE_CONFIG_NAME})
-
     set(OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_NAME}_capsule.urdf)
     set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/urdf)
+    set(GEN_CAPSULE_URDF ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_NAME}.urdf)
 
     add_custom_target(generate_urdf_${CONFIG_NAME}_capsule
         DEPENDS ${OUTPUT_FILE}
@@ -117,12 +117,12 @@ function(generate_capsule_srdf)
         DEPENDS ${XACRO_FILES} 
     )
 
-    add_custom_target(publish_urdf_${CONFIG_NAME}_capsule
+    add_custom_target(publish_srdf_${CONFIG_NAME}_capsule
         COMMENT "Publishing ${OUTPUT_FILE} to ${SRC_DIR}"
         COMMAND cp ${OUTPUT_FILE} ${SRC_DIR}
     )
 
-    add_dependencies(publish_urdf_${CONFIG_NAME}_capsule generate_urdf_${CONFIG_NAME}_capsule)
+    add_dependencies(publish_srdf_${CONFIG_NAME}_capsule generate_srdf_${CONFIG_NAME}_capsule)
 
     install(FILES ${OUTPUT_FILE}
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
