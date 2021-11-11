@@ -43,3 +43,7 @@ generate_urdf(
   CONFIG config/${ROBOT_NAME}_virtual_frame.urdf.xacro 
   ADD_TO_ALL TRUE
 )
+
+generate_capsule_urdf(
+  CONFIG_NAME ${ROBOT_NAME}
+)

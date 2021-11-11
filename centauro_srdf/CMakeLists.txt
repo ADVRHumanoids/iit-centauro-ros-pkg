@@ -19,3 +19,7 @@ generate_srdf(
   CONFIG config/${ROBOT_NAME}_virtual_frame.urdf.xacro 
   ADD_TO_ALL TRUE
 )
+
+generate_srdf_capsule(
+  CONFIG_NAME ${ROBOT_NAME}
+)
