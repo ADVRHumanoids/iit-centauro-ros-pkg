@@ -69,6 +69,7 @@ function(generate_capsule_urdf)
     set(OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_NAME}_capsule.urdf)
     set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/urdf)
     set(GEN_CAPSULE_URDF ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_NAME}.urdf)
+    set(CAPSULE_FOLDER ${CMAKE_CURRENT_BINARY_DIR}/capsules)
 
     add_custom_target(generate_urdf_${CONFIG_NAME}_capsule
         DEPENDS ${OUTPUT_FILE}
@@ -78,13 +79,15 @@ function(generate_capsule_urdf)
     add_custom_command(
         OUTPUT ${OUTPUT_FILE}
         COMMENT "Generating ${OUTPUT_FILE} .."
-        COMMAND robot_capsule_urdf ${GEN_CAPSULE_URDF} --output ${OUTPUT_FILE}
+        COMMAND mkdir -p ${CAPSULE_FOLDER}
+        COMMAND robot_capsule_urdf ${GEN_CAPSULE_URDF} --output ${OUTPUT_FILE} -c ${CAPSULE_FOLDER}
+        COMMAND robot_capsule_urdf_to_rviz ${OUTPUT_FILE} --output ${OUTPUT_FILE}
         DEPENDS ${XACRO_FILES} 
     )
 
     add_custom_target(publish_urdf_${CONFIG_NAME}_capsule
         COMMENT "Publishing ${OUTPUT_FILE} to ${SRC_DIR}"
-        COMMAND cp ${OUTPUT_FILE} ${SRC_DIR}
+        COMMAND cp ${OUTPUT_FILE} ${SRC_DIR}/capsule
     )
 
     add_dependencies(publish_urdf_${CONFIG_NAME}_capsule generate_urdf_${CONFIG_NAME}_capsule)
@@ -105,9 +108,10 @@ function(generate_capsule_srdf)
     set(OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_NAME}_capsule.srdf)
     set(URDF_FILE ${CMAKE_BINARY_DIR}/${ROBOT_NAME}_urdf/${CONFIG_NAME}_capsule.urdf)
     set(SRDF_FILE ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_NAME}.srdf)
+    set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/srdf)
 
     add_custom_target(generate_srdf_${CONFIG_NAME}_capsule
-        DEPENDS ${URDF_FILE} ${SRDF_FILE}
+        DEPENDS ${URDF_FILE} ${SRDF_FILE} ${OUTPUT_FILE}
         DEPENDS generate_urdf_${CONFIG_NAME}_capsule generate_srdf_${CONFIG_NAME}
     )
 
@@ -115,13 +119,13 @@ function(generate_capsule_srdf)
         OUTPUT ${OUTPUT_FILE}
         COMMENT "Generating ${OUTPUT_FILE} .."
         COMMAND cp ${SRDF_FILE} ${OUTPUT_FILE}
-        COMMAND moveit_compute_default_collisions --urdf-path ${URDF_FILE} --srdf-path ${OUTPUT_FILE}
+        COMMAND moveit_compute_default_collisions --urdf_path ${URDF_FILE} --srdf_path ${OUTPUT_FILE}
         DEPENDS ${XACRO_FILES} 
     )
 
     add_custom_target(publish_srdf_${CONFIG_NAME}_capsule
         COMMENT "Publishing ${OUTPUT_FILE} to ${SRC_DIR}"
-        COMMAND cp ${OUTPUT_FILE} ${SRC_DIR}
+        COMMAND cp ${OUTPUT_FILE} ${SRC_DIR}/capsule
     )
 
     add_dependencies(publish_srdf_${CONFIG_NAME}_capsule generate_srdf_${CONFIG_NAME}_capsule)
