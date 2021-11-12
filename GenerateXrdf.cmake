@@ -30,6 +30,7 @@ function(generate_xrdf type)
     # install rule
     install(FILES ${OUTPUT_FILE}
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        OPTIONAL
     )
 
     # publish to source folder
@@ -90,6 +91,7 @@ function(generate_capsule_urdf)
 
     install(FILES ${OUTPUT_FILE}
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        OPTIONAL
     )
     
 
@@ -126,6 +128,7 @@ function(generate_capsule_srdf)
 
     install(FILES ${OUTPUT_FILE}
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        OPTIONAL
     )
     
 
