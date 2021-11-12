@@ -23,3 +23,9 @@ generate_srdf(
 generate_capsule_srdf(
   CONFIG_NAME ${ROBOT_NAME}
 )
+
+## Mark srdf for installation
+
+install(DIRECTORY srdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)

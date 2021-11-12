@@ -19,12 +19,16 @@ catkin_package(
 )
 
 
-## Mark meshes and launch files for installation
+## Mark urdf, meshes and launch files for installation
 install(DIRECTORY meshes
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+install(DIRECTORY urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

@@ -27,12 +27,6 @@ function(generate_xrdf type)
         DEPENDS ${XACRO_FILES} ${CONFIG_FILES}
         )
 
-    # install rule
-    install(FILES ${OUTPUT_FILE}
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-        OPTIONAL
-    )
-
     # publish to source folder
     add_custom_target(publish_${type}_${CONFIG_NAME}
         COMMENT "Publishing ${OUTPUT_FILE} to ${SRC_DIR}"
@@ -92,12 +86,6 @@ function(generate_capsule_urdf)
 
     add_dependencies(publish_urdf_${CONFIG_NAME}_capsule generate_urdf_${CONFIG_NAME}_capsule)
 
-    install(FILES ${OUTPUT_FILE}
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-        OPTIONAL
-    )
-    
-
 endfunction()
 
 function(generate_capsule_srdf)
@@ -128,12 +116,6 @@ function(generate_capsule_srdf)
         COMMAND cp ${OUTPUT_FILE} ${SRC_DIR}/capsule
     )
 
-    add_dependencies(publish_srdf_${CONFIG_NAME}_capsule generate_srdf_${CONFIG_NAME}_capsule)
-
-    install(FILES ${OUTPUT_FILE}
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-        OPTIONAL
-    )
-    
+    add_dependencies(publish_srdf_${CONFIG_NAME}_capsule generate_srdf_${CONFIG_NAME}_capsule)  
 
 endfunction()
