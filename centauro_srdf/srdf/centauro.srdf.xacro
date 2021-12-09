@@ -68,10 +68,10 @@
 
         <xacro:if value="${ADD_UPPER_BODY}">
             <group name="left_arm" />
-            <group name="right_arm" />
+            <!--group name="right_arm" />
             <group name="torso" />
             <group name="velodyne" />
-            <group name="neck" />
+            <group name="neck" /-->
         </xacro:if>
 
         <xacro:if value="${ADD_VIRTUAL_FRAME}">

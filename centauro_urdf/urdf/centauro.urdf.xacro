@@ -25,6 +25,17 @@
 </xacro:if>
 </xacro:if>
 
+<xacro:unless value="${ADD_LEGS}">
+
+<link name="world"/>
+
+  <joint name="reference" type="fixed">
+    <parent link="world"/>
+    <child link="pelvis"/>
+</joint>
+
+</xacro:unless>
+
 
 <xacro:if value="${ADD_VIRTUAL_FRAME}">
   <xacro:include filename="$(find centauro_urdf)/urdf/parts/virtual_frame.urdf.xacro"/>
