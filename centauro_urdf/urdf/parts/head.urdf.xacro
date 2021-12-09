@@ -92,5 +92,42 @@
     <dynamics damping="0.2" friction="10.0"/>
 </joint>
 
+<xacro:if value="${ADD_INTEL_D435I}">
+        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
+        
+       <!-- <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="d435i_camera" 
+                            enable_pointCloud="true" align_depth="true">
+            <origin xyz="0.13 0 0.03" rpy="0 0.25 0"/> 
+        </xacro:sensor_d435i>-->
+        
+        <xacro:sensor_d435i parent="neck_2" name="D435i_head_camera" topics_ns="D435i/D435i_head_camera"
+                      enable_pointCloud="true" align_depth="true"
+                      unite_imu_method="false"
+                    
+                      visualize="true"
+                                                  
+                            
+                      accel_fps="300"
+                      gyro_fps="300"
+
+                      depth_width="1280"
+                      depth_height="720"
+                      depth_fps="90"
+
+                      infra_width="1280"
+                      infra_height="720"
+                      infra_fps="90"
+
+                      color_width="1280"
+                      color_height="720"
+                      color_fps="30">
+            
+            <origin xyz="0.219831 0 -0.0613293" rpy="0.0 0.5585052 0.0"/>
+        </xacro:sensor_d435i>
+
+        
+        
+    </xacro:if>
+
 
 </robot>
