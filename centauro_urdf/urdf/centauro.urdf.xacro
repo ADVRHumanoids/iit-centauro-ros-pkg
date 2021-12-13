@@ -25,7 +25,7 @@
 </xacro:if>
 </xacro:if>
 
-<xacro:unless value="${ADD_LEGS}">
+<xacro:unless value="${ADD_FLOATING_BASE}">
 
 <link name="world"/>
 

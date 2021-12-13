@@ -45,7 +45,7 @@
          
   <!-- Load URDF/SRDF for ModelInterface in robot_description -->
   <param name="robot_description"
-         command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro.urdf.xacro floating_joint:=true upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense)"/>
+         command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro.urdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense)"/>
   
   <!-- run gazebo -->
   <group if="$(arg gazebo)">
