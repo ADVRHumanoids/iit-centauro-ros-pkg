@@ -65,7 +65,7 @@
 </link>
 
 <!--JOINTS -->
-<joint name="neck_yaw" type="revolute">
+<joint name="neck_yaw" type="fixed">
     <parent link="torso_2"/>
     <origin xyz="0.0 0.0 0.2795"/>
     <child link="neck_1"/>
