@@ -738,7 +738,7 @@
   </joint>
   <joint name="neck_velodyne" type="continuous">
     <parent link="torso_2"/>
-    <origin rpy="0 0 -1.828" xyz="0.055 0.0 0.473262"/>
+    <origin rpy="0 0 0.015" xyz="0.055 0 0.473262"/>
     <!--origin xyz="0.055 0.0 0.473262" rpy="0 0 -1.311481"/-->
     <child link="neck_3"/>
     <axis xyz="0 0 1"/>
@@ -746,7 +746,7 @@
     <dynamics damping="0.2" friction="10.0"/>
   </joint>
   <joint name="velodyne_calib_base_mount_joint" type="fixed">
-    <origin rpy="0 1.5709 -0.316519  " xyz="0.032768 -0.01 0.048219"/>
+    <origin rpy="0 1.5709 0" xyz="0.032768 0 0.048219"/>
     <parent link="neck_3"/>
     <child link="velodyne_calib_base_link"/>
   </joint>
@@ -774,7 +774,7 @@
     </collision>
   </link>
   <joint name="velodyne_calib_base_scan_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.0377"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="velodyne_calib_base_link"/>
     <child link="velodyne_calib"/>
   </joint>
