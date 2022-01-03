@@ -13,14 +13,14 @@
 	<visual>
           <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
    	  <geometry>
-      	  <mesh filename="package://centauro_urdf/meshes/link1.stl" scale="0.001 0.001 0.001" />
+      	  <mesh filename="package://centauro_urdf/meshes/link1_no_head.stl" scale="0.001 0.001 0.001" />
    	  </geometry>
 	</visual>
 
 	<collision>
           <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
    	  <geometry>
-      	  <mesh filename="package://centauro_urdf/meshes/simple/link1.stl" scale="0.001 0.001 0.001" />
+      	  <mesh filename="package://centauro_urdf/meshes/simple/link1_no_head.stl" scale="0.001 0.001 0.001" />
    	  </geometry>
 	</collision>
 </link>

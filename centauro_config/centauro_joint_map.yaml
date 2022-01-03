@@ -41,9 +41,8 @@ joint_map:
   80: j_ft_arm2
   81: j_ft_arm1
   104: imu_joint
-  101: neck_yaw
-  102: neck_pitch
-  103: neck_velodyne
+  103: velodyne_joint
+#TODO: add D435 head realsense
 #  110: 110
 #  111: 111
 

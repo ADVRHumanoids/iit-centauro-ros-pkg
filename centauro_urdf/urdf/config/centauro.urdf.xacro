@@ -23,8 +23,10 @@
 
 <xacro:property name="ADD_VELODYNE" value="true" />
 
-<xacro:property name="ADD_INTEL_D435I" value="false" />
+<xacro:property name="ADD_D435_HEAD" value="true" />
 
-<xacro:property name="ADD_INTEL_T265" value="false" />
+<xacro:property name="ADD_INTEL_D435I" value="true" />
+
+<xacro:property name="ADD_INTEL_T265" value="true" />
 
 </robot>

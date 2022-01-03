@@ -3,15 +3,15 @@
     <link name='pelvis'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose frame=''>-0.001632 0.002653 0.079167 0 -0 0</pose>
-        <mass>26.5845</mass>
+        <pose frame=''>0.004901 0.002974 0.078158 0 -0 0</pose>
+        <mass>27.2166</mass>
         <inertia>
-          <ixx>0.391955</ixx>
-          <ixy>0.0247813</ixy>
-          <ixz>0.0171086</ixz>
-          <iyy>1.00007</iyy>
-          <iyz>0.00526271</iyz>
-          <izz>1.068</izz>
+          <ixx>0.397186</ixx>
+          <ixy>0.0223936</ixy>
+          <ixz>0.0246288</ixz>
+          <iyy>1.05072</iyy>
+          <iyz>0.00565099</iyz>
+          <izz>1.12094</izz>
         </inertia>
       </inertial>
       <collision name='pelvis_collision'>
@@ -31,6 +31,37 @@
           </friction>
         </surface>
       </collision>
+      <collision name='pelvis_fixed_joint_lump__D435i_camera_link_collision_1'>
+        <pose frame=''>0.278137 0 0.032415 0 0.525151 0</pose>
+        <geometry>
+          <box>
+            <size>0.02505 0.09 0.025</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='pelvis_fixed_joint_lump__T265_camera_pose_frame_collision_2'>
+        <pose frame=''>0.29245 0.00775 0.063 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://realsense_gazebo_description/meshes/t265_simplified.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name='pelvis_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -46,7 +77,271 @@
           </script>
         </material>
       </visual>
+      <visual name='pelvis_fixed_joint_lump__D435i_camera_link_visual_1'>
+        <pose frame=''>0.291029 0 0.024945 2.09595 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://realsense2_description/meshes/d435.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='pelvis_fixed_joint_lump__T265_camera_pose_frame_visual_2'>
+        <pose frame=''>0.29245 0.00775 0.063 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://realsense_gazebo_description/meshes/t265_full.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <velocity_decay/>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='D435i_cameracolor' type='camera'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>RGB_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.278137 0.0175 0.032415 0 0.525151 0</pose>
+      </sensor>
+      <sensor name='D435i_cameraired1' type='camera'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>90</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.278137 0.0175 0.032415 0 0.525151 0</pose>
+      </sensor>
+      <sensor name='D435i_cameraired2' type='camera'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>90</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.278137 0.0175 0.032415 0 0.525151 0</pose>
+      </sensor>
+      <sensor name='D435i_cameradepth' type='depth'>
+        <camera name='D435i_camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.1</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.278137 0.0175 0.032415 0 0.525151 0</pose>
+      </sensor>
+      <sensor name='D435i_cameraaccel' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>D435i/D435i_camera/accel/sample</topic>
+        <plugin name='D435i/D435i_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
+          <topicName>D435i/D435i_camera/accel/sample</topicName>
+          <bodyName>D435i_camera_link</bodyName>
+          <updateRateHZ>300</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>D435i_camera_accel_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.278137 0.0175 0.032415 0 0.525151 0</pose>
+      </sensor>
+      <sensor name='D435i_cameragyro' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>D435i_camera/gyro/sample</topic>
+        <plugin name='D435i/D435i_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
+          <topicName>D435i/D435i_camera/gyro/sample</topicName>
+          <bodyName>D435i_camera_link</bodyName>
+          <updateRateHZ>300</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>D435i_camera_gyro_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.278137 0.0175 0.032415 0 0.525151 0</pose>
+      </sensor>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='T265_camerafisheye1' type='wideanglecamera'>
+        <update_rate>30</update_rate>
+        <camera name='__default__'>
+          <horizontal_fov>1.95</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>800</height>
+          </image>
+          <clip>
+            <near>0.2</near>
+            <far>100</far>
+          </clip>
+          <lens>
+            <type>orthographic</type>
+            <scale_to_hfov>1</scale_to_hfov>
+            <cutoff_angle>2.2</cutoff_angle>
+            <env_texture_size>1024</env_texture_size>
+          </lens>
+        </camera>
+        <plugin name='T265_camerafisheye1' filename='libgazebo_ros_camera.so'>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>30</updateRate>
+          <cameraName>T265/T265_camera/fisheye1</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>T265_camera_fisheye1_optical_frame</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>-0.00040996368625201285</distortionK1>
+          <distortionK2>0.03653175011277199</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionP1>-0.034823670983314514</distortionP1>
+          <distortionP2>0.0052825710736215115</distortionP2>
+          <Cx>416.22</Cx>
+          <Cy>402.1</Cy>
+          <CxPrime>416.22</CxPrime>
+        </plugin>
+        <pose frame=''>0.29245 0.04885 0.063 0 -0 0</pose>
+      </sensor>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='T265_camerafisheye2' type='wideanglecamera'>
+        <update_rate>30</update_rate>
+        <camera name='__default__'>
+          <horizontal_fov>2.84</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>800</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <lens>
+            <type>orthographic</type>
+            <scale_to_hfov>1</scale_to_hfov>
+            <cutoff_angle>2.2</cutoff_angle>
+            <env_texture_size>1024</env_texture_size>
+          </lens>
+        </camera>
+        <always_on>1</always_on>
+        <plugin name='T265_camerafisheye2' filename='libgazebo_ros_camera.so'>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>30</updateRate>
+          <cameraName>T265/T265_camera/fisheye2</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>T265_camera_fisheye2_optical_frame</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>-0.00040996368625201285</distortionK1>
+          <distortionK2>0.03653175011277199</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionP1>-0.034823670983314514</distortionP1>
+          <distortionP2>0.0052825710736215115</distortionP2>
+        </plugin>
+        <pose frame=''>0.29245 -0.01515 0.063 0 -0 0</pose>
+      </sensor>
+      <sensor name='T265_cameraaccel' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>62.5</update_rate>
+        <plugin name='T265/T265_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
+          <topicName>T265/T265_camera/accel/sample</topicName>
+          <bodyName>T265_camera_pose_frame</bodyName>
+          <updateRateHZ>62.5</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>T265_camera_accel_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.29245 -0.01515 0.063 0 -0 0</pose>
+      </sensor>
+      <sensor name='T265_cameragyro' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>200</update_rate>
+        <topic>T265/T265_camera/gyro/sample</topic>
+        <plugin name='T265/T265_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
+          <topicName>T265/T265_camera/gyro/sample</topicName>
+          <bodyName>T265_camera_pose_frame</bodyName>
+          <updateRateHZ>200</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>T265_camera_gyro_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.29245 -0.01515 0.063 0 -0 0</pose>
+      </sensor>
       <gravity>1</gravity>
       <velocity_decay/>
       <sensor name='imu_link' type='imu'>
@@ -2032,15 +2327,15 @@
     <link name='torso_2'>
       <pose frame=''>0.2 0 0.256 0 -0 0</pose>
       <inertial>
-        <pose frame=''>-0.019498 0.004532 0.137683 0 -0 0</pose>
-        <mass>12.5537</mass>
+        <pose frame=''>-0.018905 0.004575 0.139951 0 -0 0</pose>
+        <mass>12.8925</mass>
         <inertia>
-          <ixx>0.0636434</ixx>
-          <ixy>8.939e-05</ixy>
-          <ixz>-0.00086873</ixz>
-          <iyy>0.0268023</iyy>
-          <iyz>-4.657e-05</iyz>
-          <izz>0.0474301</izz>
+          <ixx>0.066474</ixx>
+          <ixy>-1.7032e-05</ixy>
+          <ixz>-0.00153923</ixz>
+          <iyy>0.0296168</iyy>
+          <iyz>-0.000108407</iyz>
+          <izz>0.0481013</izz>
         </inertia>
       </inertial>
       <collision name='torso_2_collision'>
@@ -2048,7 +2343,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/link1.stl</uri>
+            <uri>model://centauro_urdf/meshes/simple/link1_no_head.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2060,12 +2355,21 @@
           </friction>
         </surface>
       </collision>
+      <collision name='torso_2_fixed_joint_lump__neck_1_collision_1'>
+        <pose frame=''>0.003064 0.006161 0.224 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/simple/head-base_mesh.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name='torso_2_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/link1.stl</uri>
+            <uri>model://centauro_urdf/meshes/link1_no_head.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2074,6 +2378,15 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
+      </visual>
+      <visual name='torso_2_fixed_joint_lump__neck_1_visual_1'>
+        <pose frame=''>0.003064 0.006161 0.224 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/head-base_mesh.stl</uri>
+          </mesh>
+        </geometry>
       </visual>
       <gravity>1</gravity>
       <velocity_decay/>
@@ -3280,31 +3593,249 @@
         </ode>
       </physics>
     </joint>
-    <link name='neck_3'>
-      <pose frame=''>0.255 0 0.729262 0 0 -1.828</pose>
+    <link name='d435_head_motor'>
+      <pose frame=''>0.263064 0.006161 0.6175 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.057972 -0.039858 0.020799 0 -0 0</pose>
-        <mass>1.62527</mass>
+        <pose frame=''>0.018836 0.010933 0 0 -0 0</pose>
+        <mass>0.902787</mass>
         <inertia>
-          <ixx>0.00346876</ixx>
-          <ixy>-0.000357542</ixy>
-          <ixz>-0.000351156</ixz>
-          <iyy>0.00263517</iyy>
-          <iyz>-0.000889365</iyz>
-          <izz>0.00202924</izz>
+          <ixx>0.00431792</ixx>
+          <ixy>-0.000205971</ixy>
+          <ixz>-2.80644e-05</ixz>
+          <iyy>0.000880023</iyy>
+          <iyz>-1.54534e-05</iyz>
+          <izz>0.00463882</izz>
         </inertia>
       </inertial>
-      <collision name='neck_3_collision'>
+      <collision name='d435_head_motor_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/lidar.stl</uri>
+            <uri>model://centauro_urdf/meshes/simple/neck-pitch_mesh.stl</uri>
           </mesh>
         </geometry>
       </collision>
-      <collision name='neck_3_fixed_joint_lump__velodyne_calib_base_link_collision_1'>
-        <pose frame=''>0.066837 -0.021159 0.048215 3.14159 1.57079 2.82507</pose>
+      <collision name='d435_head_motor_fixed_joint_lump__D435_head_camera_link_collision_1'>
+        <pose frame=''>0.03015 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02505 0.09 0.025</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='d435_head_motor_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/neck-pitch_mesh.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='d435_head_motor_fixed_joint_lump__D435_head_camera_link_visual_1'>
+        <pose frame=''>0.04505 0 0 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://realsense2_description/meshes/d435.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='D435_head_cameracolor' type='camera'>
+        <camera name='D435_head_camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>RGB_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.03015 0.0175 0 0 -0 0</pose>
+      </sensor>
+      <sensor name='D435_head_cameraired1' type='camera'>
+        <camera name='D435_head_camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>90</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.03015 0.0175 0 0 -0 0</pose>
+      </sensor>
+      <sensor name='D435_head_cameraired2' type='camera'>
+        <camera name='D435_head_camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>90</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.03015 0.0175 0 0 -0 0</pose>
+      </sensor>
+      <sensor name='D435_head_cameradepth' type='depth'>
+        <camera name='D435_head_camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.1</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.03015 0.0175 0 0 -0 0</pose>
+      </sensor>
+      <sensor name='D435_head_cameraaccel' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>D435/D435_head_camera/accel/sample</topic>
+        <plugin name='D435/D435_head_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
+          <topicName>D435/D435_head_camera/accel/sample</topicName>
+          <bodyName>D435_head_camera_link</bodyName>
+          <updateRateHZ>300</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>D435_head_camera_accel_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.03015 0.0175 0 0 -0 0</pose>
+      </sensor>
+      <sensor name='D435_head_cameragyro' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>300</update_rate>
+        <topic>D435_head_camera/gyro/sample</topic>
+        <plugin name='D435/D435_head_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
+          <topicName>D435/D435_head_camera/gyro/sample</topicName>
+          <bodyName>D435_head_camera_link</bodyName>
+          <updateRateHZ>300</updateRateHZ>
+          <gaussianNoise>0.1</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>D435_head_camera_gyro_optical_frame</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose frame=''>0.03015 0.0175 0 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='d435_head_joint' type='revolute'>
+      <child>d435_head_motor</child>
+      <parent>torso_2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.1</lower>
+          <upper>1.1</upper>
+          <effort>35</effort>
+          <velocity>5.7</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>10</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='velodyne_motor'>
+      <pose frame=''>0.285564 0.006161 0.723 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.025562 0 -0 0</pose>
+        <mass>1.17879</mass>
+        <inertia>
+          <ixx>0.00159071</ixx>
+          <ixy>-9.42983e-05</ixy>
+          <ixz>-2.80644e-05</ixz>
+          <iyy>0.00140754</iyy>
+          <iyz>-1.54534e-05</iyz>
+          <izz>0.00160741</izz>
+        </inertia>
+      </inertial>
+      <collision name='velodyne_motor_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/simple/lidar_mesh.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='velodyne_motor_fixed_joint_lump__velodyne_calib_base_link_collision_1'>
+        <pose frame=''>0 0 0.03585 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.0717</length>
@@ -3312,17 +3843,17 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='neck_3_visual'>
+      <visual name='velodyne_motor_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/lidar.stl</uri>
+            <uri>model://centauro_urdf/meshes/lidar_mesh.stl</uri>
           </mesh>
         </geometry>
       </visual>
-      <visual name='neck_3_fixed_joint_lump__velodyne_calib_base_link_visual_1'>
-        <pose frame=''>0.032768 -0.01 0.048219 3.14159 1.57079 2.82507</pose>
+      <visual name='velodyne_motor_fixed_joint_lump__velodyne_calib_base_link_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -3330,8 +3861,8 @@
           </mesh>
         </geometry>
       </visual>
-      <visual name='neck_3_fixed_joint_lump__velodyne_calib_base_link_visual_2'>
-        <pose frame=''>0.032768 -0.01 0.048219 3.14159 1.57079 2.82507</pose>
+      <visual name='velodyne_motor_fixed_joint_lump__velodyne_calib_base_link_visual_2'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -3339,8 +3870,8 @@
           </mesh>
         </geometry>
       </visual>
-      <visual name='neck_3_fixed_joint_lump__velodyne_calib_visual_3'>
-        <pose frame=''>0.032768 -0.01 0.048219 3.14159 1.57079 2.82507</pose>
+      <visual name='velodyne_motor_fixed_joint_lump__velodyne_calib_visual_3'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -3392,121 +3923,17 @@
           <max_range>130.0</max_range>
           <gaussianNoise>0.008</gaussianNoise>
         </plugin>
-        <pose frame=''>0.068595 -0.021735 0.048215 3.14159 1.57079 2.82507</pose>
+        <pose frame=''>0 0 0.0377 0 -0 0</pose>
       </sensor>
     </link>
-    <joint name='neck_velodyne' type='revolute'>
-      <child>neck_3</child>
+    <joint name='velodyne_joint' type='revolute'>
+      <child>velodyne_motor</child>
       <parent>torso_2</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <damping>0.2</damping>
-          <friction>10</friction>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name='neck_1'>
-      <pose frame=''>0.2 0 0.5355 0 -0 0</pose>
-      <inertial>
-        <pose frame=''>0.04048 0.021378 -0.014595 0 -0 0</pose>
-        <mass>0.338787</mass>
-        <inertia>
-          <ixx>0.000371857</ixx>
-          <ixy>-9.42983e-05</ixy>
-          <ixz>-2.80644e-05</ixz>
-          <iyy>0.000188688</iyy>
-          <iyz>-1.54534e-05</iyz>
-          <izz>0.000502344</izz>
-        </inertia>
-      </inertial>
-      <collision name='neck_1_collision'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/neck_yaw.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='neck_1_visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/neck_yaw.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name='neck_yaw' type='revolute'>
-      <child>neck_1</child>
-      <parent>torso_2</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-0.785398</lower>
-          <upper>0.785398</upper>
-          <effort>35</effort>
-          <velocity>5.7</velocity>
-        </limit>
-        <dynamics>
-          <damping>0</damping>
-          <friction>10</friction>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name='neck_2'>
-      <pose frame=''>0.254 0.0596 0.523003 0 -0 0</pose>
-      <inertial>
-        <pose frame=''>0.048467 -0.059852 -0.008531 0 -0 0</pose>
-        <mass>0.785269</mass>
-        <inertia>
-          <ixx>0.000468234</ixx>
-          <ixy>-1.05438e-05</ixy>
-          <ixz>7.24398e-05</ixz>
-          <iyy>0.000263525</iyy>
-          <iyz>1.6904e-06</iyz>
-          <izz>0.000376335</izz>
-        </inertia>
-      </inertial>
-      <collision name='neck_2_collision'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/neck_pitch.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='neck_2_visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/neck_pitch.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name='neck_pitch' type='revolute'>
-      <child>neck_2</child>
-      <parent>neck_1</parent>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.349066</lower>
-          <upper>0.785398</upper>
+          <lower>-1.1</lower>
+          <upper>1.1</upper>
           <effort>35</effort>
           <velocity>5.7</velocity>
         </limit>
@@ -3519,6 +3946,64 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+    <plugin name='D435/D435_head_camera' filename='librealsense_gazebo_plugin.so'>
+      <prefix>D435_head_camera</prefix>
+      <colorUpdateRate>30</colorUpdateRate>
+      <colorTopicName>color/image_raw</colorTopicName>
+      <colorOpticalframeName>D435_head_camera_color_optical_frame</colorOpticalframeName>
+      <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
+      <infraredUpdateRate>90</infraredUpdateRate>
+      <infrared1TopicName>infra1/image_rect_raw</infrared1TopicName>
+      <infrared2TopicName>infra2/image_rect_raw</infrared2TopicName>
+      <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+      <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+      <infrared1OpticalframeName>D435_head_camera_left_ir_optical_frame</infrared1OpticalframeName>
+      <infrared2OpticalframeName>D435_head_camera_right_ir_optical_frame</infrared2OpticalframeName>
+      <rangeMinDepth>0.2</rangeMinDepth>
+      <rangeMaxDepth>10.0</rangeMaxDepth>
+      <depthUpdateRate>30</depthUpdateRate>
+      <depthTopicName>depth/image_rect_raw</depthTopicName>
+      <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
+      <depthOpticalframeName>D435_head_camera_depth_optical_frame</depthOpticalframeName>
+      <pointCloud>1</pointCloud>
+      <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+    </plugin>
+    <plugin name='D435i/D435i_camera' filename='librealsense_gazebo_plugin.so'>
+      <prefix>D435i_camera</prefix>
+      <colorUpdateRate>30</colorUpdateRate>
+      <colorTopicName>color/image_raw</colorTopicName>
+      <colorOpticalframeName>D435i_camera_color_optical_frame</colorOpticalframeName>
+      <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
+      <infraredUpdateRate>90</infraredUpdateRate>
+      <infrared1TopicName>infra1/image_rect_raw</infrared1TopicName>
+      <infrared2TopicName>infra2/image_rect_raw</infrared2TopicName>
+      <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+      <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+      <infrared1OpticalframeName>D435i_camera_left_ir_optical_frame</infrared1OpticalframeName>
+      <infrared2OpticalframeName>D435i_camera_right_ir_optical_frame</infrared2OpticalframeName>
+      <rangeMinDepth>0.2</rangeMinDepth>
+      <rangeMaxDepth>10.0</rangeMaxDepth>
+      <depthUpdateRate>30</depthUpdateRate>
+      <depthTopicName>depth/image_rect_raw</depthTopicName>
+      <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
+      <depthOpticalframeName>D435i_camera_depth_optical_frame</depthOpticalframeName>
+      <pointCloud>1</pointCloud>
+      <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+    </plugin>
+    <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
+      <alwaysOn>1</alwaysOn>
+      <updateRate>262</updateRate>
+      <topicName>T265/T265_camera/odom/sample</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0.0 0.0 0.25</xyzOffsets>
+      <rpyOffsets>0.0 0.0 0.0</rpyOffsets>
+      <bodyName>pelvis</bodyName>
+      <xyzOffset>-0.29245 -0.00775 -0.063</xyzOffset>
+      <rpyOffset>0 -0 0</rpyOffset>
+    </plugin>
     <static>0</static>
     <plugin name='xbot2_link_state_sensor' filename='libxbot2_gz_link_state_sensor.so'>
       <links>
