@@ -21,7 +21,7 @@
 
 <xacro:property name="USE_STICKS" value="false" />
 
-<xacro:property name="ADD_VELODYNE" value="true" />
+<xacro:property name="ADD_VELODYNE" value="false" />
 
 <xacro:property name="ADD_D435_HEAD" value="false" />
 
