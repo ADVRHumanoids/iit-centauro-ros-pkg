@@ -5,10 +5,6 @@ find_package(catkin REQUIRED)
 
 catkin_package()
 
-install(DIRECTORY configs
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
 install(DIRECTORY hal
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

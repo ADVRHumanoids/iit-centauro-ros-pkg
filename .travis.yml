@@ -12,6 +12,7 @@ jobs:
 branches:
   only:
     - refactor
+    - refactor-devel
 
 notifications:
   email:
@@ -24,8 +25,8 @@ notifications:
 before_script:
 
 # apt update and core packages installation
-- sudo apt-get update
-- sudo apt-get install git libgtest-dev cmake doxygen curl libboost-system-dev libmatio-dev 
+- sudo apt update
+- sudo apt install git libgtest-dev cmake doxygen curl libboost-system-dev libmatio-dev 
 
 # ROS source.list and keys
 - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -64,9 +65,9 @@ before_script:
 
 
 - sudo apt install ros-$ROS_DISTRO-urdf ros-$ROS_DISTRO-kdl-parser ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-rosmon
-- sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-moveit-core 
+- sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher
 - sudo apt install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-interactive-markers ros-$ROS_DISTRO-tf-conversions ros-$ROS_DISTRO-tf2-eigen 
-- sudo apt install qttools5-dev libqt5charts5-dev qtdeclarative5-dev python3-pip python3-setuptools
+- sudo apt install python3-pip python3-setuptools
 - sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs  
 - sudo pip3 install hhcm-forest
 - sudo pip3 install rospkg
@@ -79,18 +80,19 @@ before_script:
 
   # source xbot2 framework
 - . /opt/xbot/setup.sh
-- export ROS_PACKAGE_PATH=$PWD:$ROS_PACKAGE_PATH
 
-- echo $PWD
+# forest magic
+- SRC_DIR=$PWD
+- cd .. && mkdir forest_ws && cd forest_ws && forest --init
+- ln -s $SRC_DIR src/$(basename $SRC_DIR)
+- forest -a git@github.com:advrhumanoids/multidof_recipes.git master -u --clone-protocol https  # get recipes
 
 script: 
-
-- mkdir -p build
-- cd build
-- cmake .. 
-- make 
+- source setup.bash -s  # source forest ws
+- FOREST_ARGS="-m test --clone-protocol https --verbose -j2"
+- forest iit-centauro-ros-pkg || travis_terminate 1
 - roscore &
 - ROSCORE_PID=$!
-- python3 ../centauro_test/gz_test.py
+- python3 $SRC_DIR/centauro_test/gz_test.py
 - kill $ROSCORE_PID
 
