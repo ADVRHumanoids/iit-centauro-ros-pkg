@@ -116,9 +116,13 @@
 	<joint name="ankle_pitch_4" value="-0.301667"/>
 	<joint name="ankle_yaw_4" value="0.746874"/>
 	<joint name="torso_yaw" value="3.56617e-13"/>
-	<joint name="velodyne_joint" value="0"/>
-	<joint name="d435_head_joint" value="0"/>
-	<joint name="j_arm1_1" value="0.520149"/>
+    <xacro:if value="${ADD_VELODYNE}">
+        <joint name="velodyne_joint" value="0"/>
+    </xacro:if>
+    <xacro:if value="${ADD_D435_HEAD}">
+        <joint name="d435_head_joint" value="0"/>
+    </xacro:if>
+    <joint name="j_arm1_1" value="0.520149"/>
 	<joint name="j_arm1_2" value="0.320865"/>
 	<joint name="j_arm1_3" value="0.274669"/>
 	<joint name="j_arm1_4" value="-2.23604"/>
