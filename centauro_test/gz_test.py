@@ -21,7 +21,7 @@ class GzTest(unittest.TestCase):
 
         this_dir = path.abspath(path.dirname(__file__))
         self.config_path = path.join(this_dir, '..', 'centauro_config', 'centauro_basic.yaml')
-        self.launch_path = path.join(this_dir, '..', 'centauro_gazebo', 'centauro_world.launch')
+        self.launch_path = path.join(this_dir, '..', 'centauro_gazebo', 'launch', 'centauro_world.launch')
 
         self.get_model_state = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
         self.ros_control = rospy.ServiceProxy('/xbotcore/ros_control/state', PluginStatus)
