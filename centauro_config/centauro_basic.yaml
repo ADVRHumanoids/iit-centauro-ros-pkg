@@ -10,6 +10,7 @@ ModelInterface:
 # hal
 xbotcore_device_configs:
     sim: $(rospack find centauro_config)/hal/centauro_gz.yaml
+    bt: $(rospack find centauro_config)/hal/centauro_bt.yaml
     dummy: $(rospack find centauro_config)/hal/centauro_dummy.yaml
 
 

@@ -23,9 +23,9 @@
             <gain name="big_mot"    p="8000" d="50"/>
             <gain name="wheel_mot"  p="0" d="10"/>
             
-            <pid name="neck_yaw" profile="lowpwr_mot"/>
-            <pid name="neck_pitch" profile="lowpwr_mot"/>
-            <pid name="neck_velodyne" p="0"  d="20"/>
+            <pid name="neck_yaw" p="5"  d="1"/>
+            <pid name="neck_pitch" p="5"  d="1"/>
+            <pid name="neck_velodyne" p="0"  d="10"/>
 
             <pid name="j_arm1_1" profile="medium_mot"/>
             <pid name="j_arm1_2" profile="medium_mot"/>

@@ -48,6 +48,12 @@ generate_urdf(
   ADD_TO_ALL TRUE
 )
 
+generate_urdf(
+  XACRO ${ROBOT_NAME}.urdf.xacro 
+  CONFIG config/${ROBOT_NAME}_robot.urdf.xacro 
+  ADD_TO_ALL TRUE
+)
+
 generate_capsule_urdf(
   CONFIG_NAME ${ROBOT_NAME}
 )
