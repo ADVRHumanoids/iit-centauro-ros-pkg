@@ -700,21 +700,6 @@
       </geometry>
     </collision>
   </link>
-  <!--JOINTS -->
-  <joint name="neck_base" type="fixed">
-    <parent link="torso_2"/>
-    <origin rpy="0 0 0" xyz="0.0030637045 0.0061607221 0.158"/>
-    <child link="neck_1"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <joint name="velodyne_joint" type="revolute">
-    <parent link="neck_1"/>
-    <origin rpy="0 0 0" xyz="0.0822724 0 0.242"/>
-    <child link="velodyne_motor"/>
-    <axis xyz="0 -1 0"/>
-    <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
-    <dynamics friction="10.0"/>
-  </joint>
   <link name="d435_head_motor">
     <inertial>
       <origin xyz="0 0 0"/>
@@ -735,6 +720,21 @@
       </geometry>
     </collision>
   </link>
+  <!--JOINTS -->
+  <joint name="neck_base" type="fixed">
+    <parent link="torso_2"/>
+    <origin rpy="0 0 0" xyz="0.0030637045 0.0061607221 0.158"/>
+    <child link="neck_1"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="velodyne_joint" type="revolute">
+    <parent link="neck_1"/>
+    <origin rpy="0 0 0" xyz="0.0822724 0 0.242"/>
+    <child link="velodyne_motor"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
+    <dynamics friction="10.0"/>
+  </joint>
   <joint name="d435_head_joint" type="revolute">
     <parent link="neck_1"/>
     <origin rpy="0 0 0" xyz="0.06 0 0.1375"/>

@@ -3,15 +3,15 @@
     <link name='pelvis'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose frame=''>-0.000881 0.002666 0.079126 0 -0 0</pose>
-        <mass>26.6526</mass>
+        <pose frame=''>-0.001632 0.002653 0.079167 0 -0 0</pose>
+        <mass>26.5845</mass>
         <inertia>
-          <ixx>0.391978</ixx>
-          <ixy>0.0246796</ixy>
-          <ixz>0.0174312</ixz>
-          <iyy>1.00602</iyy>
-          <iyz>0.0052683</iyz>
-          <izz>1.07394</izz>
+          <ixx>0.391955</ixx>
+          <ixy>0.0247813</ixy>
+          <ixz>0.0171086</ixz>
+          <iyy>1.00007</iyy>
+          <iyz>0.00526271</iyz>
+          <izz>1.068</izz>
         </inertia>
       </inertial>
       <collision name='pelvis_collision'>
@@ -31,15 +31,6 @@
           </friction>
         </surface>
       </collision>
-      <collision name='pelvis_fixed_joint_lump__T265_camera_pose_frame_collision_1'>
-        <pose frame=''>0.29245 0.00775 0.063 1.5708 -0 1.5708</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://realsense_gazebo_description/meshes/t265_simplified.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
       <visual name='pelvis_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -55,129 +46,7 @@
           </script>
         </material>
       </visual>
-      <visual name='pelvis_fixed_joint_lump__T265_camera_pose_frame_visual_1'>
-        <pose frame=''>0.29245 0.00775 0.063 1.5708 -0 1.5708</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://realsense_gazebo_description/meshes/t265_full.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
       <velocity_decay/>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
-      <enable_wind>0</enable_wind>
-      <kinematic>0</kinematic>
-      <sensor name='T265_camerafisheye1' type='wideanglecamera'>
-        <update_rate>30</update_rate>
-        <camera name='__default__'>
-          <horizontal_fov>1.95</horizontal_fov>
-          <image>
-            <width>848</width>
-            <height>800</height>
-          </image>
-          <clip>
-            <near>0.2</near>
-            <far>100</far>
-          </clip>
-          <lens>
-            <type>orthographic</type>
-            <scale_to_hfov>1</scale_to_hfov>
-            <cutoff_angle>2.2</cutoff_angle>
-            <env_texture_size>1024</env_texture_size>
-          </lens>
-        </camera>
-        <plugin name='T265_camerafisheye1' filename='libgazebo_ros_camera.so'>
-          <alwaysOn>1</alwaysOn>
-          <updateRate>30</updateRate>
-          <cameraName>T265/T265_camera/fisheye1</cameraName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>T265_camera_fisheye1_optical_frame</frameName>
-          <hackBaseline>0.07</hackBaseline>
-          <distortionK1>-0.00040996368625201285</distortionK1>
-          <distortionK2>0.03653175011277199</distortionK2>
-          <distortionK3>0.0</distortionK3>
-          <distortionP1>-0.034823670983314514</distortionP1>
-          <distortionP2>0.0052825710736215115</distortionP2>
-          <Cx>416.22</Cx>
-          <Cy>402.1</Cy>
-          <CxPrime>416.22</CxPrime>
-        </plugin>
-        <pose frame=''>0.29245 0.04885 0.063 0 -0 0</pose>
-      </sensor>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
-      <enable_wind>0</enable_wind>
-      <kinematic>0</kinematic>
-      <sensor name='T265_camerafisheye2' type='wideanglecamera'>
-        <update_rate>30</update_rate>
-        <camera name='__default__'>
-          <horizontal_fov>2.84</horizontal_fov>
-          <image>
-            <width>848</width>
-            <height>800</height>
-          </image>
-          <clip>
-            <near>0.1</near>
-            <far>100</far>
-          </clip>
-          <lens>
-            <type>orthographic</type>
-            <scale_to_hfov>1</scale_to_hfov>
-            <cutoff_angle>2.2</cutoff_angle>
-            <env_texture_size>1024</env_texture_size>
-          </lens>
-        </camera>
-        <always_on>1</always_on>
-        <plugin name='T265_camerafisheye2' filename='libgazebo_ros_camera.so'>
-          <alwaysOn>1</alwaysOn>
-          <updateRate>30</updateRate>
-          <cameraName>T265/T265_camera/fisheye2</cameraName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>T265_camera_fisheye2_optical_frame</frameName>
-          <hackBaseline>0.07</hackBaseline>
-          <distortionK1>-0.00040996368625201285</distortionK1>
-          <distortionK2>0.03653175011277199</distortionK2>
-          <distortionK3>0.0</distortionK3>
-          <distortionP1>-0.034823670983314514</distortionP1>
-          <distortionP2>0.0052825710736215115</distortionP2>
-        </plugin>
-        <pose frame=''>0.29245 -0.01515 0.063 0 -0 0</pose>
-      </sensor>
-      <sensor name='T265_cameraaccel' type='imu'>
-        <always_on>1</always_on>
-        <update_rate>62.5</update_rate>
-        <plugin name='T265/T265_camera_accel_plugin' filename='librealsense_gazebo_accel_sensor.so'>
-          <topicName>T265/T265_camera/accel/sample</topicName>
-          <bodyName>T265_camera_pose_frame</bodyName>
-          <updateRateHZ>62.5</updateRateHZ>
-          <gaussianNoise>0.1</gaussianNoise>
-          <xyzOffset>0 0 0</xyzOffset>
-          <rpyOffset>0 0 0</rpyOffset>
-          <frameName>T265_camera_accel_optical_frame</frameName>
-          <initialOrientationAsReference>0</initialOrientationAsReference>
-        </plugin>
-        <pose frame=''>0.29245 -0.01515 0.063 0 -0 0</pose>
-      </sensor>
-      <sensor name='T265_cameragyro' type='imu'>
-        <always_on>1</always_on>
-        <update_rate>200</update_rate>
-        <topic>T265/T265_camera/gyro/sample</topic>
-        <plugin name='T265/T265_camera_gyro_plugin' filename='librealsense_gazebo_gyro_sensor.so'>
-          <topicName>T265/T265_camera/gyro/sample</topicName>
-          <bodyName>T265_camera_pose_frame</bodyName>
-          <updateRateHZ>200</updateRateHZ>
-          <gaussianNoise>0.1</gaussianNoise>
-          <xyzOffset>0 0 0</xyzOffset>
-          <rpyOffset>0 0 0</rpyOffset>
-          <frameName>T265_camera_gyro_optical_frame</frameName>
-          <initialOrientationAsReference>0</initialOrientationAsReference>
-        </plugin>
-        <pose frame=''>0.29245 -0.01515 0.063 0 -0 0</pose>
-      </sensor>
       <gravity>1</gravity>
       <velocity_decay/>
       <sensor name='imu_link' type='imu'>
@@ -3429,126 +3298,44 @@
         </ode>
       </physics>
     </joint>
-    <link name='velodyne_motor'>
-      <pose frame=''>0.285336 0.006161 0.656 0 -0 0</pose>
+    <link name='d435_head_motor'>
+      <pose frame=''>0.263064 0.006161 0.5515 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0.025562 0 -0 0</pose>
-        <mass>1.17879</mass>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.338787</mass>
         <inertia>
-          <ixx>0.00159071</ixx>
+          <ixx>0.000371857</ixx>
           <ixy>-9.42983e-05</ixy>
           <ixz>-2.80644e-05</ixz>
-          <iyy>0.00140754</iyy>
+          <iyy>0.000188688</iyy>
           <iyz>-1.54534e-05</iyz>
-          <izz>0.00160741</izz>
+          <izz>0.000502344</izz>
         </inertia>
       </inertial>
-      <collision name='velodyne_motor_collision'>
+      <collision name='d435_head_motor_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/simple/lidar_mesh.stl</uri>
+            <uri>model://centauro_urdf/meshes/simple/neck-pitch_mesh.stl</uri>
           </mesh>
         </geometry>
       </collision>
-      <collision name='velodyne_motor_fixed_joint_lump__velodyne_calib_base_link_collision_1'>
-        <pose frame=''>0 0 0.03585 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.0717</length>
-            <radius>0.0516</radius>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name='velodyne_motor_visual'>
+      <visual name='d435_head_motor_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://centauro_urdf/meshes/lidar_mesh.stl</uri>
+            <uri>model://centauro_urdf/meshes/neck-pitch_mesh.stl</uri>
           </mesh>
         </geometry>
       </visual>
-      <visual name='velodyne_motor_fixed_joint_lump__velodyne_calib_base_link_visual_1'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://velodyne_description/meshes/VLP16_base_1.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name='velodyne_motor_fixed_joint_lump__velodyne_calib_base_link_visual_2'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://velodyne_description/meshes/VLP16_base_2.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name='velodyne_motor_fixed_joint_lump__velodyne_calib_visual_3'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://velodyne_description/meshes/VLP16_scan.dae</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <uri>__default__</uri>
-            <name>__default__</name>
-          </script>
-        </material>
-      </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <sensor name='velodyne_calib-VLP16' type='ray'>
-        <visualize>0</visualize>
-        <update_rate>10</update_rate>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>440</samples>
-              <resolution>1</resolution>
-              <min_angle>-3.14159</min_angle>
-              <max_angle>3.14159</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>16</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.261799</min_angle>
-              <max_angle>0.261799</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.3</min>
-            <max>131</max>
-            <resolution>0.001</resolution>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0</mean>
-            <stddev>0</stddev>
-          </noise>
-        </ray>
-        <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_laser.so'>
-          <topicName>/velodyne_points</topicName>
-          <frameName>velodyne_calib</frameName>
-          <min_range>0.9</min_range>
-          <max_range>130.0</max_range>
-          <gaussianNoise>0.008</gaussianNoise>
-        </plugin>
-        <pose frame=''>0 0 0.0377 0 -0 0</pose>
-      </sensor>
     </link>
-    <joint name='velodyne_joint' type='revolute'>
-      <child>velodyne_motor</child>
+    <joint name='d435_head_joint' type='revolute'>
+      <child>d435_head_motor</child>
       <parent>torso_2</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-1.1</lower>
           <upper>1.1</upper>
@@ -3564,18 +3351,59 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
-      <alwaysOn>1</alwaysOn>
-      <updateRate>262</updateRate>
-      <topicName>T265/T265_camera/odom/sample</topicName>
-      <gaussianNoise>0.01</gaussianNoise>
-      <frameName>world</frameName>
-      <xyzOffsets>0.0 0.0 0.25</xyzOffsets>
-      <rpyOffsets>0.0 0.0 0.0</rpyOffsets>
-      <bodyName>pelvis</bodyName>
-      <xyzOffset>-0.29245 -0.00775 -0.063</xyzOffset>
-      <rpyOffset>0 -0 0</rpyOffset>
-    </plugin>
+    <link name='velodyne_motor'>
+      <pose frame=''>0.285336 0.006161 0.656 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.338787</mass>
+        <inertia>
+          <ixx>0.000371857</ixx>
+          <ixy>-9.42983e-05</ixy>
+          <ixz>-2.80644e-05</ixz>
+          <iyy>0.000188688</iyy>
+          <iyz>-1.54534e-05</iyz>
+          <izz>0.000502344</izz>
+        </inertia>
+      </inertial>
+      <collision name='velodyne_motor_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/simple/lidar_mesh.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='velodyne_motor_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://centauro_urdf/meshes/lidar_mesh.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='velodyne_joint' type='revolute'>
+      <child>velodyne_motor</child>
+      <parent>torso_2</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.1</lower>
+          <upper>1.1</upper>
+          <effort>35</effort>
+          <velocity>5.7</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>10</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
     <static>0</static>
     <plugin name='xbot2_link_state_sensor' filename='libxbot2_gz_link_state_sensor.so'>
       <links>

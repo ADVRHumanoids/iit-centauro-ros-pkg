@@ -45,17 +45,12 @@
     	<chain base_link="torso_2" tip_link="neck_2" />
     </group>-->
 
-    <xacro:if value="${ADD_VELODYNE}">
-        <group name="velodyne">
-            <chain base_link="torso_2" tip_link="velodyne_motor" />
-        </group>
-    </xacro:if>
-    
-    <xacro:if value="${ADD_D435_HEAD}">
-        <group name="d435_head">
-            <chain base_link="torso_2" tip_link="d435_head_motor" />
-        </group>
-    </xacro:if>
+    <group name="velodyne">
+        <chain base_link="torso_2" tip_link="velodyne_motor" />
+    </group>
+    <group name="d435_head">
+        <chain base_link="torso_2" tip_link="d435_head_motor" />
+    </group>
 
 </xacro:if>
 
@@ -78,13 +73,8 @@
         <group name="right_arm" />
         <group name="torso" />
     
-        <xacro:if value="${ADD_VELODYNE}">
-            <group name="velodyne"/>
-        </xacro:if>
-        
-        <xacro:if value="${ADD_D435_HEAD}">
-            <group name="d435_head"/>
-        </xacro:if>
+        <group name="velodyne"/>
+        <group name="d435_head"/>
     </xacro:if>
 
     <xacro:if value="${ADD_VIRTUAL_FRAME}">
@@ -116,12 +106,8 @@
 	<joint name="ankle_pitch_4" value="-0.301667"/>
 	<joint name="ankle_yaw_4" value="0.746874"/>
 	<joint name="torso_yaw" value="3.56617e-13"/>
-    <xacro:if value="${ADD_VELODYNE}">
-        <joint name="velodyne_joint" value="0"/>
-    </xacro:if>
-    <xacro:if value="${ADD_D435_HEAD}">
-        <joint name="d435_head_joint" value="0"/>
-    </xacro:if>
+    <joint name="velodyne_joint" value="0"/>
+    <joint name="d435_head_joint" value="0"/>
     <joint name="j_arm1_1" value="0.520149"/>
 	<joint name="j_arm1_2" value="0.320865"/>
 	<joint name="j_arm1_3" value="0.274669"/>
