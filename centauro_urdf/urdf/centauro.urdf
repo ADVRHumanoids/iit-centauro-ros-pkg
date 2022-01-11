@@ -711,7 +711,7 @@
     <parent link="neck_1"/>
     <origin rpy="0 0 0" xyz="0.0822724 0 0.242"/>
     <child link="velodyne_motor"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
     <dynamics friction="10.0"/>
   </joint>
@@ -739,7 +739,7 @@
     <parent link="neck_1"/>
     <origin rpy="0 0 0" xyz="0.06 0 0.1375"/>
     <child link="d435_head_motor"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
     <dynamics friction="10.0"/>
   </joint>

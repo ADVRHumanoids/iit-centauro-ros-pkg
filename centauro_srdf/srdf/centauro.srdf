@@ -35,10 +35,9 @@
   <group name="torso">
     <chain base_link="pelvis" tip_link="torso_2"/>
   </group>
-  <!--
-    <group name="neck">
-    	<chain base_link="torso_2" tip_link="neck_2" />
-    </group>-->
+  <group name="neck">
+    	<chain base_link="torso_2" tip_link="d435_head_motor" />
+  </group>
   <group name="velodyne">
     <chain base_link="torso_2" tip_link="velodyne_motor"/>
   </group>
@@ -50,6 +49,7 @@
     <group name="left_arm"/>
     <group name="right_arm"/>
     <group name="torso"/>
+    <group name="neck"/>
     <group name="velodyne"/>
   </group>
   <!-- Homing posture -->
