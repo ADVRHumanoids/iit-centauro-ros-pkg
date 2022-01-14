@@ -700,109 +700,6 @@
       </geometry>
     </collision>
   </link>
-  <!--JOINTS -->
-  <joint name="neck_base" type="fixed">
-    <parent link="torso_2"/>
-    <origin rpy="0 0 0" xyz="0.0030637045 0.0061607221 0.224"/>
-    <child link="neck_1"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <joint name="velodyne_joint" type="revolute">
-    <parent link="neck_1"/>
-    <origin rpy="0 0 0" xyz="0.0825 0 0.243"/>
-    <child link="velodyne_motor"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
-    <dynamics friction="10.0"/>
-  </joint>
-  <joint name="velodyne_calib_base_mount_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="velodyne_motor"/>
-    <child link="velodyne_calib_base_link"/>
-  </joint>
-  <link name="velodyne_calib_base_link">
-    <inertial>
-      <mass value="0.83"/>
-      <origin xyz="0 0 0.03585"/>
-      <inertia ixx="0.000908059425" ixy="0" ixz="0" iyy="0.000908059425" iyz="0" izz="0.0011049624"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_base_1.dae"/>
-      </geometry>
-    </visual>
-    <visual>
-      <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_base_2.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.03585"/>
-      <geometry>
-        <cylinder length="0.0717" radius="0.0516"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="velodyne_calib_base_scan_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.0377"/>
-    <parent link="velodyne_calib_base_link"/>
-    <child link="velodyne_calib"/>
-  </joint>
-  <link name="velodyne_calib">
-    <inertial>
-      <mass value="0.01"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 -0.0377"/>
-      <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
-      </geometry>
-    </visual>
-  </link>
-  <!-- Gazebo requires the velodyne_gazebo_plugins package -->
-  <gazebo reference="velodyne_calib">
-    <sensor name="velodyne_calib-VLP16" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>10</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>440</samples>
-            <resolution>1</resolution>
-            <min_angle>-3.14159265359</min_angle>
-            <max_angle>3.14159265359</max_angle>
-          </horizontal>
-          <vertical>
-            <samples>16</samples>
-            <resolution>1</resolution>
-            <min_angle>-0.261799387799</min_angle>
-            <max_angle> 0.261799387799</max_angle>
-          </vertical>
-        </scan>
-        <range>
-          <min>0.3</min>
-          <max>131.0</max>
-          <resolution>0.001</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.0</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller">
-        <topicName>/velodyne_points</topicName>
-        <frameName>velodyne_calib</frameName>
-        <organize_cloud>False</organize_cloud>
-        <min_range>0.9</min_range>
-        <max_range>130.0</max_range>
-        <gaussianNoise>0.008</gaussianNoise>
-      </plugin>
-    </sensor>
-  </gazebo>
   <link name="d435_head_motor">
     <inertial>
       <origin xyz="0 0 0"/>
@@ -823,11 +720,26 @@
       </geometry>
     </collision>
   </link>
+  <!--JOINTS -->
+  <joint name="neck_base" type="fixed">
+    <parent link="torso_2"/>
+    <origin rpy="0 0 0" xyz="0.0030637045 0.0061607221 0.158"/>
+    <child link="neck_1"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="velodyne_joint" type="revolute">
+    <parent link="neck_1"/>
+    <origin rpy="0 0 0" xyz="0.0822724 0 0.242"/>
+    <child link="velodyne_motor"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
+    <dynamics friction="10.0"/>
+  </joint>
   <joint name="d435_head_joint" type="revolute">
     <parent link="neck_1"/>
     <origin rpy="0 0 0" xyz="0.06 0 0.1375"/>
     <child link="d435_head_motor"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
     <dynamics friction="10.0"/>
   </joint>
@@ -1108,6 +1020,94 @@
       <pointCloudTopicName>depth/color/points</pointCloudTopicName>
       <pointCloudCutoff>0.5</pointCloudCutoff>
     </plugin>
+  </gazebo>
+  <joint name="velodyne_calib_base_mount_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="velodyne_motor"/>
+    <child link="velodyne_calib_base_link"/>
+  </joint>
+  <link name="velodyne_calib_base_link">
+    <inertial>
+      <mass value="0.83"/>
+      <origin xyz="0 0 0.03585"/>
+      <inertia ixx="0.000908059425" ixy="0" ixz="0" iyy="0.000908059425" iyz="0" izz="0.0011049624"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_base_1.dae"/>
+      </geometry>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_base_2.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.03585"/>
+      <geometry>
+        <cylinder length="0.0717" radius="0.0516"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="velodyne_calib_base_scan_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.0377"/>
+    <parent link="velodyne_calib_base_link"/>
+    <child link="velodyne_calib"/>
+  </joint>
+  <link name="velodyne_calib">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.0377"/>
+      <geometry>
+        <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <!-- Gazebo requires the velodyne_gazebo_plugins package -->
+  <gazebo reference="velodyne_calib">
+    <sensor name="velodyne_calib-VLP16" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>440</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159265359</min_angle>
+            <max_angle>3.14159265359</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>16</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.261799387799</min_angle>
+            <max_angle> 0.261799387799</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.3</min>
+          <max>131.0</max>
+          <resolution>0.001</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.0</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller">
+        <topicName>/velodyne_points</topicName>
+        <frameName>velodyne_calib</frameName>
+        <organize_cloud>False</organize_cloud>
+        <min_range>0.9</min_range>
+        <max_range>130.0</max_range>
+        <gaussianNoise>0.008</gaussianNoise>
+      </plugin>
+    </sensor>
   </gazebo>
   <material name="D435i_camera_aluminum">
     <color rgba="0.5 0.5 0.5 1"/>

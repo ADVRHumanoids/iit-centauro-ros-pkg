@@ -35,6 +35,12 @@
   <group name="torso">
     <chain base_link="pelvis" tip_link="torso_2"/>
   </group>
+  <group name="velodyne">
+    <chain base_link="torso_2" tip_link="velodyne_motor"/>
+  </group>
+  <group name="d435_head">
+    <chain base_link="torso_2" tip_link="d435_head_motor"/>
+  </group>
   <group name="car_frame_chain">
     <chain base_link="pelvis" tip_link="car_frame"/>
   </group>
@@ -46,6 +52,8 @@
     <group name="left_arm"/>
     <group name="right_arm"/>
     <group name="torso"/>
+    <group name="velodyne"/>
+    <group name="d435_head"/>
     <group name="car_frame_chain"/>
   </group>
   <!-- Homing posture -->
