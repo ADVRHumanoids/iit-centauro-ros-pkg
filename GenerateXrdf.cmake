@@ -90,7 +90,7 @@ function(generate_capsule_urdf)
         COMMAND mkdir -p ${CAPSULE_FOLDER}
         COMMAND robot_capsule_urdf ${GEN_CAPSULE_URDF} --output ${OUTPUT_FILE} -c ${CAPSULE_FOLDER}
         COMMAND robot_capsule_urdf_to_rviz ${OUTPUT_FILE} --output ${OUTPUT_FILE}
-        DEPENDS ${XACRO_FILES} 
+        DEPENDS ${XACRO_FILES} ${GEN_CAPSULE_URDF}
     )
 
     add_custom_target(publish_urdf_${CONFIG_NAME}_capsule
