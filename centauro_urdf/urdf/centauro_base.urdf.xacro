@@ -71,24 +71,77 @@
       			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
    		</xacro:ball_end_effector>
 	</xacro:if>
+
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/head.urdf.xacro" />
     
-        
     <xacro:if value="${ADD_VELODYNE}">
         <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-        <xacro:VLP-16 parent="neck_3" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
-            <origin xyz="0.032768 -0.01 0.048219" rpy="0 1.5709 -0.316519  " />
+        <xacro:VLP-16 parent="velodyne_motor" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </xacro:VLP-16>
     </xacro:if>
 
+    <xacro:if value="${ADD_D435I_HEAD}">
 
-    <xacro:if value="${ADD_INTEL_D435I}">
+        <link name="d435_head_motor">
+            <inertial>
+            <origin xyz="0 0 0"/>
+            <mass value="0.33878686"/> <!-- MASS/INERTIA TO DO -->
+            <inertia ixx="0.0003718568" ixy="-9.42983e-05" ixz="-2.80644e-05" iyy="0.0001886879" iyz="-1.54534e-05" izz="0.0005023443"/>
+            </inertial>
+            <visual>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+            <geometry>
+                <mesh filename="package://centauro_urdf/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            </visual>
+            <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+            <geometry>
+                <mesh filename="package://centauro_urdf/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            </collision>
+        </link>
+
+        <joint name="d435_head_joint" type="revolute">
+            <parent link="neck_1"/>
+            <origin xyz="0.06 0 0.1375" rpy="0 0 0"/>
+            <child link="d435_head_motor"/>
+            <axis xyz="0 1 0"/>
+            <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
+            <dynamics friction="10.0"/>
+        </joint>
+
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
-        
-       <!-- <xacro:sensor_d435i parent="torso_2" name="d435i_camera" topics_ns="d435i_camera" 
-                            enable_pointCloud="true" align_depth="true">
-            <origin xyz="0.13 0 0.03" rpy="0 0.25 0"/> 
-        </xacro:sensor_d435i>-->
+
+        <xacro:sensor_d435i parent="d435_head_motor" name="D435_head_camera" topics_ns="D435/D435_head_camera"
+                      enable_pointCloud="true" align_depth="true"
+                      unite_imu_method="false"
+
+                      visualize="false"
+
+
+                      accel_fps="300"
+                      gyro_fps="300"
+
+                      depth_width="1280"
+                      depth_height="720"
+                      depth_fps="90"
+
+                      infra_width="1280"
+                      infra_height="720"
+                      infra_fps="90"
+
+                      color_width="1280"
+                      color_height="720"
+                      color_fps="30">
+
+            <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
+        </xacro:sensor_d435i>
+    </xacro:if>
+
+    <xacro:if value="${ADD_D435I_BASE}">
+        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
         
         <xacro:sensor_d435i parent="pelvis" name="D435i_camera" topics_ns="D435i/D435i_camera"
                       enable_pointCloud="true" align_depth="true"
@@ -112,7 +165,7 @@
                       color_height="720"
                       color_fps="30">
             
-            <origin xyz="0.219831 0 -0.0613293" rpy="0.0 0.5585052 0.0"/>
+            <origin xyz="0.27187 0 0.0215997" rpy="0 0.5251508 0"/>
         </xacro:sensor_d435i>
 
         
@@ -120,17 +173,10 @@
     </xacro:if>
     
     
-    <xacro:if value="${ADD_INTEL_T265}">
+    <xacro:if value="${ADD_T265_BASE}">
+
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_t265.urdf.xacro" />
 
-        <!-- unite_imu_method can be false, copy or linear_interpolation -->
-
-        <!--<xacro:sensor_t265  parent="torso_2" name="T265_camera" topics_ns="T265_camera"
-                      xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"
-                      unite_imu_method="false"> 
-            <origin xyz="0.125 0.0 0" rpy="0.0 0.25 0.0"/>  
-        </xacro:sensor_t265>-->
-        
         <xacro:sensor_t265  parent="pelvis" name="T265_camera" topics_ns="T265/T265_camera"                  
                            
                       odom_xyz="0.0 0.0 0.25"
@@ -145,7 +191,7 @@
                       accel_fps="62.5"
                       gyro_fps="200">
             
-            <origin xyz="0.252619 0.00775 -0.0206926" rpy="0.0 0.2617993 0.0" />  
+            <origin xyz="0.29245 0.00775 0.063" rpy="0 0 0" />
         </xacro:sensor_t265>
     </xacro:if>
     
