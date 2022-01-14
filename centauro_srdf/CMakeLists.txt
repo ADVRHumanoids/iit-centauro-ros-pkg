@@ -12,16 +12,18 @@ generate_srdf(
   XACRO ${ROBOT_NAME}.srdf.xacro 
   CONFIG config/${ROBOT_NAME}.urdf.xacro 
   ADD_TO_ALL TRUE
+  GEN_ACM TRUE
+)
+
+generate_capsule_srdf_acm(
+  CONFIG_NAME ${ROBOT_NAME}
+  ADD_TO_ALL TRUE
 )
 
 generate_srdf(
   XACRO ${ROBOT_NAME}.srdf.xacro 
   CONFIG config/${ROBOT_NAME}_virtual_frame.urdf.xacro 
   ADD_TO_ALL TRUE
-)
-
-generate_capsule_srdf(
-  CONFIG_NAME ${ROBOT_NAME}
 )
 
 ## Mark srdf for installation
