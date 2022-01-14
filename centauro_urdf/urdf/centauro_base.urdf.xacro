@@ -59,86 +59,7 @@
 <xacro:if value="${ADD_UPPER_BODY}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
     <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
-	
-	<xacro:if value="${ADD_BALL_END_EFFECTOR}">
-		<xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />
-
-		<xacro:ball_end_effector arm_num="1"  parent_link="arm1_7">
-      			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-   		</xacro:ball_end_effector>
-
-		<xacro:ball_end_effector arm_num="2"  parent_link="arm2_7">
-      			<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-   		</xacro:ball_end_effector>
-	</xacro:if>
-
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/head.urdf.xacro" />
-    
-    <xacro:if value="${ADD_VELODYNE}">
-        <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-        <xacro:VLP-16 parent="velodyne_motor" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
-            <origin xyz="0 0 0" rpy="0 0 0" />
-        </xacro:VLP-16>
-    </xacro:if>
-
-    <xacro:if value="${ADD_D435I_HEAD}">
-
-        <link name="d435_head_motor">
-            <inertial>
-            <origin xyz="0 0 0"/>
-            <mass value="0.33878686"/> <!-- MASS/INERTIA TO DO -->
-            <inertia ixx="0.0003718568" ixy="-9.42983e-05" ixz="-2.80644e-05" iyy="0.0001886879" iyz="-1.54534e-05" izz="0.0005023443"/>
-            </inertial>
-            <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-            <geometry>
-                <mesh filename="package://centauro_urdf/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-            </visual>
-            <collision>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-            <geometry>
-                <mesh filename="package://centauro_urdf/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-            </collision>
-        </link>
-
-        <joint name="d435_head_joint" type="revolute">
-            <parent link="neck_1"/>
-            <origin xyz="0.06 0 0.1375" rpy="0 0 0"/>
-            <child link="d435_head_motor"/>
-            <axis xyz="0 1 0"/>
-            <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
-            <dynamics friction="10.0"/>
-        </joint>
-
-        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
-
-        <xacro:sensor_d435i parent="d435_head_motor" name="D435_head_camera" topics_ns="D435/D435_head_camera"
-                      enable_pointCloud="true" align_depth="true"
-                      unite_imu_method="false"
-
-                      visualize="false"
-
-
-                      accel_fps="300"
-                      gyro_fps="300"
-
-                      depth_width="1280"
-                      depth_height="720"
-                      depth_fps="90"
-
-                      infra_width="1280"
-                      infra_height="720"
-                      infra_fps="90"
-
-                      color_width="1280"
-                      color_height="720"
-                      color_fps="30">
-
-            <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
-        </xacro:sensor_d435i>
-    </xacro:if>
 
     <xacro:if value="${ADD_D435I_BASE}">
         <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
@@ -168,8 +89,6 @@
             <origin xyz="0.27187 0 0.0215997" rpy="0 0.5251508 0"/>
         </xacro:sensor_d435i>
 
-        
-        
     </xacro:if>
     
     
@@ -200,9 +119,6 @@
 <xacro:if value="${ADD_LEGS}">
 	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
 </xacro:if>
-
-
-
 
 </robot>
 

@@ -47,17 +47,14 @@
             <chain base_link="pelvis" tip_link="torso_2" />
         </group>        
 
-        <xacro:if value="${ADD_VELODYNE}">
-            <group name="velodyne">
-                <chain base_link="torso_2" tip_link="velodyne_motor" />
-            </group>
-        </xacro:if>
+        <group name="velodyne">
+            <chain base_link="torso_2" tip_link="velodyne_motor" />
+        </group>
 
-        <xacro:if value="${ADD_D435I_HEAD}">
-            <group name="d435_head">
-                <chain base_link="torso_2" tip_link="d435_head_motor" />
-            </group>
-        </xacro:if>
+        <group name="d435_head">
+            <chain base_link="torso_2" tip_link="d435_head_motor" />
+        </group>
+
 
     </xacro:if>
 
@@ -79,14 +76,8 @@
             <group name="left_arm" />
             <group name="right_arm" />
             <group name="torso" />
-
-            <xacro:if value="${ADD_VELODYNE}">
-                <group name="velodyne"/>
-            </xacro:if>
-
-            <xacro:if value="${ADD_D435I_HEAD}">
-                <group name="d435_head"/>
-            </xacro:if>
+            <group name="velodyne"/>
+            <group name="d435_head"/>
         </xacro:if>
 
         <xacro:if value="${ADD_VIRTUAL_FRAME}">
