@@ -67,7 +67,7 @@ class GzTest(unittest.TestCase):
         from xbot_msgs.msg import JointState
         timeout = 10
         msg = rospy.wait_for_message('/xbotcore/joint_states', JointState, timeout=timeout)
-        self.assertEqual(len(msg.name), 42)
+        self.assertEqual(len(msg.name), 41)
 
     def _launch_gz(self, realsense=False, velodyne=False):
         proc = subprocess.Popen(
