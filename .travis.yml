@@ -25,6 +25,7 @@ notifications:
 before_script:
 
 # apt update and core packages installation
+- set -e
 - sudo apt update
 - sudo apt install git libgtest-dev cmake doxygen curl libboost-system-dev libmatio-dev 
 
@@ -67,7 +68,7 @@ before_script:
 - sudo apt install ros-$ROS_DISTRO-urdf ros-$ROS_DISTRO-kdl-parser ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-rosmon
 - sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-moveit-core ros-$ROS_DISTRO-srdfdom
 - sudo apt install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-interactive-markers ros-$ROS_DISTRO-tf-conversions ros-$ROS_DISTRO-tf2-eigen 
-- sudo apt install python3-pip python3-setuptools
+- sudo apt install python3-pip python3-setuptools coinor-libipopt-dev
 - sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs  
 - sudo pip3 install hhcm-forest
 - sudo pip3 install rospkg
@@ -92,6 +93,7 @@ before_script:
 - forest capsule_generation $FOREST_ARGS  # compile capsule generation (we need to re-source afterwards)
 - source setup.bash  # source forest ws again because of roboptim
 - export ROS_PACKAGE_PATH=$PWD/src:$ROS_PACKAGE_PATH # include robot dir in ros pkg path
+- set +e
 
 script: 
 - set -e
