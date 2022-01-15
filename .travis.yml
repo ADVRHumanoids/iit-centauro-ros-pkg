@@ -91,6 +91,7 @@ before_script:
 - FOREST_ARGS="-m test --clone-protocol https --verbose --pwd travis"
 - forest capsule_generation $FOREST_ARGS  # compile capsule generation (we need to re-source afterwards)
 - source setup.bash  # source forest ws again because of roboptim
+- export ROS_PACKAGE_PATH=$PWD/src:$ROS_PACKAGE_PATH # include robot dir in ros pkg path
 
 script: 
 - set -e
