@@ -1,14 +1,17 @@
+#!/usr/bin/env python3
+
 from re import sub
 import unittest
 import subprocess
-from os import path
+from os import path, environ
 from gazebo_msgs.srv import GetModelState
 from std_srvs.srv import SetBool
 from xbot_msgs.srv import PluginStatus
-import rospy
+import rospy, rosgraph
 import time
 import signal
 import warnings
+import atexit
 
 warnings.simplefilter("ignore", ResourceWarning)
 
@@ -69,7 +72,7 @@ class GzTest(unittest.TestCase):
         msg = rospy.wait_for_message('/xbotcore/joint_states', JointState, timeout=timeout)
         self.assertEqual(len(msg.name), 41)
 
-    def _launch_gz(self, realsense=False, velodyne=False):
+    def _launch_gz(self, realsense='false', velodyne='false'):
         proc = subprocess.Popen(
             args=['roslaunch', 
                   self.launch_path, 
@@ -118,5 +121,20 @@ class GzTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    # run test on a seperate roscore
+    environ['ROS_MASTER_URI'] = 'http://localhost:11322'
+    roscore = subprocess.Popen('roscore -p 11322'.split())
+
+    while not rosgraph.is_master_online():
+        print('waiting for master to come alive..')
+        time.sleep(1)
+
     rospy.init_node('centauro_test_node')
+
+    def kill_roscore():
+        roscore.send_signal(signal.SIGINT)
+        roscore.wait()
+
+    atexit.register(kill_roscore)
+
     unittest.main()

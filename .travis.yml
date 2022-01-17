@@ -98,9 +98,7 @@ before_script:
 script: 
 - set -e
 - forest iit-centauro-ros-pkg $FOREST_ARGS
-- roscore &
-- ROSCORE_PID=$!
-- python3 $SRC_DIR/centauro_test/gz_test.py
-- kill $ROSCORE_PID
+- cd build/iit-centauro-ros-pkg && make generate  # test generation 
+- ctest --output-on-failure   # unit tests
 - set +e
 
