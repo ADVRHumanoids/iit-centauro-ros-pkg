@@ -99,6 +99,6 @@ script:
 - set -e
 - forest iit-centauro-ros-pkg $FOREST_ARGS
 - cd build/iit-centauro-ros-pkg && make generate  # test generation 
-- ctest --output-on-failure   # unit tests
+- ctest -V   # unit tests
 - set +e
 
