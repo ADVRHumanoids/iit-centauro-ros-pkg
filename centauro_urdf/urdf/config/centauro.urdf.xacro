@@ -8,8 +8,8 @@
 <!-- command line arguments -->
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
-<xacro:arg name="velodyne" default="false"/>
-<xacro:arg name="realsense" default="false"/>
+<xacro:arg name="velodyne" default="true"/>
+<xacro:arg name="realsense" default="true"/>
 <xacro:arg name="floating_joint" default="true"/>
 
 

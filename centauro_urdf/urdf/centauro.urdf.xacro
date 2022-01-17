@@ -17,24 +17,13 @@
 
 <link name="world"/>
 
-  <joint name="reference" type="floating">
+<joint name="reference" type="floating">
     <parent link="world"/>
     <child link="pelvis"/>
 </joint>
 
 </xacro:if>
 </xacro:if>
-
-<xacro:unless value="${ADD_FLOATING_BASE}">
-
-<link name="world"/>
-
-  <joint name="reference" type="fixed">
-    <parent link="world"/>
-    <child link="pelvis"/>
-</joint>
-
-</xacro:unless>
 
 
 <xacro:if value="${ADD_VIRTUAL_FRAME}">

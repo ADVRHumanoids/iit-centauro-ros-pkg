@@ -40,7 +40,7 @@
   <param name="robot_description_gz"
          command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro_robot.urdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense)"/>
          
-  <param name="robot_description_semantic" 
+  <param name="robot_description_semantic_reduced" 
          command="$(find xacro)/xacro $(find centauro_srdf)/srdf/centauro.srdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense)"/>
          
   <!-- Load URDF/SRDF for ModelInterface in robot_description -->

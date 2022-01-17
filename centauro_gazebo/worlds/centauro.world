@@ -3,6 +3,38 @@
   <!-- We use a custom world for the rrbot so that the camera angle is launched correctly -->
 
   <world name="default">
+
+  <model name="box">
+    <static>true</static>
+    <pose> 1.2 0.5 0.7 0.0 0.0 0.0 </pose>
+    <link name="link">   
+    <inertial>
+      <inertia>
+      <ixx>1</ixx>
+      <ixy>0</ixy>
+      <ixz>0</ixz>
+      <iyy>1</iyy>
+      <iyz>0</iyz>
+      <izz>1</izz>
+      </inertia>
+      <mass>1.0</mass>
+    </inertial>
+    <collision name="box_collision">
+       <geometry>
+          <box>
+          <size> 0.1 0.1 0.1</size>
+          </box>
+       </geometry>
+    </collision>
+    <visual name="visual_collision">
+       <geometry>
+          <box>
+          <size> 0.1 0.1 0.1</size>
+          </box>
+       </geometry>
+    </visual>    
+    </link>   
+  </model>
   
   <plugin name="xbot2_clock" filename="libxbot2_gz_clock.so"/>
 
