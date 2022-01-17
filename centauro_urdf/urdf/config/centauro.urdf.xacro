@@ -8,8 +8,8 @@
 <!-- command line arguments -->
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
-<xacro:arg name="velodyne" default="false"/>
-<xacro:arg name="realsense" default="false"/>
+<xacro:arg name="velodyne" default="true"/>
+<xacro:arg name="realsense" default="true"/>
 <xacro:arg name="floating_joint" default="true"/>
 
 
@@ -26,7 +26,8 @@
 <xacro:property name="USE_STICKS" value="false" />
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
-<xacro:property name="ADD_INTEL_D435I" value="$(arg realsense)" />
-<xacro:property name="ADD_INTEL_T265" value="$(arg realsense)" />
+<xacro:property name="ADD_D435I_HEAD" value="$(arg realsense)" />
+<xacro:property name="ADD_D435I_BASE" value="$(arg realsense)" />
+<xacro:property name="ADD_T265_BASE" value="$(arg realsense)" />
 
 </robot>

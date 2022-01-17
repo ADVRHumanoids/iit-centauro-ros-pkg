@@ -12,6 +12,7 @@ jobs:
 branches:
   only:
     - refactor
+    - refactor-devel
 
 notifications:
   email:
@@ -24,8 +25,9 @@ notifications:
 before_script:
 
 # apt update and core packages installation
-- sudo apt-get update
-- sudo apt-get install git libgtest-dev cmake doxygen curl libboost-system-dev libmatio-dev 
+- set -e
+- sudo apt update
+- sudo apt install git libgtest-dev cmake doxygen curl libboost-system-dev libmatio-dev 
 
 # ROS source.list and keys
 - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -64,12 +66,13 @@ before_script:
 
 
 - sudo apt install ros-$ROS_DISTRO-urdf ros-$ROS_DISTRO-kdl-parser ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-rosmon
-- sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-moveit-core 
+- sudo apt install ros-$ROS_DISTRO-eigen-conversions ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-moveit-core ros-$ROS_DISTRO-srdfdom
 - sudo apt install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-interactive-markers ros-$ROS_DISTRO-tf-conversions ros-$ROS_DISTRO-tf2-eigen 
-- sudo apt install qttools5-dev libqt5charts5-dev qtdeclarative5-dev python3-pip python3-setuptools
+- sudo apt install python3-pip python3-setuptools coinor-libipopt-dev
 - sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs  
 - sudo pip3 install hhcm-forest
 - sudo pip3 install rospkg
+- source /opt/ros/$ROS_DISTRO/setup.bash
 
   # xbot2 framework install (but xbot2)
 - sudo sh -c 'echo "deb http://xbot.cloud/xbot2/ubuntu/$(lsb_release -sc) /" > /etc/apt/sources.list.d/xbot-latest.list'
@@ -79,18 +82,23 @@ before_script:
 
   # source xbot2 framework
 - . /opt/xbot/setup.sh
-- export ROS_PACKAGE_PATH=$PWD:$ROS_PACKAGE_PATH
 
-- echo $PWD
+# forest magic
+- SRC_DIR=$PWD
+- cd .. && mkdir forest_ws && cd forest_ws && forest --init
+- ln -s $SRC_DIR src/$(basename $SRC_DIR)
+- forest -a git@github.com:advrhumanoids/multidof_recipes.git master -u --clone-protocol https  # get recipes
+- source setup.bash  # source forest ws
+- FOREST_ARGS="-m test --clone-protocol https --verbose --pwd travis"
+- forest capsule_generation $FOREST_ARGS  # compile capsule generation (we need to re-source afterwards)
+- source setup.bash  # source forest ws again because of roboptim
+- export ROS_PACKAGE_PATH=$PWD/src:$ROS_PACKAGE_PATH # include robot dir in ros pkg path
+- set +e
 
 script: 
-
-- mkdir -p build
-- cd build
-- cmake .. 
-- make 
-- roscore &
-- ROSCORE_PID=$!
-- python3 ../centauro_test/gz_test.py
-- kill $ROSCORE_PID
+- set -e
+- forest iit-centauro-ros-pkg $FOREST_ARGS
+- cd build/iit-centauro-ros-pkg && make generate  # test generation 
+- ctest -V   # unit tests
+- set +e
 
