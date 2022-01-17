@@ -104,6 +104,8 @@ class GzTest(unittest.TestCase):
         print('xbot2 running')
 
         print('checking ros_control can be activated')
+        self.assertIn(self._ros_control(), ('Running', 'Starting'))
+        time.sleep(1)
         self.assertEqual(self._ros_control(), 'Running')
 
         print('checking joint_states can be received')
