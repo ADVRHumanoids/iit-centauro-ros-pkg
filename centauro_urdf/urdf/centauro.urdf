@@ -13,7 +13,7 @@
   <material name="black">
     <color rgba="0.4 0.4 0.4 1"/>
   </material>
-  <material name="dark">
+  <material name="dark_grey">
     <color rgba="0.1 0.1 0.1 1"/>
   </material>
   <!-- TODO CHECK THIS VALUE -->
