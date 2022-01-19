@@ -4,13 +4,29 @@
 <xacro:property name="model_name" value="centauro" />
 <xacro:property name="model_version" value="0.1" />
 
+
+<!-- command line arguments -->
+<xacro:arg name="legs" default="true"/>
+<xacro:arg name="upper_body" default="true"/>
+<xacro:arg name="velodyne" default="false"/>
+<xacro:arg name="realsense" default="false"/>
+<xacro:arg name="floating_joint" default="true"/>
+
+
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
-<xacro:property name="ADD_LEGS" value="true" />
-<xacro:property name="ADD_UPPER_BODY" value="true" />
+<xacro:property name="ADD_LEGS" value="$(arg legs)" />
+<xacro:property name="ADD_UPPER_BODY" value="$(arg upper_body)" />
 
 <xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
 
-<xacro:property name="ADD_FLOATING_BASE" value="true" />
+<xacro:property name="ADD_FLOATING_BASE" value="$(arg floating_joint)" />
+<xacro:property name="ADD_VIRTUAL_FRAME" value="false" />
+
+<xacro:property name="USE_STICKS" value="false" />
+
+<xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
+<xacro:property name="ADD_INTEL_D435I" value="$(arg realsense)" />
+<xacro:property name="ADD_INTEL_T265" value="$(arg realsense)" />
 
 </robot>

@@ -1,24 +1,17 @@
-cmake_minimum_required(VERSION 2.8)
-PROJECT(iit-centauro-ros-pkg)
+cmake_minimum_required(VERSION 3.0)
 
-add_custom_target(  acm
-                    COMMAND ${CMAKE_SOURCE_DIR}/centauro_urdf/script/create_acm.sh centauro)
+set(ROBOT_NAME centauro)
+project(iit-${ROBOT_NAME}-ros-pkg VERSION 1.0.0)
 
-add_custom_target(	remove_old_centauro_urdf_gazebo ALL
-    				COMMAND ${CMAKE_COMMAND} -E remove_directory 
-        			"~/.gazebo/models/centauro_urdf/")
 
-add_custom_target(  remove_old_centauro_gazebo ALL
-                    COMMAND ${CMAKE_COMMAND} -E remove_directory 
-                    "~/.gazebo/models/centauro/")
+## add sub-packages
+add_subdirectory(centauro_urdf)
+add_subdirectory(centauro_srdf)
+add_subdirectory(centauro_gazebo)
+add_subdirectory(centauro_config)
+add_subdirectory(centauro_cartesio_config)
 
-add_custom_target(  compile_urdf_sdf ALL
-                    COMMAND ${CMAKE_SOURCE_DIR}/centauro_urdf/script/create_urdf_srdf_sdf.sh centauro)
+enable_testing()
+add_subdirectory(centauro_test)
 
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    add_custom_target(	copy_centauro_gazebo ALL
-        				COMMAND ${CMAKE_COMMAND} -E copy_directory 
-            			"${PROJECT_SOURCE_DIR}/centauro_gazebo/sdf/" 
-            			"~/.gazebo/models/centauro/"
-            			DEPENDS remove_old_centauro_gazebo)
-endif()
+include(GenerateDeb.cmake)

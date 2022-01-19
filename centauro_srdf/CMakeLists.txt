@@ -1,6 +1,31 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(centauro_srdf)
+project(${ROBOT_NAME}_srdf)
 
 find_package(catkin REQUIRED)
 
 catkin_package()
+
+## for each config xacro file, generate srdf and mark it for installation
+
+include(../GenerateXrdf.cmake)
+
+generate_srdf(
+  XACRO ${ROBOT_NAME}.srdf.xacro 
+  CONFIG config/${ROBOT_NAME}.urdf.xacro 
+  ADD_TO_ALL TRUE
+)
+
+generate_srdf(
+  XACRO ${ROBOT_NAME}.srdf.xacro 
+  CONFIG config/${ROBOT_NAME}_virtual_frame.urdf.xacro 
+  ADD_TO_ALL TRUE
+)
+
+generate_capsule_srdf(
+  CONFIG_NAME ${ROBOT_NAME}
+)
+
+## Mark srdf for installation
+
+install(DIRECTORY srdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
