@@ -11,7 +11,7 @@ jobs:
 
 branches:
   only:
-    - refactor
+    - master
 
 notifications:
   email:
@@ -19,7 +19,7 @@ notifications:
       - luca.muratore89@gmail.com
       - arturo.laurenzi@iit.it
     on_success: never
-    on_failure: never
+    on_failure: always
 
 before_script:
 
