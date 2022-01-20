@@ -1,4 +1,4 @@
-# iit-centauro-ros-pkg
+# iit-centauro-ros-pkg  [![Build Status](https://app.travis-ci.com/ADVRHumanoids/iit-centauro-ros-pkg.svg?branch=master)](https://app.travis-ci.com/ADVRHumanoids/iit-centauro-ros-pkg)
 Repository dedicated to the IIT robot CENTAURO
 
 How to create the Robot Model:
