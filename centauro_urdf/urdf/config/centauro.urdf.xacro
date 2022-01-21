@@ -10,6 +10,16 @@
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="true"/>
+<xacro:if value="$(arg realsense)">
+	<xacro:arg name="d435i_head" default="true"/>
+	<xacro:arg name="d435i_base" default="true"/>
+	<xacro:arg name="t265_base" default="true"/>
+</xacro:if>
+<xacro:unless value="$(arg realsense)">
+	<xacro:arg name="d435i_head" default="false"/>
+	<xacro:arg name="d435i_base" default="false"/>
+	<xacro:arg name="t265_base" default="false"/>
+</xacro:unless>
 <xacro:arg name="floating_joint" default="true"/>
 
 
@@ -26,8 +36,8 @@
 <xacro:property name="USE_STICKS" value="false" />
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
-<xacro:property name="ADD_D435I_HEAD" value="$(arg realsense)" />
-<xacro:property name="ADD_D435I_BASE" value="$(arg realsense)" />
-<xacro:property name="ADD_T265_BASE" value="$(arg realsense)" />
+<xacro:property name="ADD_D435I_HEAD" value="$(arg d435i_head)" />
+<xacro:property name="ADD_D435I_BASE" value="$(arg d435i_base)" />
+<xacro:property name="ADD_T265_BASE" value="$(arg t265_base)" />
 
 </robot>
