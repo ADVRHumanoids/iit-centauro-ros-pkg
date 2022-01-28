@@ -96,8 +96,6 @@
   <xacro:property name="d435_head_origin">
     <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
   </xacro:property>
-  <xacro:property name="M_PI" value="3.1415926535897931"/>
-
 
   <xacro:if value="${ADD_D435I_HEAD}">
 
@@ -155,7 +153,7 @@
     
     <link name="${d435_head_name}_link">
       <visual>
-      <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${M_PI/2} 0 ${M_PI/2}"/>
+      <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${PI/2} 0 ${PI/2}"/>
         <geometry>
           <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
           <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
