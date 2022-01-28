@@ -101,8 +101,7 @@
 
   <xacro:if value="${ADD_D435I_HEAD}">
 
-<!--    <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />-->
-    <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro" />
+    <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
 
     <xacro:sensor_d435i parent="${d435_head_parent_name}" 
         name="${d435_head_name}" 
