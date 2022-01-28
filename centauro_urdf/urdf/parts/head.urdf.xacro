@@ -91,13 +91,22 @@
     <dynamics friction="10.0"/>
   </joint>
 
+  <xacro:property name="d435_head_name" value="D435_head_camera" />
+  <xacro:property name="d435_head_parent_name" value="d435_head_motor" />
+  <xacro:property name="d435_head_origin">
+    <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
+  </xacro:property>
+  <xacro:property name="M_PI" value="3.1415926535897931"/>
+
+
   <xacro:if value="${ADD_D435I_HEAD}">
 
-    <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
+<!--    <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />-->
+    <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro" />
 
-    <xacro:sensor_d435i parent="d435_head_motor" 
-        name="D435_head_camera" 
-        topics_ns="D435/D435_head_camera" 
+    <xacro:sensor_d435i parent="${d435_head_parent_name}" 
+        name="${d435_head_name}" 
+        topics_ns="D435/${d435_head_name}" 
         enable_pointCloud="true" 
         align_depth="true" 
         unite_imu_method="false" 
@@ -114,11 +123,61 @@
         color_height="720" 
         color_fps="30">
 
-      <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
+        <xacro:insert_block name="d435_head_origin" />
 
     </xacro:sensor_d435i>
     
   </xacro:if>
+  
+  <xacro:unless value="${ADD_D435I_HEAD}">
+      
+    <!--  Copied from _d435.urdf.xacro    -->
+    <xacro:property name="d435_cam_width" value="0.090"/>
+    <xacro:property name="d435_cam_height" value="0.025"/>
+    <xacro:property name="d435_cam_depth" value="0.02505"/>
+    <xacro:property name="d435_cam_mount_from_center_offset" value="0.0149"/>
+    <xacro:property name="d435_cam_depth_px" value="${d435_cam_mount_from_center_offset}"/>
+    <xacro:property name="d435_cam_depth_py" value="0.0175"/>
+    <xacro:property name="d435_cam_depth_pz" value="${d435_cam_height/2}"/> 
+      
+    <!-- camera body, with origin at bottom screw mount -->
+    <joint name="${d435_head_name}_joint" type="fixed">
+      <xacro:insert_block name="d435_head_origin"/>
+      <parent link="${d435_head_parent_name}"/>
+      <child link="${d435_head_name}_bottom_screw_frame"/>
+    </joint>
+    <link name="${d435_head_name}_bottom_screw_frame"/>
+
+    <joint name="${d435_head_name}_link_joint" type="fixed">
+      <origin xyz="0 ${d435_cam_depth_py} ${d435_cam_depth_pz}" rpy="0 0 0"/>
+      <parent link="${d435_head_name}_bottom_screw_frame"/>
+      <child link="${d435_head_name}_link"/>
+    </joint>
+    
+    <link name="${d435_head_name}_link">
+      <visual>
+      <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${M_PI/2} 0 ${M_PI/2}"/>
+        <geometry>
+          <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
+          <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        </geometry>
+        <material name="${d435_head_name}_aluminum"/>
+      </visual>
+      <collision>
+        <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <!-- The following are not reliable values, and should not be used for modeling -->
+        <mass value="0.564"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
+      </inertial>
+    </link>
+    
+  </xacro:unless>
 
   <xacro:if value="${ADD_VELODYNE}">
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
