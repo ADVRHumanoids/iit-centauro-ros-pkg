@@ -5,9 +5,9 @@
   <link name="neck_1">
     <inertial>
       <origin xyz="0 0 0"/>
-      <mass value="0.33878686"/>
+      <mass value="2.146"/>
       <!-- MASS/INERTIA TO DO -->
-      <inertia ixx="0.0003718568" ixy="-9.42983e-05" ixz="-2.80644e-05" iyy="0.0001886879" iyz="-1.54534e-05" izz="0.0005023443"/>
+      <inertia ixx="${3.6754716e+04*mm2Tom2}" ixy="${-1.7440409e+02*mm2Tom2}" ixz="${-1.1571084e+03*mm2Tom2}" iyy="${3.7072505e+04*mm2Tom2}" iyz="${-1.4217709e+03*mm2Tom2}" izz="${3.5983886e+03*mm2Tom2}"/>
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
