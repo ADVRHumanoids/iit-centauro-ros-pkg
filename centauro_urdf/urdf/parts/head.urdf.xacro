@@ -103,7 +103,7 @@
 
     <xacro:sensor_d435i parent="${d435_head_parent_name}" 
         name="${d435_head_name}" 
-        topics_ns="D435/${d435_head_name}" 
+        topics_ns="${d435_head_name}" 
         enable_pointCloud="true" 
         align_depth="true" 
         unite_imu_method="false" 
