@@ -522,5 +522,8 @@
     <disable_collisions link1="pelvis" link2="hip2_2" reason="Adjacent"/>
     <disable_collisions link1="pelvis" link2="hip2_3" reason="Adjacent"/>
     <disable_collisions link1="pelvis" link2="hip2_4" reason="Adjacent"/>
-
+    <disable_collisions link1="velodyne_motor" link2="velodyne_calib" reason="Never"/>
+    <disable_collisions link1="velodyne_calib" link2="velodyne_calib_base_link" reason="Never"/>
+    <disable_collisions link1="arm1_3" link2="arm1_5" reason="Never"/>
+    <disable_collisions link1="arm1_2" link2="arm1_5" reason="Never"/>
 </robot>
