@@ -21,7 +21,7 @@
 <xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
 
 <xacro:property name="ADD_FLOATING_BASE" value="$(arg floating_joint)" />
-<xacro:property name="ADD_VIRTUAL_FRAME" value="false" />
+<xacro:property name="ADD_VIRTUAL_FRAME" value="true" />
 
 <xacro:property name="USE_STICKS" value="false" />
 

@@ -526,4 +526,8 @@
     <disable_collisions link1="velodyne_calib" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="arm1_5" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="arm1_5" reason="Never"/>
+    <disable_collisions link1="arm2_3" link2="arm2_5" reason="Never"/>
+    <disable_collisions link1="arm2_2" link2="arm2_5" reason="Never"/>
+    <disable_collisions link1="arm2_2" link2="torso_2" reason="Never"/>
+    <disable_collisions link1="arm1_2" link2="torso_2" reason="Never"/>
 </robot>
