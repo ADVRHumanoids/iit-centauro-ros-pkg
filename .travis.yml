@@ -87,7 +87,7 @@ before_script:
 - SRC_DIR=$PWD
 - cd .. && mkdir forest_ws && cd forest_ws && forest init
 - ln -s $SRC_DIR src/$(basename $SRC_DIR)
-- forest add-recipes git@github.com:advrhumanoids/multidof_recipes.git # get recipes
+- forest add-recipes git@github.com:advrhumanoids/multidof_recipes.git --clone-protocol https # get recipes
 - source setup.bash  # source forest ws
 - FOREST_ARGS="-m test --clone-protocol https --verbose --pwd travis"
 - forest grow capsule_generation $FOREST_ARGS  # compile capsule generation (we need to re-source afterwards)
