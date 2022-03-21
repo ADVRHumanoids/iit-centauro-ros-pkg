@@ -1,0 +1,11 @@
+<mujoco>
+    <compiler angle="radian" />
+    <option timestep="0.0002"/>
+    <size njmax="1000" nconmax="200"/>
+    <contact>
+        <exclude name="hip_1_exclude" body1="pelvis" body2="hip2_1"/>
+        <exclude name="hip_2_exclude" body1="pelvis" body2="hip2_2"/>
+        <exclude name="hip_3_exclude" body1="pelvis" body2="hip2_3"/>
+        <exclude name="hip_4_exclude" body1="pelvis" body2="hip2_4"/>
+    </contact>
+</mujoco>

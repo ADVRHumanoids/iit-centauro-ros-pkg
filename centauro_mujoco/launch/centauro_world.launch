@@ -1,0 +1,12 @@
+<launch>
+
+  
+  <arg name="world" default="$(find centauro_mujoco)/config/world.xml"/>
+  <arg name="simopt" default="$(find centauro_mujoco)/config/options.xml"/>
+  <arg name="ctrlcfg" default="$(find centauro_mujoco)/config/centauro.yaml"/>
+  <arg name="urdffile" default="$(find centauro_urdf)/urdf/centauro.urdf"/>
+
+  <node pkg="centauro_mujoco" type="centauro_mujoco.py" name="centauro_mujoco"
+    args="--name centauro --urdf $(arg urdffile) --world $(arg world) --simopt $(arg simopt) --ctrlcfg $(arg ctrlcfg)"/>
+
+</launch>
