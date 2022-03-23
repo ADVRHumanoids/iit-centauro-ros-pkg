@@ -27,6 +27,7 @@ parser.add_argument('--urdf', help='The path to the robot urdf file')
 parser.add_argument('--simopt', help='The path to an XML file containing simulator options')
 parser.add_argument('--world', help='The path to an XML file containing the world description')
 parser.add_argument('--ctrlcfg', help='The path to a YAML file containing decentralized control configuration')
+parser.add_argument('--sites', help='The path to an XML file containing additional sites for the model')
 parser.add_argument('--name', help='Unique robot name')
 args, _ = parser.parse_known_args()
 
@@ -37,6 +38,12 @@ rospack = rospkg.RosPack()
 def remove_comments(XML):
     tree = etree.fromstring(XML)
     etree.strip_tags(tree, etree.Comment)
+    robot = tree.xpath('/robot')[0]
+    mujoco = etree.Element("mujoco")
+    compiler = etree.Element("compiler")
+    compiler.attrib['fusestatic'] = 'false'
+    mujoco.append(compiler)
+    robot.append(mujoco)
     return etree.tostring(tree)
 
 
@@ -127,6 +134,9 @@ with open(args.world, 'r') as file:
     mj_world = file.read()
     mj_world_tree = etree.fromstring(mj_world)
 
+with open(args.sites, 'r') as file:
+    mj_sites = file.read()
+    mj_sites_tree = etree.fromstring(mj_sites)
 
 
 mj_xml_tree.remove(mj_xml_tree.xpath('./compiler')[0])
@@ -134,6 +144,15 @@ mj_xml_tree.remove(mj_xml_tree.xpath('./size')[0])
 
 xml_merged = treeMerge(mj_xml_tree, mj_opt_tree)
 xml_merged = treeMerge(xml_merged, mj_world_tree)
+
+# add sites
+site_bodies = mj_sites_tree.xpath('./body')
+for sb in site_bodies:
+    sname = sb.get('name')
+    body = xml_merged.findall(f".//body[@name='{sname}']")[0]
+    site = etree.Element('site')
+    site.attrib['name'] = sb.xpath('./site')[0].get('name')
+    body.append(site)
 
 open(mj_xml_path, 'w').write(etree.tostring(xml_merged, pretty_print=True).decode())
 subprocess.run(['mujoco_simulator', mj_xml_path, args.ctrlcfg])

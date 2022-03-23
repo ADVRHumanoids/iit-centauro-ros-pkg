@@ -8,4 +8,8 @@
         <exclude name="hip_3_exclude" body1="pelvis" body2="hip2_3"/>
         <exclude name="hip_4_exclude" body1="pelvis" body2="hip2_4"/>
     </contact>
+    <sensor>
+        <accelerometer name="imu_link_acc" site="imu_link"/>
+        <gyro name="imu_link_gyro" site="imu_link"/>
+    </sensor>
 </mujoco>
