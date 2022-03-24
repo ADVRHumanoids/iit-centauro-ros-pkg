@@ -73,7 +73,7 @@ mj_xml_path = os.path.join(mj_xml_dir, f'{args.name}.xml')
 mj_xml_path_orig = os.path.join(mj_xml_dir, f'{args.name}.orig.xml')
 
 # create directory
-shutil.rmtree(mj_xml_dir)
+shutil.rmtree(mj_xml_dir, ignore_errors=True)
 os.makedirs(mj_xml_dir, exist_ok=True)
 
 # pre-process urdf to 
