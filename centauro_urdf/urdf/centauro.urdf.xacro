@@ -10,7 +10,7 @@
 <xacro:include filename="$(find centauro_urdf)/urdf/centauro_base.urdf.xacro"/>
 
 <!-- ************ Control frames ************ -->
-<!--xacro:include filename="$(find pholus_urdf)/urdf/control_frames.urdf.xacro"/-->
+
 
 <xacro:if value="${ADD_FLOATING_BASE}">
 <xacro:if value="${ADD_LEGS}">

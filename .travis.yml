@@ -85,19 +85,19 @@ before_script:
 
 # forest magic
 - SRC_DIR=$PWD
-- cd .. && mkdir forest_ws && cd forest_ws && forest --init
+- cd .. && mkdir forest_ws && cd forest_ws && forest init
 - ln -s $SRC_DIR src/$(basename $SRC_DIR)
-- forest -a git@github.com:advrhumanoids/multidof_recipes.git master -u --clone-protocol https  # get recipes
+- forest add-recipes git@github.com:advrhumanoids/multidof_recipes.git --clone-protocol https # get recipes
 - source setup.bash  # source forest ws
 - FOREST_ARGS="-m test --clone-protocol https --verbose --pwd travis"
-- forest capsule_generation $FOREST_ARGS  # compile capsule generation (we need to re-source afterwards)
+- forest grow capsule_generation $FOREST_ARGS  # compile capsule generation (we need to re-source afterwards)
 - source setup.bash  # source forest ws again because of roboptim
 - export ROS_PACKAGE_PATH=$PWD/src:$ROS_PACKAGE_PATH # include robot dir in ros pkg path
 - set +e
 
 script: 
 - set -e
-- forest iit-centauro-ros-pkg $FOREST_ARGS
+- forest grow iit-centauro-ros-pkg $FOREST_ARGS
 - cd build/iit-centauro-ros-pkg && make generate  # test generation 
 - ctest -V   # unit tests
 - set +e
