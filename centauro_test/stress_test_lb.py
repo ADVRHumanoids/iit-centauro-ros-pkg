@@ -41,7 +41,7 @@ def fl_to_robot(robot, q, fl_q, signs=[-1, 1, -1]):
     return q1
 
 def get_robot():
-    cfg = co.ConfigOptions.FromConfigFile()
+    cfg = co.ConfigOptions()
     prefix = 'xbotcore/'
     urdf = rospy.get_param(prefix + 'robot_description')
     srdf = rospy.get_param(prefix + 'robot_description_semantic')
