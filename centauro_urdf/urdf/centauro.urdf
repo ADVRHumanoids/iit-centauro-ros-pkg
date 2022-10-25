@@ -204,37 +204,39 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/simple/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <!-- /wrist yaw-pitch -->
-  <link name="arm1_7">
-    <inertial>
-      <origin xyz="0.0 0.0 0.03127057"/>
-      <mass value="0.27966428"/>
-      <inertia ixx="0.00014415192" ixy="9.8651826e-08" ixz="0" iyy="0.0001441701" iyz="0" izz="6.0500616e-05"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
-      </geometry>
-      <material name="dark_grey"/>
-    </visual>
-    <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
+  <!-- <link name="arm${arm_num}_7">
+      <inertial>
+         <origin xyz="${Wrist_3_x} ${rot*Wrist_3_y} ${Wrist_3_z}"/>
+         <mass value="${Wrist_3_mass}"/>
+         <inertia ixx="${Wrist_3_xx}" ixy="${rot*Wrist_3_xy}" ixz="${Wrist_3_xz}" iyy="${Wrist_3_yy}" iyz="${rot*Wrist_3_yz}" izz="${Wrist_3_zz}"/>
+      </inertial>
+
+      <visual>
+         <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
+   <geometry>
+      <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+   </geometry>
+         <material name="dark_grey"/>
+      </visual>
+
+      <collision>
+         <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
+   <geometry>
+      <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+   </geometry>
+      </collision>
+   </link> -->
   <!-- /LINKS -->
   <!-- JOINTS -->
   <!-- shoulder yaw -->
@@ -292,44 +294,44 @@
   </joint>
   <!-- /wrist yaw-->
   <!-- wrist pitch-->
-  <joint name="j_arm1_7" type="revolute">
-    <parent link="arm1_6"/>
-    <child link="arm1_7"/>
-    <origin xyz="0.0 -0.049 -0.174"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="28.32" lower="-2.565" upper="2.569" velocity="20.35"/>
-  </joint>
+  <!-- <joint name="j_arm${arm_num}_7" type="fixed">
+      <parent link="arm${arm_num}_6"/>
+      <child link="arm${arm_num}_7"/>
+      <origin xyz="${Wrist_3_Ox} ${rot*Wrist_3_Oy} ${Wrist_3_Oz}"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${j_arm_7_lower[arm_num-1]}" upper="${j_arm_7_upper[arm_num-1]}" effort="${j_arm_7_torque[arm_num-1]}" velocity="${j_arm_7_velocity[arm_num-1]}"/>
+   </joint> -->
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
   <!-- end-effector -->
   <!-- wrist pitch-->
-  <joint name="j_ft_1" type="fixed">
-    <parent link="arm1_7"/>
-    <child link="ft_arm1"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="0" lower="0.0" upper="0.0" velocity="0"/>
-  </joint>
+  <!-- <joint name="j_ft_${arm_num}" type="fixed">
+      <parent link="arm${arm_num}_7"/>
+      <child link="ft_arm${arm_num}"/>
+      <origin xyz="${Ft_arm_Ox} ${Ft_arm_Oy} ${Ft_arm_Oz}" rpy="${Ft_arm_roll} ${Ft_arm_pitch} ${Ft_arm_yaw}" />
+      <axis xyz="0 0 1"/>
+      <limit lower="0.0" upper="0.0" effort="0" velocity="0"/>
+   </joint> -->
   <!-- wrist pitch-->
-  <link name="ft_arm1">
-    <inertial>
-      <origin xyz="8.2161929e-05 0.0026334189 -0.016465877"/>
-      <mass value="0.37827821"/>
-      <inertia ixx="0.00023321716" ixy="2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="3.158829e-05" izz="0.00027399881"/>
-    </inertial>
-    <!--visual>
+  <!-- <link name="ft_arm${arm_num}">
+      <inertial>
+         <origin xyz="${Ft_arm_x} ${rot*Ft_arm_y} ${Ft_arm_z}"/>
+         <mass value="${Ft_arm_mass}"/>
+         <inertia ixx="${Ft_arm_xx}" ixy="${rot*Ft_arm_xy}" ixz="${Ft_arm_xz}" iyy="${Ft_arm_yy}" iyz="${rot*Ft_arm_yz}" izz="${Ft_arm_zz}"/>
+      </inertial> -->
+  <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
       <mesh filename="package://centauro_urdf/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual-->
-    <!--collision>
+  <!--collision>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
       <mesh filename="package://centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision-->
-  </link>
+  <!-- </link> -->
   <!-- LINKS -->
   <!-- shoulder yaw-roll-->
   <link name="arm2_1">
@@ -449,37 +451,39 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/simple/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <!-- /wrist yaw-pitch -->
-  <link name="arm2_7">
-    <inertial>
-      <origin xyz="0.0 -0.0 0.03127057"/>
-      <mass value="0.27966428"/>
-      <inertia ixx="0.00014415192" ixy="-9.8651826e-08" ixz="0" iyy="0.0001441701" iyz="0" izz="6.0500616e-05"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="dark_grey"/>
-    </visual>
-    <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
+  <!-- <link name="arm${arm_num}_7">
+      <inertial>
+         <origin xyz="${Wrist_3_x} ${rot*Wrist_3_y} ${Wrist_3_z}"/>
+         <mass value="${Wrist_3_mass}"/>
+         <inertia ixx="${Wrist_3_xx}" ixy="${rot*Wrist_3_xy}" ixz="${Wrist_3_xz}" iyy="${Wrist_3_yy}" iyz="${rot*Wrist_3_yz}" izz="${Wrist_3_zz}"/>
+      </inertial>
+
+      <visual>
+         <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
+   <geometry>
+      <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+   </geometry>
+         <material name="dark_grey"/>
+      </visual>
+
+      <collision>
+         <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
+   <geometry>
+      <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+   </geometry>
+      </collision>
+   </link> -->
   <!-- /LINKS -->
   <!-- JOINTS -->
   <!-- shoulder yaw -->
@@ -537,44 +541,44 @@
   </joint>
   <!-- /wrist yaw-->
   <!-- wrist pitch-->
-  <joint name="j_arm2_7" type="revolute">
-    <parent link="arm2_6"/>
-    <child link="arm2_7"/>
-    <origin xyz="0.0 0.049 -0.174"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="28.32" lower="-2.5554" upper="2.5686" velocity="20.35"/>
-  </joint>
+  <!-- <joint name="j_arm${arm_num}_7" type="fixed">
+      <parent link="arm${arm_num}_6"/>
+      <child link="arm${arm_num}_7"/>
+      <origin xyz="${Wrist_3_Ox} ${rot*Wrist_3_Oy} ${Wrist_3_Oz}"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${j_arm_7_lower[arm_num-1]}" upper="${j_arm_7_upper[arm_num-1]}" effort="${j_arm_7_torque[arm_num-1]}" velocity="${j_arm_7_velocity[arm_num-1]}"/>
+   </joint> -->
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
   <!-- end-effector -->
   <!-- wrist pitch-->
-  <joint name="j_ft_2" type="fixed">
-    <parent link="arm2_7"/>
-    <child link="ft_arm2"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.0"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="0" lower="0.0" upper="0.0" velocity="0"/>
-  </joint>
+  <!-- <joint name="j_ft_${arm_num}" type="fixed">
+      <parent link="arm${arm_num}_7"/>
+      <child link="ft_arm${arm_num}"/>
+      <origin xyz="${Ft_arm_Ox} ${Ft_arm_Oy} ${Ft_arm_Oz}" rpy="${Ft_arm_roll} ${Ft_arm_pitch} ${Ft_arm_yaw}" />
+      <axis xyz="0 0 1"/>
+      <limit lower="0.0" upper="0.0" effort="0" velocity="0"/>
+   </joint> -->
   <!-- wrist pitch-->
-  <link name="ft_arm2">
-    <inertial>
-      <origin xyz="8.2161929e-05 -0.0026334189 -0.016465877"/>
-      <mass value="0.37827821"/>
-      <inertia ixx="0.00023321716" ixy="-2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="-3.158829e-05" izz="0.00027399881"/>
-    </inertial>
-    <!--visual>
+  <!-- <link name="ft_arm${arm_num}">
+      <inertial>
+         <origin xyz="${Ft_arm_x} ${rot*Ft_arm_y} ${Ft_arm_z}"/>
+         <mass value="${Ft_arm_mass}"/>
+         <inertia ixx="${Ft_arm_xx}" ixy="${rot*Ft_arm_xy}" ixz="${Ft_arm_xz}" iyy="${Ft_arm_yy}" iyz="${rot*Ft_arm_yz}" izz="${Ft_arm_zz}"/>
+      </inertial> -->
+  <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
       <mesh filename="package://centauro_urdf/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual-->
-    <!--collision>
+  <!--collision>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
       <mesh filename="package://centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision-->
-  </link>
+  <!-- </link> -->
   <link name="ball1">
     <inertial>
       <origin rpy="0 0 0" xyz="-1.0072498e-05 3.7590658e-05 0.019772332"/>
@@ -597,9 +601,9 @@
   </link>
   <link name="ball1_tip"/>
   <joint name="j_arm1_8" type="fixed">
-    <parent link="arm1_7"/>
+    <parent link="arm1_6"/>
     <child link="ball1"/>
-    <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+    <origin rpy="0. 0. 0." xyz="0. -0.05 -0.105"/>
   </joint>
   <joint name="j_ball1_tip" type="fixed">
     <parent link="ball1"/>
@@ -639,9 +643,9 @@
   </link>
   <link name="ball2_tip"/>
   <joint name="j_arm2_8" type="fixed">
-    <parent link="arm2_7"/>
+    <parent link="arm2_6"/>
     <child link="ball2"/>
-    <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+    <origin rpy="0. 0. 0." xyz="0. 0.05 -0.105"/>
   </joint>
   <joint name="j_ball2_tip" type="fixed">
     <parent link="ball2"/>
@@ -964,7 +968,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435_head_camera/accel/sample</topic>
-      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435/D435_head_camera_accel_plugin">
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435_head_camera_accel_plugin">
         <topicName>D435_head_camera/accel/sample</topicName>
         <bodyName>D435_head_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -980,7 +984,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435_head_camera/gyro/sample</topic>
-      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435/D435_head_camera_gyro_plugin">
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435_head_camera_gyro_plugin">
         <topicName>D435_head_camera/gyro/sample</topicName>
         <bodyName>D435_head_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -993,7 +997,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435/D435_head_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435_head_camera">
       <prefix>D435_head_camera</prefix>
       <!-- Color camera settings -->
       <colorUpdateRate>30</colorUpdateRate>
@@ -1330,7 +1334,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/accel/sample</topic>
-      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i/D435i_camera_accel_plugin">
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i_camera_accel_plugin">
         <topicName>D435i_camera/accel/sample</topicName>
         <bodyName>D435i_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1346,7 +1350,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/gyro/sample</topic>
-      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i/D435i_camera_gyro_plugin">
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i_camera_gyro_plugin">
         <topicName>D435i_camera/gyro/sample</topicName>
         <bodyName>D435i_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1359,7 +1363,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435i/D435i_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435i_camera">
       <prefix>D435i_camera</prefix>
       <!-- Color camera settings -->
       <colorUpdateRate>30</colorUpdateRate>
