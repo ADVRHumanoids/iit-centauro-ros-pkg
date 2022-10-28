@@ -98,7 +98,6 @@
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_3" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_4" reason="Never"/>
-    <disable_collisions link1="D435_head_camera_link" link2="ankle2_1" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle2_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle2_3" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle2_4" reason="Never"/>
@@ -124,7 +123,7 @@
     <disable_collisions link1="D435_head_camera_link" link2="torso_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="D435_head_camera_link" link2="wheel_1" reason="Never"/>
+    <disable_collisions link1="D435_head_camera_link" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="wheel_4" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="T265_camera_pose_frame" reason="Never"/>
@@ -197,7 +196,6 @@
     <disable_collisions link1="ankle1_4" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="wheel_4" reason="Never"/>
-    <disable_collisions link1="ankle2_1" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="ankle2_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle2_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle2_1" link2="wheel_1" reason="Adjacent"/>
@@ -256,6 +254,7 @@
     <disable_collisions link1="arm1_2" link2="hip2_2" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="hip2_3" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="hip2_4" reason="Never"/>
+    <disable_collisions link1="arm1_2" link2="knee_4" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="neck_1" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="torso_2" reason="Default"/>
     <disable_collisions link1="arm1_2" link2="velodyne_calib_base_link" reason="Never"/>
@@ -357,7 +356,7 @@
     <disable_collisions link1="d435_head_motor" link2="torso_2" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="d435_head_motor" link2="wheel_1" reason="Never"/>
+    <disable_collisions link1="d435_head_motor" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="wheel_4" reason="Never"/>
     <disable_collisions link1="hip1_1" link2="hip1_2" reason="Never"/>

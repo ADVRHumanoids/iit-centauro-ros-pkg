@@ -3,14 +3,11 @@
   <material name="black">
     <color rgba="0.4 0.4 0.4 1.0"/>
   </material>
-  <material name="grey">
-    <color rgba="0.7 0.7 0.7 1.0"/>
-  </material>
   <material name="dark">
     <color rgba="0.1 0.1 0.1 1.0"/>
   </material>
   <material name="dark_grey">
-    <color rgba="0.6 0.6 0.6 1.0"/>
+    <color rgba="0.2 0.2 0.2 1.0"/>
   </material>
   <link name="base_link"/>
   <link name="pelvis">
@@ -566,7 +563,7 @@
       <geometry>
         <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey"/>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="-2.6819999999999855e-07 1.2015000000000003e-06 -0.0105021" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
@@ -619,7 +616,7 @@
       <geometry>
         <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey"/>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="-2.6819999999999855e-07 1.2015000000000003e-06 -0.0105021" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
@@ -981,7 +978,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435_head_camera/accel/sample</topic>
-      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435/D435_head_camera_accel_plugin">
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435_head_camera_accel_plugin">
         <topicName>D435_head_camera/accel/sample</topicName>
         <bodyName>D435_head_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -997,7 +994,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435_head_camera/gyro/sample</topic>
-      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435/D435_head_camera_gyro_plugin">
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435_head_camera_gyro_plugin">
         <topicName>D435_head_camera/gyro/sample</topicName>
         <bodyName>D435_head_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1010,7 +1007,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435/D435_head_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435_head_camera">
       <prefix>D435_head_camera</prefix>
       <colorUpdateRate>30</colorUpdateRate>
       <colorTopicName>color/image_raw</colorTopicName>
@@ -1338,7 +1335,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/accel/sample</topic>
-      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i/D435i_camera_accel_plugin">
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i_camera_accel_plugin">
         <topicName>D435i_camera/accel/sample</topicName>
         <bodyName>D435i_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1354,7 +1351,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/gyro/sample</topic>
-      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i/D435i_camera_gyro_plugin">
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i_camera_gyro_plugin">
         <topicName>D435i_camera/gyro/sample</topicName>
         <bodyName>D435i_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1367,7 +1364,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435i/D435i_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435i_camera">
       <prefix>D435i_camera</prefix>
       <colorUpdateRate>30</colorUpdateRate>
       <colorTopicName>color/image_raw</colorTopicName>
