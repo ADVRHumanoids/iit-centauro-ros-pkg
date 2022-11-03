@@ -230,19 +230,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-3.7982729999999996e-06 0.00576208 -0.08227100000000001" rpy="-0.19504999679008256 0.00010897068899718279 -1.0661187695164793e-05"/>
+      <origin xyz="-3.7982785e-06 0.00576208 -0.08227100000000001" rpy="-0.1950499967900825 0.00010897079569875528 -1.0661198134352675e-05"/>
       <geometry>
-        <cylinder radius="0.0804108" length="0.08434739747702548"/>
+        <cylinder radius="0.0804108" length="0.08434739747702645"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000008 -0.002412 -0.123645" rpy="-0.19504999679008256 0.00010897068899718279 -1.0661187695164793e-05"/>
+      <origin xyz="-0.000008 -0.002412 -0.123645" rpy="-0.1950499967900825 0.00010897079569875528 -1.0661198134352675e-05"/>
       <geometry>
         <sphere radius="0.0804108"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000001 0.013936 -0.040897" rpy="-0.19504999679008256 0.00010897068899718279 -1.0661187695164793e-05"/>
+      <origin xyz="0.000001 0.013936 -0.040897" rpy="-0.1950499967900825 0.00010897079569875528 -1.0661198134352675e-05"/>
       <geometry>
         <sphere radius="0.0804108"/>
       </geometry>
@@ -257,57 +257,25 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="1.1095500000000002e-06 -0.04345545 -0.05749733" rpy="-0.15592455942442648 -0.0006430984043059979 5.0239247340461654e-05"/>
+      <origin xyz="-0.0007855109 -0.028511995000000002 -0.03192399" rpy="-0.5594293097385409 -0.02095499521275571 0.006019428316027259"/>
       <geometry>
-        <cylinder radius="0.0583263" length="0.11425141871384588"/>
+        <cylinder radius="0.0474698" length="0.07750977987441161"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000038 -0.052327 -0.113930" rpy="-0.15592455942442648 -0.0006430984043059979 5.0239247340461654e-05"/>
+      <origin xyz="0.000027 -0.049075 -0.064764" rpy="-0.5594293097385409 -0.02095499521275571 0.006019428316027259"/>
       <geometry>
-        <sphere radius="0.0583263"/>
+        <sphere radius="0.0474698"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000036 -0.034584 -0.001065" rpy="-0.15592455942442648 -0.0006430984043059979 5.0239247340461654e-05"/>
+      <origin xyz="-0.001598 -0.007949 0.000916" rpy="-0.5594293097385409 -0.02095499521275571 0.006019428316027259"/>
       <geometry>
-        <sphere radius="0.0583263"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="arm1_7">
-    <inertial>
-      <origin xyz="0.0 0.0 0.03127057" rpy="0 0 0"/>
-      <mass value="0.27966428"/>
-      <inertia ixx="0.00014415192" ixy="9.8651826e-08" ixz="0.0" iyy="0.0001441701" iyz="0.0" izz="6.0500616e-05"/>
-    </inertial>
-    <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
-      </geometry>
-      <material name="dark_grey"/>
-    </visual>
-    <collision>
-      <origin xyz="0.0 0.0 0.0101335" rpy="-1.5707963267948966 -0.2627330208352526 0.2627330208352526"/>
-      <geometry>
-        <cylinder radius="0.0207073" length="0.009167307493588288"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="0.001190 -0.004426 0.010134" rpy="-1.5707963267948966 -0.2627330208352526 0.2627330208352526"/>
-      <geometry>
-        <sphere radius="0.0207073"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="-0.001190 0.004426 0.010134" rpy="-1.5707963267948966 -0.2627330208352526 0.2627330208352526"/>
-      <geometry>
-        <sphere radius="0.0207073"/>
+        <sphere radius="0.0474698"/>
       </geometry>
     </collision>
   </link>
@@ -353,27 +321,6 @@
     <child link="arm1_6"/>
     <limit effort="55.0" lower="-1.529" upper="1.509" velocity="11.72"/>
   </joint>
-  <joint name="j_arm1_7" type="revolute">
-    <origin xyz="0.0 -0.049 -0.174" rpy="0 0 0"/>
-    <axis xyz="0.0 0.0 1.0"/>
-    <parent link="arm1_6"/>
-    <child link="arm1_7"/>
-    <limit effort="28.32" lower="-2.565" upper="2.569" velocity="20.35"/>
-  </joint>
-  <joint name="j_ft_1" type="fixed">
-    <origin xyz="0.0 0.0 -0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 1.0"/>
-    <parent link="arm1_7"/>
-    <child link="ft_arm1"/>
-    <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
-  </joint>
-  <link name="ft_arm1">
-    <inertial>
-      <origin xyz="8.2161929e-05 0.0026334189 -0.016465877" rpy="0 0 0"/>
-      <mass value="0.37827821"/>
-      <inertia ixx="0.00023321716" ixy="2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="3.158829e-05" izz="0.00027399881"/>
-    </inertial>
-  </link>
   <link name="arm2_1">
     <inertial>
       <origin xyz="-0.0074457212 -0.03410796 0.00010978102" rpy="0 0 0"/>
@@ -514,19 +461,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-3.7982729999999996e-06 -0.00576208 -0.08227100000000001" rpy="0.19504999679008256 0.00010897068899718279 1.0661187695164793e-05"/>
+      <origin xyz="-3.7982785e-06 -0.00576208 -0.08227100000000001" rpy="0.1950499967900825 0.00010897079569875528 1.0661198134352675e-05"/>
       <geometry>
-        <cylinder radius="0.0804108" length="0.08434739747702548"/>
+        <cylinder radius="0.0804108" length="0.08434739747702645"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000008 0.002412 -0.123645" rpy="0.19504999679008256 0.00010897068899718279 1.0661187695164793e-05"/>
+      <origin xyz="-0.000008 0.002412 -0.123645" rpy="0.1950499967900825 0.00010897079569875528 1.0661198134352675e-05"/>
       <geometry>
         <sphere radius="0.0804108"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000001 -0.013936 -0.040897" rpy="0.19504999679008256 0.00010897068899718279 1.0661187695164793e-05"/>
+      <origin xyz="0.000001 -0.013936 -0.040897" rpy="0.1950499967900825 0.00010897079569875528 1.0661198134352675e-05"/>
       <geometry>
         <sphere radius="0.0804108"/>
       </geometry>
@@ -541,57 +488,25 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="1.1095500000000002e-06 0.04345545 -0.05749733" rpy="0.15592455942442648 -0.0006430984043059979 -5.0239247340461654e-05"/>
+      <origin xyz="-0.0007855109 0.028511995000000002 -0.03192399" rpy="0.5594293097385409 -0.02095499521275571 -0.006019428316027259"/>
       <geometry>
-        <cylinder radius="0.0583263" length="0.11425141871384588"/>
+        <cylinder radius="0.0474698" length="0.07750977987441161"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000038 0.052327 -0.113930" rpy="0.15592455942442648 -0.0006430984043059979 -5.0239247340461654e-05"/>
+      <origin xyz="0.000027 0.049075 -0.064764" rpy="0.5594293097385409 -0.02095499521275571 -0.006019428316027259"/>
       <geometry>
-        <sphere radius="0.0583263"/>
+        <sphere radius="0.0474698"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000036 0.034584 -0.001065" rpy="0.15592455942442648 -0.0006430984043059979 -5.0239247340461654e-05"/>
+      <origin xyz="-0.001598 0.007949 0.000916" rpy="0.5594293097385409 -0.02095499521275571 -0.006019428316027259"/>
       <geometry>
-        <sphere radius="0.0583263"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="arm2_7">
-    <inertial>
-      <origin xyz="0.0 -0.0 0.03127057" rpy="0 0 0"/>
-      <mass value="0.27966428"/>
-      <inertia ixx="0.00014415192" ixy="-9.8651826e-08" ixz="0.0" iyy="0.0001441701" iyz="0.0" izz="6.0500616e-05"/>
-    </inertial>
-    <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="dark_grey"/>
-    </visual>
-    <collision>
-      <origin xyz="0.0 0.0 0.0101335" rpy="1.5707963267948966 -0.2627330208352526 -0.2627330208352526"/>
-      <geometry>
-        <cylinder radius="0.0207073" length="0.009167307493588288"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="0.001190 0.004426 0.010134" rpy="1.5707963267948966 -0.2627330208352526 -0.2627330208352526"/>
-      <geometry>
-        <sphere radius="0.0207073"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="-0.001190 -0.004426 0.010134" rpy="1.5707963267948966 -0.2627330208352526 -0.2627330208352526"/>
-      <geometry>
-        <sphere radius="0.0207073"/>
+        <sphere radius="0.0474698"/>
       </geometry>
     </collision>
   </link>
@@ -637,27 +552,6 @@
     <child link="arm2_6"/>
     <limit effort="55.0" lower="-1.5154" upper="1.5156" velocity="11.72"/>
   </joint>
-  <joint name="j_arm2_7" type="revolute">
-    <origin xyz="0.0 0.049 -0.174" rpy="0 0 0"/>
-    <axis xyz="0.0 0.0 1.0"/>
-    <parent link="arm2_6"/>
-    <child link="arm2_7"/>
-    <limit effort="28.32" lower="-2.5554" upper="2.5686" velocity="20.35"/>
-  </joint>
-  <joint name="j_ft_2" type="fixed">
-    <origin xyz="0.0 0.0 -0.0" rpy="0.0 0.0 0.0"/>
-    <axis xyz="0.0 0.0 1.0"/>
-    <parent link="arm2_7"/>
-    <child link="ft_arm2"/>
-    <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
-  </joint>
-  <link name="ft_arm2">
-    <inertial>
-      <origin xyz="8.2161929e-05 -0.0026334189 -0.016465877" rpy="0 0 0"/>
-      <mass value="0.37827821"/>
-      <inertia ixx="0.00023321716" ixy="-2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="-3.158829e-05" izz="0.00027399881"/>
-    </inertial>
-  </link>
   <link name="ball1">
     <inertial>
       <origin xyz="-1.0072498e-05 3.7590658e-05 0.019772332" rpy="0.0 0.0 0.0"/>
@@ -692,8 +586,8 @@
   </link>
   <link name="ball1_tip"/>
   <joint name="j_arm1_8" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="arm1_7"/>
+    <origin xyz="0.0 -0.05 -0.105" rpy="0.0 0.0 0.0"/>
+    <parent link="arm1_6"/>
     <child link="ball1"/>
   </joint>
   <joint name="j_ball1_tip" type="fixed">
@@ -745,8 +639,8 @@
   </link>
   <link name="ball2_tip"/>
   <joint name="j_arm2_8" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="arm2_7"/>
+    <origin xyz="0.0 0.05 -0.105" rpy="0.0 0.0 0.0"/>
+    <parent link="arm2_6"/>
     <child link="ball2"/>
   </joint>
   <joint name="j_ball2_tip" type="fixed">
@@ -1084,7 +978,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435_head_camera/accel/sample</topic>
-      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435/D435_head_camera_accel_plugin">
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435_head_camera_accel_plugin">
         <topicName>D435_head_camera/accel/sample</topicName>
         <bodyName>D435_head_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1100,7 +994,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435_head_camera/gyro/sample</topic>
-      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435/D435_head_camera_gyro_plugin">
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435_head_camera_gyro_plugin">
         <topicName>D435_head_camera/gyro/sample</topicName>
         <bodyName>D435_head_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1113,7 +1007,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435/D435_head_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435_head_camera">
       <prefix>D435_head_camera</prefix>
       <colorUpdateRate>30</colorUpdateRate>
       <colorTopicName>color/image_raw</colorTopicName>
@@ -1441,7 +1335,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/accel/sample</topic>
-      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i/D435i_camera_accel_plugin">
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i_camera_accel_plugin">
         <topicName>D435i_camera/accel/sample</topicName>
         <bodyName>D435i_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1457,7 +1351,7 @@
       <always_on>true</always_on>
       <update_rate>300</update_rate>
       <topic>D435i_camera/gyro/sample</topic>
-      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i/D435i_camera_gyro_plugin">
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i_camera_gyro_plugin">
         <topicName>D435i_camera/gyro/sample</topicName>
         <bodyName>D435i_camera_link</bodyName>
         <updateRateHZ>300</updateRateHZ>
@@ -1470,7 +1364,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435i/D435i_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435i_camera">
       <prefix>D435i_camera</prefix>
       <colorUpdateRate>30</colorUpdateRate>
       <colorTopicName>color/image_raw</colorTopicName>
@@ -1765,19 +1659,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="1.1069698e-06 -0.13974034 0.0170087" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+      <origin xyz="1.10696985e-06 -0.13974034 0.0170087" rpy="-1.590922320366177 -7.24562306920002e-06 7.392935812695044e-06"/>
       <geometry>
         <cylinder radius="0.0808941" length="0.2919804521727749"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000002 -0.285701 0.019947" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+      <origin xyz="0.000002 -0.285701 0.019947" rpy="-1.590922320366177 -7.24562306920002e-06 7.392935812695044e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.006220 0.014071" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+      <origin xyz="0.000000 0.006220 0.014071" rpy="-1.590922320366177 -7.24562306920002e-06 7.392935812695044e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
@@ -1797,19 +1691,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-4.0765105e-06 0.0958646315 0.014374499999999998" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
+      <origin xyz="-4.076516e-06 0.0958646315 0.014374499999999998" rpy="-1.6091143483828545 -4.051216032610466e-05 4.20950259773918e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <cylinder radius="0.0664305" length="0.1927502246061244"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000000 -0.000440 0.018067" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
+      <origin xyz="-0.000000 -0.000440 0.018066" rpy="-1.6091143483828545 -4.051216032610466e-05 4.20950259773918e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000008 0.192169 0.010682" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
+      <origin xyz="-0.000008 0.192169 0.010682" rpy="-1.6091143483828545 -4.051216032610466e-05 4.20950259773918e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
@@ -2003,19 +1897,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="1.1069698e-06 -0.13974034 -0.0170087" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+      <origin xyz="1.10696985e-06 -0.13974034 -0.0170087" rpy="-1.5506703332236162 -7.245623069200021e-06 7.101245701440088e-06"/>
       <geometry>
         <cylinder radius="0.0808941" length="0.2919804521727749"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000002 -0.285701 -0.019947" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+      <origin xyz="0.000002 -0.285701 -0.019947" rpy="-1.5506703332236162 -7.245623069200021e-06 7.101245701440088e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.006220 -0.014071" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+      <origin xyz="0.000000 0.006220 -0.014071" rpy="-1.5506703332236162 -7.245623069200021e-06 7.101245701440088e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
@@ -2035,19 +1929,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-4.0765105e-06 0.0958646315 -0.014374499999999998" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+      <origin xyz="-4.076516e-06 0.0958646315 -0.014374499999999998" rpy="-1.5324783052069388 -4.0512160326104654e-05 3.898881390804118e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <cylinder radius="0.0664305" length="0.1927502246061244"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000000 -0.000440 -0.018066" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+      <origin xyz="-0.000000 -0.000440 -0.018066" rpy="-1.5324783052069388 -4.0512160326104654e-05 3.898881390804118e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000008 0.192169 -0.010683" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+      <origin xyz="-0.000008 0.192169 -0.010683" rpy="-1.5324783052069388 -4.0512160326104654e-05 3.898881390804118e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
@@ -2066,19 +1960,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="2.2606999999999985e-07 -0.020764664999999998 0.000108892" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+      <origin xyz="2.260750000000002e-07 -0.020764664999999998 0.00010889250000000001" rpy="-1.5912124973162882 0.00029736394117794144 -0.00030349780205160657"/>
       <geometry>
-        <cylinder radius="0.0781037" length="0.047884051265172006"/>
+        <cylinder radius="0.0781037" length="0.04788405128558378"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000007 -0.044702 0.000598" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+      <origin xyz="-0.000007 -0.044702 0.000598" rpy="-1.5912124973162882 0.00029736394117794144 -0.00030349780205160657"/>
       <geometry>
         <sphere radius="0.0781037"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000007 0.003172 -0.000380" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+      <origin xyz="0.000007 0.003172 -0.000380" rpy="-1.5912124973162882 0.00029736394117794144 -0.00030349780205160657"/>
       <geometry>
         <sphere radius="0.0781037"/>
       </geometry>
@@ -2241,19 +2135,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="1.1069698e-06 -0.13974034 0.0170087" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+      <origin xyz="1.10696985e-06 -0.13974034 0.0170087" rpy="-1.590922320366177 -7.24562306920002e-06 7.392935812695044e-06"/>
       <geometry>
         <cylinder radius="0.0808941" length="0.2919804521727749"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000002 -0.285701 0.019947" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+      <origin xyz="0.000002 -0.285701 0.019947" rpy="-1.590922320366177 -7.24562306920002e-06 7.392935812695044e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.006220 0.014071" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+      <origin xyz="0.000000 0.006220 0.014071" rpy="-1.590922320366177 -7.24562306920002e-06 7.392935812695044e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
@@ -2273,19 +2167,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-4.0765105e-06 0.0958646315 0.014374499999999998" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
+      <origin xyz="-4.076516e-06 0.0958646315 0.014374499999999998" rpy="-1.6091143483828545 -4.051216032610466e-05 4.20950259773918e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <cylinder radius="0.0664305" length="0.1927502246061244"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000000 -0.000440 0.018067" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
+      <origin xyz="-0.000000 -0.000440 0.018066" rpy="-1.6091143483828545 -4.051216032610466e-05 4.20950259773918e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000008 0.192169 0.010682" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
+      <origin xyz="-0.000008 0.192169 0.010682" rpy="-1.6091143483828545 -4.051216032610466e-05 4.20950259773918e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
@@ -2479,19 +2373,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="1.1069698e-06 -0.13974034 -0.0170087" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+      <origin xyz="1.10696985e-06 -0.13974034 -0.0170087" rpy="-1.5506703332236162 -7.245623069200021e-06 7.101245701440088e-06"/>
       <geometry>
         <cylinder radius="0.0808941" length="0.2919804521727749"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000002 -0.285701 -0.019947" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+      <origin xyz="0.000002 -0.285701 -0.019947" rpy="-1.5506703332236162 -7.245623069200021e-06 7.101245701440088e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000000 0.006220 -0.014071" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+      <origin xyz="0.000000 0.006220 -0.014071" rpy="-1.5506703332236162 -7.245623069200021e-06 7.101245701440088e-06"/>
       <geometry>
         <sphere radius="0.0808941"/>
       </geometry>
@@ -2511,19 +2405,19 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-4.0765105e-06 0.0958646315 -0.014374499999999998" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+      <origin xyz="-4.076516e-06 0.0958646315 -0.014374499999999998" rpy="-1.5324783052069388 -4.0512160326104654e-05 3.898881390804118e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <cylinder radius="0.0664305" length="0.1927502246061244"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000000 -0.000440 -0.018066" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+      <origin xyz="-0.000000 -0.000440 -0.018066" rpy="-1.5324783052069388 -4.0512160326104654e-05 3.898881390804118e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000008 0.192169 -0.010683" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+      <origin xyz="-0.000008 0.192169 -0.010683" rpy="-1.5324783052069388 -4.0512160326104654e-05 3.898881390804118e-05"/>
       <geometry>
         <sphere radius="0.0664305"/>
       </geometry>
@@ -2542,19 +2436,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="2.2606999999999985e-07 -0.020764664999999998 0.000108892" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+      <origin xyz="2.260750000000002e-07 -0.020764664999999998 0.00010889250000000001" rpy="-1.5912124973162882 0.00029736394117794144 -0.00030349780205160657"/>
       <geometry>
-        <cylinder radius="0.0781037" length="0.047884051265172006"/>
+        <cylinder radius="0.0781037" length="0.04788405128558378"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000007 -0.044702 0.000598" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+      <origin xyz="-0.000007 -0.044702 0.000598" rpy="-1.5912124973162882 0.00029736394117794144 -0.00030349780205160657"/>
       <geometry>
         <sphere radius="0.0781037"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000007 0.003172 -0.000380" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+      <origin xyz="0.000007 0.003172 -0.000380" rpy="-1.5912124973162882 0.00029736394117794144 -0.00030349780205160657"/>
       <geometry>
         <sphere radius="0.0781037"/>
       </geometry>
