@@ -474,4 +474,8 @@
     <disable_collisions link1="velodyne_motor" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_4" reason="Never"/>
+    <disable_collisions link1="pelvis" link2="hip2_1" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_2" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_3" reason="Default"/>
+    <disable_collisions link1="pelvis" link2="hip2_4" reason="Default"/>
 </robot>
