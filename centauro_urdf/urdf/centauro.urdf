@@ -874,19 +874,19 @@
   </gazebo>
   <!-- camera body, with origin at bottom screw mount -->
   <joint name="D435i_camera_joint" type="fixed">
-    <origin rpy="0 0.5251508 0" xyz="0.27187 0 0.0215997"/>
+    <origin rpy="0 0.54 0" xyz="0.272 0 0.084"/>
     <parent link="pelvis"/>
     <child link="D435i_camera_bottom_screw_frame"/>
   </joint>
   <link name="D435i_camera_bottom_screw_frame"/>
   <joint name="D435i_camera_link_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0.0175 0.0125"/>
+    <origin rpy="0 0.0050 -0.008" xyz="0.053 0.0 -0.035"/>
     <parent link="D435i_camera_bottom_screw_frame"/>
     <child link="D435i_camera_link"/>
   </joint>
   <link name="D435i_camera_link">
     <visual>
-      <origin rpy="1.5707963268 0 1.5707963268" xyz="0.0149 -0.0175 0"/>
+      <origin rpy="1.5707963268 0 1.5707963268" xyz="0.053 -0.0 0"/>
       <geometry>
         <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
         <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
@@ -894,7 +894,7 @@
       <material name="D435i_camera_aluminum"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 -0.0175 0"/>
+      <origin rpy="0 0 0" xyz="0 -0.0 0"/>
       <geometry>
         <box size="0.02505 0.09 0.025"/>
       </geometry>
