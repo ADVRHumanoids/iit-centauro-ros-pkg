@@ -22,8 +22,8 @@
     <xacro:property name="USE_STICKS" value="false" />
 
     <xacro:property name="ADD_VELODYNE" value="true" />
-    <xacro:property name="ADD_D435I_HEAD" value="true" />
-    <xacro:property name="ADD_D435I_BASE" value="true" />
-    <xacro:property name="ADD_T265_BASE" value="true" />
+    <xacro:property name="ADD_D435I_HEAD" value="false" />
+    <xacro:property name="ADD_D435I_BASE" value="false" />
+    <xacro:property name="ADD_T265_BASE" value="false" />
     
 </robot>

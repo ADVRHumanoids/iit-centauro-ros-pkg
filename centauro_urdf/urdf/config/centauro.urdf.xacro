@@ -9,7 +9,7 @@
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
-<xacro:arg name="realsense" default="true"/>
+<xacro:arg name="realsense" default="false"/>
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
 	<xacro:arg name="d435i_base" default="true"/>
