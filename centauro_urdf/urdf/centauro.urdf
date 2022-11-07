@@ -785,7 +785,7 @@
     </inertial>
   </link>
   <joint name="velodyne_calib_base_mount_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0.025 0.019 0" xyz="-0.01 0.02 0.06"/>
     <parent link="velodyne_motor"/>
     <child link="velodyne_calib_base_link"/>
   </joint>
