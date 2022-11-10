@@ -13,16 +13,52 @@
       <origin xyz="${Shoulder_1_Ox} ${-Shoulder_1_Oy} ${Shoulder_1_Oz}" rpy="${-Shoulder_1_roll} ${Shoulder_1_pitch} ${-Shoulder_1_yaw}" />
 </xacro:centauro_arm>
 
-<xacro:if value="${ADD_BALL_END_EFFECTOR}">
+<xacro:if value="${END_EFFECTOR_LEFT == 'ball'}">
       <xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />
 
       <xacro:ball_end_effector arm_num="1"  parent_link="arm1_6">
                   <origin xyz="0. -0.05 -0.105" rpy="0. 0. 0."/>
       </xacro:ball_end_effector>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_RIGHT == 'ball'}">
+      <xacro:include filename="$(find centauro_urdf)/urdf/parts/ball.urdf.xacro" />
 
       <xacro:ball_end_effector arm_num="2"  parent_link="arm2_6">
                   <origin xyz="0. 0.05 -0.105" rpy="0. 0. 0."/>
       </xacro:ball_end_effector>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_LEFT == 'dagana_fixed'}">
+	  <xacro:include filename="$(find dagana_urdf)/urdf/dagana_macro.urdf.xacro" />
+
+	  <xacro:dagana_gripper name="dagana_1" parent_link="arm1_6" joint_type="fixed">
+	    <origin xyz="0. -0.05 -0.08" rpy="0. ${PI} 0"/>
+	  </xacro:dagana_gripper>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_RIGHT == 'dagana_fixed'}">
+      <xacro:include filename="$(find dagana_urdf)/urdf/dagana_macro.urdf.xacro" />
+
+	  <xacro:dagana_gripper name="dagana_2" parent_link="arm2_6" joint_type="fixed">
+	    <origin xyz="0. 0.05 -0.08" rpy="0. ${PI} ${PI}"/>
+	  </xacro:dagana_gripper>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_LEFT == 'dagana'}">
+	  <xacro:include filename="$(find dagana_urdf)/urdf/dagana_macro.urdf.xacro" />
+
+	  <xacro:dagana_gripper name="dagana_1" parent_link="arm1_6" joint_type="revolute">
+	    <origin xyz="0. -0.05 -0.08" rpy="0. ${PI} 0"/>
+	  </xacro:dagana_gripper>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_RIGHT == 'dagana'}">
+      <xacro:include filename="$(find dagana_urdf)/urdf/dagana_macro.urdf.xacro" />
+
+	  <xacro:dagana_gripper name="dagana_2" parent_link="arm2_6" joint_type="revolute">
+	    <origin xyz="0. 0.05 -0.08" rpy="0. ${PI} ${PI}"/>
+	  </xacro:dagana_gripper>
 </xacro:if>
 
 </robot>
