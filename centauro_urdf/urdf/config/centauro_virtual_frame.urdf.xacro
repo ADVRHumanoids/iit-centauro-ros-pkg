@@ -8,13 +8,17 @@
     <!-- command line arguments -->
     <xacro:arg name="add_legs" default="true"/>
     <xacro:arg name="add_upper_body" default="true"/>
+    
+    <xacro:arg name="end_effector_left" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
+	<xacro:arg name="end_effector_right" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
 
     <!-- ************SELECT PARTS*************-->
     <!-- *************************************-->
     <xacro:property name="ADD_LEGS" value="$(arg add_legs)" />
     <xacro:property name="ADD_UPPER_BODY" value="$(arg add_upper_body)" />
 
-    <xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
+	<xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
+	<xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
 
     <xacro:property name="ADD_FLOATING_BASE" value="$(arg add_legs)" />
     <xacro:property name="ADD_VIRTUAL_FRAME" value="true" />
