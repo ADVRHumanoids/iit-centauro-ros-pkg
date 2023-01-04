@@ -117,7 +117,7 @@
         infra_height="720" 
         infra_fps="90" 
         color_width="1280" 
-        color_height="720" 
+        color_height="720"
         color_fps="30">
 
         <xacro:insert_block name="d435_head_origin" />
@@ -175,6 +175,151 @@
     </link>
     
   </xacro:unless>
+
+  <xacro:if value="${USE_EUROBIN_HEAD}">
+  <xacro:include filename="$(find centauro_urdf)/urdf/parts/zed_x_mini.urdf.xacro"/>
+  <xacro:include filename="$(find centauro_urdf)/urdf/parts/zed_mini.urdf.xacro"/>
+  <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro"/>
+  <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d455.urdf.xacro"/>
+
+    <xacro:if value="${USE_HEAD_ZED_MINI}">
+        <xacro:zed_mini
+            parent="neck_1"
+            name="zed_mini_front1">
+
+            <origin xyz="0.09 0.05 0.1375" rpy="-1.57 0 -0.5"/>
+
+        </xacro:zed_mini>
+        <xacro:zed_mini_gazebo
+                name="zed_mini_front1"/>
+
+
+        <xacro:zed_mini
+            parent="neck_1"
+            name="zed_mini_front2">
+
+        <origin xyz="0.09 -0.05 0.1375" rpy="-1.57 0 0.5"/>
+
+        </xacro:zed_mini>
+        <xacro:zed_mini_gazebo
+                name="zed_mini_front2"/>
+    </xacro:if>
+
+    <xacro:if value="${USE_HEAD_ZED_X_MINI}">
+        <xacro:zed_x_mini
+            parent="neck_1"
+            name="zedx_front1">
+
+            <origin xyz="0.09 0.05 0.1375" rpy="-1.57 0 -0.5"/>
+
+        </xacro:zed_x_mini>
+        <xacro:zed_x_mini_gazebo
+                name="zedx_front1"/>
+
+
+        <xacro:zed_x_mini
+            parent="neck_1"
+            name="zedx_front2">
+
+        <origin xyz="0.09 -0.05 0.1375" rpy="-1.57 0 0.5"/>
+
+        </xacro:zed_x_mini>
+        <xacro:zed_x_mini_gazebo
+                name="zedx_front2"/>
+      </xacro:if>
+
+    <xacro:if value="${USE_HEAD_D435}">
+        <xacro:sensor_d435i parent="neck_1"
+            name="d435_head_1"
+            topics_ns="d435_head_1"
+            enable_pointCloud="true"
+            align_depth="true"
+            unite_imu_method="false"
+            visualize="false"
+            accel_fps="300"
+            gyro_fps="300"
+            depth_width="1280"
+            depth_height="720"
+            depth_fps="90"
+            infra_width="1280"
+            infra_height="720"
+            infra_fps="90"
+            color_width="1280"
+            color_height="720"
+            color_fps="30">
+
+            <origin xyz="0.09 0.05 0.1375" rpy="-1.57 0 -0.5"/>
+        </xacro:sensor_d435i>
+
+        <xacro:sensor_d435i parent="neck_1"
+            name="d435_head_2"
+            topics_ns="d435_head_2"
+            enable_pointCloud="true"
+            align_depth="true"
+            unite_imu_method="false"
+            visualize="false"
+            accel_fps="300"
+            gyro_fps="300"
+            depth_width="1280"
+            depth_height="720"
+            depth_fps="90"
+            infra_width="1280"
+            infra_height="720"
+            infra_fps="90"
+            color_width="1280"
+            color_height="720"
+            color_fps="30">
+
+            <origin xyz="0.09 -0.05 0.1375" rpy="-1.57 0 0.5"/>
+        </xacro:sensor_d435i>
+    </xacro:if>
+
+    <xacro:if value="${USE_HEAD_D455}">
+        <xacro:sensor_d455 parent="neck_1"
+            name="d455_head_1"
+            topics_ns="d455_head_1"
+            enable_pointCloud="true"
+            align_depth="true"
+            unite_imu_method="false"
+            visualize="false"
+            accel_fps="300"
+            gyro_fps="300"
+            depth_width="1280"
+            depth_height="720"
+            depth_fps="90"
+            infra_width="1280"
+            infra_height="720"
+            infra_fps="90"
+            color_width="1280"
+            color_height="720"
+            color_fps="30">
+
+            <origin xyz="0.08 0.065 0.1375" rpy="-1.57 0 -0.52"/>
+        </xacro:sensor_d455>
+
+        <xacro:sensor_d455 parent="neck_1"
+            name="d455_head_2"
+            topics_ns="d455_head_2"
+            enable_pointCloud="true"
+            align_depth="true"
+            unite_imu_method="false"
+            visualize="false"
+            accel_fps="300"
+            gyro_fps="300"
+            depth_width="1280"
+            depth_height="720"
+            depth_fps="90"
+            infra_width="1280"
+            infra_height="720"
+            infra_fps="90"
+            color_width="1280"
+            color_height="720"
+            color_fps="30">
+
+            <origin xyz="0.08 -0.065 0.1375" rpy="-1.57 0 0.52"/>
+        </xacro:sensor_d455>
+    </xacro:if>
+  </xacro:if>
 
   <xacro:if value="${ADD_VELODYNE}">
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>

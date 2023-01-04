@@ -9,9 +9,15 @@
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
-<xacro:arg name="realsense" default="false"/>
+<xacro:arg name="realsense" default="true"/>
+<xacro:arg name="eurobin_head" default="true"/>
+    <xacro:arg name="head_d455" default="false"/>
+    <xacro:arg name="head_d435" default="false"/>
+    <xacro:arg name="head_zed_x_mini" default="true"/>
+    <xacro:arg name="head_zed_mini" default="false"/>
+
 <xacro:if value="$(arg realsense)">
-	<xacro:arg name="d435i_head" default="true"/>
+        <xacro:arg name="d435i_head" default="false"/>
 	<xacro:arg name="d435i_base" default="true"/>
 	<xacro:arg name="t265_base" default="true"/>
 </xacro:if>
@@ -39,5 +45,10 @@
 <xacro:property name="ADD_D435I_HEAD" value="$(arg d435i_head)" />
 <xacro:property name="ADD_D435I_BASE" value="$(arg d435i_base)" />
 <xacro:property name="ADD_T265_BASE" value="$(arg t265_base)" />
+<xacro:property name="USE_EUROBIN_HEAD" value="$(arg eurobin_head)" />
+<xacro:property name="USE_HEAD_D455" value="$(arg head_d455)" />
+<xacro:property name="USE_HEAD_D435" value="$(arg head_d435)" />
+<xacro:property name="USE_HEAD_ZED_X_MINI" value="$(arg head_zed_x_mini)" />
+<xacro:property name="USE_HEAD_ZED_MINI" value="$(arg head_zed_mini)" />
 
 </robot>
