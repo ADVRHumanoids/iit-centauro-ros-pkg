@@ -35,7 +35,6 @@
         </gazebo>
 
         <gazebo reference="wheel_1">
-            <material>Gazebo/Residential </material>
             <collision>
                 <surface>
                     <friction>
@@ -71,7 +70,6 @@
         </gazebo>
 
         <gazebo reference="wheel_2">
-            <material>Gazebo/Residential</material>
             <collision>
                 <surface>
                     <friction>
@@ -107,7 +105,6 @@
         </gazebo>
 
         <gazebo reference="wheel_3">
-            <material>Gazebo/Residential </material>
             <collision>
 
                 <surface>
@@ -143,7 +140,6 @@
             </collision>
         </gazebo>
         <gazebo reference="wheel_4">
-            <material>Gazebo/Residential</material>
             <collision>
                 <surface>
                     <friction>
@@ -284,7 +280,6 @@
     
     	<!-- add tags similar with wheels so that arm ball EE can have stable contacts -->
         <gazebo reference="ball1">
-            <material>Gazebo/Residential</material>
             <collision>
                 <surface>
                     <friction>
@@ -320,7 +315,6 @@
         </gazebo>
         
         <gazebo reference="ball2">
-            <material>Gazebo/Residential</material>
             <collision>
                 <surface>
                     <friction>
