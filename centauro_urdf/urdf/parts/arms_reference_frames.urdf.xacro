@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+<!-- This is probably not mandatory unless gazebo plugin -->
 <xacro:if value="${FORCE_TORQUE_SENSORS}">
 
 <link name="l_arm_ft"/>

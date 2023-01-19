@@ -6,7 +6,7 @@ in the sensor location.
 <robot xmlns:xacro="http:/ros.org/wiki/xacro">
 
 <xacro:if value="${FORCE_TORQUE_SENSORS}" >
-       <gazebo reference="j_arm1_6">
+       <gazebo reference="j_arm1_6">	<!-- joint on which the sensor is located -->
               <sensor type="force_torque" name="l_arm_ft">
                      <force_torque>
                        <frame>sensor</frame>
@@ -15,7 +15,7 @@ in the sensor location.
 		       <always_on>true</always_on>
 		       <visualize>true</visualize>
 		       <update_rate>200</update_rate>
-		       <!--pose>0 0 -0.02 0 0 0</pose--> <!-- check! -->
+		       <!--pose>0 0 -0.02 0 0 0</pose--> <!-- express reading wrt frame transformed by this pose -->
 	       </sensor>
        </gazebo>
 
