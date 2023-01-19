@@ -16,3 +16,7 @@ xbotcore_devices:
         names: []
         thread: rt_main
         type: link_state_sensor
+        
+    ft_gz:
+        names: []
+        thread: rt_main

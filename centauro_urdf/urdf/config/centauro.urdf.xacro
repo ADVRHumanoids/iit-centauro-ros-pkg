@@ -10,6 +10,8 @@
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="true"/>
+<xacro:arg name="ft_sensors" default="true"/>
+
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
 	<xacro:arg name="d435i_base" default="true"/>
@@ -25,6 +27,7 @@
 
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
+<xacro:property name="FORCE_TORQUE_SENSORS" value="$(arg ft_sensors)" />
 <xacro:property name="ADD_LEGS" value="$(arg legs)" />
 <xacro:property name="ADD_UPPER_BODY" value="$(arg upper_body)" />
 

@@ -31,6 +31,13 @@
         <group name="rear_left_leg">
             <chain base_link="pelvis" tip_link="wheel_3" />
         </group>
+        
+        <group name="force_torque_sensors">
+		<xacro:if value="${FORCE_TORQUE_SENSORS}">
+		    <joint name="l_arm_ft_joint"/>
+		    <joint name="r_arm_ft_joint"/>
+		</xacro:if>
+	</group>
     </xacro:if>
 
     <xacro:if value="${ADD_UPPER_BODY}">
