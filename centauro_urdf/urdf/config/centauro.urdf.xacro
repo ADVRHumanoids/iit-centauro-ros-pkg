@@ -10,7 +10,7 @@
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="true"/>
-<xacro:arg name="ft_sensors" default="true"/>
+<xacro:arg name="ft_sensors" default="false"/>
 
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
