@@ -15,7 +15,29 @@
     
     <plugin name="xbot2_imu_driver" filename="libxbot2_gz_imu_server.so"/>
     
+    <xacro:if value="${END_EFFECTOR_RIGHT == 'dagana'}">
+    <xacro:if value="${DAGANA_STANDALONE_PLUGIN}">
+        <plugin filename="libdagana_gazebo_DaganaPlugin.so" name="dagana_plugin">
+            <gripperName>dagana_2</gripperName>
+            <jointName>dagana_2_claw_joint</jointName>
+            <rate>100</rate>
+            <p>1</p>
+            <i>0.1</i>
+            <d>0.01</d>
+            <cmdMax>1000</cmdMax>
+            <cmdMin>-1000</cmdMin>
+        </plugin>
+    </xacro:if>
+    </xacro:if>
+    
     <plugin name="xbot2_joint_driver" filename="libxbot2_gz_joint_server.so">
+        <xacro:if value="${END_EFFECTOR_RIGHT == 'dagana'}">
+        <xacro:if value="${DAGANA_STANDALONE_PLUGIN}">
+        <ignore_joints>
+            <joint name="dagana_2_claw_joint" />
+        </ignore_joints> 
+        </xacro:if>
+        </xacro:if>
         <pid>
             <gain name="lowpwr_mot" p="50"  d="5"/>
             <gain name="small_mot"  p="1000"  d="10"/>
