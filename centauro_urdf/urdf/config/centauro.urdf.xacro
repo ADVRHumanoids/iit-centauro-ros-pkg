@@ -10,6 +10,9 @@
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="false"/>
+<xacro:arg name="end_effector_left" default="ball"/>
+<xacro:arg name="end_effector_right" default="ball"/>
+
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
 	<xacro:arg name="d435i_base" default="true"/>
@@ -22,8 +25,8 @@
 </xacro:unless>
 <xacro:arg name="floating_joint" default="true"/>
 <xacro:arg name="virtual_frame" default="false"/> <!-- For cartesio model must be set to true-->
-<xacro:arg name="end_effector_left" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
-<xacro:arg name="end_effector_right" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
+<xacro:arg name="end_effector_left" default="$(arg end_effector_left)"/> <!-- none, ball, dagana_fixed, dagana -->
+<xacro:arg name="end_effector_right" default="$(end_effector_right)"/> <!-- none, ball, dagana_fixed, dagana -->
 
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
