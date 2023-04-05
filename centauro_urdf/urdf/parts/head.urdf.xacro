@@ -179,7 +179,7 @@
   <xacro:if value="${ADD_VELODYNE}">
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
     <xacro:VLP-16 parent="velodyne_motor" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="-0.01 0.02 0.06" rpy="0.025 0.019 0" />
     </xacro:VLP-16>
   </xacro:if>
 

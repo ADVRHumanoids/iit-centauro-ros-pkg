@@ -9,8 +9,11 @@
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
-<xacro:arg name="realsense" default="true"/>
+<xacro:arg name="realsense" default="false"/>
 <xacro:arg name="ft_sensors" default="false"/>
+<xacro:arg name="end_effector_left" default="ball"/>
+<xacro:arg name="end_effector_right" default="ball"/>
+>>>>>>> new_end_effectors
 
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
@@ -23,7 +26,9 @@
 	<xacro:arg name="t265_base" default="false"/>
 </xacro:unless>
 <xacro:arg name="floating_joint" default="true"/>
-
+<xacro:arg name="virtual_frame" default="false"/> <!-- For cartesio model must be set to true-->
+<xacro:arg name="end_effector_left" default="$(arg end_effector_left)"/> <!-- none, ball, dagana_fixed, dagana -->
+<xacro:arg name="end_effector_right" default="$(end_effector_right)"/> <!-- none, ball, dagana_fixed, dagana -->
 
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
@@ -31,10 +36,16 @@
 <xacro:property name="ADD_LEGS" value="$(arg legs)" />
 <xacro:property name="ADD_UPPER_BODY" value="$(arg upper_body)" />
 
-<xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
+<xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
+<xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
+
+<!-- HACK to add standalone dagana plugin and ignore the dagana joint in the libxbot2_gz_joint_server -->
+<!-- This property is used in the gazebo/xbot.gazebo.xacro file -->
+<!-- In future, xbot will be able to ignore end-effectors in the hal and this should not be neccesary anymore -->
+<xacro:property name="DAGANA_STANDALONE_PLUGIN" value="true" />
 
 <xacro:property name="ADD_FLOATING_BASE" value="$(arg floating_joint)" />
-<xacro:property name="ADD_VIRTUAL_FRAME" value="false" />
+<xacro:property name="ADD_VIRTUAL_FRAME" value="$(arg virtual_frame)" />
 
 <xacro:property name="USE_STICKS" value="false" />
 

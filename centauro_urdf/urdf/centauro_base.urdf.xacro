@@ -1,183 +1,174 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="centauro">
 
-<!-- 
+    <!-- 
   ROS urdf definition of the CENTAURO humanoid robot by Istituto Italiano di Tecnologia
   
   Author: Enrico Mingo Hoffman
 -->
 
-<xacro:include filename="$(find centauro_urdf)/urdf/utils.urdf.xacro" />
-<xacro:include filename="$(find centauro_urdf)/urdf/parts/kinematics_properties.urdf.xacro" />
-<xacro:include filename="$(find centauro_urdf)/urdf/parts/inertial_properties.urdf.xacro" />
-<xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
+    <xacro:include filename="$(find centauro_urdf)/urdf/utils.urdf.xacro" />
+    <xacro:include filename="$(find centauro_urdf)/urdf/parts/kinematics_properties.urdf.xacro" />
+    <xacro:include filename="$(find centauro_urdf)/urdf/parts/inertial_properties.urdf.xacro" />
+    <xacro:include filename="$(find centauro_urdf)/urdf/parts/limits.urdf.xacro" />
 
 
-<link name="base_link"/>
+    <link name="base_link" />
 
-<link name="pelvis">
+    <link name="pelvis">
 
-      <inertial>
-         <origin xyz="${Pelvis_x} ${Pelvis_y} ${Pelvis_z}"/>
-         <mass value="${Pelvis_mass}"/>
-         <inertia ixx="${Pelvis_xx}" ixy="${Pelvis_xy}" ixz="${Pelvis_xz}" iyy="${Pelvis_yy}" iyz="${Pelvis_yz}" izz="${Pelvis_zz}"/>
-      </inertial>
+        <inertial>
+            <origin xyz="${Pelvis_x} ${Pelvis_y} ${Pelvis_z}" />
+            <mass value="${Pelvis_mass}" />
+            <inertia ixx="${Pelvis_xx}" ixy="${Pelvis_xy}" ixz="${Pelvis_xz}" iyy="${Pelvis_yy}" iyz="${Pelvis_yz}" izz="${Pelvis_zz}" />
+        </inertial>
 
-      <visual>
-        <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
-        <geometry>
-         <mesh filename="package://centauro_urdf/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-      </visual>
-
-      <collision>
-         <origin xyz="0.0 0 0.0"  rpy="0.0 0.0 0.0"/>
-        <geometry>
-          <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
-
-   </link>
-
-
-<link name="imu_link"/>
-
-<joint name="imu_joint" type="fixed">
-    <parent link="pelvis"/>
-    <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}"/>
-    <child link="imu_link"/>
-</joint>
-
-
-<joint name="base_joint" type="fixed">
-    <parent link="pelvis"/>
-    <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0" />
-</joint>
-
-
-<xacro:if value="${ADD_UPPER_BODY}">
-	<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
-    <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
-	<xacro:include filename="$(find centauro_urdf)/urdf/parts/head.urdf.xacro" />
-
-    <xacro:property name="d435_base_name" value="D435i_camera" />
-    <xacro:property name="d435_base_parent_name" value="pelvis" />
-    <xacro:property name="d435_base_origin">
-        <origin xyz="0.27187 0 0.0215997" rpy="0 0.5251508 0"/>
-    </xacro:property>
-    
-    <xacro:if value="${ADD_D435I_BASE}">
-        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
-        
-        <xacro:sensor_d435i parent="${d435_base_parent_name}"
-                      name="${d435_base_name}" 
-                      topics_ns="${d435_base_name}" 
-                      enable_pointCloud="true" align_depth="true"
-                      unite_imu_method="false"
-                    
-                      visualize="true"
-                                                  
-                            
-                      accel_fps="300"
-                      gyro_fps="300"
-
-                      depth_width="1280"
-                      depth_height="720"
-                      depth_fps="90"
-
-                      infra_width="1280"
-                      infra_height="720"
-                      infra_fps="90"
-
-                      color_width="1280"
-                      color_height="720"
-                      color_fps="30">
-        
-            <xacro:insert_block name="d435_base_origin" />
-          
-        </xacro:sensor_d435i>
-
-    </xacro:if>
-    
-    <xacro:unless value="${ADD_D435I_BASE}">
-      
-        <!--  Copied from _d435.urdf.xacro    -->
-        <xacro:property name="d435_cam_width" value="0.090"/>
-        <xacro:property name="d435_cam_height" value="0.025"/>
-        <xacro:property name="d435_cam_depth" value="0.02505"/>
-        <xacro:property name="d435_cam_mount_from_center_offset" value="0.0149"/>
-        <xacro:property name="d435_cam_depth_px" value="${d435_cam_mount_from_center_offset}"/>
-        <xacro:property name="d435_cam_depth_py" value="0.0175"/>
-        <xacro:property name="d435_cam_depth_pz" value="${d435_cam_height/2}"/> 
-        
-        <!-- camera body, with origin at bottom screw mount -->
-        <joint name="${d435_base_name}_joint" type="fixed">
-        <xacro:insert_block name="d435_base_origin"/>
-        <parent link="${d435_base_parent_name}"/>
-        <child link="${d435_base_name}_bottom_screw_frame"/>
-        </joint>
-        <link name="${d435_base_name}_bottom_screw_frame"/>
-
-        <joint name="${d435_base_name}_link_joint" type="fixed">
-        <origin xyz="0 ${d435_cam_depth_py} ${d435_cam_depth_pz}" rpy="0 0 0"/>
-        <parent link="${d435_base_name}_bottom_screw_frame"/>
-        <child link="${d435_base_name}_link"/>
-        </joint>
-        
-        <link name="${d435_base_name}_link">
         <visual>
-        <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${PI/2} 0 ${PI/2}"/>
+            <origin xyz="0.0 0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-            <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-            <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+                <mesh filename="package://centauro_urdf/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001" />
             </geometry>
-            <material name="${d435_base_name}_aluminum"/>
         </visual>
+
         <collision>
-            <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
+            <origin xyz="0.0 0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-            <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}"/>
+                <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
-        <inertial>
-            <!-- The following are not reliable values, and should not be used for modeling -->
-            <mass value="0.564"/>
-            <origin xyz="0 0 0"/>
-            <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
-        </inertial>
-        </link>
-    
-    </xacro:unless>
-    
-    
-    <xacro:if value="${ADD_T265_BASE}">
 
-        <xacro:include filename="$(find realsense_gazebo_description)/urdf/_t265.urdf.xacro" />
+    </link>
 
-        <xacro:sensor_t265  parent="pelvis" name="T265_camera" topics_ns="T265/T265_camera"                  
-                           
-                      odom_xyz="0.0 0.0 0.25"
-                      odom_rpy="0.0 0.0 0.0"
-                      odom_fps="262"
 
-                      fisheye_width="848"
-                      fisheye_height="800"
-                      fisheye_fps="30"
+    <link name="imu_link" />
 
-                      unite_imu_method="false"
-                      accel_fps="62.5"
-                      gyro_fps="200">
-            
-            <origin xyz="0.29245 0.00775 0.063" rpy="0 0 0" />
-        </xacro:sensor_t265>
+    <joint name="imu_joint" type="fixed">
+        <parent link="pelvis" />
+        <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}" />
+        <child link="imu_link" />
+    </joint>
+
+
+    <joint name="base_joint" type="fixed">
+        <parent link="pelvis" />
+        <child link="base_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+
+    <xacro:if value="${ADD_UPPER_BODY}">
+        <xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
+        <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms.urdf.xacro" />
+        <xacro:include filename="$(find centauro_urdf)/urdf/parts/head.urdf.xacro" />
+
+        <xacro:property name="d435_base_name" value="D435i_camera" />
+        <xacro:property name="d435_base_parent_name" value="pelvis" />
+        <xacro:property name="d435_base_origin">
+            <origin xyz="0.272 0 0.084" rpy="0 0.54 0" />
+        </xacro:property>
+
+        <xacro:if value="${ADD_D435I_BASE}">
+            <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />
+
+            <xacro:sensor_d435i parent="${d435_base_parent_name}"
+                name="${d435_base_name}"
+                topics_ns="${d435_base_name}"
+                enable_pointCloud="true" 
+                align_depth="true"
+                unite_imu_method="false"
+                visualize="false"
+                accel_fps="300"
+                gyro_fps="300"
+                depth_width="1280"
+                depth_height="720"
+                depth_fps="90"
+                infra_width="1280"
+                infra_height="720"
+                infra_fps="90"
+                color_width="1280"
+                color_height="720"
+                color_fps="30">
+
+                <xacro:insert_block name="d435_base_origin" />
+
+            </xacro:sensor_d435i>
+
+        </xacro:if>
+
+        <xacro:unless value="${ADD_D435I_BASE}">
+
+            <!--  Copied from _d435.urdf.xacro    -->
+            <xacro:property name="d435_cam_width" value="0.090" />
+            <xacro:property name="d435_cam_height" value="0.025" />
+            <xacro:property name="d435_cam_depth" value="0.02505" />
+            <xacro:property name="d435_cam_mount_from_center_offset" value="0.053" />
+            <xacro:property name="d435_cam_depth_px" value="${d435_cam_mount_from_center_offset}" />
+            <xacro:property name="d435_cam_depth_py" value="0.0" />
+            <xacro:property name="d435_cam_depth_pz" value="-0.035" />
+
+            <!-- camera body, with origin at bottom screw mount -->
+            <joint name="${d435_base_name}_joint" type="fixed">
+                <xacro:insert_block name="d435_base_origin" />
+                <parent link="${d435_base_parent_name}" />
+                <child link="${d435_base_name}_bottom_screw_frame" />
+            </joint>
+            <link name="${d435_base_name}_bottom_screw_frame" />
+
+            <joint name="${d435_base_name}_link_joint" type="fixed">
+                <origin xyz="${d435_cam_depth_px} ${d435_cam_depth_py} ${d435_cam_depth_pz}" rpy="0 0.0050 -0.008" />
+                <parent link="${d435_base_name}_bottom_screw_frame" />
+                <child link="${d435_base_name}_link" />
+            </joint>
+
+            <link name="${d435_base_name}_link">
+                <visual>
+                    <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${PI/2} 0 ${PI/2}" />
+                    <geometry>
+                        <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
+                        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae" />
+                    </geometry>
+                    <material name="${d435_base_name}_aluminum" />
+                </visual>
+                <collision>
+                    <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0" />
+                    <geometry>
+                        <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}" />
+                    </geometry>
+                </collision>
+                <inertial>
+                    <!-- The following are not reliable values, and should not be used for modeling -->
+                    <mass value="0.564" />
+                    <origin xyz="0 0 0" />
+                    <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257" />
+                </inertial>
+            </link>
+
+        </xacro:unless>
+
+
+        <xacro:if value="${ADD_T265_BASE}">
+
+            <xacro:include filename="$(find realsense_gazebo_description)/urdf/_t265.urdf.xacro" />
+
+            <xacro:sensor_t265 parent="pelvis" name="T265_camera" topics_ns="T265/T265_camera"
+                odom_xyz="0.0 0.0 0.25"
+                odom_rpy="0.0 0.0 0.0"
+                odom_fps="262"
+                fisheye_width="848"
+                fisheye_height="800"
+                fisheye_fps="30"
+                unite_imu_method="false"
+                accel_fps="62.5"
+                gyro_fps="200">
+
+                <origin xyz="0.29245 0.00775 0.063" rpy="0 0 0" />
+            </xacro:sensor_t265>
+        </xacro:if>
+
     </xacro:if>
-    
-</xacro:if>
 
-<xacro:if value="${ADD_LEGS}">
-	<xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
-</xacro:if>
+    <xacro:if value="${ADD_LEGS}">
+        <xacro:include filename="$(find centauro_urdf)/urdf/parts/legs.urdf.xacro" />
+    </xacro:if>
 
 </robot>
-

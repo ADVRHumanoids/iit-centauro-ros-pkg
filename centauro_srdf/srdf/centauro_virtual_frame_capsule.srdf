@@ -42,6 +42,9 @@
     <group name="d435_head">
         <chain base_link="torso_2" tip_link="d435_head_motor"/>
     </group>
+    <group name="car_frame_chain">
+        <chain base_link="pelvis" tip_link="car_frame"/>
+    </group>
     <group name="chains">
         <group name="front_left_leg"/>
         <group name="front_right_leg"/>
@@ -52,6 +55,7 @@
         <group name="torso"/>
         <group name="velodyne"/>
         <group name="d435_head"/>
+        <group name="car_frame_chain"/>
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="chains">
@@ -93,7 +97,6 @@
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="D435_head_camera_link" link2="D435i_camera_link" reason="Never"/>
-    <disable_collisions link1="D435_head_camera_link" link2="T265_camera_pose_frame" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_1" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_3" reason="Never"/>
@@ -119,24 +122,20 @@
     <disable_collisions link1="D435_head_camera_link" link2="knee_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="knee_3" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="knee_4" reason="Never"/>
-    <disable_collisions link1="D435_head_camera_link" link2="neck_1" reason="Never"/>
+    <disable_collisions link1="D435_head_camera_link" link2="neck_1" reason="Default"/>
     <disable_collisions link1="D435_head_camera_link" link2="pelvis" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="D435_head_camera_link" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="wheel_1" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="wheel_4" reason="Never"/>
-    <disable_collisions link1="D435i_camera_link" link2="T265_camera_pose_frame" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="arm1_1" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="arm1_2" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="arm1_3" reason="Never"/>
-    <disable_collisions link1="D435i_camera_link" link2="arm1_4" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="arm2_1" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="arm2_2" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="arm2_3" reason="Never"/>
-    <disable_collisions link1="D435i_camera_link" link2="arm2_4" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="hip1_1" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="hip1_2" reason="Never"/>
@@ -144,87 +143,50 @@
     <disable_collisions link1="D435i_camera_link" link2="hip1_4" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="hip2_3" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="hip2_4" reason="Never"/>
+    <disable_collisions link1="D435i_camera_link" link2="knee_3" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="neck_1" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="pelvis" reason="Adjacent"/>
     <disable_collisions link1="D435i_camera_link" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="D435i_camera_link" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="D435i_camera_link" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm1_1" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm1_2" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm1_3" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm2_1" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm2_2" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm2_3" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="arm2_4" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="d435_head_motor" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip1_1" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip1_2" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip1_3" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip1_4" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip2_1" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip2_2" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip2_3" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="hip2_4" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="knee_3" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="knee_4" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="pelvis" reason="Adjacent"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="velodyne_calib_base_link" reason="Never"/>
-    <disable_collisions link1="T265_camera_pose_frame" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle1_1" link2="ankle2_1" reason="Adjacent"/>
     <disable_collisions link1="ankle1_1" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="ankle1_1" link2="hip1_1" reason="Never"/>
     <disable_collisions link1="ankle1_1" link2="knee_1" reason="Adjacent"/>
     <disable_collisions link1="ankle1_1" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="ankle1_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle1_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle1_1" link2="wheel_1" reason="Never"/>
     <disable_collisions link1="ankle1_2" link2="ankle2_2" reason="Adjacent"/>
-    <disable_collisions link1="ankle1_2" link2="arm2_1" reason="Never"/>
     <disable_collisions link1="ankle1_2" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="ankle1_2" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="ankle1_2" link2="knee_2" reason="Adjacent"/>
     <disable_collisions link1="ankle1_2" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="ankle1_2" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle1_2" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle1_2" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="ankle2_3" reason="Adjacent"/>
-    <disable_collisions link1="ankle1_3" link2="arm1_1" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="arm2_1" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="knee_3" reason="Adjacent"/>
     <disable_collisions link1="ankle1_3" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="ankle1_3" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle1_3" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="ankle2_4" reason="Adjacent"/>
-    <disable_collisions link1="ankle1_4" link2="arm1_1" reason="Never"/>
-    <disable_collisions link1="ankle1_4" link2="arm2_1" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="hip1_4" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="knee_4" reason="Adjacent"/>
     <disable_collisions link1="ankle1_4" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="ankle1_4" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle1_4" link2="wheel_4" reason="Never"/>
     <disable_collisions link1="ankle2_1" link2="d435_head_motor" reason="Never"/>
-    <disable_collisions link1="ankle2_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle2_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle2_1" link2="wheel_1" reason="Adjacent"/>
     <disable_collisions link1="ankle2_2" link2="d435_head_motor" reason="Never"/>
-    <disable_collisions link1="ankle2_2" link2="knee_2" reason="Never"/>
-    <disable_collisions link1="ankle2_2" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle2_2" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle2_2" link2="wheel_2" reason="Adjacent"/>
     <disable_collisions link1="ankle2_3" link2="d435_head_motor" reason="Never"/>
-    <disable_collisions link1="ankle2_3" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle2_3" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle2_3" link2="wheel_3" reason="Adjacent"/>
     <disable_collisions link1="ankle2_4" link2="d435_head_motor" reason="Never"/>
-    <disable_collisions link1="ankle2_4" link2="knee_4" reason="Never"/>
-    <disable_collisions link1="ankle2_4" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="ankle2_4" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="ankle2_4" link2="wheel_4" reason="Adjacent"/>
     <disable_collisions link1="arm1_1" link2="arm1_2" reason="Adjacent"/>
@@ -252,7 +214,6 @@
     <disable_collisions link1="arm1_1" link2="neck_1" reason="Never"/>
     <disable_collisions link1="arm1_1" link2="pelvis" reason="Never"/>
     <disable_collisions link1="arm1_1" link2="torso_2" reason="Adjacent"/>
-    <disable_collisions link1="arm1_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="arm1_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="arm1_3" reason="Adjacent"/>
     <disable_collisions link1="arm1_2" link2="arm1_4" reason="Never"/>
@@ -260,7 +221,6 @@
     <disable_collisions link1="arm1_2" link2="arm2_1" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="arm2_2" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="arm2_3" reason="Never"/>
-    <disable_collisions link1="arm1_2" link2="arm2_4" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="d435_head_motor" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="hip1_1" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="hip1_2" reason="Never"/>
@@ -270,11 +230,11 @@
     <disable_collisions link1="arm1_2" link2="hip2_2" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="hip2_3" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="hip2_4" reason="Never"/>
-    <disable_collisions link1="arm1_2" link2="knee_3" reason="Never"/>
     <disable_collisions link1="arm1_2" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="arm1_2" link2="velodyne_calib_base_link" reason="Never"/>
+    <disable_collisions link1="arm1_2" link2="torso_2" reason="Default"/>
     <disable_collisions link1="arm1_2" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="arm1_4" reason="Adjacent"/>
+    <disable_collisions link1="arm1_3" link2="arm1_5" reason="Default"/>
     <disable_collisions link1="arm1_3" link2="arm1_6" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="arm2_1" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="arm2_2" reason="Never"/>
@@ -283,7 +243,6 @@
     <disable_collisions link1="arm1_3" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="hip1_4" reason="Never"/>
-    <disable_collisions link1="arm1_3" link2="hip2_3" reason="Never"/>
     <disable_collisions link1="arm1_3" link2="torso_2" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="arm1_5" reason="Adjacent"/>
     <disable_collisions link1="arm1_4" link2="arm1_6" reason="Never"/>
@@ -294,9 +253,8 @@
     <disable_collisions link1="arm1_4" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="hip1_4" reason="Never"/>
-    <disable_collisions link1="arm1_4" link2="torso_2" reason="Never"/>
     <disable_collisions link1="arm1_5" link2="arm1_6" reason="Adjacent"/>
-    <disable_collisions link1="arm1_5" link2="ball1" reason="Never"/>
+    <disable_collisions link1="arm1_5" link2="ball1" reason="Default"/>
     <disable_collisions link1="arm1_6" link2="ball1" reason="Adjacent"/>
     <disable_collisions link1="arm2_1" link2="arm2_2" reason="Adjacent"/>
     <disable_collisions link1="arm2_1" link2="arm2_3" reason="Never"/>
@@ -319,7 +277,6 @@
     <disable_collisions link1="arm2_1" link2="neck_1" reason="Never"/>
     <disable_collisions link1="arm2_1" link2="pelvis" reason="Never"/>
     <disable_collisions link1="arm2_1" link2="torso_2" reason="Adjacent"/>
-    <disable_collisions link1="arm2_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="arm2_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="arm2_2" link2="arm2_3" reason="Adjacent"/>
     <disable_collisions link1="arm2_2" link2="arm2_4" reason="Never"/>
@@ -333,18 +290,17 @@
     <disable_collisions link1="arm2_2" link2="hip2_2" reason="Never"/>
     <disable_collisions link1="arm2_2" link2="hip2_3" reason="Never"/>
     <disable_collisions link1="arm2_2" link2="hip2_4" reason="Never"/>
-    <disable_collisions link1="arm2_2" link2="knee_3" reason="Never"/>
     <disable_collisions link1="arm2_2" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="arm2_2" link2="velodyne_calib_base_link" reason="Never"/>
+    <disable_collisions link1="arm2_2" link2="torso_2" reason="Default"/>
     <disable_collisions link1="arm2_2" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="arm2_4" reason="Adjacent"/>
+    <disable_collisions link1="arm2_3" link2="arm2_5" reason="Default"/>
     <disable_collisions link1="arm2_3" link2="arm2_6" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="ball2" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="hip1_1" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="hip1_4" reason="Never"/>
-    <disable_collisions link1="arm2_3" link2="hip2_3" reason="Never"/>
     <disable_collisions link1="arm2_3" link2="torso_2" reason="Never"/>
     <disable_collisions link1="arm2_4" link2="arm2_5" reason="Adjacent"/>
     <disable_collisions link1="arm2_4" link2="arm2_6" reason="Never"/>
@@ -353,9 +309,8 @@
     <disable_collisions link1="arm2_4" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="arm2_4" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="arm2_4" link2="hip1_4" reason="Never"/>
-    <disable_collisions link1="arm2_4" link2="torso_2" reason="Never"/>
     <disable_collisions link1="arm2_5" link2="arm2_6" reason="Adjacent"/>
-    <disable_collisions link1="arm2_5" link2="ball2" reason="Never"/>
+    <disable_collisions link1="arm2_5" link2="ball2" reason="Default"/>
     <disable_collisions link1="arm2_6" link2="ball2" reason="Adjacent"/>
     <disable_collisions link1="d435_head_motor" link2="hip1_1" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="hip1_2" reason="Never"/>
@@ -372,12 +327,12 @@
     <disable_collisions link1="d435_head_motor" link2="neck_1" reason="Adjacent"/>
     <disable_collisions link1="d435_head_motor" link2="pelvis" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="d435_head_motor" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="wheel_1" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="d435_head_motor" link2="wheel_4" reason="Never"/>
+    <disable_collisions link1="dagana_2_bottom_link" link2="dagana_2_top_link" reason="Adjacent"/>
     <disable_collisions link1="hip1_1" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="hip1_1" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="hip1_1" link2="hip1_4" reason="Never"/>
@@ -388,7 +343,6 @@
     <disable_collisions link1="hip1_1" link2="neck_1" reason="Never"/>
     <disable_collisions link1="hip1_1" link2="pelvis" reason="Adjacent"/>
     <disable_collisions link1="hip1_1" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip1_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip1_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip1_2" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="hip1_2" link2="hip1_4" reason="Never"/>
@@ -399,7 +353,6 @@
     <disable_collisions link1="hip1_2" link2="neck_1" reason="Never"/>
     <disable_collisions link1="hip1_2" link2="pelvis" reason="Adjacent"/>
     <disable_collisions link1="hip1_2" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip1_2" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip1_2" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip1_3" link2="hip1_4" reason="Never"/>
     <disable_collisions link1="hip1_3" link2="hip2_1" reason="Never"/>
@@ -409,7 +362,6 @@
     <disable_collisions link1="hip1_3" link2="neck_1" reason="Never"/>
     <disable_collisions link1="hip1_3" link2="pelvis" reason="Adjacent"/>
     <disable_collisions link1="hip1_3" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip1_3" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip1_3" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip1_4" link2="hip2_1" reason="Never"/>
     <disable_collisions link1="hip1_4" link2="hip2_2" reason="Never"/>
@@ -418,64 +370,55 @@
     <disable_collisions link1="hip1_4" link2="neck_1" reason="Never"/>
     <disable_collisions link1="hip1_4" link2="pelvis" reason="Adjacent"/>
     <disable_collisions link1="hip1_4" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip1_4" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip1_4" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip2_1" link2="knee_1" reason="Adjacent"/>
     <disable_collisions link1="hip2_1" link2="neck_1" reason="Never"/>
+    <disable_collisions link1="hip2_1" link2="pelvis" reason="Default"/>
     <disable_collisions link1="hip2_1" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip2_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip2_1" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip2_2" link2="knee_2" reason="Adjacent"/>
     <disable_collisions link1="hip2_2" link2="neck_1" reason="Never"/>
+    <disable_collisions link1="hip2_2" link2="pelvis" reason="Default"/>
     <disable_collisions link1="hip2_2" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip2_2" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip2_2" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip2_3" link2="knee_3" reason="Adjacent"/>
     <disable_collisions link1="hip2_3" link2="neck_1" reason="Never"/>
+    <disable_collisions link1="hip2_3" link2="pelvis" reason="Default"/>
     <disable_collisions link1="hip2_3" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip2_3" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip2_3" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="hip2_4" link2="knee_4" reason="Adjacent"/>
     <disable_collisions link1="hip2_4" link2="neck_1" reason="Never"/>
+    <disable_collisions link1="hip2_4" link2="pelvis" reason="Default"/>
     <disable_collisions link1="hip2_4" link2="torso_2" reason="Never"/>
-    <disable_collisions link1="hip2_4" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="hip2_4" link2="velodyne_motor" reason="Never"/>
     <disable_collisions link1="knee_1" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="knee_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="knee_1" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="knee_1" link2="wheel_1" reason="Never"/>
     <disable_collisions link1="knee_2" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="knee_2" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="knee_2" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="knee_2" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="knee_3" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="knee_3" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="knee_3" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="knee_3" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="knee_4" link2="neck_1" reason="Never"/>
-    <disable_collisions link1="knee_4" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="knee_4" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="knee_4" link2="wheel_4" reason="Never"/>
     <disable_collisions link1="neck_1" link2="pelvis" reason="Never"/>
     <disable_collisions link1="neck_1" link2="torso_2" reason="Adjacent"/>
-    <disable_collisions link1="neck_1" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="neck_1" link2="velodyne_motor" reason="Adjacent"/>
     <disable_collisions link1="pelvis" link2="torso_2" reason="Adjacent"/>
-    <disable_collisions link1="pelvis" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="pelvis" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="torso_2" link2="velodyne_calib_base_link" reason="Never"/>
     <disable_collisions link1="torso_2" link2="velodyne_motor" reason="Never"/>
-    <disable_collisions link1="velodyne_calib_base_link" link2="velodyne_motor" reason="Adjacent"/>
-    <disable_collisions link1="velodyne_calib_base_link" link2="wheel_1" reason="Never"/>
-    <disable_collisions link1="velodyne_calib_base_link" link2="wheel_2" reason="Never"/>
-    <disable_collisions link1="velodyne_calib_base_link" link2="wheel_3" reason="Never"/>
-    <disable_collisions link1="velodyne_calib_base_link" link2="wheel_4" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_1" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_4" reason="Never"/>
-    <disable_collisions link1="pelvis" link2="hip2_1" reason="Default"/>
-    <disable_collisions link1="pelvis" link2="hip2_2" reason="Default"/>
-    <disable_collisions link1="pelvis" link2="hip2_3" reason="Default"/>
-    <disable_collisions link1="pelvis" link2="hip2_4" reason="Default"/>
+
+    <disable_collisions link1="ankle2_1" link2="knee_1" reason="Never"/>
+    <disable_collisions link1="ankle2_2" link2="knee_2" reason="Never"/>
+    <disable_collisions link1="ankle2_3" link2="knee_3" reason="Never"/>
+    <disable_collisions link1="ankle2_4" link2="knee_4" reason="Never"/>
+    <disable_collisions link1="ankle1_1" link2="hip2_1" reason="Never"/>
+    <disable_collisions link1="ankle1_2" link2="hip2_2" reason="Never"/>
+    <disable_collisions link1="ankle1_3" link2="hip2_3" reason="Never"/>
+    <disable_collisions link1="ankle1_4" link2="hip2_4" reason="Never"/>
+    <disable_collisions link1="arm2_5" link2="arm2_2" reason="Never"/>
+    <disable_collisions link1="arm1_5" link2="arm1_2" reason="Never"/>
+
 </robot>
