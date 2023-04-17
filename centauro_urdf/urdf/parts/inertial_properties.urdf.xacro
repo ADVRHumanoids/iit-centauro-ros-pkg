@@ -96,6 +96,22 @@
 <!-- Mass -->
 <xacro:property name="Ankle_2_mass" value="1.7656714e+00"/>
 
+<!-- Note: the "23" suffix denotes the new bigger-size wheel -->
+
+<!-- Center of Mass -->
+<xacro:property name="Ankle23_2_x" value="${1.8512273e-01 * mmTom}"/>
+<xacro:property name="Ankle23_2_y" value="${-1.7369405e+00 * mmTom}"/>
+<xacro:property name="Ankle23_2_z" value="${-9.1340683e+01 * mmTom}"/>
+<!-- Inertia -->
+<xacro:property name="Ankle23_2_xx" value="${1.7711499e+04 * mm2Tom2}"/>
+<xacro:property name="Ankle23_2_yy" value="${1.4263485e+04 * mm2Tom2}"/>
+<xacro:property name="Ankle23_2_zz" value="${8.0747557e+03 * mm2Tom2}"/>
+<xacro:property name="Ankle23_2_xy" value="${-1.0713141e+01 * mm2Tom2}"/>
+<xacro:property name="Ankle23_2_xz" value="${-2.2094697e+01 * mm2Tom2}"/>
+<xacro:property name="Ankle23_2_yz" value="${-3.3426702e+02 * mm2Tom2}"/>
+<!-- Mass -->
+<xacro:property name="Ankle23_2_mass" value="2.4409290e+00"/>
+
 <!-- Center of Mass -->
 <xacro:property name="Wheel_x" value="${0.0 * mmTom}"/>
 <xacro:property name="Wheel_y" value="${0.0 * mmTom}"/>
@@ -108,7 +124,21 @@
 <xacro:property name="Wheel_xz" value="${0.0 * mm2Tom2}"/>
 <xacro:property name="Wheel_yz" value="${0.0 * mm2Tom2}"/>
 <!-- Mass -->
-<xacro:property name="Wheel_mass" value="1.1116400e+00"/>  <!-- TODO CHECK THIS VALUE -->
+<xacro:property name="Wheel_mass" value="1.1116400e+00"/>  
+
+<!-- Center of Mass -->
+<xacro:property name="Wheel23_x" value="${0.0 * mmTom}"/>
+<xacro:property name="Wheel23_y" value="${0.0 * mmTom}"/>
+<xacro:property name="Wheel23_z" value="${-1.5403767e-01 * mmTom}"/>
+<!-- Inertia -->
+<xacro:property name="Wheel23_xx" value="${8.6373591e+03 * mm2Tom2}"/>
+<xacro:property name="Wheel23_yy" value="${8.6373644e+03 * mm2Tom2}"/>
+<xacro:property name="Wheel23_zz" value="${1.6376551e+04 * mm2Tom2}"/>
+<xacro:property name="Wheel23_xy" value="${0.0 * mm2Tom2}"/>
+<xacro:property name="Wheel23_xz" value="${0.0 * mm2Tom2}"/>
+<xacro:property name="Wheel23_yz" value="${0.0 * mm2Tom2}"/>
+<!-- Mass -->
+<xacro:property name="Wheel23_mass" value="1.8569388e+00"/>  
 
 <!-- Center of Mass -->
 <xacro:property name="Torso_2_x" value=" -0.0194977940 "/>

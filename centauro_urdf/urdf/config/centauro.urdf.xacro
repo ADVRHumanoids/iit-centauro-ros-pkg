@@ -7,6 +7,7 @@
 
 <!-- command line arguments -->
 <xacro:arg name="legs" default="true"/>
+<xacro:arg name="big_wheel" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="false"/>
@@ -34,6 +35,7 @@
 <xacro:property name="ADD_VIRTUAL_FRAME" value="false" />
 
 <xacro:property name="USE_STICKS" value="false" />
+<xacro:property name="USE_WHEEL_23" value="$(arg big_wheel)" />
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
 <xacro:property name="ADD_D435I_HEAD" value="$(arg d435i_head)" />
