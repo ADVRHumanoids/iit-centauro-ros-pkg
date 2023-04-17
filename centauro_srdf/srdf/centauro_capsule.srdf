@@ -97,6 +97,7 @@
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_2" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_3" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle1_4" reason="Never"/>
+    <disable_collisions link1="D435_head_camera_link" link2="ankle2_1" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="ankle2_4" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="arm1_1" reason="Never"/>
     <disable_collisions link1="D435_head_camera_link" link2="arm1_2" reason="Never"/>
@@ -257,6 +258,7 @@
     <disable_collisions link1="arm1_4" link2="arm1_5" reason="Adjacent"/>
     <disable_collisions link1="arm1_4" link2="arm1_6" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="arm2_1" reason="Never"/>
+    <disable_collisions link1="arm1_4" link2="arm2_2" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="ball1" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="hip1_1" reason="Never"/>
     <disable_collisions link1="arm1_4" link2="hip1_2" reason="Never"/>
@@ -323,7 +325,6 @@
     <disable_collisions link1="arm2_4" link2="hip1_2" reason="Never"/>
     <disable_collisions link1="arm2_4" link2="hip1_3" reason="Never"/>
     <disable_collisions link1="arm2_4" link2="hip1_4" reason="Never"/>
-    <disable_collisions link1="arm2_4" link2="velodyne_calib" reason="Never"/>
     <disable_collisions link1="arm2_5" link2="arm2_6" reason="Adjacent"/>
     <disable_collisions link1="arm2_5" link2="ball2" reason="Default"/>
     <disable_collisions link1="arm2_6" link2="ball2" reason="Adjacent"/>

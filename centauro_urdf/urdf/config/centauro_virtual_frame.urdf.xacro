@@ -7,7 +7,7 @@
     <!-- ************SELECT PARTS*************-->
     <!-- *************************************-->
     <xacro:property name="ADD_LEGS" value="true" />
-    <xacro:property name="ADD_UPPER_BODY" value="false" />
+    <xacro:property name="ADD_UPPER_BODY" value="true" />
 
     <xacro:property name="ADD_BALL_END_EFFECTOR" value="true" />
 
