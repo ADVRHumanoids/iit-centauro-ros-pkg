@@ -87,7 +87,7 @@
 	<xacro:include filename="$(find dagana_urdf)/urdf/dagana_macro.urdf.xacro" />
 
 	<xacro:dagana_gripper name="dagana_${arm_num}" parent_link="arm${arm_num}_6" joint_type="fixed">
-		<origin xyz="0. 0.05 -0.08" rpy="0. ${PI} ${PI}"/>
+		<origin xyz="0. 0.05 -0.08" rpy="0. ${PI} 0"/>
 	</xacro:dagana_gripper>
 	  
     <!-- add armX_8 link for compliance with srdf file -->
