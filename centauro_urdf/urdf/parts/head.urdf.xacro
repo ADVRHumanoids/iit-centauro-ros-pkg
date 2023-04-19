@@ -65,6 +65,13 @@
     </collision>
   </link>
 
+  <link name="d435_head_calib"/>
+  <joint name="d435_head_calib_joint" type="fixed">
+    <parent link="d435_head_motor"/>
+    <child link="d435_head_calib"/>
+    <!-- <origin xyz="1.06832322 0.03353594 0.1387841" rpy="-0.03851041 0.29866375 -0.06730427"/> -->
+  </joint>
+
   <!--JOINTS -->
   <joint name="neck_base" type="fixed">
     <parent link="torso_2"/>
@@ -92,7 +99,7 @@
   </joint>
 
   <xacro:property name="d435_head_name" value="D435_head_camera" />
-  <xacro:property name="d435_head_parent_name" value="d435_head_motor" />
+  <xacro:property name="d435_head_parent_name" value="d435_head_calib" />
   <xacro:property name="d435_head_origin">
     <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
   </xacro:property>
