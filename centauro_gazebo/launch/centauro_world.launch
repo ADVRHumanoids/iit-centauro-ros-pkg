@@ -21,7 +21,8 @@
   <arg name="realsense" default="false"/>
   <arg name="end_effector_left" default="ball"/>
   <arg name="end_effector_right" default="ball"/>
-
+  <arg name="big_wheel" default="true"/>
+  
   <!-- Internal arguments, rewrite human-readable gazebo arguments to it's internal arguments -->
   <arg unless="$(arg paused)" name="command_arg1" value=""/>
   <arg     if="$(arg paused)" name="command_arg1" value="-u"/>
@@ -40,7 +41,7 @@
 
   <!-- Load the URDF/SRDF into the ROS Parameter Server -->
   <param name="robot_description_gz"
-         command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro_robot.urdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense) end_effector_left:=$(arg end_effector_left) end_effector_right:=$(arg end_effector_right)"/>
+         command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro_robot.urdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense) end_effector_left:=$(arg end_effector_left) end_effector_right:=$(arg end_effector_right) big_wheel:=$(arg big_wheel)"/>
   
   <!-- run gazebo -->
   <group if="$(arg gazebo)">
