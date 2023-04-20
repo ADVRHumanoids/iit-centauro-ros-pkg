@@ -10,21 +10,21 @@
     <xacro:arg name="add_upper_body" default="true"/>
     
     <xacro:arg name="end_effector_left" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
-	<xacro:arg name="end_effector_right" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
-
+    <xacro:arg name="end_effector_right" default="ball"/> <!-- none, ball, dagana_fixed, dagana -->
+    <xacro:arg name="ft_sensors" default="false"/>
+    
     <!-- ************SELECT PARTS*************-->
     <!-- *************************************-->
     <xacro:property name="ADD_LEGS" value="$(arg add_legs)" />
     <xacro:property name="ADD_UPPER_BODY" value="$(arg add_upper_body)" />
-
-	<xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
-	<xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
+    <xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
+    <xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
     
     <!-- HACK to add standalone dagana plugin and ignore the dagana joint in the libxbot2_gz_joint_server -->
     <!-- This property is used in the gazebo/xbot.gazebo.xacro file -->
     <!-- In future, xbot will be able to ignore end-effectors in the hal and this should not be neccesary anymore -->
     <xacro:property name="DAGANA_STANDALONE_PLUGIN" value="true" />
-
+    <xacro:property name="FORCE_TORQUE_SENSORS" value="$(arg ft_sensors)" />
     <xacro:property name="ADD_FLOATING_BASE" value="$(arg add_legs)" />
     <xacro:property name="ADD_VIRTUAL_FRAME" value="true" />
 
