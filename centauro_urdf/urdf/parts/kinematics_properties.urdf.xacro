@@ -77,6 +77,15 @@
 <xacro:property name="Wheel_roll" value="${PI_2}"/>
 <xacro:property name="Wheel_pitch" value="0.0"/>
 <xacro:property name="Wheel_yaw" value="0.0"/>
+<xacro:property name="Wheel_radius" value="0.078"/>
+
+<xacro:property name="Wheel23_Ox" value="${0.0 * mmTom}"/>
+<xacro:property name="Wheel23_Oy" value="${0.0 * mmTom}"/>
+<xacro:property name="Wheel23_Oz" value="${-144.350 * mmTom}"/>
+<xacro:property name="Wheel23_roll" value="${PI_2}"/>
+<xacro:property name="Wheel23_pitch" value="0.0"/>
+<xacro:property name="Wheel23_yaw" value="0.0"/>
+<xacro:property name="Wheel23_radius" value="0.124"/>
 
 <!-- Origin -->
 <xacro:property name="Torso_2_Ox" value=" 0.200 "/>

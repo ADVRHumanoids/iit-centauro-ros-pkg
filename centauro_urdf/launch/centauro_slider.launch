@@ -2,9 +2,10 @@
 
     <arg name="gui" default="true" />
     <arg name="visualize_inertia" default="false" />
+    <arg name="big_wheel" default="true"/>
 
 
-    <param name="robot_description" command="xacro '$(find centauro_urdf)/urdf/centauro.urdf.xacro'" />
+    <param name="robot_description" command="xacro '$(find centauro_urdf)/urdf/centauro.urdf.xacro' big_wheel:=$(arg big_wheel)" />
     <param name="use_gui" value="$(arg gui)"/>
     <param name="rate" value="50.0"/>
      

@@ -29,8 +29,12 @@
     <xacro:property name="ADD_VIRTUAL_FRAME" value="true" />
 
     <xacro:property name="USE_STICKS" value="false" />
+    <xacro:property name="USE_WHEEL_23" value="true" />
 
-    <xacro:property name="ADD_VELODYNE" value="true" />
+    <xacro:property name="END_EFFECTOR_LEFT" value="ball" />	
+    <xacro:property name="END_EFFECTOR_RIGHT" value="ball" />
+
+    <xacro:property name="ADD_VELODYNE" value="false" />
     <xacro:property name="ADD_D435I_HEAD" value="false" />
     <xacro:property name="ADD_D435I_BASE" value="false" />
     <xacro:property name="ADD_T265_BASE" value="false" />

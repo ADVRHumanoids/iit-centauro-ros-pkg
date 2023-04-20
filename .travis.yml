@@ -23,7 +23,7 @@ notifications:
     on_failure: always
 
 before_script:
-
+- rm -rf /opt/pyenv
 # apt update and core packages installation
 - set -e
 - sudo apt update
