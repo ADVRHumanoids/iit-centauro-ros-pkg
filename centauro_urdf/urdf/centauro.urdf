@@ -1782,12 +1782,12 @@
       <material name="black"/>
     </collision>
   </link>
-  <!-- *****************************-->
+  <!-- *********** CONTACT FRAME ******************-->
   <link name="contact_1"/>
   <joint name="contact_joint_1" type="fixed">
     <parent link="ankle2_1"/>
     <child link="contact_1"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.176"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.26835"/>
   </joint>
   <!-- ******************************** -->
   <joint name="hip_yaw_1" type="revolute">
@@ -1963,12 +1963,12 @@
       <material name="black"/>
     </collision>
   </link>
-  <!-- *****************************-->
+  <!-- *********** CONTACT FRAME ******************-->
   <link name="contact_2"/>
   <joint name="contact_joint_2" type="fixed">
     <parent link="ankle2_2"/>
     <child link="contact_2"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.176"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.26835"/>
   </joint>
   <!-- ******************************** -->
   <joint name="hip_yaw_2" type="revolute">
@@ -2144,12 +2144,12 @@
       <material name="black"/>
     </collision>
   </link>
-  <!-- *****************************-->
+  <!-- *********** CONTACT FRAME ******************-->
   <link name="contact_3"/>
   <joint name="contact_joint_3" type="fixed">
     <parent link="ankle2_3"/>
     <child link="contact_3"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.176"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.26835"/>
   </joint>
   <!-- ******************************** -->
   <joint name="hip_yaw_3" type="revolute">
@@ -2325,12 +2325,12 @@
       <material name="black"/>
     </collision>
   </link>
-  <!-- *****************************-->
+  <!-- *********** CONTACT FRAME ******************-->
   <link name="contact_4"/>
   <joint name="contact_joint_4" type="fixed">
     <parent link="ankle2_4"/>
     <child link="contact_4"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.176"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.26835"/>
   </joint>
   <!-- ******************************** -->
   <joint name="hip_yaw_4" type="revolute">
