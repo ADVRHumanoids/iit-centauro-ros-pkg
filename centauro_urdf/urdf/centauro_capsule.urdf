@@ -605,51 +605,90 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
   </link>
-  <link name="ball2">
+  <joint name="dagana_2_mount_joint" type="fixed">
+    <origin xyz="0.0 0.05 -0.08" rpy="0.0 3.14159265359 0.0"/>
+    <parent link="arm2_6"/>
+    <child link="dagana_2_top_link"/>
+  </joint>
+  <link name="dagana_2_top_link">
     <inertial>
-      <origin xyz="-1.0072498e-05 3.7590658e-05 0.019772332" rpy="0.0 0.0 0.0"/>
-      <mass value="1.27"/>
-      <inertia ixx="0.0023061092" ixy="2.9181758e-07" ixz="-2.1246683999999997e-07" iyy="0.0023053155000000002" iyz="7.9290978e-07" izz="0.0030675615999999997"/>
+      <origin xyz="-0.0063562154 -0.0060265532000000005 0.060068288000000004" rpy="0.0 0.0 0.0"/>
+      <mass value="1.74324"/>
+      <inertia ixx="0.0050510328" ixy="-0.00025264216" ixz="-0.00012103013" iyy="0.0047944612" iyz="-0.00073917704" izz="0.0031156997"/>
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0001-simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-2.6819999999999855e-07 1.2015000000000003e-06 -0.0105021" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
+      <origin xyz="-0.000122827 -0.0012617600000000002 0.09111949999999999" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
-        <cylinder radius="0.0709883" length="9.940076835940455e-05"/>
+        <cylinder radius="0.0760764" length="0.10212404260993166"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000046 -0.000017 -0.010502" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
+      <origin xyz="-0.000111 0.003909 0.141919" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
-        <sphere radius="0.0709883"/>
+        <sphere radius="0.0760764"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000046 0.000020 -0.010502" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
+      <origin xyz="-0.000134 -0.006433 0.040320" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
-        <sphere radius="0.0709883"/>
+        <sphere radius="0.0760764"/>
       </geometry>
     </collision>
   </link>
-  <link name="ball2_tip"/>
-  <joint name="j_arm2_8" type="fixed">
-    <origin xyz="0.0 0.05 -0.105" rpy="0.0 0.0 0.0"/>
-    <parent link="arm2_6"/>
-    <child link="ball2"/>
+  <joint name="dagana_2_claw_joint" type="revolute">
+    <origin xyz="0.0 -0.028 0.05025" rpy="1.57079632679 0.0 3.14159265359"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="dagana_2_top_link"/>
+    <child link="dagana_2_bottom_link"/>
+    <limit effort="1000.0" lower="0.0" upper="1.0" velocity="2.0"/>
   </joint>
-  <joint name="j_ball2_tip" type="fixed">
-    <origin xyz="0.0 0.0 -0.07" rpy="0.0 0.0 0.0"/>
-    <parent link="ball2"/>
-    <child link="ball2_tip"/>
+  <link name="dagana_2_bottom_link">
+    <inertial>
+      <origin xyz="0.0 0.069644767 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.46117745"/>
+      <inertia ixx="0.0014726990999999999" ixy="7.134683e-05" ixz="2.529065e-06" iyy="0.0009385556899999999" iyz="-0.000264452" izz="0.0019472731"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://dagana_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.000557338 0.06060969 0.00269066" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
+      <geometry>
+        <cylinder radius="0.0618624" length="0.11781363498578913"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.000508 0.001819 -0.001012" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
+      <geometry>
+        <sphere radius="0.0618624"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.000607 0.119400 0.006393" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
+      <geometry>
+        <sphere radius="0.0618624"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dagana_2_tcp_joint" type="fixed">
+    <origin xyz="0.0 -0.05 0.15" rpy="0.0 0.0 0.0"/>
+    <parent link="dagana_2_top_link"/>
+    <child link="dagana_2_tcp"/>
   </joint>
-  <joint name="j_ball2_fixed" type="fixed">
-    <parent link="ball2"/>
+  <link name="dagana_2_tcp"/>
+  <joint name="j_dagana_2_final" type="fixed">
+    <parent link="dagana_2_bottom_link"/>
     <child link="arm2_8"/>
   </joint>
   <link name="arm2_8">
@@ -773,6 +812,9 @@
     <limit effort="35.0" lower="-1.1" upper="1.1" velocity="5.7"/>
     <dynamics friction="10.0"/>
   </joint>
+  <material name="D435_head_camera_aluminum">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
   <joint name="D435_head_camera_joint" type="fixed">
     <origin xyz="0.03015 0.0 -0.0125" rpy="0.0 0.0 0.0"/>
     <parent link="d435_head_motor"/>
@@ -791,9 +833,9 @@
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
     </inertial>
     <visual>
-      <origin xyz="0.0149 -0.0175 0.0" rpy="1.570796326795 0.0 1.570796326795"/>
+      <origin xyz="0.0149 -0.0175 0.0" rpy="1.5707963267948966 0.0 1.5707963267948966"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        <mesh filename="package://realsense2_description/meshes/d435.dae"/>
       </geometry>
       <material name="D435_head_camera_aluminum"/>
     </visual>
@@ -804,6 +846,230 @@
       </geometry>
     </collision>
   </link>
+  <joint name="D435_head_camera_depth_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435_head_camera_link"/>
+    <child link="D435_head_camera_depth_frame"/>
+  </joint>
+  <link name="D435_head_camera_depth_frame"/>
+  <joint name="D435_head_camera_depth_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435_head_camera_depth_frame"/>
+    <child link="D435_head_camera_depth_optical_frame"/>
+  </joint>
+  <link name="D435_head_camera_depth_optical_frame"/>
+  <joint name="D435_head_camera_left_ir_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435_head_camera_depth_frame"/>
+    <child link="D435_head_camera_left_ir_frame"/>
+  </joint>
+  <link name="D435_head_camera_left_ir_frame"/>
+  <joint name="D435_head_camera_left_ir_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435_head_camera_left_ir_frame"/>
+    <child link="D435_head_camera_left_ir_optical_frame"/>
+  </joint>
+  <link name="D435_head_camera_left_ir_optical_frame"/>
+  <joint name="D435_head_camera_right_ir_joint" type="fixed">
+    <origin xyz="0.0 -0.05 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435_head_camera_depth_frame"/>
+    <child link="D435_head_camera_right_ir_frame"/>
+  </joint>
+  <link name="D435_head_camera_right_ir_frame"/>
+  <joint name="D435_head_camera_right_ir_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435_head_camera_right_ir_frame"/>
+    <child link="D435_head_camera_right_ir_optical_frame"/>
+  </joint>
+  <link name="D435_head_camera_right_ir_optical_frame"/>
+  <joint name="D435_head_camera_color_joint" type="fixed">
+    <origin xyz="0.0 0.015 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435_head_camera_depth_frame"/>
+    <child link="D435_head_camera_color_frame"/>
+  </joint>
+  <link name="D435_head_camera_color_frame"/>
+  <joint name="D435_head_camera_color_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435_head_camera_color_frame"/>
+    <child link="D435_head_camera_color_optical_frame"/>
+  </joint>
+  <link name="D435_head_camera_color_optical_frame"/>
+  <joint name="D435_head_camera_accel_joint" type="fixed">
+    <origin xyz="-0.00174 0.00552 0.0176" rpy="0.0 0.0 0.0"/>
+    <parent link="D435_head_camera_link"/>
+    <child link="D435_head_camera_accel_frame"/>
+  </joint>
+  <link name="D435_head_camera_accel_frame"/>
+  <joint name="D435_head_camera_accel_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435_head_camera_accel_frame"/>
+    <child link="D435_head_camera_accel_optical_frame"/>
+  </joint>
+  <link name="D435_head_camera_accel_optical_frame"/>
+  <joint name="D435_head_camera_gyro_joint" type="fixed">
+    <origin xyz="-0.00174 0.00552 0.0176" rpy="0.0 0.0 0.0"/>
+    <parent link="D435_head_camera_link"/>
+    <child link="D435_head_camera_gyro_frame"/>
+  </joint>
+  <link name="D435_head_camera_gyro_frame"/>
+  <joint name="D435_head_camera_gyro_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435_head_camera_gyro_frame"/>
+    <child link="D435_head_camera_gyro_optical_frame"/>
+  </joint>
+  <link name="D435_head_camera_gyro_optical_frame"/>
+  <gazebo reference="D435_head_camera_link">
+    <self_collide>0</self_collide>
+    <enable_wind>0</enable_wind>
+    <kinematic>0</kinematic>
+    <mu2>1</mu2>
+    <fdir1>0 0 0</fdir1>
+    <kp>1e+13</kp>
+    <kd>1</kd>
+    <sensor name="D435_head_cameracolor" type="camera">
+      <camera name="D435_head_camera">
+        <horizontal_fov>1.2112585008840648</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>RGB_INT8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>False</visualize>
+    </sensor>
+    <sensor name="D435_head_cameraired1" type="camera">
+      <camera name="D435_head_camera">
+        <horizontal_fov>1.4870205226991688</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>L_INT8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.05</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>90</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+    <sensor name="D435_head_cameraired2" type="camera">
+      <camera name="D435_head_camera">
+        <horizontal_fov>1.4870205226991688</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>L_INT8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.05</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>90</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+    <sensor name="D435_head_cameradepth" type="depth">
+      <camera name="D435_head_camera">
+        <horizontal_fov>1.2112585008840648</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.100</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+    <sensor name="D435_head_cameraaccel" type="imu">
+      <always_on>true</always_on>
+      <update_rate>300</update_rate>
+      <topic>D435_head_camera/accel/sample</topic>
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435_head_camera_accel_plugin">
+        <topicName>D435_head_camera/accel/sample</topicName>
+        <bodyName>D435_head_camera_link</bodyName>
+        <updateRateHZ>300</updateRateHZ>
+        <gaussianNoise>0.1</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>D435_head_camera_accel_optical_frame</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+    <sensor name="D435_head_cameragyro" type="imu">
+      <always_on>true</always_on>
+      <update_rate>300</update_rate>
+      <topic>D435_head_camera/gyro/sample</topic>
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435_head_camera_gyro_plugin">
+        <topicName>D435_head_camera/gyro/sample</topicName>
+        <bodyName>D435_head_camera_link</bodyName>
+        <updateRateHZ>300</updateRateHZ>
+        <gaussianNoise>0.1</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>D435_head_camera_gyro_optical_frame</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435_head_camera">
+      <prefix>D435_head_camera</prefix>
+      <colorUpdateRate>30</colorUpdateRate>
+      <colorTopicName>color/image_raw</colorTopicName>
+      <colorOpticalframeName>D435_head_camera_color_optical_frame</colorOpticalframeName>
+      <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
+      <infraredUpdateRate>90</infraredUpdateRate>
+      <infrared1TopicName>infra1/image_rect_raw</infrared1TopicName>
+      <infrared2TopicName>infra2/image_rect_raw</infrared2TopicName>
+      <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+      <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+      <infrared1OpticalframeName>D435_head_camera_left_ir_optical_frame</infrared1OpticalframeName>
+      <infrared2OpticalframeName>D435_head_camera_right_ir_optical_frame</infrared2OpticalframeName>
+      <rangeMinDepth>0.2</rangeMinDepth>
+      <rangeMaxDepth>10.0</rangeMaxDepth>
+      <depthUpdateRate>30</depthUpdateRate>
+      <depthTopicName>aligned_depth_to_color/image_raw</depthTopicName>
+      <depthCameraInfoTopicName>aligned_depth_to_color/camera_info</depthCameraInfoTopicName>
+      <depthOpticalframeName>D435_head_camera_color_optical_frame</depthOpticalframeName>
+      <pointCloud>True</pointCloud>
+      <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+    </plugin>
+  </gazebo>
   <joint name="velodyne_calib_base_mount_joint" type="fixed">
     <origin xyz="-0.01 0.02 0.06" rpy="0.025 0.019 0.0"/>
     <parent link="velodyne_motor"/>
@@ -908,6 +1174,9 @@
       </plugin>
     </sensor>
   </gazebo>
+  <material name="D435i_camera_aluminum">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
   <joint name="D435i_camera_joint" type="fixed">
     <origin xyz="0.272 0.0 0.084" rpy="0.0 0.54 0.0"/>
     <parent link="pelvis"/>
@@ -915,7 +1184,7 @@
   </joint>
   <link name="D435i_camera_bottom_screw_frame"/>
   <joint name="D435i_camera_link_joint" type="fixed">
-    <origin xyz="0.053 0.0 -0.035" rpy="0.0 0.005 -0.008"/>
+    <origin xyz="0.0 0.0175 0.0125" rpy="0.0 0.0 0.0"/>
     <parent link="D435i_camera_bottom_screw_frame"/>
     <child link="D435i_camera_link"/>
   </joint>
@@ -926,19 +1195,469 @@
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
     </inertial>
     <visual>
-      <origin xyz="0.053 -0.0 0.0" rpy="1.570796326795 0.0 1.570796326795"/>
+      <origin xyz="0.0149 -0.0175 0.0" rpy="1.5707963267948966 0.0 1.5707963267948966"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        <mesh filename="package://realsense2_description/meshes/d435.dae"/>
       </geometry>
       <material name="D435i_camera_aluminum"/>
     </visual>
     <collision>
-      <origin xyz="0.0 -0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 -0.0175 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.02505 0.09 0.025"/>
       </geometry>
     </collision>
   </link>
+  <joint name="D435i_camera_depth_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435i_camera_link"/>
+    <child link="D435i_camera_depth_frame"/>
+  </joint>
+  <link name="D435i_camera_depth_frame"/>
+  <joint name="D435i_camera_depth_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435i_camera_depth_frame"/>
+    <child link="D435i_camera_depth_optical_frame"/>
+  </joint>
+  <link name="D435i_camera_depth_optical_frame"/>
+  <joint name="D435i_camera_left_ir_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435i_camera_depth_frame"/>
+    <child link="D435i_camera_left_ir_frame"/>
+  </joint>
+  <link name="D435i_camera_left_ir_frame"/>
+  <joint name="D435i_camera_left_ir_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435i_camera_left_ir_frame"/>
+    <child link="D435i_camera_left_ir_optical_frame"/>
+  </joint>
+  <link name="D435i_camera_left_ir_optical_frame"/>
+  <joint name="D435i_camera_right_ir_joint" type="fixed">
+    <origin xyz="0.0 -0.05 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435i_camera_depth_frame"/>
+    <child link="D435i_camera_right_ir_frame"/>
+  </joint>
+  <link name="D435i_camera_right_ir_frame"/>
+  <joint name="D435i_camera_right_ir_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435i_camera_right_ir_frame"/>
+    <child link="D435i_camera_right_ir_optical_frame"/>
+  </joint>
+  <link name="D435i_camera_right_ir_optical_frame"/>
+  <joint name="D435i_camera_color_joint" type="fixed">
+    <origin xyz="0.0 0.015 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="D435i_camera_depth_frame"/>
+    <child link="D435i_camera_color_frame"/>
+  </joint>
+  <link name="D435i_camera_color_frame"/>
+  <joint name="D435i_camera_color_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435i_camera_color_frame"/>
+    <child link="D435i_camera_color_optical_frame"/>
+  </joint>
+  <link name="D435i_camera_color_optical_frame"/>
+  <joint name="D435i_camera_accel_joint" type="fixed">
+    <origin xyz="-0.00174 0.00552 0.0176" rpy="0.0 0.0 0.0"/>
+    <parent link="D435i_camera_link"/>
+    <child link="D435i_camera_accel_frame"/>
+  </joint>
+  <link name="D435i_camera_accel_frame"/>
+  <joint name="D435i_camera_accel_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435i_camera_accel_frame"/>
+    <child link="D435i_camera_accel_optical_frame"/>
+  </joint>
+  <link name="D435i_camera_accel_optical_frame"/>
+  <joint name="D435i_camera_gyro_joint" type="fixed">
+    <origin xyz="-0.00174 0.00552 0.0176" rpy="0.0 0.0 0.0"/>
+    <parent link="D435i_camera_link"/>
+    <child link="D435i_camera_gyro_frame"/>
+  </joint>
+  <link name="D435i_camera_gyro_frame"/>
+  <joint name="D435i_camera_gyro_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="D435i_camera_gyro_frame"/>
+    <child link="D435i_camera_gyro_optical_frame"/>
+  </joint>
+  <link name="D435i_camera_gyro_optical_frame"/>
+  <gazebo reference="D435i_camera_link">
+    <self_collide>0</self_collide>
+    <enable_wind>0</enable_wind>
+    <kinematic>0</kinematic>
+    <mu2>1</mu2>
+    <fdir1>0 0 0</fdir1>
+    <kp>1e+13</kp>
+    <kd>1</kd>
+    <sensor name="D435i_cameracolor" type="camera">
+      <camera name="D435i_camera">
+        <horizontal_fov>1.2112585008840648</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>RGB_INT8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>False</visualize>
+    </sensor>
+    <sensor name="D435i_cameraired1" type="camera">
+      <camera name="D435i_camera">
+        <horizontal_fov>1.4870205226991688</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>L_INT8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.05</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>90</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+    <sensor name="D435i_cameraired2" type="camera">
+      <camera name="D435i_camera">
+        <horizontal_fov>1.4870205226991688</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>L_INT8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.05</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>90</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+    <sensor name="D435i_cameradepth" type="depth">
+      <camera name="D435i_camera">
+        <horizontal_fov>1.2112585008840648</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.100</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+    <sensor name="D435i_cameraaccel" type="imu">
+      <always_on>true</always_on>
+      <update_rate>300</update_rate>
+      <topic>D435i_camera/accel/sample</topic>
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="D435i_camera_accel_plugin">
+        <topicName>D435i_camera/accel/sample</topicName>
+        <bodyName>D435i_camera_link</bodyName>
+        <updateRateHZ>300</updateRateHZ>
+        <gaussianNoise>0.1</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>D435i_camera_accel_optical_frame</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+    <sensor name="D435i_cameragyro" type="imu">
+      <always_on>true</always_on>
+      <update_rate>300</update_rate>
+      <topic>D435i_camera/gyro/sample</topic>
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="D435i_camera_gyro_plugin">
+        <topicName>D435i_camera/gyro/sample</topicName>
+        <bodyName>D435i_camera_link</bodyName>
+        <updateRateHZ>300</updateRateHZ>
+        <gaussianNoise>0.1</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>D435i_camera_gyro_optical_frame</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="librealsense_gazebo_plugin.so" name="D435i_camera">
+      <prefix>D435i_camera</prefix>
+      <colorUpdateRate>30</colorUpdateRate>
+      <colorTopicName>color/image_raw</colorTopicName>
+      <colorOpticalframeName>D435i_camera_color_optical_frame</colorOpticalframeName>
+      <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
+      <infraredUpdateRate>90</infraredUpdateRate>
+      <infrared1TopicName>infra1/image_rect_raw</infrared1TopicName>
+      <infrared2TopicName>infra2/image_rect_raw</infrared2TopicName>
+      <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+      <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+      <infrared1OpticalframeName>D435i_camera_left_ir_optical_frame</infrared1OpticalframeName>
+      <infrared2OpticalframeName>D435i_camera_right_ir_optical_frame</infrared2OpticalframeName>
+      <rangeMinDepth>0.2</rangeMinDepth>
+      <rangeMaxDepth>10.0</rangeMaxDepth>
+      <depthUpdateRate>30</depthUpdateRate>
+      <depthTopicName>aligned_depth_to_color/image_raw</depthTopicName>
+      <depthCameraInfoTopicName>aligned_depth_to_color/camera_info</depthCameraInfoTopicName>
+      <depthOpticalframeName>D435i_camera_color_optical_frame</depthOpticalframeName>
+      <pointCloud>True</pointCloud>
+      <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+    </plugin>
+  </gazebo>
+  <material name="T265_camera_aluminum">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+  <joint name="T265_camera_pose_joint" type="fixed">
+    <origin xyz="0.29245 0.00775 0.063" rpy="0.0 0.0 0.0"/>
+    <parent link="pelvis"/>
+    <child link="T265_camera_pose_frame"/>
+  </joint>
+  <link name="T265_camera_pose_frame">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="0.068024"/>
+      <inertia ixx="3.9782e-06" ixy="0.0" ixz="3.4641e-08" iyy="6.5045e-05" iyz="0.0" izz="6.7499e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963267948966 0.0 1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://realsense_gazebo_description/meshes/t265_full.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="T265_camera_aluminum"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0064037350000000015 -0.008331499999999999 7.158999999999612e-06" rpy="1.5683956607269751 0.002431176166064703 -3.128964044931256"/>
+      <geometry>
+        <cylinder radius="0.0142751" length="0.1022528557886848"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.005758 -0.059454 -0.000116" rpy="1.5683956607269751 0.002431176166064703 -3.128964044931256"/>
+      <geometry>
+        <sphere radius="0.0142751"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.007050 0.042791 0.000130" rpy="1.5683956607269751 0.002431176166064703 -3.128964044931256"/>
+      <geometry>
+        <sphere radius="0.0142751"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="T265_camera_link_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="T265_camera_pose_frame"/>
+    <child link="T265_camera_link"/>
+  </joint>
+  <link name="T265_camera_link"/>
+  <joint name="T265_camera_fisheye1_rgb_joint" type="fixed">
+    <origin xyz="-0.0411 0.0 0.0" rpy="0.0 1.5707963267948966 1.5707963267948966"/>
+    <parent link="T265_camera_link"/>
+    <child link="T265_camera_fisheye1_rgb_frame"/>
+  </joint>
+  <link name="T265_camera_fisheye1_rgb_frame"/>
+  <joint name="T265_camera_fisheye2_rgb_joint" type="fixed">
+    <origin xyz="0.0229 0.0 0.0" rpy="0.0 1.5707963267948966 1.5707963267948966"/>
+    <parent link="T265_camera_link"/>
+    <child link="T265_camera_fisheye2_rgb_frame"/>
+  </joint>
+  <link name="T265_camera_fisheye2_rgb_frame"/>
+  <joint name="T265_camera_fisheye1_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="T265_camera_fisheye1_rgb_frame"/>
+    <child link="T265_camera_fisheye1_optical_frame"/>
+  </joint>
+  <link name="T265_camera_fisheye1_optical_frame"/>
+  <joint name="T265_camera_fisheye2_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="T265_camera_fisheye2_rgb_frame"/>
+    <child link="T265_camera_fisheye2_optical_frame"/>
+  </joint>
+  <link name="T265_camera_fisheye2_optical_frame"/>
+  <joint name="T265_camera_accel_joint" type="fixed">
+    <origin xyz="-0.0311 0.0 0.00655" rpy="0.0 3.141592653589793 0.0"/>
+    <parent link="T265_camera_link"/>
+    <child link="T265_camera_accel_frame"/>
+  </joint>
+  <link name="T265_camera_accel_frame"/>
+  <joint name="T265_camera_accel_optical_joint" type="fixed">
+    <origin xyz="-0.0311 0.0 0.00655" rpy="0.0 3.141592653589793 0.0"/>
+    <parent link="T265_camera_accel_frame"/>
+    <child link="T265_camera_accel_optical_frame"/>
+  </joint>
+  <link name="T265_camera_accel_optical_frame"/>
+  <joint name="T265_camera_gyro_joint" type="fixed">
+    <origin xyz="-0.0311 0.0 0.00655" rpy="0.0 3.141592653589793 0.0"/>
+    <parent link="T265_camera_link"/>
+    <child link="T265_camera_gyro_frame"/>
+  </joint>
+  <link name="T265_camera_gyro_frame"/>
+  <joint name="T265_camera_gyro_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="T265_camera_gyro_frame"/>
+    <child link="T265_camera_gyro_optical_frame"/>
+  </joint>
+  <link name="T265_camera_gyro_optical_frame"/>
+  <gazebo reference="T265_camera_fisheye1_rgb_frame">
+    <self_collide>0</self_collide>
+    <enable_wind>0</enable_wind>
+    <kinematic>0</kinematic>
+    <mu2>1</mu2>
+    <fdir1>0 0 0</fdir1>
+    <kp>1e+13</kp>
+    <kd>1</kd>
+    <sensor name="T265_camerafisheye1" type="wideanglecamera">
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>1.95</horizontal_fov>
+        <image>
+          <width>848</width>
+          <height>800</height>
+        </image>
+        <clip>
+          <near>0.2</near>
+          <far>100</far>
+        </clip>
+        <lens>
+          <type>orthographic</type>
+          <scale_to_hfov>true</scale_to_hfov>
+          <cutoff_angle>2.20</cutoff_angle>
+          <env_texture_size>1024</env_texture_size>
+        </lens>
+      </camera>
+      <plugin filename="libgazebo_ros_camera.so" name="T265_camerafisheye1">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30</updateRate>
+        <cameraName>T265/T265_camera/fisheye1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>T265_camera_fisheye1_optical_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>-0.00040996368625201285</distortionK1>
+        <distortionK2>0.03653175011277199</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionP1>-0.034823670983314514</distortionP1>
+        <distortionP2>0.0052825710736215115</distortionP2>
+        <Cx>416.22</Cx>
+        <Cy>402.1</Cy>
+        <CxPrime>416.22</CxPrime>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="T265_camera_fisheye2_rgb_frame">
+    <self_collide>0</self_collide>
+    <enable_wind>0</enable_wind>
+    <kinematic>0</kinematic>
+    <mu2>1</mu2>
+    <fdir1>0 0 0</fdir1>
+    <kp>1e+13</kp>
+    <kd>1</kd>
+    <sensor name="T265_camerafisheye2" type="wideanglecamera">
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>2.84</horizontal_fov>
+        <image>
+          <width>848</width>
+          <height>800</height>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+        <lens>
+          <type>orthographic</type>
+          <scale_to_hfov>true</scale_to_hfov>
+          <cutoff_angle>2.20</cutoff_angle>
+          <env_texture_size>1024</env_texture_size>
+        </lens>
+      </camera>
+      <always_on>1</always_on>
+      <plugin filename="libgazebo_ros_camera.so" name="T265_camerafisheye2">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30</updateRate>
+        <cameraName>T265/T265_camera/fisheye2</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>T265_camera_fisheye2_optical_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>-0.00040996368625201285</distortionK1>
+        <distortionK2>0.03653175011277199</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionP1>-0.034823670983314514</distortionP1>
+        <distortionP2>0.0052825710736215115</distortionP2>
+      </plugin>
+    </sensor>
+    <sensor name="T265_cameraaccel" type="imu">
+      <always_on>true</always_on>
+      <update_rate>62.5</update_rate>
+      <plugin filename="librealsense_gazebo_accel_sensor.so" name="T265/T265_camera_accel_plugin">
+        <topicName>T265_camera/accel/sample</topicName>
+        <bodyName>T265_camera_pose_frame</bodyName>
+        <updateRateHZ>62.5</updateRateHZ>
+        <gaussianNoise>0.1</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>T265_camera_accel_optical_frame</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+    <sensor name="T265_cameragyro" type="imu">
+      <always_on>true</always_on>
+      <update_rate>200</update_rate>
+      <topic>T265/T265_camera/gyro/sample</topic>
+      <plugin filename="librealsense_gazebo_gyro_sensor.so" name="T265/T265_camera_gyro_plugin">
+        <topicName>T265_camera/gyro/sample</topicName>
+        <bodyName>T265_camera_pose_frame</bodyName>
+        <updateRateHZ>200</updateRateHZ>
+        <gaussianNoise>0.1</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>T265_camera_gyro_optical_frame</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_p3d.so" name="p3d_base_controller">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>262</updateRate>
+      <bodyName>T265_camera_pose_frame</bodyName>
+      <topicName>T265/T265_camera/odom/sample</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0.0 0.0 0.25</xyzOffsets>
+      <rpyOffsets>0.0 0.0 0.0</rpyOffsets>
+    </plugin>
+  </gazebo>
   <link name="hip1_1">
     <inertial>
       <origin xyz="0.0003595855 0.033338818000000006 -0.059190309" rpy="0 0 0"/>
@@ -1138,7 +1857,7 @@
   </link>
   <link name="contact_1"/>
   <joint name="contact_joint_1" type="fixed">
-    <origin xyz="0.0 0.0 -0.176" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 0.0 -0.26835" rpy="0.0 0.0 0.0"/>
     <parent link="ankle2_1"/>
     <child link="contact_1"/>
   </joint>
@@ -1376,7 +2095,7 @@
   </link>
   <link name="contact_2"/>
   <joint name="contact_joint_2" type="fixed">
-    <origin xyz="0.0 0.0 -0.176" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 0.0 -0.26835" rpy="0.0 0.0 0.0"/>
     <parent link="ankle2_2"/>
     <child link="contact_2"/>
   </joint>
@@ -1614,7 +2333,7 @@
   </link>
   <link name="contact_3"/>
   <joint name="contact_joint_3" type="fixed">
-    <origin xyz="0.0 0.0 -0.176" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 0.0 -0.26835" rpy="0.0 0.0 0.0"/>
     <parent link="ankle2_3"/>
     <child link="contact_3"/>
   </joint>
@@ -1852,7 +2571,7 @@
   </link>
   <link name="contact_4"/>
   <joint name="contact_joint_4" type="fixed">
-    <origin xyz="0.0 0.0 -0.176" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 0.0 -0.26835" rpy="0.0 0.0 0.0"/>
     <parent link="ankle2_4"/>
     <child link="contact_4"/>
   </joint>
