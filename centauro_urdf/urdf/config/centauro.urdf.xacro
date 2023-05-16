@@ -28,8 +28,6 @@
 </xacro:unless>
 <xacro:arg name="floating_joint" default="true"/>
 <xacro:arg name="virtual_frame" default="false"/> <!-- For cartesio model must be set to true-->
-<xacro:arg name="end_effector_left" default="$(arg end_effector_left)"/> <!-- none, ball, dagana_fixed, dagana -->
-<xacro:arg name="end_effector_right" default="$(end_effector_right)"/> <!-- none, ball, dagana_fixed, dagana -->
 
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
