@@ -12,7 +12,7 @@
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="false"/>
 <xacro:arg name="end_effector_left" default="ball"/>
-<xacro:arg name="end_effector_right" default="ball"/>
+<xacro:arg name="end_effector_right" default="dagana"/>
 
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
