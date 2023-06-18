@@ -10,8 +10,10 @@
 <xacro:arg name="big_wheel" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
+
 <xacro:arg name="realsense" default="false"/>
 <xacro:arg name="ft_sensors" default="false"/>
+
 <xacro:arg name="end_effector_left" default="ball"/>
 <xacro:arg name="end_effector_right" default="ball"/>
 

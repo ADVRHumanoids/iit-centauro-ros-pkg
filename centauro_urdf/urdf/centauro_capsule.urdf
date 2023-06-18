@@ -605,51 +605,90 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
   </link>
-  <link name="ball2">
+  <joint name="dagana_2_mount_joint" type="fixed">
+    <origin xyz="0.0 0.05 -0.08" rpy="0.0 3.14159265359 0.0"/>
+    <parent link="arm2_6"/>
+    <child link="dagana_2_top_link"/>
+  </joint>
+  <link name="dagana_2_top_link">
     <inertial>
-      <origin xyz="-1.0072498e-05 3.7590658e-05 0.019772332" rpy="0.0 0.0 0.0"/>
-      <mass value="1.27"/>
-      <inertia ixx="0.0023061092" ixy="2.9181758e-07" ixz="-2.1246683999999997e-07" iyy="0.0023053155000000002" iyz="7.9290978e-07" izz="0.0030675615999999997"/>
+      <origin xyz="-0.0063562154 -0.0060265532000000005 0.060068288000000004" rpy="0.0 0.0 0.0"/>
+      <mass value="1.74324"/>
+      <inertia ixx="0.0050510328" ixy="-0.00025264216" ixz="-0.00012103013" iyy="0.0047944612" iyz="-0.00073917704" izz="0.0031156997"/>
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0001-simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin xyz="-2.6819999999999855e-07 1.2015000000000003e-06 -0.0105021" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
+      <origin xyz="-0.000122827 -0.0012617600000000002 0.09111949999999999" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
-        <cylinder radius="0.0709883" length="9.940076835940455e-05"/>
+        <cylinder radius="0.0760764" length="0.10212404260993166"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000046 -0.000017 -0.010502" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
+      <origin xyz="-0.000111 0.003909 0.141919" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
-        <sphere radius="0.0709883"/>
+        <sphere radius="0.0760764"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.000046 0.000020 -0.010502" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
+      <origin xyz="-0.000134 -0.006433 0.040320" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
-        <sphere radius="0.0709883"/>
+        <sphere radius="0.0760764"/>
       </geometry>
     </collision>
   </link>
-  <link name="ball2_tip"/>
-  <joint name="j_arm2_8" type="fixed">
-    <origin xyz="0.0 0.05 -0.105" rpy="0.0 0.0 0.0"/>
-    <parent link="arm2_6"/>
-    <child link="ball2"/>
+  <joint name="dagana_2_claw_joint" type="revolute">
+    <origin xyz="0.0 -0.028 0.05025" rpy="1.57079632679 0.0 3.14159265359"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="dagana_2_top_link"/>
+    <child link="dagana_2_bottom_link"/>
+    <limit effort="1000.0" lower="0.0" upper="1.0" velocity="2.0"/>
   </joint>
-  <joint name="j_ball2_tip" type="fixed">
-    <origin xyz="0.0 0.0 -0.07" rpy="0.0 0.0 0.0"/>
-    <parent link="ball2"/>
-    <child link="ball2_tip"/>
+  <link name="dagana_2_bottom_link">
+    <inertial>
+      <origin xyz="0.0 0.069644767 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.46117745"/>
+      <inertia ixx="0.0014726990999999999" ixy="7.134683e-05" ixz="2.529065e-06" iyy="0.0009385556899999999" iyz="-0.000264452" izz="0.0019472731"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://dagana_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.000557338 0.06060969 0.00269066" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
+      <geometry>
+        <cylinder radius="0.0618624" length="0.11781363498578913"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.000508 0.001819 -0.001012" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
+      <geometry>
+        <sphere radius="0.0618624"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.000607 0.119400 0.006393" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
+      <geometry>
+        <sphere radius="0.0618624"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dagana_2_tcp_joint" type="fixed">
+    <origin xyz="0.0 -0.05 0.15" rpy="0.0 0.0 0.0"/>
+    <parent link="dagana_2_top_link"/>
+    <child link="dagana_2_tcp"/>
   </joint>
-  <joint name="j_ball2_fixed" type="fixed">
-    <parent link="ball2"/>
+  <link name="dagana_2_tcp"/>
+  <joint name="j_dagana_2_final" type="fixed">
+    <parent link="dagana_2_bottom_link"/>
     <child link="arm2_8"/>
   </joint>
   <link name="arm2_8">
@@ -1088,6 +1127,11 @@
         <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
       </geometry>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+    </collision>
   </link>
   <gazebo reference="velodyne_calib">
     <sensor name="velodyne_calib-VLP16" type="ray">
@@ -1972,7 +2016,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.000007 0.003172 -0.000380" rpy="-1.5912124764368596 0.000297364150142511 -0.0003034980089883971"/>
+      <origin xyz="0.000007 0.003172 -0.000380" rpy="-1.5912124764368596 0.000297364150142511 -0.0003034980089883971"/>0
       <geometry>
         <sphere radius="0.0781037"/>
       </geometry>

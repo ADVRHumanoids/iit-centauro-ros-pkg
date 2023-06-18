@@ -4,7 +4,6 @@
     <xacro:property name="model_name" value="centauro" />
     <xacro:property name="model_version" value="0.1" />
 
-
     <!-- command line arguments -->
     <xacro:arg name="add_legs" default="true"/>
     <xacro:arg name="add_upper_body" default="true"/>
