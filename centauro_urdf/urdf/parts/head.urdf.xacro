@@ -94,7 +94,7 @@
   <xacro:property name="d435_head_name" value="D435_head_camera" />
   <xacro:property name="d435_head_parent_name" value="d435_head_motor" />
   <xacro:property name="d435_head_origin">
-    <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
+    <origin xyz="0.0316 0 -0.01309" rpy="0 0.349065 0"/>
   </xacro:property>
 
   <xacro:if value="${ADD_D435I_HEAD}">

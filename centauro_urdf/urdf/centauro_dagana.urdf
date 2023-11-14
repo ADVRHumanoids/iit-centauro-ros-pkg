@@ -786,7 +786,7 @@
   </material>
   <!-- camera body, with origin at bottom screw mount -->
   <joint name="D435_head_camera_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.03015 0 -0.0125"/>
+    <origin xyz="0.0316 0 -0.01309" rpy="0 0.349065 0"/>	<!-- camera mounted on 3d printed 20 deg angle -->
     <parent link="d435_head_motor"/>
     <child link="D435_head_camera_bottom_screw_frame"/>
   </joint>
