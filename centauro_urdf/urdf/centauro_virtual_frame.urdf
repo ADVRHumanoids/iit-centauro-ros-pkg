@@ -35,13 +35,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -66,13 +66,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/link1_no_head.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/link1_no_head.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/link1_no_head.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/link1_no_head.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -99,14 +99,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -121,13 +121,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -142,14 +142,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -164,13 +164,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/Elbow.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/Elbow.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/Elbow.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -185,14 +185,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/Forearm.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -207,13 +207,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/wrist_pitch_right.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -228,7 +228,7 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -236,7 +236,7 @@
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link> -->
@@ -325,13 +325,13 @@
   <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual-->
   <!--collision>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision-->
   <!-- </link> -->
@@ -346,14 +346,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -368,13 +368,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -389,14 +389,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -411,13 +411,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/Elbow.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/Elbow.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/Elbow.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -432,14 +432,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -454,13 +454,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/wrist_pitch_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -475,7 +475,7 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -483,7 +483,7 @@
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link> -->
@@ -572,13 +572,13 @@
   <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual-->
   <!--collision>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${CENTAURO_ROOT}/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision-->
   <!-- </link> -->
@@ -591,14 +591,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry name="ball1_visual">
-        <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry name="ball1_collision">
-        <mesh filename="package://centauro_urdf/meshes/simple/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -633,14 +633,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry name="ball2_visual">
-        <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry name="ball2_collision">
-        <mesh filename="package://centauro_urdf/meshes/simple/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -677,13 +677,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -697,13 +697,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -717,13 +717,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -767,7 +767,7 @@
       <origin rpy="1.570796326795 0 1.570796326795" xyz="0.0149 -0.0175 0"/>
       <geometry>
         <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/realsense/d435.dae"/>
       </geometry>
       <material name="D435_head_camera_aluminum"/>
     </visual>
@@ -801,7 +801,7 @@
       <origin rpy="1.570796326795 0 1.570796326795" xyz="0.053 -0.0 0"/>
       <geometry>
         <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/realsense/d435.dae"/>
       </geometry>
       <material name="D435i_camera_aluminum"/>
     </visual>
@@ -831,14 +831,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -852,13 +852,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
@@ -872,14 +872,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/knee.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/knee.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
@@ -893,13 +893,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
@@ -913,14 +913,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -942,14 +942,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="black"/>
     </collision>
@@ -1012,14 +1012,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1033,13 +1033,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1053,14 +1053,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/knee.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/knee.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1074,13 +1074,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1094,14 +1094,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1123,14 +1123,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </collision>
@@ -1193,14 +1193,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-yaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1214,13 +1214,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1234,14 +1234,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/knee.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/knee.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1255,13 +1255,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1275,14 +1275,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1304,14 +1304,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="black"/>
     </collision>
@@ -1374,14 +1374,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1395,13 +1395,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1415,14 +1415,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/knee.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/knee.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1436,13 +1436,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1456,14 +1456,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1485,14 +1485,14 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </collision>

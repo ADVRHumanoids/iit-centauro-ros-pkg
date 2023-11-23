@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-<xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_leg.urdf.xacro" />
+<xacro:include filename="${CENTAURO_ROOT}/urdf/parts/centauro_leg.urdf.xacro" />
 
 
 <xacro:centauro_leg leg_num="1" origin_x="1" origin_y="-1" mirror="-1">

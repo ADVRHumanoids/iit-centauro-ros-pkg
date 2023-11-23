@@ -8,13 +8,20 @@
   This file groups files to use CENTAURO in GAZEBO
   
   -->
-  <xacro:include filename="$(find centauro_urdf)/urdf/centauro.urdf.xacro" />
 
-  <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/centauro.gazebo.xacro" />
+  <!-- This argument and property should be in the top level xacro and
+  will be propagated to all its downstream childs -->
+  <xacro:arg name="centauro_root" default="$(find centauro_urdf)" />  
+  <xacro:property name="CENTAURO_ROOT" value="$(arg centauro_root)" />
+
+    
+  <xacro:include filename="${CENTAURO_ROOT}/urdf/centauro.urdf.xacro" />
+
+  <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/centauro.gazebo.xacro" />
    
-  <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/xbot.gazebo.xacro" />
+  <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/xbot.gazebo.xacro" />
 
-  <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/materials.gazebo.xacro" />
+  <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/materials.gazebo.xacro" />
   
   <xacro:unless value="${ADD_LEGS}">
 
@@ -28,4 +35,3 @@
 
   <origin xyz="0.0 0.0 1.2" rpy="0 0 0" />
 </robot>
-

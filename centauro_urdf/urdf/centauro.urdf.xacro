@@ -1,13 +1,47 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="centauro">
 
-<xacro:arg name="config" default="$(find centauro_urdf)/urdf/config/centauro.urdf.xacro"/>
+<!-- This argument and property should be in the top level xacro and
+will be propagated to all its downstream childs -->
+<xacro:arg name="centauro_root" default="$(find centauro_urdf)" />  
+<xacro:property name="CENTAURO_ROOT" value="$(arg centauro_root)" />
+
+<xacro:arg name="config" default="${CENTAURO_ROOT}/urdf/config/centauro.urdf.xacro"/>
 
 <!-- ************ MODEL CONFIGURATION ************ -->
 <xacro:include filename="$(arg config)"/>
 
+<xacro:if value="${ADD_UPPER_BODY}">
+
+  <xacro:if value="${ADD_D435I_BASE or ADD_T265_BASE or ADD_D435I_HEAD}">
+
+    <xacro:arg name="realsense_gazebo_description_root" default="$(find realsense_gazebo_description)" /> 
+    <xacro:property name="REALSENSE_GAZEBO_DESCRIPTION_ROOT" value="$(arg realsense_gazebo_description_root)" />
+
+  </xacro:if>
+
+  <xacro:if value="${ADD_VELODYNE}">
+
+    <xacro:arg name="velodyne_description_root" default="$(find velodyne_description)" /> 
+    <xacro:property name="VELODYNE_DESCRIPTION_ROOT" value="$(arg velodyne_description_root)" />
+
+  </xacro:if>
+
+</xacro:if>
+
+<!-- here the properties from the config dare set -->
+<xacro:if value="${END_EFFECTOR_LEFT == 'dagana' 
+              or END_EFFECTOR_LEFT == 'dagana_fixed'
+              or END_EFFECTOR_RIGHT == 'dagana' or
+              END_EFFECTOR_RIGHT == 'dagana_fixed'}">
+	
+	<xacro:arg name="dagana_root" default="$(find dagana_urdf)" /> 
+	<xacro:property name="DAGANA_ROOT" value="$(arg dagana_root)" />
+
+</xacro:if>
+
 <!-- ************ Pholus plain model ************ -->
-<xacro:include filename="$(find centauro_urdf)/urdf/centauro_base.urdf.xacro"/>
+<xacro:include filename="${CENTAURO_ROOT}/urdf/centauro_base.urdf.xacro"/>
 
 <!-- ************ Control frames ************ -->
 
@@ -27,9 +61,7 @@
 
 
 <xacro:if value="${ADD_VIRTUAL_FRAME}">
-  <xacro:include filename="$(find centauro_urdf)/urdf/parts/virtual_frame.urdf.xacro"/>
+  <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/virtual_frame.urdf.xacro"/>
 </xacro:if>
 
 </robot>
-
-

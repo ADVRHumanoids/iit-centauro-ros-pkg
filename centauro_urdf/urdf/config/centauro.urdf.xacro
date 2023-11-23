@@ -4,20 +4,19 @@
 <xacro:property name="model_name" value="centauro" />
 <xacro:property name="model_version" value="0.1" />
 
-
 <!-- command line arguments -->
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="big_wheel" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
-<xacro:arg name="velodyne" default="true"/>
-<xacro:arg name="realsense" default="true"/>
+<xacro:arg name="velodyne" default="false"/>
+<xacro:arg name="realsense" default="false"/>
 <xacro:arg name="end_effector_left" default="ball"/>
 <xacro:arg name="end_effector_right" default="ball"/>
 
 <xacro:if value="$(arg realsense)">
-	<xacro:arg name="d435i_head" default="true"/>
-	<xacro:arg name="d435i_base" default="true"/>
-	<xacro:arg name="t265_base" default="true"/>
+	<xacro:arg name="d435i_head" default="false"/>
+	<xacro:arg name="d435i_base" default="false"/>
+	<xacro:arg name="t265_base" default="false"/>
 </xacro:if>
 <xacro:unless value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="false"/>

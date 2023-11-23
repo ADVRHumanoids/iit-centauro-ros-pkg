@@ -12,13 +12,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -33,13 +33,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -54,13 +54,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${CENTAURO_ROOT}/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -156,7 +156,7 @@
       <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${PI/2} 0 ${PI/2}"/>
         <geometry>
           <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-          <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+          <mesh filename="${CENTAURO_ROOT}/meshes/realsense/d435.dae"/>
         </geometry>
         <material name="${d435_head_name}_aluminum"/>
       </visual>
@@ -177,7 +177,7 @@
   </xacro:unless>
 
   <xacro:if value="${ADD_VELODYNE}">
-    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+    <xacro:include filename="${VELODYNE_DESCRIPTION_ROOT}/urdf/VLP-16.urdf.xacro"/>
     <xacro:VLP-16 parent="velodyne_motor" name="velodyne_calib" topic="/velodyne_points" hz="10" samples="440">
         <origin xyz="-0.01 0.02 0.06" rpy="0.025 0.019 0" />
     </xacro:VLP-16>

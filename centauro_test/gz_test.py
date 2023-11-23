@@ -43,8 +43,8 @@ class GzTest(unittest.TestCase):
             print(f'timeout: {e}; exit status {self.gz.poll()}')
             return False 
             
-        t0 = time.time()
-        while time.time()  - t0 < timeout:
+        t0 = time.perf_counter()
+        while time.perf_counter()  - t0 < timeout:
             res = self.get_model_state('centauro', '')
             if res.success:
                 print('got centauro!')
