@@ -18,7 +18,7 @@
    <visual>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
+         <mesh filename="${MESH_PATH}/v2/hip-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
       </geometry>
       <material name="dark_grey"/>
    </visual>
@@ -26,7 +26,7 @@
    <collision>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
+         <mesh filename="${MESH_PATH}/v2/collision/hip-yaw.stl" scale="0.001 ${mirror*0.001} 0.001" />
       </geometry>
    </collision>
 
@@ -42,14 +42,14 @@
    <visual>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="${CENTAURO_ROOT}/meshes/v2/hip-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
+         <mesh filename="${MESH_PATH}/v2/hip-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
       </geometry>
    </visual>
 	
    <collision>
       <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
       <geometry>
-         <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/hip-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
+         <mesh filename="${MESH_PATH}/v2/collision/hip-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
       </geometry>
    </collision>
 
@@ -69,14 +69,14 @@
          <origin xyz="0 0 0" rpy="${PI_2} 0 ${-PI_2}"/>
          <material name="black"/>
          <geometry name="${leg_num}_stick_visual">
-         <mesh filename="${CENTAURO_ROOT}/meshes/front_right_stick.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+         <mesh filename="${MESH_PATH}/front_right_stick.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
          </geometry>
    </visual> 
 
    <collision>
          <origin xyz="0 0 0" rpy="${PI_2} 0 ${-PI_2}"/>
          <geometry name="${leg_num}_stick_collision">
-         <mesh filename="${CENTAURO_ROOT}/meshes/simple/front_right_stick.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
+         <mesh filename="${MESH_PATH}/simple/front_right_stick.stl" scale="${mmTom} ${mmTom} ${mmTom}"/>
          </geometry>             
    </collision>  
    </link>
@@ -94,7 +94,7 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
          <geometry>
-            <mesh filename="${CENTAURO_ROOT}/meshes/v2/knee.stl" scale="0.001 0.001 ${mirror*0.001}" />
+            <mesh filename="${MESH_PATH}/v2/knee.stl" scale="0.001 0.001 ${mirror*0.001}" />
          </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -102,7 +102,7 @@
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
          <geometry>
-            <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/knee.stl" scale="0.001 0.001 ${mirror*0.001}" />
+            <mesh filename="${MESH_PATH}/v2/collision/knee.stl" scale="0.001 0.001 ${mirror*0.001}" />
          </geometry>
       </collision>
    </link>
@@ -117,14 +117,14 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
          <geometry>
-            <mesh filename="${CENTAURO_ROOT}/meshes/v2/ankle-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
+            <mesh filename="${MESH_PATH}/v2/ankle-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
          </geometry>
       </visual>
       
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
          <geometry>
-            <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/ankle-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
+            <mesh filename="${MESH_PATH}/v2/collision/ankle-pitch.stl" scale="0.001 0.001 ${mirror*0.001}" />
          </geometry>
       </collision>
    </link>

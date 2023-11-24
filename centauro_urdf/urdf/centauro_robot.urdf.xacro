@@ -13,8 +13,21 @@
   will be propagated to all its downstream childs -->
   <xacro:arg name="centauro_root" default="$(find centauro_urdf)" />  
   <xacro:property name="CENTAURO_ROOT" value="$(arg centauro_root)" />
+  
+  <!-- setting use_abs_mesh_paths should be kept to false
+  for use with tools like RViz, which does not accept plain
+  abolute paths for mesh paths-->
+  <xacro:arg name="use_abs_mesh_paths" default="false" />  
 
-    
+  <xacro:property name="USE_ABS_MESH_PATHS" value="$(arg use_abs_mesh_paths)" />
+
+  <xacro:if value="${USE_ABS_MESH_PATHS}">
+    <xacro:property name="MESH_PATH" value="${CENTAURO_ROOT}/meshes" />
+  </xacro:if>
+  <xacro:unless value="${USE_ABS_MESH_PATHS}">
+    <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
+  </xacro:unless>
+
   <xacro:include filename="${CENTAURO_ROOT}/urdf/centauro.urdf.xacro" />
 
   <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/centauro.gazebo.xacro" />
@@ -28,7 +41,7 @@
     <link name="world"/>
       <joint name="reference" type="fixed">
       <parent link="world"/>
-      <child link="pelvis"/>
+      <child link="base_link"/>
     </joint>
 
   </xacro:unless>

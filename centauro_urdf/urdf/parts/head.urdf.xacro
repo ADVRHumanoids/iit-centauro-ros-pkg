@@ -12,13 +12,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="${CENTAURO_ROOT}/meshes/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${MESH_PATH}/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="${CENTAURO_ROOT}/meshes/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${MESH_PATH}/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -33,13 +33,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="${CENTAURO_ROOT}/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${MESH_PATH}/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="${CENTAURO_ROOT}/meshes/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${MESH_PATH}/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -54,13 +54,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="${CENTAURO_ROOT}/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${MESH_PATH}/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="${CENTAURO_ROOT}/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="${MESH_PATH}/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -156,7 +156,7 @@
       <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${PI/2} 0 ${PI/2}"/>
         <geometry>
           <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-          <mesh filename="${CENTAURO_ROOT}/meshes/realsense/d435.dae"/>
+          <mesh filename="${MESH_PATH}/realsense/d435.dae"/>
         </geometry>
         <material name="${d435_head_name}_aluminum"/>
       </visual>

@@ -19,7 +19,7 @@
       <visual>
    <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderPitch.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/ShoulderPitch.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -27,7 +27,7 @@
       <collision>
    <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderPitch.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/ShoulderPitch.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
@@ -44,14 +44,14 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderRoll.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/ShoulderRoll.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual>
 	
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderRoll.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/ShoulderRoll.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
@@ -68,7 +68,7 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/ShoulderYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/ShoulderYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -76,7 +76,7 @@
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/ShoulderYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/ShoulderYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
@@ -93,14 +93,14 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/Elbow.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/Elbow.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual>
 	
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/Elbow.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/Elbow.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
@@ -116,7 +116,7 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/Forearm.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/Forearm.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -124,7 +124,7 @@
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/Forearm.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/Forearm.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
@@ -141,14 +141,14 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/wrist_pitch_right.stl" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/wrist_pitch_right.stl" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual>
 	
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/wrist_pitch_right.stl" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/wrist_pitch_right.stl" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
@@ -164,7 +164,7 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
          <material name="dark_grey"/>
       </visual>
@@ -172,7 +172,7 @@
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link> -->
@@ -273,14 +273,14 @@
       <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual-->
 	
       <!--collision>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
-      <mesh filename="${CENTAURO_ROOT}/meshes/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="${MESH_PATH}/simple/Wrist.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision-->
 

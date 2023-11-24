@@ -12,14 +12,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry name="ball${arm_num}_visual">
-        <mesh filename="${CENTAURO_ROOT}/meshes/BallHand.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="${MESH_PATH}/BallHand.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="dark_grey"/>
    </visual>
    <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry name="ball${arm_num}_collision">
-        <mesh filename="${CENTAURO_ROOT}/meshes/simple/BallHand.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="${MESH_PATH}/simple/BallHand.stl" scale="0.001 0.001 0.001" />
       </geometry>
    </collision>
 </link>
