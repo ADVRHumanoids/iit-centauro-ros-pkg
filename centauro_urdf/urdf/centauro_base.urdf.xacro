@@ -15,6 +15,12 @@
 
     <link name="base_link" />
 
+    <joint name="base_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="pelvis" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
     <link name="pelvis">
 
         <inertial>
@@ -39,7 +45,6 @@
 
     </link>
 
-
     <link name="imu_link" />
 
     <joint name="imu_joint" type="fixed">
@@ -47,14 +52,6 @@
         <origin xyz="${Imu_Ox} ${Imu_Oy} ${Imu_Oz}" rpy="${Imu_raw} ${Imu_pitch} ${Imu_yaw}" />
         <child link="imu_link" />
     </joint>
-
-
-    <joint name="base_joint" type="fixed">
-        <parent link="pelvis" />
-        <child link="base_link" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-    </joint>
-
 
     <xacro:if value="${ADD_UPPER_BODY}">
         <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/centauro_torso.urdf.xacro" />

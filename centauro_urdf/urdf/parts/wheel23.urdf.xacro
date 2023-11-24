@@ -15,7 +15,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://centauro_urdf/meshes/v2/mesh_ankle-yaw_wheel23.stl"
+                    <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_ankle-yaw_wheel23.stl"
                         scale="0.001 ${mirror*0.001} 0.001" />
                 </geometry>
                 <material name="dark_grey" />
@@ -25,7 +25,7 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
                     <mesh
-                        filename="package://centauro_urdf/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl"
+                        filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_ankle-yaw_wheel23.stl"
                         scale="0.001 ${mirror*0.001} 0.001" />
                 </geometry>
             </collision>
@@ -52,7 +52,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl"
+                    <mesh filename="${CENTAURO_ROOT}/meshes/v2/mesh_wheel23.stl"
                         scale="0.001 0.001 ${mirror*0.001}" />
                 </geometry>
                 <material name="black" />
@@ -61,7 +61,7 @@
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl"
+                    <mesh filename="${CENTAURO_ROOT}/meshes/v2/collision/mesh_wheel23.stl"
                         scale="0.001 0.001 ${mirror*0.001}" />
                 </geometry>
                 <material name="black" />
