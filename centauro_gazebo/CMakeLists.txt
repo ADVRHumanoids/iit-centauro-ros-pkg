@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.20)
 project(centauro_gazebo)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake REQUIRED)
 
-catkin_package()
+ament_package()
 
 install(DIRECTORY launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  DESTINATION share/${PROJECT_NAME}
 )
 
 install(DIRECTORY worlds
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  DESTINATION share/${PROJECT_NAME}
 )

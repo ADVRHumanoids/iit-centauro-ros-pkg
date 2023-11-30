@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>centauro_urdf</name>
   <version>0.0.0</version>
-  <description>The centauro_urdf package</description>
-  <maintainer email="enrico@todo.todo">enrico</maintainer>
-  <license>TODO</license>
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>joint_state_publisher</build_depend>
-  <build_depend>robot_state_publisher</build_depend>
-  <build_depend>rospy</build_depend>
-  <build_export_depend>joint_state_publisher</build_export_depend>
-  <build_export_depend>robot_state_publisher</build_export_depend>
-  <build_export_depend>rospy</build_export_depend>
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>rospy</exec_depend>
+  <description>TODO: Package description</description>
+  <maintainer email="arturo.laurenzi@iit.it">alaurenzi</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
   <export>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
