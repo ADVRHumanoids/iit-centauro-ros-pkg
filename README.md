@@ -3,7 +3,7 @@ Repository dedicated to the IIT robot CENTAURO
 
 How to run the simulator
 ========================
-To run the simulator under the [Xbot2](https://advrhumanoids.github.io/xbot2_wip/quickstart.html#install-the-xbot2-framework) framework, please follow these steps:
+To run the simulator under the [Xbot2](https://advrhumanoids.github.io/xbot2/master/quickstart.html#install-the-xbot2-framework) framework, please follow these steps:
 1) install the required dependencies (mainly ROS, Gazebo, and Xbot2 - see the `.travis.yml` file)
 2) clone the repository to a sourced environment (e.g., a catkin workspace)
 3) set a basic configuration file for Xbot2 with `set_xbot2_config $(rospack find centauro_config)/centauro_basic.yaml`
