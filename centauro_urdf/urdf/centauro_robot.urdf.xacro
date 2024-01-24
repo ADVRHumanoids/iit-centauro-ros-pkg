@@ -12,6 +12,12 @@
 
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/centauro.gazebo.xacro" />
    
+  <!-- ************ frames for force torque sensors ************ -->
+  <xacro:if value="${FORCE_TORQUE_SENSORS}">
+  <xacro:include filename="$(find centauro_urdf)/urdf/parts/arms_reference_frames.urdf.xacro"/>
+  <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/force_torque.gazebo.xacro" />
+  </xacro:if>
+  
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/xbot.gazebo.xacro" />
 
   <xacro:include filename="$(find centauro_urdf)/urdf/gazebo/materials.gazebo.xacro" />
