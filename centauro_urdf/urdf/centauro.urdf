@@ -1443,14 +1443,14 @@
     <visual>
       <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://realsense_gazebo_description/meshes/t265_full.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://realsense2_description/meshes/t265_full.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="T265_camera_aluminum"/>
     </visual>
     <collision>
       <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://realsense_gazebo_description/meshes/t265_simplified.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://realsense2_description/meshes/t265_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>

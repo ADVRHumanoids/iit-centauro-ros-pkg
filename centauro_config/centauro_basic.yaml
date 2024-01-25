@@ -1,6 +1,6 @@
 XBotInterface:
-  urdf_path: $(rospack find centauro_urdf)/urdf/centauro.urdf
-  srdf_path: $(rospack find centauro_srdf)/srdf/centauro.srdf
+  urdf_path: $(ros2 pkg prefix --share centauro_urdf)/urdf/centauro.urdf
+  srdf_path: $(ros2 pkg prefix --share centauro_srdf)/srdf/centauro.srdf
 
 ModelInterface:
   model_type: RBDL
@@ -9,8 +9,8 @@ ModelInterface:
 
 # hal
 xbotcore_device_configs:
-    sim: $(rospack find centauro_config)/hal/centauro_gz.yaml
-    dummy: $(rospack find centauro_config)/hal/centauro_dummy.yaml
+    sim: $(ros2 pkg prefix --share centauro_config)/hal/centauro_gz.yaml
+    dummy: $(ros2 pkg prefix --share centauro_config)/hal/centauro_dummy.yaml
 
 
 # threads
@@ -26,17 +26,17 @@ xbotcore_plugins:
         thread: rt_main
         type: homing
 
-    ros_io: {thread: nrt_main, type: ros_io}
+    ros_io: {thread: nrt_main, type: ros2_io}
 
-    ros_control: {thread: nrt_main, type: ros_control, params: {autostart: {type: bool, value: true}}}
+    ros_control: {thread: nrt_main, type: ros2_control, params: {autostart: true}}
     
 
 
 # global parameters
 xbotcore_param:
-  /xbot/hal/joint_safety/filter_autostart: {value: true, type: bool}
-  /xbot/hal/joint_safety/filter_cutoff_hz: {value: 2.0, type: double}
-  /xbot/hal/enable_safety: {value: true, type: bool}
+  /xbot/hal/joint_safety/filter_autostart: true
+  /xbot/hal/joint_safety/filter_cutoff_hz: 2.0
+  /xbot/hal/enable_safety: true
 
 
 

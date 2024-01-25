@@ -1,23 +1,18 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>centauro_srdf</name>
   <version>0.0.0</version>
-  <description>The centauro_srdf package</description>
+  <description>TODO: Package description</description>
+  <maintainer email="arturo.laurenzi@iit.it">alaurenzi</maintainer>
+  <license>TODO: License declaration</license>
 
-  <maintainer email="enrico@todo.todo">enrico</maintainer>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <license>TODO</license>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <depend>roscpp</depend>
-  <depend>rospy</depend>
-  <depend>srdfdom</depend>
-  <depend>urdf</depend>
-
-
-  <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <!-- Other tools can request additional information be placed here -->
-
+    <build_type>ament_cmake</build_type>
   </export>
 </package>

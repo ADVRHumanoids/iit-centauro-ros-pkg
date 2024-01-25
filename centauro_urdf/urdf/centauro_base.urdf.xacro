@@ -64,6 +64,7 @@
         </xacro:property>
 
         <xacro:if value="${ADD_D435I_BASE}">
+
             <xacro:include filename="${REALSENSE_GAZEBO_DESCRIPTION_ROOT}/urdf/_d435i.urdf.xacro" />
 
             <xacro:sensor_d435i parent="${d435_base_parent_name}"
