@@ -13,6 +13,7 @@
 <xacro:arg name="realsense" default="true"/>
 <xacro:arg name="end_effector_left" default="ball"/>
 <xacro:arg name="end_effector_right" default="ball"/>
+<xacro:arg name="battery" default="false"/>
 
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
@@ -31,6 +32,8 @@
 
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
+<xacro:property name="ADD_BATTERY" value="$(arg battery)"/>
+
 <xacro:property name="ADD_LEGS" value="$(arg legs)" />
 <xacro:property name="ADD_UPPER_BODY" value="$(arg upper_body)" />
 

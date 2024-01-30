@@ -19,6 +19,7 @@
   <arg name="legs" default="true"/>
   <arg name="velodyne" default="false"/>
   <arg name="realsense" default="false"/>
+  <arg name="battery" default="false"/>
   <arg name="end_effector_left" default="ball"/>
   <arg name="end_effector_right" default="ball"/>
 
@@ -40,7 +41,7 @@
 
   <!-- Load the URDF/SRDF into the ROS Parameter Server -->
   <param name="robot_description_gz"
-         command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro_robot.urdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense) end_effector_left:=$(arg end_effector_left) end_effector_right:=$(arg end_effector_right)"/>
+         command="$(find xacro)/xacro $(find centauro_urdf)/urdf/centauro_robot.urdf.xacro floating_joint:=false upper_body:=$(arg arms) legs:=$(arg legs) velodyne:=$(arg velodyne) realsense:=$(arg realsense) battery:=$(arg battery) end_effector_left:=$(arg end_effector_left) end_effector_right:=$(arg end_effector_right)"/>
   
   <!-- run gazebo -->
   <group if="$(arg gazebo)">

@@ -4,7 +4,6 @@
     <!-- 
   ROS urdf definition of the CENTAURO humanoid robot by Istituto Italiano di Tecnologia
   
-  Author: Enrico Mingo Hoffman
 -->
 
     <xacro:include filename="$(find centauro_urdf)/urdf/utils.urdf.xacro" />
@@ -16,12 +15,21 @@
     <link name="base_link" />
 
     <link name="pelvis">
-
-        <inertial>
-            <origin xyz="${Pelvis_x} ${Pelvis_y} ${Pelvis_z}" />
-            <mass value="${Pelvis_mass}" />
-            <inertia ixx="${Pelvis_xx}" ixy="${Pelvis_xy}" ixz="${Pelvis_xz}" iyy="${Pelvis_yy}" iyz="${Pelvis_yz}" izz="${Pelvis_zz}" />
-        </inertial>
+		
+		<xacro:if value="${ADD_BATTERY}">
+		    <inertial>
+		        <origin xyz="${Pelvis_x} ${Pelvis_y} ${Pelvis_z}" />
+		        <mass value="${Pelvis_mass}" />
+		        <inertia ixx="${Pelvis_xx}" ixy="${Pelvis_xy}" ixz="${Pelvis_xz}" iyy="${Pelvis_yy}" iyz="${Pelvis_yz}" izz="${Pelvis_zz}" />
+		    </inertial>
+		</xacro:if>
+		<xacro:unless value="${ADD_BATTERY}">
+			<inertial>
+		        <origin xyz="${PelvisNoBattery_x} ${PelvisNoBattery_y} ${PelvisNoBattery_z}" />
+		        <mass value="${PelvisNoBattery_mass}" />
+		        <inertia ixx="${PelvisNoBattery_xx}" ixy="${PelvisNoBattery_xy}" ixz="${PelvisNoBattery_xz}" iyy="${PelvisNoBattery_yy}" iyz="${PelvisNoBattery_yz}" izz="${PelvisNoBattery_zz}" />
+		    </inertial>
+		</xacro:unless>
 
         <visual>
             <origin xyz="0.0 0 0.0" rpy="0.0 0.0 0.0" />

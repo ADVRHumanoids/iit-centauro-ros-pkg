@@ -16,6 +16,11 @@
 <xacro:property name="Pelvis_x" value="${-1.6320207e+00 * mmTom}"/>
 <xacro:property name="Pelvis_y" value="${2.6534004e+00 * mmTom}"/>
 <xacro:property name="Pelvis_z" value="${7.9167428e+01 * mmTom}"/>
+
+<xacro:property name="PelvisNoBattery_x" value="${1.0310423e+01 * mmTom}"/>
+<xacro:property name="PelvisNoBattery_y" value="${3.4907373e+00 * mmTom}"/>
+<xacro:property name="PelvisNoBattery_z" value="${5.7233845e+01 * mmTom}"/>
+
 <!-- Inertia -->
 <xacro:property name="Pelvis_xx" value="${3.9195477e+05 * mm2Tom2}"/>
 <xacro:property name="Pelvis_yy" value="${1.0000709e+06 * mm2Tom2}"/>
@@ -23,8 +28,16 @@
 <xacro:property name="Pelvis_xy" value="${2.4781259e+04 * mm2Tom2}"/>
 <xacro:property name="Pelvis_xz" value="${1.7108607e+04 * mm2Tom2}"/>
 <xacro:property name="Pelvis_yz" value="${5.2627106e+03 * mm2Tom2}"/>
+
+<xacro:property name="PelvisNoBattery_xx" value="${8.7627533e+05 * mm2Tom2}"/>
+<xacro:property name="PelvisNoBattery_yy" value="${1.6329655e+06 * mm2Tom2}"/>
+<xacro:property name="PelvisNoBattery_zz" value="${1.9611303e+06  * mm2Tom2}"/>
+<xacro:property name="PelvisNoBattery_xy" value="${2.2209997e+04 * mm2Tom2}"/>
+<xacro:property name="PelvisNoBattery_xz" value="${-6.1989843e+03 * mm2Tom2}"/>
+<xacro:property name="PelvisNoBattery_yz" value="${4.5514872e+03 * mm2Tom2}"/>
 <!-- Mass -->
 <xacro:property name="Pelvis_mass" value="2.6584529e+01"/>
+<xacro:property name="PelvisNoBattery_mass" value="1.8845851e+01"/>
 
 <!-- Center of Mass -->
 <xacro:property name="Leg_1_x" value="${3.5958550e-01 * mmTom}"/>
