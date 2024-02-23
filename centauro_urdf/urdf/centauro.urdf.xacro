@@ -10,14 +10,21 @@ will be propagated to all its downstream childs -->
 for use with tools like RViz, which does not accept plain
 abolute paths for mesh paths-->
 <xacro:arg name="use_abs_mesh_paths" default="false" />  
+<xacro:arg name="use_local_filesys_for_meshes" default="false" />  
 
 <xacro:property name="USE_ABS_MESH_PATHS" value="$(arg use_abs_mesh_paths)" />
+  <xacro:property name="USE_LOCAL_FILESYS_FOR_MESHES" value="$(arg use_local_filesys_for_meshes)" />
 
 <xacro:if value="${USE_ABS_MESH_PATHS}">
-  <xacro:property name="MESH_PATH" value="${CENTAURO_ROOT}/meshes" />
+    <xacro:if value="${USE_LOCAL_FILESYS_FOR_MESHES}">
+    <xacro:property name="MESH_PATH" value="file://${CENTAURO_ROOT}/meshes" />
+    </xacro:if>
+    <xacro:unless value="${USE_ABS_MESH_PATHS}">
+    <xacro:property name="MESH_PATH" value="${CENTAURO_ROOT}/meshes" />
+    </xacro:unless>
 </xacro:if>
 <xacro:unless value="${USE_ABS_MESH_PATHS}">
-  <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
+    <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
 </xacro:unless>
 
 <!-- configuration -->
