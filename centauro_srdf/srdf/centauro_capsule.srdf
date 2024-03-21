@@ -496,4 +496,21 @@
     <disable_collisions link1="velodyne_motor" link2="wheel_2" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_4" reason="Never"/>
+    
+    
+    <disable_collisions link1="neck_1" link2="velodyne_calib" reason="Never"/>
+    <disable_collisions link1="arm2_5" link2="dagana_2_bottom_link" reason="Never"/>
+    <disable_collisions link1="ankle2_4" link2="knee_4" reason="Never"/>
+    <disable_collisions link1="ankle2_3" link2="knee_3" reason="Never"/>
+    <disable_collisions link1="ankle2_2" link2="knee_2" reason="Never"/>
+    <disable_collisions link1="ankle2_1" link2="knee_1" reason="Never"/>
+    <disable_collisions link1="ankle1_4" link2="hip2_4" reason="Never"/>
+    <disable_collisions link1="ankle1_2" link2="hip2_2" reason="Never"/>
+    <disable_collisions link1="ankle1_3" link2="hip2_3" reason="Never"/>
+    <disable_collisions link1="ankle1_1" link2="hip2_1" reason="Never"/>
+    <disable_collisions link1="arm2_2" link2="arm2_5" reason="Never"/>
+    <disable_collisions link1="arm1_2" link2="arm1_5" reason="Never"/>
 </robot>
+
+
+
