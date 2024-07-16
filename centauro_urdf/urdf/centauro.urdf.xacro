@@ -19,13 +19,17 @@ abolute paths for mesh paths-->
     <xacro:if value="${USE_LOCAL_FILESYS_FOR_MESHES}">
     <xacro:property name="MESH_PATH" value="file://${CENTAURO_ROOT}/meshes" />
     </xacro:if>
-    <xacro:unless value="${USE_ABS_MESH_PATHS}">
+    <xacro:unless value="${USE_LOCAL_FILESYS_FOR_MESHES}">
     <xacro:property name="MESH_PATH" value="${CENTAURO_ROOT}/meshes" />
     </xacro:unless>
 </xacro:if>
 <xacro:unless value="${USE_ABS_MESH_PATHS}">
     <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
 </xacro:unless>
+
+<xacro:macro name="example_macro">
+  <example_element message="${MESH_PATH}" />
+</xacro:macro>
 
 <!-- configuration -->
 <xacro:arg name="config" default="${CENTAURO_ROOT}/urdf/config/centauro.urdf.xacro"/>
