@@ -11,7 +11,7 @@
 
 	<inertial>
 		<origin xyz="${Leg_1_x} ${mirror*Leg_1_y} ${Leg_1_z}" />
-		<mass value="${Leg_1_mass}"/> <!-- org: 2 -->
+		<mass value="${Leg_1_mass}"/> <!-- org 2 -->
 		<inertia ixx="${Leg_1_xx}" ixy="${mirror*Leg_1_xy}" ixz="${Leg_1_xz}" iyy="${Leg_1_yy}" iyz="${mirror*Leg_1_yz}" izz="${Leg_1_zz}"/>
 	</inertial>
 
@@ -35,7 +35,7 @@
 <link name="hip2_${leg_num}">
 	<inertial>
 		<origin xyz="${Leg_2_x} ${Leg_2_y} ${mirror*Leg_2_z}"/>	
-		<mass value="${Leg_2_mass}"/> <!-- org: 4.5 -->
+		<mass value="${Leg_2_mass}"/> <!-- org 4.5 -->
 		<inertia ixx="${Leg_2_xx}" ixy="${Leg_2_xy}" ixz="${mirror*Leg_2_xz}" iyy="${Leg_2_yy}" iyz="${mirror*Leg_2_yz}" izz="${Leg_2_zz}"/> 
 	</inertial>
 
@@ -87,7 +87,7 @@
    <link name="knee_${leg_num}">
       <inertial>
          <origin xyz="${Leg_3_x} ${Leg_3_y} ${mirror*Leg_3_z}"/>
-         <mass value="${Leg_3_mass}"/>  <!-- org: 3.5, foot un modeled-->
+         <mass value="${Leg_3_mass}"/>  <!-- org 3.5, foot un modeled-->
          <inertia ixx="${Leg_3_xx}" ixy="${Leg_3_xy}" ixz="${mirror*Leg_3_xz}" iyy="${Leg_3_yy}" iyz="${mirror*Leg_3_yz}" izz="${Leg_3_zz}"/>
       </inertial>
 
@@ -110,7 +110,7 @@
    <link name="ankle1_${leg_num}">
       <inertial>
          <origin xyz="${Ankle_1_x} ${Ankle_1_y} ${mirror*Ankle_1_z}"/>
-         <mass value="${Ankle_1_mass}"/>  <!-- org: 3.5, foot un modeled-->
+         <mass value="${Ankle_1_mass}"/>  <!-- org 3.5, foot un modeled-->
          <inertia ixx="${Ankle_1_xx}" ixy="${Ankle_1_xy}" ixz="${mirror*Ankle_1_xz}" iyy="${Ankle_1_yy}" iyz="${mirror*Ankle_1_yz}" izz="${Ankle_1_zz}"/>
       </inertial>
 

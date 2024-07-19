@@ -7,7 +7,7 @@
         <link name="ankle2_${leg_num}">
             <inertial>
                 <origin xyz="${Ankle23_2_x} ${mirror*Ankle23_2_y} ${Ankle23_2_z}" />
-                <mass value="${Ankle23_2_mass}" />  <!-- org: 3.5, foot un modeled-->
+                <mass value="${Ankle23_2_mass}" />  <!-- org 3.5, foot un modeled-->
                 <inertia ixx="${Ankle23_2_xx}" ixy="${mirror*Ankle23_2_xy}" ixz="${Ankle23_2_xz}"
                     iyy="${Ankle23_2_yy}" iyz="${mirror*Ankle23_2_yz}" izz="${Ankle23_2_zz}" />
             </inertial>

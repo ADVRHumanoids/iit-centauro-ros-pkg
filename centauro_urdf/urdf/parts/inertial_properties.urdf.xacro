@@ -96,7 +96,7 @@
 <!-- Mass -->
 <xacro:property name="Ankle_2_mass" value="1.7656714e+00"/>
 
-<!-- Note: the "23" suffix denotes the new bigger-size wheel -->
+<!-- Note that the "23" suffix denotes the new bigger-size wheel -->
 
 <!-- Center of Mass -->
 <xacro:property name="Ankle23_2_x" value="${1.8512273e-01 * mmTom}"/>

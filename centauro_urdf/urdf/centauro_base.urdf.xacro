@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="centauro">
-
-    <!-- 
-  ROS urdf definition of the CENTAURO humanoid robot by Istituto Italiano di Tecnologia
-  
-  Author: Enrico Mingo Hoffman
--->
-
+    <!-- ROS urdf definition of the CENTAURO humanoid robot by Istituto Italiano di Tecnologia. Author Enrico Mingo Hoffman-->
     <xacro:include filename="${CENTAURO_ROOT}/urdf/utils.urdf.xacro" />
     <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/kinematics_properties.urdf.xacro" />
     <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/inertial_properties.urdf.xacro" />
