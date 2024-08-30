@@ -12,7 +12,7 @@
   <!-- This argument and property should be in the top level xacro and
   will be propagated to all its downstream childs -->
   <xacro:arg name="centauro_root" default="$(find centauro_urdf)" />  
-  <xacro:property name="CENTAURO_ROOT" value="$(arg centauro_root)" />
+  <xacro:property name="ROOT" value="$(arg centauro_root)" />
   
   <!-- setting use_abs_mesh_paths should be kept to false
   for use with tools like RViz, which does not accept plain
@@ -22,19 +22,19 @@
   <xacro:property name="USE_ABS_MESH_PATHS" value="$(arg use_abs_mesh_paths)" />
 
   <xacro:if value="${USE_ABS_MESH_PATHS}">
-    <xacro:property name="MESH_PATH" value="${CENTAURO_ROOT}/meshes" />
+    <xacro:property name="MESH_PATH" value="${ROOT}/meshes" />
   </xacro:if>
   <xacro:unless value="${USE_ABS_MESH_PATHS}">
     <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
   </xacro:unless>
 
-  <xacro:include filename="${CENTAURO_ROOT}/urdf/centauro.urdf.xacro" />
+  <xacro:include filename="${ROOT}/urdf/centauro.urdf.xacro" />
 
-  <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/centauro.gazebo.xacro" />
+  <xacro:include filename="${ROOT}/urdf/gazebo/centauro.gazebo.xacro" />
    
-  <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/xbot.gazebo.xacro" />
+  <xacro:include filename="${ROOT}/urdf/gazebo/xbot.gazebo.xacro" />
 
-  <xacro:include filename="${CENTAURO_ROOT}/urdf/gazebo/materials.gazebo.xacro" />
+  <xacro:include filename="${ROOT}/urdf/gazebo/materials.gazebo.xacro" />
   
   <xacro:unless value="${ADD_LEGS}">
 
