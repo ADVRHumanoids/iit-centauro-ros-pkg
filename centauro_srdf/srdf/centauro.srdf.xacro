@@ -5,8 +5,8 @@
 -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="centauro">
 
-    <xacro:arg name="centauro_root" default="$(find centauro_urdf)" />  
-    <xacro:property name="ROOT" value="$(arg centauro_root)" />
+    <xacro:arg name="root" default="$(find centauro_urdf)" />  
+    <xacro:property name="ROOT" value="$(arg root)" />
 
     <!-- ************ MODEL CONFIGURATION ************ -->
     <xacro:arg name="config" default="${ROOT}/urdf/config/centauro.urdf.xacro"/>
