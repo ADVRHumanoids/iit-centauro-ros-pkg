@@ -12,24 +12,8 @@
 <!-- ************ Control frames ************ -->
 
 
-<xacro:if value="${ADD_FLOATING_BASE}">
-<xacro:if value="${ADD_LEGS}">
-
-<link name="world"/>
-
-  <joint name="reference" type="floating">
-    <parent link="world"/>
-    <child link="pelvis"/>
-</joint>
-
-</xacro:if>
-</xacro:if>
-
-
 <xacro:if value="${ADD_VIRTUAL_FRAME}">
   <xacro:include filename="$(find centauro_urdf)/urdf/parts/virtual_frame.urdf.xacro"/>
 </xacro:if>
 
 </robot>
-
-
