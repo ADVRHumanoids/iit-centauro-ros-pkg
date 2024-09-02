@@ -17,7 +17,7 @@
 <xacro:if value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="true"/>
 	<xacro:arg name="d435i_base" default="true"/>
-	<xacro:arg name="t265_base" default="true"/>
+	<xacro:arg name="t265_base" default="false"/>
 </xacro:if>
 <xacro:unless value="$(arg realsense)">
 	<xacro:arg name="d435i_head" default="false"/>
