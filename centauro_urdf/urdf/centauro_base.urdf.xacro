@@ -4,7 +4,7 @@
     <!-- 
   ROS urdf definition of the CENTAURO humanoid robot by Istituto Italiano di Tecnologia
   
-  Author: Enrico Mingo Hoffman
+  Author Enrico Mingo Hoffman
 -->
 
     <xacro:include filename="$(find centauro_urdf)/urdf/utils.urdf.xacro" />
@@ -72,22 +72,7 @@
 
             <xacro:sensor_d435i parent="${d435_base_parent_name}"
                 name="${d435_base_name}"
-                topics_ns="${d435_base_name}"
-                enable_pointCloud="true" 
-                align_depth="true"
-                unite_imu_method="false"
-                visualize="false"
-                accel_fps="300"
-                gyro_fps="300"
-                depth_width="1280"
-                depth_height="720"
-                depth_fps="90"
-                infra_width="1280"
-                infra_height="720"
-                infra_fps="90"
-                color_width="1280"
-                color_height="720"
-                color_fps="30">
+                use_nominal_extrinsics="true" >
 
                 <xacro:insert_block name="d435_base_origin" />
 
