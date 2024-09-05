@@ -1,0 +1,29 @@
+<launch>
+
+    <arg name="gui" default="true"/>
+    <arg name="verbose" default="false"/>
+    <arg name="paused" default="false"/>
+    <arg name="velodyne" default="false"/>
+
+    <let name="arg_gui" value="-s" unless="$(var gui)"/> 
+    <let name="arg_gui" value="" if="$(var gui)"/> 
+
+    <let name="arg_verbose" value="" unless="$(var verbose)"/> 
+    <let name="arg_verbose" value="-v" if="$(var verbose)"/> 
+
+    <let name="arg_paused" value="-r" unless="$(var paused)"/> 
+    <let name="arg_paused" value="" if="$(var paused)"/> 
+
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="$(find-pkg-share centauro_gazebo)/world/centauro.world $(var arg_verbose) $(var arg_gui) $(var arg_paused)"/>
+    </include>
+
+    <node pkg="ros_gz_sim" exec="create" name="urdf_spawner">
+        <param name="string" type="str" value="$(command 'xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro velodyne:=$(var velodyne)')"/>
+        <param name="z" value="1.0"/>
+    </node>
+
+    <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge" 
+        args="/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked /clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock"/>
+
+</launch>

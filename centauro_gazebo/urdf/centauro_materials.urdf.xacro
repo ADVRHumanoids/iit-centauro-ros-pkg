@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<xacro:macro name="centauro_leg_materials" params="leg_num">
+
+<gazebo reference="hip1_${leg_num}">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="hip2_${leg_num}">
+	<material>Gazebo/DarkGrey</material>
+</gazebo>
+<gazebo reference="knee_${leg_num}">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="ankle1_${leg_num}">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="ankle2_${leg_num}">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="wheel_${leg_num}">
+	<material>Gazebo/DarkGrey</material>
+</gazebo>
+
+</xacro:macro>
+
+<xacro:macro name="centauro_arm_materials" params="arm_num">
+
+<gazebo reference="arm${arm_num}_1">
+	<material>Gazebo/DarkGrey</material>
+</gazebo>
+<gazebo reference="arm${arm_num}_2">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="arm${arm_num}_3">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="arm${arm_num}_4">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="arm${arm_num}_5">
+	<material>Gazebo/DarkGrey</material>
+</gazebo>
+<gazebo reference="arm${arm_num}_6">
+	<material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="arm${arm_num}_7">
+	<material>Gazebo/Orange</material>
+</gazebo>
+
+</xacro:macro>
+
+
+
+<gazebo reference="pelvis">
+	<material>Gazebo/Orange</material>
+</gazebo>
+
+<xacro:if value="${ADD_LEGS}">
+
+<xacro:centauro_leg_materials leg_num="1"/>
+<xacro:centauro_leg_materials leg_num="2"/>
+<xacro:centauro_leg_materials leg_num="3"/>
+<xacro:centauro_leg_materials leg_num="4"/>
+
+	
+</xacro:if>
+
+<xacro:if value="${ADD_UPPER_BODY}">
+
+<gazebo reference="torso_2">
+	<material>Gazebo/DarkGrey</material>
+</gazebo>
+
+<xacro:centauro_arm_materials arm_num="1"/>
+<xacro:centauro_arm_materials arm_num="2"/>
+
+
+<xacro:if value="${END_EFFECTOR_LEFT == 'ball'}">
+	<gazebo reference="ball1">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_RIGHT == 'ball'}">
+	<gazebo reference="ball2">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_LEFT == 'dagana_fixed' or END_EFFECTOR_LEFT == 'dagana'}">
+	<gazebo reference="dagana_1_top_link">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+	<gazebo reference="dagana_1_bottom_link">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+</xacro:if>
+
+<xacro:if value="${END_EFFECTOR_RIGHT == 'dagana_fixed' or END_EFFECTOR_RIGHT == 'dagana'}">
+	<gazebo reference="dagana_2_top_link">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+	<gazebo reference="dagana_2_bottom_link">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+</xacro:if>
+
+</xacro:if>
+
+
+
+</robot>

@@ -4,7 +4,7 @@
   <name>centauro_gazebo</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="arturo.laurenzi@iit.it">alaurenzi</maintainer>
+  <maintainer email="arturo.laurenzi@iit.it">user</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

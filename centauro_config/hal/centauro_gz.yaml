@@ -3,27 +3,27 @@ xbotcore_devices:
         names: []
         thread: rt_main
 
-    joint_master:
-        master: true # this is a master device for 'joint'
-        thread: rt_main
+    # joint_master:
+    #     master: true # this is a master device for 'joint'
+    #     thread: rt_main
 
-    imu_gz:
-        names: []
-        thread: rt_main
+    # imu_gz:
+    #     names: []
+    #     thread: rt_main
 
-    link_state_sensor:
-        names: []
-        thread: rt_main
+    # link_state_sensor:
+    #     names: []
+    #     thread: rt_main
 
-    joint_gripper_adapter:
-        names: [dagana_2]
-        thread: rt_main
-        params:
-            dagana_2/joint_name: {value: dagana_2_claw_joint, type: string}
-            dagana_2/joint_type: {value: joint_gz, type: string}
-            dagana_2/qopen: {value: 1.0, type: double}
-            dagana_2/qclosed: {value: 0.0, type: double}
-            dagana_2/vmax: {value: 1.0, type: double}
-            dagana_2/stiffness: {value: 10.0, type: double}
+    # joint_gripper_adapter:
+    #     names: [dagana_2]
+    #     thread: rt_main
+    #     params:
+    #         dagana_2/joint_name: {value: dagana_2_claw_joint, type: string}
+    #         dagana_2/joint_type: {value: joint_gz, type: string}
+    #         dagana_2/qopen: {value: 1.0, type: double}
+    #         dagana_2/qclosed: {value: 0.0, type: double}
+    #         dagana_2/vmax: {value: 1.0, type: double}
+    #         dagana_2/stiffness: {value: 10.0, type: double}
 
 

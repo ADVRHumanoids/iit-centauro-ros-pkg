@@ -3,8 +3,7 @@ XBotInterface:
   srdf_path: $(ros2 pkg prefix --share centauro_srdf)/srdf/centauro.srdf
 
 ModelInterface:
-  model_type: RBDL
-  is_model_floating_base: true
+  model_type: pin
 
 
 # hal
