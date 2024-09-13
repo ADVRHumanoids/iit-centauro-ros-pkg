@@ -3,25 +3,36 @@
 
 <!-- This argument and property should be in the top level xacro and
 will be propagated to all its downstream childs -->
-<xacro:arg name="centauro_root" default="$(find centauro_urdf)" />  
-<xacro:property name="CENTAURO_ROOT" value="$(arg centauro_root)" />
+<xacro:arg name="root" default="$(find centauro_urdf)" />  
+<xacro:property name="ROOT" value="$(arg root)" />
 
 <!-- setting use_abs_mesh_paths should be kept to false
 for use with tools like RViz, which does not accept plain
 abolute paths for mesh paths-->
 <xacro:arg name="use_abs_mesh_paths" default="false" />  
+<xacro:arg name="use_local_filesys_for_meshes" default="false" />  
 
 <xacro:property name="USE_ABS_MESH_PATHS" value="$(arg use_abs_mesh_paths)" />
+<xacro:property name="USE_LOCAL_FILESYS_FOR_MESHES" value="$(arg use_local_filesys_for_meshes)" />
 
 <xacro:if value="${USE_ABS_MESH_PATHS}">
-  <xacro:property name="MESH_PATH" value="${CENTAURO_ROOT}/meshes" />
+    <xacro:if value="${USE_LOCAL_FILESYS_FOR_MESHES}">
+    <xacro:property name="MESH_PATH" value="file://${ROOT}/meshes" />
+    </xacro:if>
+    <xacro:unless value="${USE_LOCAL_FILESYS_FOR_MESHES}">
+    <xacro:property name="MESH_PATH" value="${ROOT}/meshes" />
+    </xacro:unless>
 </xacro:if>
 <xacro:unless value="${USE_ABS_MESH_PATHS}">
-  <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
+    <xacro:property name="MESH_PATH" value="package://centauro_urdf/meshes" />
 </xacro:unless>
 
+<xacro:macro name="example_macro">
+  <example_element message="${MESH_PATH}" />
+</xacro:macro>
+
 <!-- configuration -->
-<xacro:arg name="config" default="${CENTAURO_ROOT}/urdf/config/centauro.urdf.xacro"/>
+<xacro:arg name="config" default="${ROOT}/urdf/config/centauro.urdf.xacro"/>
 
 <!-- ************ MODEL CONFIGURATION ************ -->
 <xacro:include filename="$(arg config)"/>
@@ -56,7 +67,7 @@ abolute paths for mesh paths-->
 </xacro:if>
 
 <!-- ************ Pholus plain model ************ -->
-<xacro:include filename="${CENTAURO_ROOT}/urdf/centauro_base.urdf.xacro"/>
+<xacro:include filename="${ROOT}/urdf/centauro_base.urdf.xacro"/>
 
 <!-- ************ Control frames ************ -->
 
@@ -76,7 +87,7 @@ abolute paths for mesh paths-->
 
 
 <xacro:if value="${ADD_VIRTUAL_FRAME}">
-  <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/virtual_frame.urdf.xacro"/>
+  <xacro:include filename="${ROOT}/urdf/parts/virtual_frame.urdf.xacro"/>
 </xacro:if>
 
 </robot>

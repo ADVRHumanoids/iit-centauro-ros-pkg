@@ -7,10 +7,10 @@
   Author: Enrico Mingo Hoffman
 -->
 
-    <xacro:include filename="${CENTAURO_ROOT}/urdf/utils.urdf.xacro" />
-    <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/kinematics_properties.urdf.xacro" />
-    <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/inertial_properties.urdf.xacro" />
-    <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/limits.urdf.xacro" />
+    <xacro:include filename="${ROOT}/urdf/utils.urdf.xacro" />
+    <xacro:include filename="${ROOT}/urdf/parts/kinematics_properties.urdf.xacro" />
+    <xacro:include filename="${ROOT}/urdf/parts/inertial_properties.urdf.xacro" />
+    <xacro:include filename="${ROOT}/urdf/parts/limits.urdf.xacro" />
 
     <link name="base_link" />
 
@@ -53,9 +53,9 @@
     </joint>
 
     <xacro:if value="${ADD_UPPER_BODY}">
-        <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/centauro_torso.urdf.xacro" />
-        <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/arms.urdf.xacro" />
-        <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/head.urdf.xacro" />
+        <xacro:include filename="${ROOT}/urdf/parts/centauro_torso.urdf.xacro" />
+        <xacro:include filename="${ROOT}/urdf/parts/arms.urdf.xacro" />
+        <xacro:include filename="${ROOT}/urdf/parts/head.urdf.xacro" />
 
         <xacro:property name="d435_base_name" value="D435i_camera" />
         <xacro:property name="d435_base_parent_name" value="pelvis" />
@@ -164,7 +164,7 @@
     </xacro:if>
 
     <xacro:if value="${ADD_LEGS}">
-        <xacro:include filename="${CENTAURO_ROOT}/urdf/parts/legs.urdf.xacro" />
+        <xacro:include filename="${ROOT}/urdf/parts/legs.urdf.xacro" />
     </xacro:if>
 
 </robot>
