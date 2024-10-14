@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/pelvis.stl">
+<robot name="/home/enrico/advr-superbuild/robots/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/pelvis_reduced.stl">
   <link name="0.00100_0.00100_0.00100">
     <collision>
       <origin xyz="-0.005085 2.00284e-07 0.03057945" rpy="3.14158470812 1.54787296367 3.14158452386"/>
