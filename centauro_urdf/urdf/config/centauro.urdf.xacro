@@ -4,6 +4,9 @@
 <xacro:property name="model_name" value="centauro" />
 <xacro:property name="model_version" value="0.1" />
 
+<xacro:property name="wheel23_radius" value="0.124"/>
+<xacro:property name="wheel23_depth" value="0.03"/>
+
 <!-- command line arguments -->
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="big_wheel" default="true"/>
