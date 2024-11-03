@@ -61,9 +61,12 @@
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
+					<cylinder radius="${wheel23_radius}" length="${wheel23_depth}"/>
+				</geometry>
+                <!-- <geometry>
                     <mesh filename="${MESH_PATH}/v2/collision/mesh_wheel23.stl"
                         scale="0.001 0.001 ${mirror*0.001}" />
-                </geometry>
+                </geometry> -->
                 <material name="black" />
             </collision>
         </link>
