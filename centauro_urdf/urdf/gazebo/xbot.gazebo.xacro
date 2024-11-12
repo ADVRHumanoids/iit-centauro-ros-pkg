@@ -18,7 +18,7 @@
    
     <plugin name="xbot2_joint_driver" filename="libxbot2_gz_joint_server.so">
         <pid>
-            <gain name="lowpwr_mot" p="50"  d="5"/>
+            <gain name="lowpwr_mot" p="500"  d="5"/>
             <gain name="small_mot"  p="1000"  d="10"/>
             <gain name="medium_mot" p="4000" d="40"/>
             <gain name="big_mot"    p="8000" d="50"/>
