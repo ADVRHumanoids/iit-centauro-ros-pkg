@@ -517,8 +517,14 @@
     <disable_collisions link1="velodyne_motor" link2="wheel_3" reason="Never"/>
     <disable_collisions link1="velodyne_motor" link2="wheel_4" reason="Never"/>
 
-    <disable_collisions link1="pelvis" link2="hip2_1" reason="Adjacent"/>
-    <disable_collisions link1="pelvis" link2="hip2_2" reason="Adjacent"/>
-    <disable_collisions link1="pelvis" link2="hip2_3" reason="Adjacent"/>
-    <disable_collisions link1="pelvis" link2="hip2_4" reason="Adjacent"/>
+
+    <disable_collisions link1="pelvis" link2="hip2_1" reason="Never"/>
+    <disable_collisions link1="pelvis" link2="hip2_2" reason="Never"/>
+    <disable_collisions link1="pelvis" link2="hip2_3" reason="Never"/>
+    <disable_collisions link1="pelvis" link2="hip2_4" reason="Never"/>
+    
+    <disable_collisions link1="arm1_6" link2="dagana_1_top_link" reason="Never"/>
+    <disable_collisions link1="dagana_1_top_link" link2="dagana_1_bottom_link" reason="Never"/>
+
+
 </robot>
