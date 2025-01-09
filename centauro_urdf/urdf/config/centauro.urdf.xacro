@@ -11,6 +11,7 @@
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="big_wheel" default="true"/>
 <xacro:arg name="upper_body" default="true"/>
+<xacro:arg name="battery" default="true"/>
 <xacro:arg name="velodyne" default="false"/>
 <xacro:arg name="realsense" default="false"/>
 <xacro:arg name="end_effector_left" default="ball"/>
@@ -35,6 +36,7 @@
 <!-- *************************************-->
 <xacro:property name="ADD_LEGS" value="$(arg legs)" />
 <xacro:property name="ADD_UPPER_BODY" value="$(arg upper_body)" />
+<xacro:property name="WITH_BATTERY" value="$(arg battery)" />
 
 <xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
 <xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
