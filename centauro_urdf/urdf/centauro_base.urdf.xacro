@@ -39,7 +39,7 @@
 
         </link>
     </xacro:if>
-    <xacro:unless value="WITH_BATTERY">
+    <xacro:unless value="${WITH_BATTERY}">
         <link name="pelvis">
 
             <inertial>
