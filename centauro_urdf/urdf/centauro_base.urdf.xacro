@@ -39,6 +39,13 @@
 
     </link>
 
+    <xacro:if value="${ADD_FLOATING_BASE}">
+        <link name="world"/>
+        <joint name="floating_joint" type="floating">
+            <parent link="world" />
+            <child link="pelvis" />
+        </joint>
+    </xacro:if>
 
     <link name="imu_link" />
 
@@ -109,8 +116,8 @@
                 <visual>
                     <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${PI/2} 0 ${PI/2}" />
                     <geometry>
-                        <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-                        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae" />
+                        <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/>
+                        <!-- <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae" /> -->
                     </geometry>
                     <material name="${d435_base_name}_aluminum" />
                 </visual>
