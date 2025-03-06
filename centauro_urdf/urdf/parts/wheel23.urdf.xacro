@@ -61,9 +61,13 @@
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
+                <xacro:if value="${USE_WHEEL_23_SPHERE_COLLISION}">
                     <sphere radius="0.125"/>
-                    <!-- <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl"
-                        scale="0.001 0.001 ${mirror*0.001}" /> -->
+                </xacro:if>
+                <xacro:unless value="${USE_WHEEL_23_SPHERE_COLLISION}">
+                    <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl"
+                        scale="0.001 0.001 ${mirror*0.001}" />
+                </xacro:unless>                    
                 </geometry>
                 <material name="black" />
             </collision>
