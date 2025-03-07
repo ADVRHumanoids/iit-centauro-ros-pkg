@@ -14,8 +14,8 @@ xbotcore_device_configs:
 
 # threads
 xbotcore_threads:
-    rt_main:  {sched: fifo , prio: 60, period: 0.001}
-    nrt_main: {sched: other, prio: 0 , period: 0.005}
+    rt_main:  {sched: fifo , prio: 60, period: 0.001, main: true}
+    nrt_main: {sched: other, prio: 0 , period: 0.001}
 
 
 # plugins
@@ -33,9 +33,9 @@ xbotcore_plugins:
 
 # global parameters
 xbotcore_param:
-  /xbot/hal/joint_safety/filter_autostart: true
-  /xbot/hal/joint_safety/filter_cutoff_hz: 2.0
-  /xbot/hal/enable_safety: true
+  /xbot/hal/joint_safety/filter_autostart: false
+  /xbot/hal/joint_safety/filter_cutoff_hz: 10.0
+  /xbot/hal/enable_safety: false
 
 
 
