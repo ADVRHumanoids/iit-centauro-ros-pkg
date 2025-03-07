@@ -1,31 +1,53 @@
 <launch>
 
-    <arg name="rate" default="100.0"/>
-    <arg name="prefix" default=""/>
-    <arg name="gui" default="false"/>
-    
-    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/centauro.urdf"/>
+    <arg name="rate" default="100.0" />
+    <arg name="prefix" default="" />
+    <arg name="gui" default="false" />
+    <arg name="xbot" default="false" />
 
-    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/centauro.srdf"/>
+    <node unless="$(var xbot)"
+        pkg="cartesian_interface"
+        exec="robot_description_publisher"
+        name="robot_description_publisher">
 
-    <param name="cartesian/problem_description" textfile="$(find centauro_cartesio_config)/centauro_manipulation_stack.yaml"/>
-        
+        <param name="robot_description" type="str"
+            value="$(command 'cat $(find-pkg-share centauro_urdf)/urdf/centauro.urdf')" />
+        <param name="robot_description_semantic" type="str"
+            value="$(command 'cat $(find-pkg-share centauro_srdf)/srdf/centauro.srdf')" />
+
+    </node>
+
+    <param name="robot_description" textfile="$(find centauro_urdf)/urdf/centauro.urdf" />
+
+    <param name="robot_description_semantic" textfile="$(find centauro_srdf)/srdf/centauro.srdf" />
+
+    <param name="cartesian/problem_description"
+        textfile="$(find centauro_cartesio_config)/centauro_manipulation_stack.yaml" />
+
     <rosparam name="cartesian/velocity_whitelist">
         <param>[j_wheel_1, j_wheel_2, j_wheel_3, j_wheel_4]</param>
     </rosparam>
-    
-    <include file="$(find cartesian_interface)/launch/cartesio.launch">
-        <arg name="rate" value="$(arg rate)"/>
-        <arg name="prefix" value="$(arg prefix)"/>
-        <arg name="is_model_floating_base" value="true"/>
-    </include>
+
+    <node pkg="cartesian_interface" exec="ros_server_node"
+        name="ros_server_node"
+        output="screen"
+        launch-prefix="$(var prefix)">
+        <remap if="$(var xbot)" from="robot_description" to="/xbotcore/robot_description" />
+        <remap if="$(var xbot)" from="robot_description_semantic"
+            to="/xbotcore/robot_description_semantic" />
+
+        <param name="solver" value="OpenSot" />
+        <param name="rate" value="$(var rate)" />
+        <param name="problem_description" type="str"
+            value="$(command 'cat $(find centauro_cartesio_config)/centauro_manipulation_stack.yaml')" />
+
+    </node>
 
     <node if="$(arg gui)"
-          type="rviz"
-          name="rviz"
-          pkg="rviz"
-          args="-d $(find centauro_cartesio_config)/rviz_cartesio.rviz" />
-
+        type="rviz"
+        name="rviz"
+        pkg="rviz"
+        args="-d $(find centauro_cartesio_config)/rviz_cartesio.rviz" />
 
 
 </launch>
