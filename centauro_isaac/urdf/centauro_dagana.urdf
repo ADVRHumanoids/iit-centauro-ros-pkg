@@ -13,13 +13,13 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/pelvis.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="base_link">
-      <origin xyz="-0.005084999999999992 2.00284e-07 0.03057945" rpy="3.141584708121066 1.5478729636744712 3.14158452386424"/>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <cylinder radius="0.213204" length="0.38594139791384763"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
      
@@ -51,10 +51,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/link1_no_head.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/link1_no_head.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="torso_2">
+    <collision>
       <origin xyz="-3.2165000000000015e-05 9.785000000000002e-05 0.07465275" rpy="1.5666391113102787 -0.01588146658428072 -0.0158155835137567"/>
       <geometry>
         <cylinder radius="0.158224" length="0.09543675990850982"/>
@@ -78,11 +78,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="arm1_1">
+    <collision>
       <origin xyz="0.017831411999999998 0.05324115 2.3169000000000008e-05" rpy="-1.6903347176271586 1.4526491831510902 -1.5721974565036339"/>
       <geometry>
         <cylinder radius="0.0698859" length="0.03739768494560427"/>
@@ -99,10 +99,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="arm1_2">
+    <collision>
       <origin xyz="0.0637382 4.0379999999999995e-07 -0.064359175" rpy="3.141581408692036 0.43013736369295724 3.141541177080914"/>
       <geometry>
         <cylinder radius="0.0700645" length="0.12799269981445732"/>
@@ -119,11 +119,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="arm1_3">
+    <collision>
       <origin xyz="0.0073075385949999995 -0.0040911384949999996 -0.03662884" rpy="3.0024238046134086 0.2429098209130052 2.103907539504161"/>
       <geometry>
         <cylinder radius="0.0896121" length="0.06082252644344949"/>
@@ -140,10 +140,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="arm1_4">
+    <collision>
       <origin xyz="-0.00746020465 -0.0408499 -0.0404292381" rpy="-0.33854605247629793 0.17337814940326016 -0.029704070188628324"/>
       <geometry>
         <cylinder radius="0.0600429" length="0.08713418572944408"/>
@@ -160,11 +160,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="arm1_5">
+    <collision>
       <origin xyz="-3.7982729999999996e-06 0.00576208 -0.08227100000000001" rpy="-0.19504999679008256 0.00010897068899718279 -1.0661187695164793e-05"/>
       <geometry>
         <cylinder radius="0.0804108" length="0.08434739747702548"/>
@@ -181,10 +181,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 -0.001 0.001" />
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
-    <collision name="arm1_6">
+    <collision>
       <origin xyz="-0.0007855109 -0.028511995000000002 -0.03192399" rpy="-0.5594293097385409 -0.02095499521275571 0.006019428316027259" />
       <geometry>
         <cylinder radius="0.0474698" length="0.07750977987441161" />
@@ -242,11 +242,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="arm2_1">
+    <collision>
       <origin xyz="0.017831411999999998 -0.05324115 2.3169000000000008e-05" rpy="1.6903347176271586 1.4526491831510902 1.5721974565036339"/>
       <geometry>
         <cylinder radius="0.0698859" length="0.03739768494560427"/>
@@ -263,10 +263,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="arm2_2">
+    <collision>
       <origin xyz="0.0637382 -4.0379999999999995e-07 -0.064359175" rpy="-3.141581408692036 0.43013736369295724 -3.141541177080914"/>
       <geometry>
         <cylinder radius="0.0700645" length="0.12799269981445732"/>
@@ -283,11 +283,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="arm2_3">
+    <collision>
       <origin xyz="0.0073075385949999995 0.0040911384949999996 -0.03662884" rpy="-3.0024238046134086 0.2429098209130052 -2.103907539504161"/>
       <geometry>
         <cylinder radius="0.0896121" length="0.06082252644344949"/>
@@ -304,10 +304,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="arm2_4">
+    <collision>
       <origin xyz="-0.00746020465 0.0408499 -0.0404292381" rpy="0.33854605247629793 0.17337814940326016 0.029704070188628324"/>
       <geometry>
         <cylinder radius="0.0600429" length="0.08713418572944408"/>
@@ -324,11 +324,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="arm2_5">
+    <collision>
       <origin xyz="-3.7982729999999996e-06 -0.00576208 -0.08227100000000001" rpy="0.19504999679008256 0.00010897068899718279 1.0661187695164793e-05"/>
       <geometry>
         <cylinder radius="0.0804108" length="0.08434739747702548"/>
@@ -345,10 +345,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
-    <collision name="arm2_6">
+    <collision>
       <origin xyz="-0.0007855109 0.028511995000000002 -0.03192399" rpy="0.5594293097385409 -0.02095499521275571 -0.006019428316027259" />
       <geometry>
         <cylinder radius="0.0474698" length="0.07750977987441161" />
@@ -406,11 +406,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/BallHand.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="ball1">
+    <collision>
       <origin xyz="-2.6819999999999855e-07 1.2015000000000003e-06 -0.0105021" rpy="-1.5654390438571615 -1.1857782102348717 1.1808181135942444"/>
       <geometry>
         <cylinder radius="0.0709883" length="9.940076835940455e-05"/>
@@ -455,11 +455,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/dg0001_simplified.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/dg0001_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="dagana_2_top_link">
+    <collision>
       <origin xyz="-0.000122827 -0.0012617600000000002 0.09111949999999999" rpy="3.0401469956240503 -0.00022380626154906884 -0.004408546116587804"/>
       <geometry>
         <cylinder radius="0.0760764" length="0.10212404260993166"/>
@@ -483,12 +483,12 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://dagana_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-dagana-ros-pkg/dagana_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <!-- can ignore bottom link since the top one covers it
-    <collision name="dagana_2_bottom_link">
+    <collision>
       <origin xyz="-0.000557338 0.06060969 0.00269066" rpy="-1.5078975982532556 -0.0008422964943385845 0.0007909160627971824"/>
       <geometry>
         <cylinder radius="0.0618624" length="0.11781363498578913"/>
@@ -525,10 +525,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/head_base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/head_base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="neck_1">
+    <collision>
       <origin xyz="0.006498149999999998 -1.4782499999999998e-06 0.1544216" rpy="0.00021616021402232196 0.3728341899733125 4.076931979237498e-05"/>
       <geometry>
         <cylinder radius="0.100414" length="0.16454098025546557"/>
@@ -545,10 +545,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="velodyne_motor">
+    <collision>
       <origin xyz="-0.0007438725 0.005083050000000001 0.008359974999999999" rpy="-1.5617654568599377 -0.08162793425341344 0.08089487547525437"/>
       <geometry>
         <cylinder radius="0.0544637" length="0.032463112134515464"/>
@@ -565,10 +565,10 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/neck_pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/neck_pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="d435_head_motor">
+    <collision>
       <origin xyz="0.01553645 -0.004684799999999996 0.0025092235000000003" rpy="-1.5968195967793293 0.04575443525621143 -0.04696044351276075"/>
       <geometry>
         <cylinder radius="0.0261699" length="0.12134423548428976"/>
@@ -615,7 +615,7 @@
     <visual>
       <origin xyz="0.0149 -0.0175 0.0" rpy="1.5707963267948966 0.0 1.5707963267948966"/>
       <geometry>
-        <mesh filename="package://realsense2_description/meshes/d435.dae"/>
+        <mesh filename="/workspace/models/realsense2_description/meshes/d435.dae"/>
       </geometry>
       <material name="D435_head_camera_aluminum"/>
     </visual>
@@ -713,15 +713,15 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_base_1.dae"/>
+        <mesh filename="/workspace/models/velodyne_simulator/velodyne_description/meshes/VLP16_base_1.dae"/>
       </geometry>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_base_2.dae"/>
+        <mesh filename="/workspace/models/velodyne_simulator/velodyne_description/meshes/VLP16_base_2.dae"/>
       </geometry>
     </visual>
-    <collision name="velodyne_calib_base_link">
+    <collision>
       <origin xyz="0.0 0.0 0.03585" rpy="0.0 0.0 0.0"/>
       <geometry>
         <cylinder radius="0.0516" length="0.0717"/>
@@ -743,7 +743,7 @@
     <visual>
       <origin xyz="0.0 0.0 -0.0377" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
+        <mesh filename="/workspace/models/velodyne_simulator/velodyne_description/meshes/VLP16_scan.dae"/>
       </geometry>
     </visual>
   </link>
@@ -771,7 +771,7 @@
     <visual>
       <origin xyz="0.0149 -0.0175 0.0" rpy="1.5707963267948966 0.0 1.5707963267948966"/>
       <geometry>
-        <mesh filename="package://realsense2_description/meshes/d435.dae"/>
+        <mesh filename="/workspace/models/realsense2_description/meshes/d435.dae"/>
       </geometry>
       <material name="D435i_camera_aluminum"/>
     </visual>
@@ -873,11 +873,11 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="1.5707963267948966 0.0 1.5707963267948966"/>
       <geometry>
-        <mesh filename="package://realsense_gazebo_description/meshes/t265_full.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/realsense_gazebo_description/meshes/t265_full.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="T265_camera_aluminum"/>
     </visual>
-    <collision name="T265_camera_pose_frame">
+    <collision>
       <origin xyz="-0.0064037350000000015 -0.008331499999999999 7.158999999999612e-06" rpy="1.5683956607269751 0.002431176166064703 -3.128964044931256"/>
       <geometry>
         <cylinder radius="0.0142751" length="0.1022528557886848"/>
@@ -949,14 +949,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_yaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_yaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="hip1_1">
-      <origin xyz="0.000123454 -0.011949659999999999 -0.0631367" rpy="-1.2794257859148763 0.011059385729693427 -0.008229300412466476"/>
+    <collision>
+      <origin xyz="0.000123454 -0.011949659999999999 -0.0631367" rpy="-1.57 0.011059385729693427 -0.008229300412466476"/>
       <geometry>
-        <cylinder radius="0.0747223" length="0.03069545889898954"/>
+        <cylinder radius="0.05" length="0.09"/>
       </geometry>
     </collision>
    </link>
@@ -969,16 +969,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
-    <collision name="hip2_1">
-      <origin xyz="1.1069698e-06 -0.13974034 0.0170087" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+    <collision>
+      <origin xyz="0 -0.13974034 0.0" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
       <geometry>
-        <cylinder radius="0.0808941" length="0.2919804521727749"/>
+        <box size="0.12 0.10 0.4"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="knee_1">
     <inertial>
@@ -989,17 +988,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="knee_1">
+    <collision>
       <origin xyz="-4.0765105e-06 0.0958646315 0.014374499999999998" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <box size="0.08 0.08 0.3"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle1_1">
     <inertial>
@@ -1010,16 +1008,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
-    <collision name="ankle1_1">
-      <origin xyz="-3.39946e-05 -0.0238355765 -1.2084000000000002e-05" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
+    <collision>
+      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
       <geometry>
-        <cylinder radius="0.0792379" length="0.049256315666076876"/>
+        <cylinder radius="0.065" length="0.14"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle2_1">
     <inertial>
@@ -1030,17 +1027,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="ankle2_1">
-      <origin xyz="7.660185e-06 1.8502850000000002e-05 -0.074374825" rpy="-7.419312771134829e-05 -4.365071188304786e-05 1.6192914200839787e-09"/>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.13078435048455633"/>
+        <cylinder radius="0.08586" length="0.05"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="wheel_1">
     <inertial>
@@ -1051,17 +1047,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
-    <collision name="wheel_1">
-      <origin xyz="-3.3094249999999996e-05 -5.490949999999999e-05 -0.0005398675" rpy="1.5816328784466134 -0.48253134991153823 -0.4875840488446713"/>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder radius="0.119659" length="0.0004424382093719415"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="contact_1"/>
   <joint name="contact_joint_1" type="fixed">
@@ -1121,17 +1116,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="hip1_2">
-      <origin xyz="0.000123454 0.011949659999999999 -0.0631367" rpy="1.2794257859148763 0.011059385729693427 0.008229300412466476"/>
+    <collision>
+      <origin xyz="0.000123454 0.011949659999999999 -0.0631367" rpy="-1.57 0.011059385729693427 -0.008229300412466476"/>
       <geometry>
-        <cylinder radius="0.0747223" length="0.03069545889898954"/>
+        <cylinder radius="0.05" length="0.09"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="hip2_2">
     <inertial>
@@ -1142,16 +1136,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="hip2_2">
-      <origin xyz="1.1069698e-06 -0.13974034 -0.0170087" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+    <collision>
+      <origin xyz="0 -0.13974034 0.0" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
       <geometry>
-        <cylinder radius="0.0808941" length="0.2919804521727749"/>
+        <box size="0.12 0.10 0.4"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="knee_2">
     <inertial>
@@ -1162,17 +1155,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="knee_2">
-      <origin xyz="-4.0765105e-06 0.0958646315 -0.014374499999999998" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+    <collision>
+      <origin xyz="-4.0765105e-06 0.0958646315 -0.014374499999999998" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <box size="0.08 0.08 0.3"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle1_2">
     <inertial>
@@ -1183,16 +1175,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="ankle1_2">
-      <origin xyz="2.2606999999999985e-07 -0.020764664999999998 0.000108892" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+    <collision>
+      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
       <geometry>
-        <cylinder radius="0.0781037" length="0.047884051265172006"/>
+        <cylinder radius="0.065" length="0.14"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle2_2">
     <inertial>
@@ -1203,17 +1194,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="ankle2_2">
-      <origin xyz="7.660185e-06 -1.8502850000000002e-05 -0.074374825" rpy="-3.141518460462082 4.365071188311448e-05 -1.0636022462194945"/>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.13078435048455633"/>
+        <cylinder radius="0.08586" length="0.05"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="wheel_2">
     <inertial>
@@ -1224,17 +1214,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
-    <collision name="wheel_2">
-      <origin xyz="-3.3094249999999996e-05 -5.490949999999999e-05 0.0005398675" rpy="1.55995977514318 -0.48253134991153823 -0.47752692177837863"/>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder radius="0.119659" length="0.0004424382093719415"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="contact_2"/>
   <joint name="contact_joint_2" type="fixed">
@@ -1294,17 +1283,17 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_yaw.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_yaw.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="hip1_3">
-      <origin xyz="0.000123454 -0.011949659999999999 -0.0631367" rpy="-1.2794257859148763 0.011059385729693427 -0.008229300412466476"/>
+    <collision>
+      <origin xyz="0.000123454 -0.011949659999999999 -0.0631367" rpy="-1.57 0.011059385729693427 -0.008229300412466476"/>
       <geometry>
-        <cylinder radius="0.0747223" length="0.03069545889898954"/>
+        <cylinder radius="0.05" length="0.09"/>
       </geometry>
     </collision>
-     
+
   </link>
   <link name="hip2_3">
     <inertial>
@@ -1315,16 +1304,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
-    <collision name="hip2_3">
-      <origin xyz="1.1069698e-06 -0.13974034 0.0170087" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
+    <collision>
+      <origin xyz="0 -0.13974034 0.0" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
       <geometry>
-        <cylinder radius="0.0808941" length="0.2919804521727749"/>
+        <box size="0.12 0.10 0.4"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="knee_3">
     <inertial>
@@ -1335,17 +1323,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="knee_3">
+    <collision>
       <origin xyz="-4.0765105e-06 0.0958646315 0.014374499999999998" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <box size="0.08 0.08 0.3"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle1_3">
     <inertial>
@@ -1356,16 +1343,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </visual>
-    <collision name="ankle1_3">
-      <origin xyz="-3.39946e-05 -0.0238355765 -1.2084000000000002e-05" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
+    <collision>
+      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
       <geometry>
-        <cylinder radius="0.0792379" length="0.049256315666076876"/>
+        <cylinder radius="0.065" length="0.14"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle2_3">
     <inertial>
@@ -1376,17 +1362,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="ankle2_3">
-      <origin xyz="7.660185e-06 1.8502850000000002e-05 -0.074374825" rpy="-7.419312771134828e-05 -4.365071188304787e-05 1.6192914200839787e-09"/>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.13078435048455633"/>
+        <cylinder radius="0.08586" length="0.05"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="wheel_3">
     <inertial>
@@ -1397,17 +1382,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
-    <collision name="wheel_3">
-      <origin xyz="-3.3094249999999996e-05 -5.490949999999999e-05 -0.0005398675" rpy="1.5816328784466134 -0.4825313499115383 -0.4875840488446713"/>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder radius="0.119659" length="0.0004424382093719415"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="contact_3"/>
   <joint name="contact_joint_3" type="fixed">
@@ -1467,17 +1451,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="hip1_4">
-      <origin xyz="0.000123454 0.011949659999999999 -0.0631367" rpy="1.2794257859148763 0.011059385729693427 0.008229300412466476"/>
+    <collision>
+      <origin xyz="0.000123454 0.011949659999999999 -0.0631367" rpy="-1.57 0.011059385729693427 -0.008229300412466476"/>
       <geometry>
-        <cylinder radius="0.0747223" length="0.03069545889898954"/>
+        <cylinder radius="0.05" length="0.09"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="hip2_4">
     <inertial>
@@ -1488,16 +1471,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/hip_pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="hip2_4">
-      <origin xyz="1.1069698e-06 -0.13974034 -0.0170087" rpy="-1.5506703332236162 -7.245623411688702e-06 7.1012460371042874e-06"/>
+    <collision>
+      <origin xyz="0 -0.13974034 0.0" rpy="-1.590922320366177 -7.245623411688702e-06 7.392936162146956e-06"/>
       <geometry>
-        <cylinder radius="0.0808941" length="0.2919804521727749"/>
+        <box size="0.12 0.10 0.4"/>
       </geometry>
-    </collision>
-     
+    </collision> 
   </link>
   <link name="knee_4">
     <inertial>
@@ -1508,17 +1490,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/knee.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="knee_4">
-      <origin xyz="-4.0765105e-06 0.0958646315 -0.014374499999999998" rpy="-1.5324783052069388 -4.051211363355209e-05 3.898876897123139e-05"/>
+    <collision>
+      <origin xyz="-4.0765105e-06 0.0958646315 -0.014374499999999998" rpy="-1.6091143483828545 -4.05121136335521e-05 4.209497746049719e-05"/>
       <geometry>
-        <cylinder radius="0.0664305" length="0.19275022460612404"/>
+        <box size="0.08 0.08 0.3"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle1_4">
     <inertial>
@@ -1529,16 +1510,15 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/ankle_pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
-    <collision name="ankle1_4">
-      <origin xyz="2.2606999999999985e-07 -0.020764664999999998 0.000108892" rpy="-1.5912124764368596 0.00029736415014251105 -0.00030349800898839713"/>
+    <collision>
+      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
       <geometry>
-        <cylinder radius="0.0781037" length="0.047884051265172006"/>
+        <cylinder radius="0.065" length="0.14"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="ankle2_4">
     <inertial>
@@ -1549,17 +1529,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_isaac/meshes/mesh_ankle_yaw_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
-    <collision name="ankle2_4">
-      <origin xyz="7.660185e-06 -1.8502850000000002e-05 -0.074374825" rpy="-3.141518460462082 4.3650711883114486e-05 -1.0636022462194945"/>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.13078435048455633"/>
+        <cylinder radius="0.08586" length="0.05"/>
       </geometry>
     </collision>
-     
   </link>
   <link name="wheel_4">
     <inertial>
@@ -1570,17 +1549,16 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/mesh_wheel23.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
-    <collision name="wheel_4">
-      <origin xyz="-3.3094249999999996e-05 -5.490949999999999e-05 0.0005398675" rpy="1.55995977514318 -0.4825313499115383 -0.47752692177837863"/>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder radius="0.119659" length="0.0004424382093719415"/>
+        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/v2/collision/mesh_wheel23.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
-    </collision>
-     
+    </collision> 
   </link>
   <link name="contact_4"/>
   <joint name="contact_joint_4" type="fixed">
