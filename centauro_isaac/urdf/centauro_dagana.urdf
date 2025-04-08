@@ -17,12 +17,11 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+      <origin rpy="0.05 0.0 0.0" xyz="0.0 0 0.10"/>
       <geometry>
-        <mesh filename="/workspace/models/iit-centauro-ros-pkg/centauro_urdf/meshes/simple/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.6 0.3 0.22"/>
       </geometry>
     </collision>
-     
   </link>
   <joint name="base_to_base_inertia" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -55,9 +54,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-3.2165000000000015e-05 9.785000000000002e-05 0.07465275" rpy="1.5666391113102787 -0.01588146658428072 -0.0158155835137567"/>
+      <origin xyz="0 0 0.07465275" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.158224" length="0.09543675990850982"/>
+        <cylinder radius="0.15" length="0.20"/>
       </geometry>
     </collision>
      
@@ -1012,9 +1011,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
+      <origin xyz="0 -0.0238355765 -0.01" rpy="1.5740621233399696 0.0 0.0"/>
       <geometry>
-        <cylinder radius="0.065" length="0.14"/>
+        <cylinder radius="0.05" length="0.14"/>
       </geometry>
     </collision>
   </link>
@@ -1034,7 +1033,7 @@
     <collision>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.05"/>
+        <cylinder radius="0.075" length="0.05"/>
       </geometry>
     </collision>
   </link>
@@ -1179,9 +1178,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
+      <origin xyz="0 -0.0238355765 0.01" rpy="1.5740621233399696 0.0 0.0"/>
       <geometry>
-        <cylinder radius="0.065" length="0.14"/>
+        <cylinder radius="0.05" length="0.14"/>
       </geometry>
     </collision>
   </link>
@@ -1201,7 +1200,7 @@
     <collision>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.05"/>
+        <cylinder radius="0.075" length="0.05"/>
       </geometry>
     </collision>
   </link>
@@ -1347,9 +1346,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
+      <origin xyz="0 -0.0238355765 -0.01" rpy="1.5740621233399696 0.0 0.0"/>
       <geometry>
-        <cylinder radius="0.065" length="0.14"/>
+        <cylinder radius="0.05" length="0.14"/>
       </geometry>
     </collision>
   </link>
@@ -1369,7 +1368,7 @@
     <collision>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.05"/>
+        <cylinder radius="0.075" length="0.05"/>
       </geometry>
     </collision>
   </link>
@@ -1514,9 +1513,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 -0.0238355765 0" rpy="1.5740621233399696 0.0004934392809863637 0.0004950533903306543"/>
+      <origin xyz="0 -0.0238355765 0.01" rpy="1.5740621233399696 0.0 0.0"/>
       <geometry>
-        <cylinder radius="0.065" length="0.14"/>
+        <cylinder radius="0.05" length="0.14"/>
       </geometry>
     </collision>
   </link>
@@ -1536,7 +1535,7 @@
     <collision>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.08586" length="0.05"/>
+        <cylinder radius="0.075" length="0.05"/>
       </geometry>
     </collision>
   </link>
