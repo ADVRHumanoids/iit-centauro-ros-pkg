@@ -26,6 +26,7 @@
 	<xacro:arg name="t265_base" default="false"/>
 </xacro:unless>
 <xacro:arg name="floating_joint" default="false"/>
+<xacro:arg name="fixed_base_joint" default="false"/>
 <xacro:arg name="virtual_frame" default="false"/> <!-- For cartesio model must be set to true-->
 <xacro:arg name="end_effector_left" default="$(arg end_effector_left)"/> <!-- none, ball, dagana_fixed, dagana -->
 <xacro:arg name="end_effector_right" default="$(end_effector_right)"/> <!-- none, ball, dagana_fixed, dagana -->
@@ -44,6 +45,7 @@
 <xacro:property name="DAGANA_STANDALONE_PLUGIN" value="true" />
 
 <xacro:property name="ADD_FLOATING_BASE" value="$(arg floating_joint)" />
+<xacro:property name="ADD_FIXED_BASE" value="$(arg fixed_base_joint)" />
 <xacro:property name="ADD_VIRTUAL_FRAME" value="$(arg virtual_frame)" />
 
 <xacro:property name="USE_STICKS" value="false" />

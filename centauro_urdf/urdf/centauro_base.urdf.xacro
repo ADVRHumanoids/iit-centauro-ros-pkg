@@ -47,6 +47,15 @@
         </joint>
     </xacro:if>
 
+    <xacro:if value="${ADD_FIXED_BASE}">
+        <link name="world"/>
+        <joint name="fixed_joint" type="fixed">
+            <parent link="world" />
+            <child link="pelvis" />
+            <origin xyz="0 0 0.85" rpy="0 0 0" />
+        </joint>
+    </xacro:if>
+
     <link name="imu_link" />
 
     <joint name="imu_joint" type="fixed">
