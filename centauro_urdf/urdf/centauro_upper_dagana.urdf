@@ -8,6 +8,7 @@
   <!-- 
   ROS urdf definition of the CENTAURO humanoid robot by Istituto Italiano di Tecnologia
   
+  Author Enrico Mingo Hoffman
 -->
   <!-- scaling facto for available peack torque link side, from 0 to 1 -->
   <material name="black">
@@ -28,9 +29,9 @@
   <link name="base_link"/>
   <link name="pelvis">
     <inertial>
-      <origin xyz="0.010310423 0.0034907373000000004 0.057233845000000005"/>
-      <mass value="18.845851"/>
-      <inertia ixx="0.8762753299999999" ixy="0.022209997" ixz="-0.0061989843" iyy="1.6329654999999998" iyz="0.004551487199999999" izz="1.9611303"/>
+      <origin xyz="-0.0016320207 0.0026534004000000003 0.079167428"/>
+      <mass value="26.584529"/>
+      <inertia ixx="0.39195477" ixy="0.024781258999999996" ixz="0.017108606999999998" iyy="1.0000708999999999" iyz="0.0052627106000000005" izz="1.0679988999999999"/>
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
@@ -599,14 +600,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0001_simplified.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0001-simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dagana_dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0001_simplified_v2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0001-simplified_v2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -626,14 +627,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dagana_dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0002_ch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0002-ch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -672,14 +673,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0001_simplified.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0001-simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dagana_dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0001_simplified_v2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0001-simplified_v2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -699,14 +700,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0002.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dagana_dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/dg0002_ch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://dagana_urdf/meshes/dg0002-ch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -729,7 +730,6 @@
     </inertial>
   </link>
   <!-- LINKS -->
-  <!-- LINKS -->
   <link name="neck_1">
     <inertial>
       <origin xyz="0 0 0"/>
@@ -740,13 +740,33 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/head_base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/head_base_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/simple/head-base_mesh.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="velodyne_motor">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0.33878686"/>
+      <!-- MASS/INERTIA TO DO -->
+      <inertia ixx="0.0003718568" ixy="-9.42983e-05" ixz="-2.80644e-05" iyy="0.0001886879" iyz="-1.54534e-05" izz="0.0005023443"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro_urdf/meshes/simple/lidar_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -760,13 +780,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/neck_pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro_urdf/meshes/simple/neck_pitch_mesh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://centauro_urdf/meshes/simple/neck-pitch_mesh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -777,7 +797,14 @@
     <child link="neck_1"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <!-- **************** HEAD CAMERA **************************** -->
+  <joint name="velodyne_joint" type="revolute">
+    <parent link="neck_1"/>
+    <origin rpy="0 0 0" xyz="0.0822724 0 0.242"/>
+    <child link="velodyne_motor"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="35" lower="-1.1" upper="1.1" velocity="5.7"/>
+    <dynamics friction="10.0"/>
+  </joint>
   <joint name="d435_head_joint" type="revolute">
     <parent link="neck_1"/>
     <origin rpy="0 0 0" xyz="0.06 0 0.1375"/>
@@ -802,8 +829,8 @@
     <visual>
       <origin rpy="1.570796326795 0 1.570796326795" xyz="0.0149 -0.0175 0"/>
       <geometry>
-        <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        <box size="0.09 0.025 0.02505"/>
+        <!-- <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/> -->
       </geometry>
       <material name="D435_head_camera_aluminum"/>
     </visual>
@@ -820,91 +847,12 @@
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
     </inertial>
   </link>
-   <!-- camera depth joints and links -->
-  <joint name="D435_head_camera_depth_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="D435_head_camera_link"/>
-    <child link="D435_head_camera_depth_frame"/>
-  </joint>
-  <link name="D435_head_camera_depth_frame"/>
-  <joint name="D435_head_camera_depth_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435_head_camera_depth_frame"/>
-    <child link="D435_head_camera_depth_optical_frame"/>
-  </joint>
-  <link name="D435_head_camera_depth_optical_frame"/>
-  <!-- camera left IR joints and links -->
-  <joint name="D435_head_camera_left_ir_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0.0 0"/>
-    <parent link="D435_head_camera_depth_frame"/>
-    <child link="D435_head_camera_left_ir_frame"/>
-  </joint>
-  <link name="D435_head_camera_left_ir_frame"/>
-  <joint name="D435_head_camera_left_ir_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435_head_camera_left_ir_frame"/>
-    <child link="D435_head_camera_left_ir_optical_frame"/>
-  </joint>
-  <link name="D435_head_camera_left_ir_optical_frame"/>
-  <!-- camera right IR joints and links -->
-  <joint name="D435_head_camera_right_ir_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 -0.05 0"/>
-    <parent link="D435_head_camera_depth_frame"/>
-    <child link="D435_head_camera_right_ir_frame"/>
-  </joint>
-  <link name="D435_head_camera_right_ir_frame"/>
-  <joint name="D435_head_camera_right_ir_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435_head_camera_right_ir_frame"/>
-    <child link="D435_head_camera_right_ir_optical_frame"/>
-  </joint>
-  <link name="D435_head_camera_right_ir_optical_frame"/>
-  <!-- camera color joints and links -->
-  <joint name="D435_head_camera_color_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0.015 0"/>
-    <parent link="D435_head_camera_depth_frame"/>
-    <child link="D435_head_camera_color_frame"/>
-  </joint>
-  <link name="D435_head_camera_color_frame"/>
-  <joint name="D435_head_camera_color_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435_head_camera_color_frame"/>
-    <child link="D435_head_camera_color_optical_frame"/>
-  </joint>
-  <link name="D435_head_camera_color_optical_frame"/>
-  <!-- camera accel joints and links -->
-  <joint name="D435_head_camera_accel_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.00174 0.00552 0.0176"/>
-    <parent link="D435_head_camera_link"/>
-    <child link="D435_head_camera_accel_frame"/>
-  </joint>
-  <link name="D435_head_camera_accel_frame"/>
-  <joint name="D435_head_camera_accel_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435_head_camera_accel_frame"/>
-    <child link="D435_head_camera_accel_optical_frame"/>
-  </joint>
-  <link name="D435_head_camera_accel_optical_frame"/>
-  <!-- camera gyro joints and links -->
-  <joint name="D435_head_camera_gyro_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.00174 0.00552 0.0176"/>
-    <parent link="D435_head_camera_link"/>
-    <child link="D435_head_camera_gyro_frame"/>
-  </joint>
-  <link name="D435_head_camera_gyro_frame"/>
-  <joint name="D435_head_camera_gyro_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435_head_camera_gyro_frame"/>
-    <child link="D435_head_camera_gyro_optical_frame"/>
-  </joint>
-  <link name="D435_head_camera_gyro_optical_frame"/>
-  <!-- **************** PELVIS CAMERA **************************** -->
+  <!-- camera body, with origin at bottom screw mount -->
   <joint name="D435i_camera_joint" type="fixed">
     <origin rpy="0 0.54 0" xyz="0.272 0 0.084"/>
     <parent link="pelvis"/>
     <child link="D435i_camera_bottom_screw_frame"/>
   </joint>
-  <!-- camera body, with origin at bottom screw mount -->
   <link name="D435i_camera_bottom_screw_frame"/>
   <joint name="D435i_camera_link_joint" type="fixed">
     <origin rpy="0 0.0050 -0.008" xyz="0.053 0.0 -0.035"/>
@@ -915,8 +863,8 @@
     <visual>
       <origin rpy="1.570796326795 0 1.570796326795" xyz="0.053 -0.0 0"/>
       <geometry>
-        <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-        <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae"/>
+        <box size="0.09 0.025 0.02505"/>
+        <!-- <mesh filename="package://centauro_urdf/meshes/realsense/d435.dae" /> -->
       </geometry>
       <material name="D435i_camera_aluminum"/>
     </visual>
@@ -933,83 +881,6 @@
       <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
     </inertial>
   </link>
-  <!-- camera depth joints and links -->
-  <joint name="D435i_camera_depth_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="D435i_camera_link"/>
-    <child link="D435i_camera_depth_frame"/>
-  </joint>
-  <link name="D435i_camera_depth_frame"/>
-  <joint name="D435i_camera_depth_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435i_camera_depth_frame"/>
-    <child link="D435i_camera_depth_optical_frame"/>
-  </joint>
-  <link name="D435i_camera_depth_optical_frame"/>
-  <!-- camera left IR joints and links -->
-  <joint name="D435i_camera_left_ir_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0.0 0"/>
-    <parent link="D435i_camera_depth_frame"/>
-    <child link="D435i_camera_left_ir_frame"/>
-  </joint>
-  <link name="D435i_camera_left_ir_frame"/>
-  <joint name="D435i_camera_left_ir_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435i_camera_left_ir_frame"/>
-    <child link="D435i_camera_left_ir_optical_frame"/>
-  </joint>
-  <link name="D435i_camera_left_ir_optical_frame"/>
-  <!-- camera right IR joints and links -->
-  <joint name="D435i_camera_right_ir_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 -0.05 0"/>
-    <parent link="D435i_camera_depth_frame"/>
-    <child link="D435i_camera_right_ir_frame"/>
-  </joint>
-  <link name="D435i_camera_right_ir_frame"/>
-  <joint name="D435i_camera_right_ir_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435i_camera_right_ir_frame"/>
-    <child link="D435i_camera_right_ir_optical_frame"/>
-  </joint>
-  <link name="D435i_camera_right_ir_optical_frame"/>
-  <!-- camera color joints and links -->
-  <joint name="D435i_camera_color_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0.015 0"/>
-    <parent link="D435i_camera_depth_frame"/>
-    <child link="D435i_camera_color_frame"/>
-  </joint>
-  <link name="D435i_camera_color_frame"/>
-  <joint name="D435i_camera_color_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435i_camera_color_frame"/>
-    <child link="D435i_camera_color_optical_frame"/>
-  </joint>
-  <link name="D435i_camera_color_optical_frame"/>
-    <!-- camera accel joints and links -->
-  <joint name="D435i_camera_accel_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.00174 0.00552 0.0176"/>
-    <parent link="D435i_camera_link"/>
-    <child link="D435i_camera_accel_frame"/>
-  </joint>
-  <link name="D435i_camera_accel_frame"/>
-  <joint name="D435i_camera_accel_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435i_camera_accel_frame"/>
-    <child link="D435i_camera_accel_optical_frame"/>
-  </joint>
-  <link name="D435i_camera_accel_optical_frame"/>
-  <!-- camera gyro joints and links -->
-  <joint name="D435i_camera_gyro_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.00174 0.00552 0.0176"/>
-    <parent link="D435i_camera_link"/>
-    <child link="D435i_camera_gyro_frame"/>
-  </joint>
-  <link name="D435i_camera_gyro_frame"/>
-  <joint name="D435i_camera_gyro_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="D435i_camera_gyro_frame"/>
-    <child link="D435i_camera_gyro_optical_frame"/>
-  </joint>
-  <link name="D435i_camera_gyro_optical_frame"/>
+  <!-- ************ Control frames ************ -->
 </robot>
 

@@ -5,7 +5,7 @@
     <arg name="big_wheel" default="true"/>
 
 
-    <param name="robot_description" command="xacro '$(find centauro_urdf)/urdf/centauro.urdf.xacro' big_wheel:=$(arg big_wheel)" />
+    <param name="robot_description" command="xacro '$(find centauro_urdf)/urdf/centauro_upper_dagana_no_palms.urdf'" />
     <param name="use_gui" value="$(arg gui)"/>
     <param name="rate" value="50.0"/>
      
