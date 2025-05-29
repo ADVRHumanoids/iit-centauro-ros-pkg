@@ -25,6 +25,14 @@
 	<xacro:arg name="d435i_base" default="false"/>
 	<xacro:arg name="t265_base" default="false"/>
 </xacro:unless>
+<xacro:arg name="d435i_head_color_width" default="1280"/>
+<xacro:arg name="d435i_head_color_height" default="720"/>
+<xacro:arg name="d435i_head_color_fps" default="30"/>
+<xacro:arg name="d435i_head_depth_width" default="1280"/>
+<xacro:arg name="d435i_head_depth_height" default="720"/>
+<xacro:arg name="d435i_head_depth_fps" default="90"/>
+<xacro:arg name="d435i_head_enable_pointcloud" default="true"/>
+
 <xacro:arg name="floating_joint" default="true"/>
 <xacro:arg name="virtual_frame" default="false"/> <!-- For cartesio model must be set to true-->
 <xacro:arg name="end_effector_left" default="$(arg end_effector_left)"/> <!-- none, ball, dagana_fixed, dagana -->
@@ -48,7 +56,16 @@
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
 <xacro:property name="ADD_D435I_HEAD" value="$(arg d435i_head)" />
+<xacro:property name="D435I_HEAD_COLOR_WIDTH" value="$(arg d435i_head_color_width)" />
+<xacro:property name="D435I_HEAD_COLOR_HEIGHT" value="$(arg d435i_head_color_height)" />
+<xacro:property name="D435I_HEAD_COLOR_FPS" value="$(arg d435i_head_color_height)" />
+<xacro:property name="D435I_HEAD_DEPTH_WIDTH" value="$(arg d435i_head_depth_width)" />
+<xacro:property name="D435I_HEAD_DEPTH_HEIGHT" value="$(arg d435i_head_depth_height)" />
+<xacro:property name="D435I_HEAD_DEPTH_FPS" value="$(arg d435i_head_depth_height)" />
+<xacro:property name="D435I_HEAD_ENABLE_POINTCLOUD" value="$(arg d435i_head_enable_pointcloud)" />
+
 <xacro:property name="ADD_D435I_BASE" value="$(arg d435i_base)" />
 <xacro:property name="ADD_T265_BASE" value="$(arg t265_base)" />
+
 
 </robot>
