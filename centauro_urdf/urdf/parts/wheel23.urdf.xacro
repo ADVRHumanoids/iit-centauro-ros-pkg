@@ -59,16 +59,25 @@
             </visual>
 
             <collision>
-                <origin xyz="0 0 0" rpy="0 0 0" />
-                <geometry>
                 <xacro:if value="${USE_WHEEL_23_SPHERE_COLLISION}">
-                    <sphere radius="0.125"/>
+                    <origin xyz="0 0 0" rpy="0 0 0" />
+                    <geometry>
+                        <sphere radius="0.125"/>
+                    </geometry>
                 </xacro:if>
-                <xacro:unless value="${USE_WHEEL_23_SPHERE_COLLISION}">
-                    <mesh filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl"
-                        scale="0.001 0.001 ${mirror*0.001}" />
+                <xacro:if value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION}">
+                    <origin xyz="0 ${-(0.125-0.015)} 0" rpy="0 0 0" />
+                    <geometry>
+                        <sphere radius="0.015" />
+                    </geometry>
+                </xacro:if>
+                <xacro:unless value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION or USE_WHEEL_23_SPHERE_COLLISION}">
+                    <origin xyz="0 0 0" rpy="0 0 0" />
+                    <geometry>
+                        <mesh   filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl"
+                                scale="0.001 0.001 ${mirror*0.001}" />
+                    </geometry>
                 </xacro:unless>                    
-                </geometry>
                 <material name="black" />
             </collision>
         </link>
