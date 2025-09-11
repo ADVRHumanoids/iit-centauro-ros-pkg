@@ -113,12 +113,24 @@
         depth_width="${D435I_HEAD_DEPTH_WIDTH}" 
         depth_height="${D435I_HEAD_DEPTH_HEIGHT}" 
         depth_fps="${D435I_HEAD_DEPTH_FPS}" 
+        depth_fx="${D435I_HEAD_DEPTH_FX}" 
+        depth_fy="${D435I_HEAD_DEPTH_FY}" 
+        depth_cx="${D435I_HEAD_DEPTH_CX}" 
+        depth_cy="${D435I_HEAD_DEPTH_CY}" 
+        clip_distance="${D435I_HEAD_CLIP_DISTANCE}"
+        clip_distance_min="${D435I_HEAD_CLIP_DISTANCE_MIN}"
+
         infra_width="1280" 
         infra_height="720" 
         infra_fps="90" 
         color_width="${D435I_HEAD_COLOR_WIDTH}" 
         color_height="${D435I_HEAD_COLOR_HEIGHT}" 
-        color_fps="${D435I_HEAD_COLOR_FPS}">
+        color_fps="${D435I_HEAD_COLOR_FPS}"
+        color_fx="${D435I_HEAD_COLOR_FX}" 
+        color_fy="${D435I_HEAD_COLOR_FY}" 
+        color_cx="${D435I_HEAD_COLOR_CX}" 
+        color_cy="${D435I_HEAD_COLOR_CY}"
+        >
 
         <xacro:insert_block name="d435_head_origin" />
 

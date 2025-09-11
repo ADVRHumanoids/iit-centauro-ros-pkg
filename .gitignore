@@ -29,6 +29,7 @@
 
 #kdevelop
 *.kdev4
+*.vscode
 
 # merge
 *.orig

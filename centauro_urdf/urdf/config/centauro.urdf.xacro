@@ -28,9 +28,20 @@
 <xacro:arg name="d435i_head_color_width" default="1280"/>
 <xacro:arg name="d435i_head_color_height" default="720"/>
 <xacro:arg name="d435i_head_color_fps" default="30"/>
+<xacro:arg name="d435i_head_color_fx" default="909.7210083007812"/>
+<xacro:arg name="d435i_head_color_fy" default="909.655029296875"/>
+<xacro:arg name="d435i_head_color_cx" default="649.3759155273438"/>
+<xacro:arg name="d435i_head_color_cy" default="381.8260498046875"/>
+
 <xacro:arg name="d435i_head_depth_width" default="1280"/>
 <xacro:arg name="d435i_head_depth_height" default="720"/>
-<xacro:arg name="d435i_head_depth_fps" default="90"/>
+<xacro:arg name="d435i_head_depth_fps" default="30"/>
+<xacro:arg name="d435i_head_depth_fx" default="650.98046875"/>
+<xacro:arg name="d435i_head_depth_fy" default="650.98046875"/>
+<xacro:arg name="d435i_head_depth_cx" default="639.7286987304688"/>
+<xacro:arg name="d435i_head_depth_cy" default="361.9244384765625"/>
+<xacro:arg name="d435i_head_clip_distance" default="10"/>
+<xacro:arg name="d435i_head_clip_distance_min" default="0.280"/>
 <xacro:arg name="d435i_head_enable_pointcloud" default="true"/>
 
 <xacro:arg name="floating_joint" default="true"/>
@@ -55,13 +66,25 @@
 <xacro:property name="USE_WHEEL_23" value="$(arg big_wheel)" />
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
+
 <xacro:property name="ADD_D435I_HEAD" value="$(arg d435i_head)" />
 <xacro:property name="D435I_HEAD_COLOR_WIDTH" value="$(arg d435i_head_color_width)" />
 <xacro:property name="D435I_HEAD_COLOR_HEIGHT" value="$(arg d435i_head_color_height)" />
-<xacro:property name="D435I_HEAD_COLOR_FPS" value="$(arg d435i_head_color_height)" />
+<xacro:property name="D435I_HEAD_COLOR_FPS" value="$(arg d435i_head_color_fps)" />
+<xacro:property name="D435I_HEAD_COLOR_FX" value="$(arg d435i_head_color_fx)" />
+<xacro:property name="D435I_HEAD_COLOR_FY" value="$(arg d435i_head_color_fy)" />
+<xacro:property name="D435I_HEAD_COLOR_CX" value="$(arg d435i_head_color_cx)" />
+<xacro:property name="D435I_HEAD_COLOR_CY" value="$(arg d435i_head_color_cy)" />
+
 <xacro:property name="D435I_HEAD_DEPTH_WIDTH" value="$(arg d435i_head_depth_width)" />
 <xacro:property name="D435I_HEAD_DEPTH_HEIGHT" value="$(arg d435i_head_depth_height)" />
-<xacro:property name="D435I_HEAD_DEPTH_FPS" value="$(arg d435i_head_depth_height)" />
+<xacro:property name="D435I_HEAD_DEPTH_FPS" value="$(arg d435i_head_depth_fps)" />
+<xacro:property name="D435I_HEAD_DEPTH_FX" value="$(arg d435i_head_depth_fx)" />
+<xacro:property name="D435I_HEAD_DEPTH_FY" value="$(arg d435i_head_depth_fy)" />
+<xacro:property name="D435I_HEAD_DEPTH_CX" value="$(arg d435i_head_depth_cx)" />
+<xacro:property name="D435I_HEAD_DEPTH_CY" value="$(arg d435i_head_depth_cy)" />
+<xacro:property name="D435I_HEAD_CLIP_DISTANCE" value="$(arg d435i_head_clip_distance)" />
+<xacro:property name="D435I_HEAD_CLIP_DISTANCE_MIN" value="$(arg d435i_head_clip_distance_min)" />
 <xacro:property name="D435I_HEAD_ENABLE_POINTCLOUD" value="$(arg d435i_head_enable_pointcloud)" />
 
 <xacro:property name="ADD_D435I_BASE" value="$(arg d435i_base)" />
