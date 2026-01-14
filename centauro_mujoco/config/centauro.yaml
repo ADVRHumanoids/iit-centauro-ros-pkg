@@ -1,0 +1,65 @@
+motor_pd:
+  j_arm*_1: [500, 10]
+  j_arm*_2: [500, 10]
+  j_arm*_3: [500, 10]
+  j_arm*_4: [500, 10]
+  j_arm*_5: [100, 5]
+  j_arm*_6: [100, 5]
+  j_arm*_7: [100, 5]
+  hip_yaw_*: [3000, 30]
+  hip_pitch_*: [3000, 30]
+  knee_pitch_*: [3000, 30]
+  ankle_pitch_*: [1000, 10]
+  ankle_yaw_*: [300, 10]
+  neck_pitch: [10, 1]
+  neck_yaw: [10, 1]
+  torso_yaw: [1000, 30]
+  j_wheel_*: [0, 30]
+
+motor_vel:
+  j_wheel_*: [1]
+  neck_velodyne: [1]
+
+q_init:
+  hip_yaw_1: -0.746874
+  hip_pitch_1: -1.25409
+  knee_pitch_1: -1.55576
+  ankle_pitch_1: -0.301666
+  ankle_yaw_1: 0.746874
+  j_wheel_1: 0.0
+  hip_yaw_2: 0.746874
+  hip_pitch_2: 1.25409
+  knee_pitch_2: 1.55576
+  ankle_pitch_2: 0.301666
+  ankle_yaw_2: -0.746874
+  j_wheel_2: 0.0
+  j_arm1_1: 0.520149
+  j_arm1_2: 0.320865
+  j_arm1_3: 0.274669
+  j_arm1_4: -2.23604
+  j_arm1_5: 0.0500815
+  j_arm1_6: -0.781461
+  j_arm1_7: -0.0567608
+  neck_yaw: 0.0
+  neck_pitch: 0.2
+  hip_yaw_3: 0.746874
+  hip_pitch_3: 1.25409
+  knee_pitch_3: 1.55576
+  ankle_pitch_3: 0.301667
+  ankle_yaw_3: -0.746874
+  j_wheel_3: 0.0
+  hip_yaw_4: -0.746874
+  hip_pitch_4: -1.25409
+  knee_pitch_4: -1.55576
+  ankle_pitch_4: -0.301667
+  ankle_yaw_4: 0.746874
+  j_wheel_4: 0.0
+  j_arm2_1: 0.520149
+  j_arm2_2: -0.320865
+  j_arm2_3: -0.274669
+  j_arm2_4: -2.23604
+  j_arm2_5: -0.0500815
+  j_arm2_6: -0.781461
+  j_arm2_7: 0.0567608
+  torso_yaw: 0.0
+  neck_velodyne: 0.0

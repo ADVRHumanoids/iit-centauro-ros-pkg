@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+In this version the force torque sensor is modelled measuring the wrench on the last revolute joint in the robot and then reporting the measurement
+in the sensor location.
+-->
+<robot xmlns:xacro="http:/ros.org/wiki/xacro">
+
+<xacro:if value="${FORCE_TORQUE_SENSORS}" >
+       <gazebo reference="j_arm1_6">	<!-- joint on which the sensor is located -->
+              <sensor type="force_torque" name="l_arm_ft">
+                     <force_torque>
+                       <frame>sensor</frame>
+                       <measure_direction>child_to_parent</measure_direction>     
+                     </force_torque>
+		       <always_on>true</always_on>
+		       <visualize>true</visualize>
+		       <update_rate>200</update_rate>
+		       <!--pose>0 0 -0.02 0 0 0</pose--> <!-- express reading wrt frame transformed by this pose -->
+	       </sensor>
+       </gazebo>
+
+       <gazebo reference="j_arm2_6">
+	       <sensor type="force_torque" name="r_arm_ft">
+                     <force_torque>
+                       <frame>sensor</frame>
+                       <measure_direction>child_to_parent</measure_direction>
+                     </force_torque>
+		       <always_on>true</always_on>
+		       <visualize>true</visualize>
+		       <update_rate>200</update_rate>
+		       <!--pose>0 0 -0.02 0 0 0</pose--> <!-- check! -->
+              </sensor>
+       </gazebo>
+
+</xacro:if>
+
+
+</robot>

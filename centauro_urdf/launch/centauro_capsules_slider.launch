@@ -2,7 +2,7 @@
      <arg name="gui" default="true" />
 
      <!-- send the cogimon robot XML to param server -->
-     <param name="robot_description" command="$(find xacro)/xacro '$(find centauro_urdf)/urdf/centauro_capsules.rviz'" />
+     <param name="robot_description" command="xacro '$(find centauro_urdf)/urdf/centauro_capsule.urdf'" />
      <!-- param name="robot_description_semantic" textfile="$(find cogimon_srdf)/srdf/cogimon.srdf" / -->   
      <param name="use_gui" value="$(arg gui)"/>
         

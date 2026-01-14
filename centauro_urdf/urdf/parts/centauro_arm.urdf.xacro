@@ -141,20 +141,20 @@
       <visual>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="package://centauro_urdf/meshes/wrist_pitch_right.stl" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </visual>
 	
       <collision>
          <origin xyz="0.0 0.0 0.0"  rpy="0.0 0.0 0.0"/>
    <geometry>
-      <mesh filename="package://centauro_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 ${-rot*0.001} 0.001" />
+      <mesh filename="package://centauro_urdf/meshes/simple/wrist_pitch_right.stl" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
    </link>
 <!-- /wrist yaw-pitch -->
 
-   <link name="arm${arm_num}_7">
+   <!-- <link name="arm${arm_num}_7">
       <inertial>
          <origin xyz="${Wrist_3_x} ${rot*Wrist_3_y} ${Wrist_3_z}"/>
          <mass value="${Wrist_3_mass}"/>
@@ -175,7 +175,7 @@
       <mesh filename="package://centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 ${-rot*0.001} 0.001" />
    </geometry>
       </collision>
-   </link>
+   </link> -->
 
 <!-- /LINKS -->
 
@@ -241,13 +241,13 @@
 <!-- /wrist yaw-->
 	
 <!-- wrist pitch-->
-   <joint name="j_arm${arm_num}_7" type="revolute">
+   <!-- <joint name="j_arm${arm_num}_7" type="fixed">
       <parent link="arm${arm_num}_6"/>
       <child link="arm${arm_num}_7"/>
       <origin xyz="${Wrist_3_Ox} ${rot*Wrist_3_Oy} ${Wrist_3_Oz}"/>
       <axis xyz="0 0 1"/>
       <limit lower="${j_arm_7_lower[arm_num-1]}" upper="${j_arm_7_upper[arm_num-1]}" effort="${j_arm_7_torque[arm_num-1]}" velocity="${j_arm_7_velocity[arm_num-1]}"/>
-   </joint>
+   </joint> -->
 <!-- wrist pitch-->
 
 <!-- force-troque sensor -->
@@ -255,21 +255,21 @@
 
 <!-- end-effector -->
 <!-- wrist pitch-->
-   <joint name="j_ft_${arm_num}" type="fixed">
+   <!-- <joint name="j_ft_${arm_num}" type="fixed">
       <parent link="arm${arm_num}_7"/>
       <child link="ft_arm${arm_num}"/>
       <origin xyz="${Ft_arm_Ox} ${Ft_arm_Oy} ${Ft_arm_Oz}" rpy="${Ft_arm_roll} ${Ft_arm_pitch} ${Ft_arm_yaw}" />
       <axis xyz="0 0 1"/>
       <limit lower="0.0" upper="0.0" effort="0" velocity="0"/>
-   </joint>
+   </joint> -->
 
 <!-- wrist pitch-->
-   <link name="ft_arm${arm_num}">
+   <!-- <link name="ft_arm${arm_num}">
       <inertial>
          <origin xyz="${Ft_arm_x} ${rot*Ft_arm_y} ${Ft_arm_z}"/>
          <mass value="${Ft_arm_mass}"/>
          <inertia ixx="${Ft_arm_xx}" ixy="${rot*Ft_arm_xy}" ixz="${Ft_arm_xz}" iyy="${Ft_arm_yy}" iyz="${rot*Ft_arm_yz}" izz="${Ft_arm_zz}"/>
-      </inertial>
+      </inertial> -->
       <!--visual>
          <origin xyz="0.0 0.0 0.0"  rpy="${PI} 0.0 0.0"/>
    <geometry>
@@ -284,7 +284,7 @@
    </geometry>
       </collision-->
 
-   </link>
+   <!-- </link> -->
 
 
 

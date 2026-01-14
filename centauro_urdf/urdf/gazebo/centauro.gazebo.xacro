@@ -35,7 +35,6 @@
         </gazebo>
 
         <gazebo reference="wheel_1">
-            <material>Gazebo/Residential </material>
             <collision>
                 <surface>
                     <friction>
@@ -71,7 +70,6 @@
         </gazebo>
 
         <gazebo reference="wheel_2">
-            <material>Gazebo/Residential</material>
             <collision>
                 <surface>
                     <friction>
@@ -107,7 +105,6 @@
         </gazebo>
 
         <gazebo reference="wheel_3">
-            <material>Gazebo/Residential </material>
             <collision>
 
                 <surface>
@@ -143,7 +140,6 @@
             </collision>
         </gazebo>
         <gazebo reference="wheel_4">
-            <material>Gazebo/Residential</material>
             <collision>
                 <surface>
                     <friction>
@@ -177,8 +173,7 @@
                 </surface>
             </collision>
         </gazebo>
-
-
+        
         <gazebo reference="hip_yaw_1">
             <implicitSpringDamper>1</implicitSpringDamper>
             <provideFeedback>true</provideFeedback>
@@ -282,6 +277,77 @@
     </xacro:if>
 
     <xacro:if value="${ADD_UPPER_BODY}">
+    
+    	<!-- add tags similar with wheels so that arm ball EE can have stable contacts -->
+        <gazebo reference="ball1">
+            <collision>
+                <surface>
+                    <friction>
+                        <!-- <torsional>
+                            <coefficient> 1.0 </coefficient>
+                            <use_patch_radius>true</use_patch_radius>
+                            <patch_radius>0.2</patch_radius>
+                        </torsional> -->
+                        <ode>
+                            <mu>1.0</mu>
+                            <mu2>1.0</mu2>
+                        </ode>
+                        <bullet>
+                            <friction>1.0</friction>
+                            <friction2>1.0</friction2>
+                        </bullet>
+                    </friction>
+                    <contact>
+                        <ode>
+                            <kp>2100000</kp>
+                            <kd>1</kd>
+                            <max_vel>100</max_vel>
+                        </ode>
+                        <bullet>
+                            <soft_cfm>0.007</soft_cfm>
+                            <soft_erp>0.25</soft_erp>
+                            <kp>1000000</kp>
+                            <kd>5</kd>
+                        </bullet>
+                    </contact>
+                </surface>
+            </collision>
+        </gazebo>
+        
+        <gazebo reference="ball2">
+            <collision>
+                <surface>
+                    <friction>
+                        <!-- <torsional>
+                            <coefficient> 1.0 </coefficient>
+                            <use_patch_radius>true</use_patch_radius>
+                            <patch_radius>0.2</patch_radius>
+                        </torsional> -->
+                        <ode>
+                            <mu>1.0</mu>
+                            <mu2>1.0</mu2>
+                        </ode>
+                        <bullet>
+                            <friction>1.0</friction>
+                            <friction2>1.0</friction2>
+                        </bullet>
+                    </friction>
+                    <contact>
+                        <ode>
+                            <kp>2100000</kp>
+                            <kd>1</kd>
+                            <max_vel>100</max_vel>
+                        </ode>
+                        <bullet>
+                            <soft_cfm>0.007</soft_cfm>
+                            <soft_erp>0.25</soft_erp>
+                            <kp>1000000</kp>
+                            <kd>5</kd>
+                        </bullet>
+                    </contact>
+                </surface>
+            </collision>
+        </gazebo>
 
         <gazebo reference="torso_yaw">
             <implicitSpringDamper>1</implicitSpringDamper>
