@@ -4,17 +4,16 @@
 
 <gazebo>
 
-    <!-- <plugin name="gz::sim::systems::GzLinkStateSensor" filename="libxbot2_gz_link_state_sensor.so">
+    <plugin name="gz::sim::systems::GzLinkStateSensor" filename="libxbot2_gz_link_state_sensor.so">
         <links>
             <link name="pelvis"/>
             <link name="wheel_1"/>
         </links>
-    </plugin> -->
+    </plugin>
     
     <!-- <plugin name="xbot2_ft_driver" filename="libxbot2_gz_ft_server.so"/> -->
     
     <plugin name="gz::sim::systems::GzImuServer" filename="libxbot2_gz_imu_server.so"/> 
-
 
     <plugin name="gz::sim::systems::GzJointServer" filename="libxbot2_gz_joint_server.so">
         <profile name="lowpwr_mot" p="50"  d="5"/>

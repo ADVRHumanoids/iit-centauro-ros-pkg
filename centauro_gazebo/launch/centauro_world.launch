@@ -1,0 +1,121 @@
+<launch>
+
+  <!-- Taken from centauro centauro_world_ros2.launch -->
+
+  <!-- Gazebo configuration parameters -->
+  <arg name="gazebo" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="verbose" default="false"/>
+  
+  <arg name="arms" default="true"/>
+  <arg name="end_effector_left" default="ball"/>
+  <arg name="end_effector_right" default="ball"/>
+  <arg name="legs" default="true"/>
+  <arg name="velodyne" default="false"/>
+  <arg name="realsense" default="false"/>
+  <arg name="d435i_head" default="false"/>
+  <arg name="d435i_base" default="false"/>
+  <arg name="t265_base" default="false"/>
+  <arg name="battery" default="false"/>
+
+  <arg name="world_name" default="$(find-pkg-share centauro_gazebo)/world/centauro.world"/>
+
+  <!-- Convert paused and gui to Gazebo Sim arguments -->
+  <let name="arg_paused" value="" if="$(var paused)"/>
+  <let name="arg_paused" value="-r" unless="$(var paused)"/>
+  
+  <let name="arg_gui" value="" if="$(var gui)"/>
+  <let name="arg_gui" value="-s" unless="$(var gui)"/>
+  
+  <let name="arg_verbose" value="--verbose" if="$(var verbose)"/>
+  <let name="arg_verbose" value="" unless="$(var verbose)"/>
+
+  <set_env name="GZ_SIM_RESOURCE_PATH" value="$(find-pkg-share centauro_urdf)"/>
+
+  <group if="$(var gazebo)">
+  
+    <!-- Load the URDF/SRDF into the ROS Parameter Server -->
+    <let name="urdf_command_gz"
+        value="xacro $(find-pkg-share centauro_urdf)/urdf/centauro_robot.urdf.xacro 
+            floating_joint:=false 
+            end_effector_left:=$(var end_effector_left) 
+            end_effector_right:=$(var end_effector_right)
+            upper_body:=$(var arms) 
+            legs:=$(var legs) 
+            velodyne:=$(var velodyne) 
+            realsense:=$(var realsense) 
+            d435i_head:=$(var d435i_head) 
+            d435i_base:=$(var d435i_base) 
+            t265_base:=$(var t265_base)
+            battery:=$(var battery)
+            "/>
+    
+    <let name="robot_description_gz"
+        value="$(command '$(var urdf_command_gz)')"/>
+
+    <let name="urdf_command_xbot"
+        value="xacro $(find-pkg-share centauro_urdf)/urdf/centauro_robot.urdf.xacro 
+        floating_joint:=true 
+        upper_body:=$(var arms) 
+        end_effector_left:=$(var end_effector_left) 
+        end_effector_right:=$(var end_effector_right)
+        legs:=$(var legs) 
+        velodyne:=$(var velodyne) 
+        realsense:=$(var realsense) 
+        d435i_head:=$(var d435i_head) 
+        d435i_base:=$(var d435i_base) 
+        t265_base:=$(var t265_base)
+        battery:=$(var battery)
+        "/>
+
+    <let name="robot_description_xbot"
+        value="$(command '$(var urdf_command_xbot)')"/>
+
+    <let name="srdf_command"
+        value="xacro $(find-pkg-share centauro_srdf)/srdf/centauro.srdf.xacro 
+        floating_joint:=true 
+        upper_body:=$(var arms)
+        end_effector_left:=$(var end_effector_left) 
+        end_effector_right:=$(var end_effector_right)
+        legs:=$(var legs) 
+        velodyne:=$(var velodyne) 
+        realsense:=$(var realsense)
+        d435i_head:=$(var d435i_head) 
+        d435i_base:=$(var d435i_base) 
+        t265_base:=$(var t265_base)
+        battery:=$(var battery)
+        "/>
+    
+    <let name="robot_description_semantic"
+        value="$(command '$(var srdf_command)')"/>
+
+    <!-- Publish robot description -->
+    <node pkg="xbot2_ros" exec="robot_description_publisher" name="robot_description_publisher" output="screen">
+      <param name="robot_description" value="$(var robot_description_xbot)" type="str"/>
+      <param name="robot_description_semantic" value="$(var robot_description_semantic)" type="str"/>
+    </node>
+
+    <!-- Start Gazebo Sim (formerly Ignition Gazebo) -->
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+      <arg name="gz_args" value="$(var world_name) $(var arg_verbose) $(var arg_gui) $(var arg_paused)"/>
+    </include>
+
+    <!-- Spawn URDF model in Gazebo -->
+    <node pkg="ros_gz_sim" exec="create" name="urdf_spawner">
+      <param name="string" type="str" value="$(var robot_description_gz)"/>
+      <param name="z" value="1.0"/>
+    </node>
+
+    <!-- ROS-Gazebo bridge for clock -->
+    <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_clock"
+        args="/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"/>
+        
+    <!-- ROS-Gazebo bridge for Velodyne (if enabled) -->
+    <node if="$(var velodyne)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_velodyne"
+        args="/velodyne/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked
+         /velodyne/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"/>
+
+  </group>
+
+</launch>
