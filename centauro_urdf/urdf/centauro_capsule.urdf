@@ -1046,7 +1046,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435_head_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="gz::realsense_gazebo_plugin::GazeboRosRealsense">
       <prefix>D435_head_camera</prefix>
       <colorUpdateRate>30</colorUpdateRate>
       <colorTopicName>color/image_raw</colorTopicName>
@@ -1408,7 +1408,7 @@
     </sensor>
   </gazebo>
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="D435i_camera">
+    <plugin filename="librealsense_gazebo_plugin.so" name="gz::realsense_gazebo_plugin::GazeboRosRealsense">
       <prefix>D435i_camera</prefix>
       <colorUpdateRate>30</colorUpdateRate>
       <colorTopicName>color/image_raw</colorTopicName>

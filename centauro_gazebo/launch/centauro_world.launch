@@ -15,6 +15,16 @@
   <arg name="velodyne" default="false"/>
   <arg name="realsense" default="false"/>
   <arg name="d435i_head" default="false"/>
+  <arg name="d435i_head_color_width" default="640"/>
+  <arg name="d435i_head_color_height" default="480"/>
+  <arg name="d435i_head_color_fps" default="30"/>
+  <arg name="d435i_head_color_fx" default="606.4806518554688"/>
+  <arg name="d435i_head_color_fy" default="606.4806518554688"/>
+  <arg name="d435i_head_color_cx" default="326.2506103515625"/>
+  <arg name="d435i_head_color_cy" default="254.5507049560547"/>
+  <arg name="d435i_head_clip_distance" default="10.0"/>
+  <arg name="d435i_head_clip_distance_min" default="0.175"/>
+
   <arg name="d435i_base" default="false"/>
   <arg name="t265_base" default="false"/>
   <arg name="battery" default="false"/>
@@ -45,7 +55,16 @@
             legs:=$(var legs) 
             velodyne:=$(var velodyne) 
             realsense:=$(var realsense) 
-            d435i_head:=$(var d435i_head) 
+            d435i_head:=$(var d435i_head)
+            d435i_head_color_width:=$(var d435i_head_color_width)
+            d435i_head_color_height:=$(var d435i_head_color_height)
+            d435i_head_color_fps:=$(var d435i_head_color_fps)
+            d435i_head_color_fx:=$(var d435i_head_color_fx)
+            d435i_head_color_fy:=$(var d435i_head_color_fy)
+            d435i_head_color_cx:=$(var d435i_head_color_cx)
+            d435i_head_color_cy:=$(var d435i_head_color_cy)
+            d435i_head_clip_distance:=$(var d435i_head_clip_distance)
+            d435i_head_clip_distance_min:=$(var d435i_head_clip_distance_min)
             d435i_base:=$(var d435i_base) 
             t265_base:=$(var t265_base)
             battery:=$(var battery)
@@ -63,7 +82,16 @@
         legs:=$(var legs) 
         velodyne:=$(var velodyne) 
         realsense:=$(var realsense) 
-        d435i_head:=$(var d435i_head) 
+        d435i_head:=$(var d435i_head)
+        d435i_head_color_width:=$(var d435i_head_color_width)
+        d435i_head_color_height:=$(var d435i_head_color_height)
+        d435i_head_color_fps:=$(var d435i_head_color_fps)
+        d435i_head_color_fx:=$(var d435i_head_color_fx)
+        d435i_head_color_fy:=$(var d435i_head_color_fy)
+        d435i_head_color_cx:=$(var d435i_head_color_cx)
+        d435i_head_color_cy:=$(var d435i_head_color_cy)
+        d435i_head_clip_distance:=$(var d435i_head_clip_distance)
+        d435i_head_clip_distance_min:=$(var d435i_head_clip_distance_min)
         d435i_base:=$(var d435i_base) 
         t265_base:=$(var t265_base)
         battery:=$(var battery)
@@ -110,7 +138,18 @@
     <!-- ROS-Gazebo bridge for clock -->
     <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_clock"
         args="/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"/>
-        
+
+    <!-- ROS-Gazebo bridge for Camera (if enabled) -->
+    <node if="$(var d435i_head)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_d435i_head"
+        args="/D435_head_camera/color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
+         /D435_head_camera/aligned_depth_to_color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
+         /D435_head_camera/depth/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked"/>
+
+    <node if="$(var d435i_base)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_d435i_base"
+        args="/D435_base_camera/color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
+         /D435_base_camera/aligned_depth_to_color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
+         /D435_base_camera/depth/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked"/>
+
     <!-- ROS-Gazebo bridge for Velodyne (if enabled) -->
     <node if="$(var velodyne)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_velodyne"
         args="/velodyne/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked
