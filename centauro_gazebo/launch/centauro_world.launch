@@ -69,9 +69,6 @@
             t265_base:=$(var t265_base)
             battery:=$(var battery)
             "/>
-    
-    <let name="robot_description_gz"
-        value="$(command '$(var urdf_command_gz)')"/>
 
     <let name="urdf_command_xbot"
         value="xacro $(find-pkg-share centauro_urdf)/urdf/centauro_robot.urdf.xacro 
@@ -97,9 +94,6 @@
         battery:=$(var battery)
         "/>
 
-    <let name="robot_description_xbot"
-        value="$(command '$(var urdf_command_xbot)')"/>
-
     <let name="srdf_command"
         value="xacro $(find-pkg-share centauro_srdf)/srdf/centauro.srdf.xacro 
         floating_joint:=true 
@@ -114,14 +108,11 @@
         t265_base:=$(var t265_base)
         battery:=$(var battery)
         "/>
-    
-    <let name="robot_description_semantic"
-        value="$(command '$(var srdf_command)')"/>
 
     <!-- Publish robot description -->
     <node pkg="xbot2_ros" exec="robot_description_publisher" name="robot_description_publisher" output="screen">
-      <param name="robot_description" value="$(var robot_description_xbot)" type="str"/>
-      <param name="robot_description_semantic" value="$(var robot_description_semantic)" type="str"/>
+      <param name="robot_description" value="$(command '$(var urdf_command_xbot)')" type="str"/>
+      <param name="robot_description_semantic" value="$(command '$(var srdf_command)')" type="str"/>
     </node>
 
     <!-- Start Gazebo Sim (formerly Ignition Gazebo) -->
@@ -131,7 +122,7 @@
 
     <!-- Spawn URDF model in Gazebo -->
     <node pkg="ros_gz_sim" exec="create" name="urdf_spawner">
-      <param name="string" type="str" value="$(var robot_description_gz)"/>
+      <param name="string" type="str" value="$(command '$(var urdf_command_gz)')"/>
       <param name="z" value="1.0"/>
     </node>
 
