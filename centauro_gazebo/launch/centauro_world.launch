@@ -47,7 +47,7 @@
   
     <!-- Load the URDF/SRDF into the ROS Parameter Server -->
     <let name="urdf_command_gz"
-        value="xacro $(find-pkg-share centauro_urdf)/urdf/centauro_robot.urdf.xacro 
+        value="xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro 
             floating_joint:=false 
             end_effector_left:=$(var end_effector_left) 
             end_effector_right:=$(var end_effector_right)
@@ -71,7 +71,7 @@
             "/>
 
     <let name="urdf_command_xbot"
-        value="xacro $(find-pkg-share centauro_urdf)/urdf/centauro_robot.urdf.xacro 
+        value="xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro 
         floating_joint:=true 
         upper_body:=$(var arms) 
         end_effector_left:=$(var end_effector_left) 
@@ -132,14 +132,36 @@
 
     <!-- ROS-Gazebo bridge for Camera (if enabled) -->
     <node if="$(var d435i_head)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_d435i_head"
-        args="/D435_head_camera/color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
-         /D435_head_camera/aligned_depth_to_color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
-         /D435_head_camera/depth/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked"/>
+        args="/D435_head_camera/image@sensor_msgs/msg/Image[gz.msgs.Image
+         /D435_head_camera/depth_image@sensor_msgs/msg/Image[gz.msgs.Image
+         /D435_head_camera/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked
+         /D435_head_camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo">
+      <remap from="/D435_head_camera/image" to="/D435_head_camera/color/image_raw"/>
+      <remap from="/D435_head_camera/depth_image" to="/D435_head_camera/aligned_depth_to_color/image_raw"/>
+      <remap from="/D435_head_camera/points" to="/D435_head_camera/depth/color/points"/>
+      <remap from="/D435_head_camera/camera_info" to="/D435_head_camera/color/camera_info_gz"/>
+    </node>
+
+    <!-- ROS-Gazebo bridge for Camera Info (workaround crazy gz frame issue) -->
+    <node if="$(var d435i_head)" pkg="centauro_gazebo" exec="ros_gz_camera_workaround.py" name="head_cam_workaround_color" output="screen">
+      <param name="input_topic" value="/D435_head_camera/color/camera_info_gz"/>
+      <param name="output_topic" value="/D435_head_camera/color/camera_info"/>
+      <param name="frame_id" value="D435_head_camera_gz_optical_frame"/>
+    </node>
+
+    <node if="$(var d435i_head)" pkg="centauro_gazebo" exec="ros_gz_camera_workaround.py" name="head_cam_workaround_depth" output="screen">
+      <param name="input_topic" value="/D435_head_camera/color/camera_info_gz"/>
+      <param name="output_topic" value="/D435_head_camera/aligned_depth_to_color/camera_info"/>
+      <param name="frame_id" value="D435_head_camera_gz_optical_frame"/>
+    </node>
 
     <node if="$(var d435i_base)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_d435i_base"
         args="/D435_base_camera/color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
          /D435_base_camera/aligned_depth_to_color/image_raw@sensor_msgs/msg/Image[gz.msgs.Image
-         /D435_base_camera/depth/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked"/>
+         /D435_base_camera/depth/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked
+         /D435_base_camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo">
+      <remap from="/D435_base_camera/camera_info" to="/D435_base_camera/color/camera_info"/>
+    </node>
 
     <!-- ROS-Gazebo bridge for Velodyne (if enabled) -->
     <node if="$(var velodyne)" pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge_velodyne"

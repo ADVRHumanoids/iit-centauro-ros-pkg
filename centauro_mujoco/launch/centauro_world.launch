@@ -23,7 +23,7 @@
     <param name="robot_description_semantic" value="$(var srdf_string)" type="str"/>
   </node>
 
-  <node pkg="kyon_mujoco" exec="simulator_wrapper.bash" name="centauro_mujoco"
+  <node pkg="kyon_mujoco" exec="simulator_wrapper.bash" name="centauro_mujoco" output="screen"
     args="--name centauro --urdf-command $(var urdf_command) --world $(var world) --simopt $(var simopt) --ctrlcfg $(var ctrlcfg) --sites $(var sites)"/>
 
 

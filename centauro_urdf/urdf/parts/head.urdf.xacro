@@ -97,7 +97,7 @@
     <origin xyz="0.03015 0 -0.0125" rpy="0 0 0"/>
   </xacro:property>
 
-  <xacro:if value="${ADD_D435I_HEAD}">
+  <!-- <xacro:if value="${ADD_D435I_HEAD}">
 
     <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro" />  
 
@@ -123,9 +123,9 @@
 
     </xacro:sensor_d435i>
     
-  </xacro:if>
+  </xacro:if> -->
   
-  <xacro:unless value="${ADD_D435I_HEAD}">
+  <!-- <xacro:unless value="${ADD_D435I_HEAD}"> -->
       
     <!--  Copied from _d435.urdf.xacro    -->
     <xacro:property name="d435_cam_width" value="0.090"/>
@@ -173,7 +173,7 @@
       </inertial>
     </link>
     
-  </xacro:unless>
+  <!-- </xacro:unless> -->
 
   <xacro:if value="${ADD_VELODYNE}">
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>

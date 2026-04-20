@@ -5,6 +5,7 @@
     <arg name="paused" default="false"/>
     <arg name="velodyne" default="false"/>
     <arg name="realsense" default="false"/>
+    <arg name="dagana" default="false"/>
 
     <let name="arg_gui" value="-s" unless="$(var gui)"/> 
     <let name="arg_gui" value="" if="$(var gui)"/> 
@@ -15,12 +16,16 @@
     <let name="arg_paused" value="-r" unless="$(var paused)"/> 
     <let name="arg_paused" value="" if="$(var paused)"/> 
 
+    <let name="arg_dagana" value="ball" unless="$(var dagana)"/>
+    <let name="arg_dagana" value="dagana" if="$(var dagana)"/>
+
+
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="gz_args" value="$(find-pkg-share centauro_gazebo)/world/centauro.world $(var arg_verbose) $(var arg_gui) $(var arg_paused)"/>
     </include>
 
     <node pkg="ros_gz_sim" exec="create" name="urdf_spawner">
-        <param name="string" type="str" value="$(command 'xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro velodyne:=$(var velodyne) realsense:=$(var realsense)')"/>
+        <param name="string" type="str" value="$(command 'xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro velodyne:=$(var velodyne) realsense:=$(var realsense) end_effector_left:=$(var arg_dagana) end_effector_right:=$(var arg_dagana)')"/>
         <param name="z" value="1.0"/>
     </node>
 

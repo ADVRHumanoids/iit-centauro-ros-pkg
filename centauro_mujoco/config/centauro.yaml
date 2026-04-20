@@ -1,3 +1,8 @@
+xbot2:
+  run: false
+  config: $(ros2 pkg prefix --share centauro_config)/centauro_basic.yaml
+  verbose: true
+
 motor_pd:
   j_arm*_1: [500, 10]
   j_arm*_2: [500, 10]

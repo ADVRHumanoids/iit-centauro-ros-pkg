@@ -7,7 +7,6 @@
     <plugin name="gz::sim::systems::GzLinkStateSensor" filename="libxbot2_gz_link_state_sensor.so">
         <links>
             <link name="pelvis"/>
-            <link name="wheel_1"/>
         </links>
     </plugin>
     

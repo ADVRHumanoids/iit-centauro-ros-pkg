@@ -1,25 +1,47 @@
 <launch>
 
+    <!-- Taken from centauro centauro_world_ros2.launch -->
+
+    <!-- Gazebo configuration parameters -->
+    <arg name="gazebo" default="true" />
+    <arg name="paused" default="false" />
     <arg name="gui" default="true" />
-    <arg name="visualize_inertia" default="false" />
-    <arg name="big_wheel" default="true"/>
+    <arg name="verbose" default="false" />
+
+    <arg name="arms" default="true" />
+    <arg name="end_effector_left" default="ball" />
+    <arg name="end_effector_right" default="ball" />
+    <arg name="legs" default="true" />
+    <arg name="velodyne" default="false" />
+    <arg name="realsense" default="false" />
+    <arg name="d435i_head" default="false" />
+    <arg name="d435i_base" default="false" />
+    <arg name="battery" default="false" />
+
+    <let name="urdf_command"
+        value="xacro $(find-pkg-share centauro_urdf)/urdf/centauro.urdf.xacro 
+    floating_joint:=true 
+    upper_body:=$(var arms) 
+    end_effector_left:=$(var end_effector_left) 
+    end_effector_right:=$(var end_effector_right)
+    legs:=$(var legs) 
+    velodyne:=$(var velodyne) 
+    realsense:=$(var realsense) 
+    d435i_head:=$(var d435i_head)
+    d435i_base:=$(var d435i_base) 
+    battery:=$(var battery)
+    " />
 
 
-    <param name="robot_description" command="xacro '$(find centauro_urdf)/urdf/centauro.urdf.xacro' big_wheel:=$(arg big_wheel)" />
-    <param name="use_gui" value="$(arg gui)"/>
-    <param name="rate" value="50.0"/>
-     
-        
-    <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    <!-- Robot State Publisher: publishes /robot_description and TF frames -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen">
+        <param name="robot_description" value="$(command '$(var urdf_command)')" type="str"/>
     </node>
 
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
-        <param name="publish_frequency" type="double" value="250.0" />
-    </node> 
+    <!-- Joint State Publisher GUI: publishes /joint_states with interactive sliders -->
+    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" />
 
-    <node pkg="rviz" type="rviz" name="rviz" output="screen" if="$(arg gui)" args="-d $(find centauro_urdf)/launch/centauro.rviz">
-    </node> 
-
-    <node if="$(arg visualize_inertia)" pkg="robot_inertia_publisher" type="robot_inertia_publisher" name="robot_inertia_publisher" output="screen" />
+    <!-- RViz -->
+    <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" />
 
 </launch>

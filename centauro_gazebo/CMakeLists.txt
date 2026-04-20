@@ -25,8 +25,8 @@ endif()
 
 ament_package()
 
-install(DIRECTORY launch
+install(DIRECTORY launch world urdf
   DESTINATION share/${PROJECT_NAME})
 
-install(DIRECTORY world
-  DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS src/ros_gz_camera_workaround.py
+  DESTINATION lib/${PROJECT_NAME})
