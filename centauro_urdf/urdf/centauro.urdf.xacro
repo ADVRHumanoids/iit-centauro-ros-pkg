@@ -6,6 +6,14 @@
 <!-- ************ MODEL CONFIGURATION ************ -->
 <xacro:include filename="$(arg config)"/>
 
+<xacro:if value="${ADD_FLOATING_BASE}">
+  <link name="world"/>
+  <joint name="reference" type="floating">
+    <parent link="world"/>
+    <child link="pelvis"/>
+  </joint>
+</xacro:if>
+
 <!-- ************ Pholus plain model ************ -->
 <xacro:include filename="$(find centauro_urdf)/urdf/centauro_base.urdf.xacro"/>
 
