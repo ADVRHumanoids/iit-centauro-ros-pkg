@@ -19,8 +19,8 @@ def generate_launch_description():
     centauro_srdf_share   = get_package_share_directory("centauro_srdf")
     centauro_ci_share     = get_package_share_directory("centauro_cartesio_config")
 
-    robot_description = Path(centauro_urdf_share, "urdf", "centauro.urdf").read_text()
-    robot_description_semantic = Path(centauro_srdf_share, "srdf", "centauro.srdf").read_text()
+    robot_description = ''
+    robot_description_semantic = ''
     problem_description = Path(centauro_ci_share, "centauro_manipulation_stack.yaml").read_text()
 
     ros_server_remaps_xbot = [
