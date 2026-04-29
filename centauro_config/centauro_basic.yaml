@@ -30,22 +30,13 @@ xbotcore_plugins:
 
     ros_control: {thread: nrt_main, type: ros2_control, params: {autostart: true}}
 
-    zmq_io:
+    omnisteering:
+      type: omnisteering_controller_plugin
       thread: nrt_main
-      type: zmq_io
       params:
-          autostart: true
-
-    # eval_policy:
-    #   thread: rt_main
-    #   type: python_trampoline
-    #   params:
-    #     python_module: kyon_mjx.eval_playground_centauro_xbot 
-    #     python_class: PolicyEvaluator
-    #     # policy_fn: /home/alaurenzi/code/mjx_playground/playground/src/kyon_mjx/saved_policy/CentauroFlatTerrainJoystick_centauro_notorque_energy1e-4_actionrate0.075_vertical5_1__1740571486/inference_fn.bin
-    #     policy_fn: /home/alaurenzi/code/mjx_playground/playground/src/kyon_mjx/saved_policy/CentauroFlatTerrainJoystick_centauro_notorque_energy1e-4_actionrate0.075_vertical5_filt10_Kp500_scale0.6_1_dr_kpkd_1741009260/inference_fn.bin
-
-    
+        wheel_names: [wheel_1, wheel_2, wheel_3, wheel_4]
+        wheel_radius: [0.124, 0.124, 0.124, 0.124]
+        vel_offset_gain: 1.0
 
 
 # global parameters
