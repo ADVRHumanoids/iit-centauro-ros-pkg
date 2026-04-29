@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 install(
   FILES 
   centauro_manipulation_stack.yaml
-  centauro_manipulation.launch 
+  centauro_manipulation.launch.py
   DESTINATION share/${PROJECT_NAME}/
 )
 
