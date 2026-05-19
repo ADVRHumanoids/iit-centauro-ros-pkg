@@ -4,6 +4,7 @@
     <arg name="verbose" default="false"/>
     <arg name="paused" default="false"/>
     <arg name="velodyne" default="false"/>
+    <arg name="realsense" default="false"/>
 
     <let name="arg_gui" value="-s" unless="$(var gui)"/> 
     <let name="arg_gui" value="" if="$(var gui)"/> 
@@ -19,11 +20,14 @@
     </include>
 
     <node pkg="ros_gz_sim" exec="create" name="urdf_spawner">
-        <param name="string" type="str" value="$(command 'xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro velodyne:=$(var velodyne)')"/>
+        <param name="string" type="str" value="$(command 'xacro $(find-pkg-share centauro_gazebo)/urdf/centauro_gazebo.urdf.xacro velodyne:=$(var velodyne) realsense:=$(var realsense)')"/>
         <param name="z" value="1.0"/>
     </node>
 
+    <let name="velodyne_arg" value ="" unless="$(var velodyne)"/>
+    <let name="velodyne_arg" value ="/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked" if="$(var velodyne)"/>
+
     <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge" 
-        args="/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked /clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock"/>
+        args="/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock $(var velodyne_arg)"/>
 
 </launch>

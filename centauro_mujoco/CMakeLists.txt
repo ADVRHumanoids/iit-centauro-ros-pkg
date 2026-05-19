@@ -1,14 +1,18 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.20)
 project(centauro_mujoco)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake REQUIRED)
 
-catkin_package()
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
-# install(DIRECTORY launch
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+)
 
-# install(DIRECTORY worlds
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(DIRECTORY urdf
+  DESTINATION share/${PROJECT_NAME}
+)
+
+ament_package()

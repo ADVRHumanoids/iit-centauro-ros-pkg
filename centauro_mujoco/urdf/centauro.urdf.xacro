@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="centauro">
+
+<link name="world"/>
+
+<joint name="reference" type="floating">
+  <parent link="world"/>
+  <child link="pelvis"/>
+</joint>
+
+<xacro:include filename="$(find centauro_urdf)/urdf/centauro.urdf.xacro" />
+
+</robot>

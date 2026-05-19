@@ -1,13 +1,30 @@
 <launch>
 
-  
-  <arg name="world" default="$(find centauro_mujoco)/config/world.xml"/>
-  <arg name="simopt" default="$(find centauro_mujoco)/config/options.xml"/>
-  <arg name="sites" default="$(find centauro_mujoco)/config/sites.xml"/>
-  <arg name="ctrlcfg" default="$(find centauro_mujoco)/config/centauro.yaml"/>
-  <arg name="urdffile" default="$(find centauro_urdf)/urdf/centauro.urdf"/>
+  <arg name="world" default="$(find-pkg-share centauro_mujoco)/config/world.xml"/>
+  <arg name="simopt" default="$(find-pkg-share centauro_mujoco)/config/options.xml"/>
+  <arg name="sites" default="$(find-pkg-share centauro_mujoco)/config/sites.xml"/>
+  <arg name="ctrlcfg" default="$(find-pkg-share centauro_mujoco)/config/centauro.yaml"/>
 
-  <node pkg="centauro_mujoco" type="centauro_mujoco.py" name="centauro_mujoco"
-    args="--name centauro --urdf $(arg urdffile) --world $(arg world) --simopt $(arg simopt) --ctrlcfg $(arg ctrlcfg) --sites $(arg sites)"/>
+  <!-- Load the URDF/SRDF into the ROS Parameter Server -->
+  <let name="urdf_command"
+      value="xacro $(find-pkg-share centauro_mujoco)/urdf/centauro.urdf.xacro floating_joint:=true velodyne:=false realsense:=false"/>
+
+  <let name="urdf_string"
+      value="$(command '$(var urdf_command)' ignore)"/>
+
+  <let name="srdf_command"
+      value="xacro $(find-pkg-share centauro_srdf)/srdf/centauro.srdf.xacro floating_joint:=true velodyne:=false realsense:=false"/>
+
+  <let name="srdf_string"
+      value="$(command '$(var srdf_command)' ignore)"/>
+
+  <node pkg="xbot2_ros" exec="robot_description_publisher" name="robot_description_publisher" output="screen">
+    <param name="robot_description" value="$(var urdf_string)" type="str"/>
+    <param name="robot_description_semantic" value="$(var srdf_string)" type="str"/>
+  </node>
+
+  <node pkg="kyon_mujoco" exec="simulator_wrapper.bash" name="centauro_mujoco"
+    args="--name centauro --urdf-command $(var urdf_command) --world $(var world) --simopt $(var simopt) --ctrlcfg $(var ctrlcfg) --sites $(var sites)"/>
+
 
 </launch>

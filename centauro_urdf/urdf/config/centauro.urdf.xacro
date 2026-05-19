@@ -26,11 +26,21 @@
 	<xacro:arg name="d435i_base" default="false"/>
 	<xacro:arg name="t265_base" default="false"/>
 </xacro:unless>
-<xacro:arg name="floating_joint" default="false"/>
+
+<xacro:arg name="d435i_head_color_width" default="1280"/>
+<xacro:arg name="d435i_head_color_height" default="720"/>
+<xacro:arg name="d435i_head_color_fps" default="30"/>
+<xacro:arg name="d435i_head_depth_width" default="1280"/>
+<xacro:arg name="d435i_head_depth_height" default="720"/>
+<xacro:arg name="d435i_head_depth_fps" default="90"/>
+<xacro:arg name="d435i_head_enable_pointcloud" default="true"/>
+
+<xacro:arg name="floating_joint" default="true"/>
 <xacro:arg name="fixed_base_joint" default="false"/>
+
 <xacro:arg name="virtual_frame" default="false"/> <!-- For cartesio model must be set to true-->
 <xacro:arg name="end_effector_left" default="$(arg end_effector_left)"/> <!-- none, ball, dagana_fixed, dagana -->
-<xacro:arg name="end_effector_right" default="$(end_effector_right)"/> <!-- none, ball, dagana_fixed, dagana -->
+<xacro:arg name="end_effector_right" default="$(arg end_effector_right)"/> <!-- none, ball, dagana_fixed, dagana -->
 
 <!-- ************SELECT PARTS*************-->
 <!-- *************************************-->
@@ -39,11 +49,6 @@
 
 <xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
 <xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
-
-<!-- HACK to add standalone dagana plugin and ignore the dagana joint in the libxbot2_gz_joint_server -->
-<!-- This property is used in the gazebo/xbot.gazebo.xacro file -->
-<!-- In future, xbot will be able to ignore end-effectors in the hal and this should not be neccesary anymore -->
-<xacro:property name="DAGANA_STANDALONE_PLUGIN" value="true" />
 
 <xacro:property name="ADD_FLOATING_BASE" value="$(arg floating_joint)" />
 <xacro:property name="ADD_FIXED_BASE" value="$(arg fixed_base_joint)" />
@@ -56,7 +61,16 @@
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
 <xacro:property name="ADD_D435I_HEAD" value="$(arg d435i_head)" />
+<xacro:property name="D435I_HEAD_COLOR_WIDTH" value="$(arg d435i_head_color_width)" />
+<xacro:property name="D435I_HEAD_COLOR_HEIGHT" value="$(arg d435i_head_color_height)" />
+<xacro:property name="D435I_HEAD_COLOR_FPS" value="$(arg d435i_head_color_height)" />
+<xacro:property name="D435I_HEAD_DEPTH_WIDTH" value="$(arg d435i_head_depth_width)" />
+<xacro:property name="D435I_HEAD_DEPTH_HEIGHT" value="$(arg d435i_head_depth_height)" />
+<xacro:property name="D435I_HEAD_DEPTH_FPS" value="$(arg d435i_head_depth_height)" />
+<xacro:property name="D435I_HEAD_ENABLE_POINTCLOUD" value="$(arg d435i_head_enable_pointcloud)" />
+
 <xacro:property name="ADD_D435I_BASE" value="$(arg d435i_base)" />
 <xacro:property name="ADD_T265_BASE" value="$(arg t265_base)" />
+
 
 </robot>

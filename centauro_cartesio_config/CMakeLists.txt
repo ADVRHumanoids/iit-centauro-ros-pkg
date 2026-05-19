@@ -1,14 +1,26 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.8)
 project(centauro_cartesio_config)
 
-find_package(catkin REQUIRED)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-catkin_package()
+# Find dependencies
+find_package(ament_cmake REQUIRED)
 
 install(
   FILES 
   centauro_manipulation_stack.yaml
   centauro_manipulation.launch 
-  DESTINATION 
-  ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  DESTINATION share/${PROJECT_NAME}/
 )
+
+# Testing
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+endif()
+
+# Export dependencies
+ament_export_dependencies()
+
+ament_package()

@@ -3,8 +3,6 @@
 
     <xacro:if value="${ADD_LEGS}">
 
-
-
         <gazebo reference="imu_link">
             <sensor name="imu_link" type="imu">
                 <always_on>1</always_on>
