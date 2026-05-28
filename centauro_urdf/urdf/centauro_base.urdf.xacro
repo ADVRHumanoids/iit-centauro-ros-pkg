@@ -49,12 +49,19 @@
     </joint>
 
 
+    <xacro:if value="${ADD_FLOATING_BASE}">
+        <link name="world"/>
+        <joint name="reference" type="floating">
+            <parent link="world"/>
+            <child link="pelvis"/>
+        </joint>
+    </xacro:if>
+    
     <joint name="base_joint" type="fixed">
         <parent link="pelvis" />
         <child link="base_link" />
         <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
-
 
     <xacro:if value="${ADD_UPPER_BODY}">
         <xacro:include filename="$(find centauro_urdf)/urdf/parts/centauro_torso.urdf.xacro" />
