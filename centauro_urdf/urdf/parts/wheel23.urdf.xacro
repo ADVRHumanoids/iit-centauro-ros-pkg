@@ -65,12 +65,6 @@
                         <sphere radius="0.125"/>
                     </geometry>
                 </xacro:if>
-                <xacro:if value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION}">
-                    <origin xyz="0 ${-(0.125-0.015)} 0" rpy="0 0 0" />
-                    <geometry>
-                        <sphere radius="0.015" />
-                    </geometry>
-                </xacro:if>
                 <xacro:unless value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION or USE_WHEEL_23_SPHERE_COLLISION}">
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>
@@ -81,6 +75,34 @@
                 <material name="black" />
             </collision>
         </link>
+
+        <link name="wheel_contact_${leg_num}">
+            <inertial>
+                <origin xyz="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="6.4e-7" ixy="0.0" ixz="0.0" iyy="6.4e-7" iyz="0.0" izz="6.4e-7"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.015"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <xacro:if value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION}">
+                <collision name="wheel_contact_${leg_num}">
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <geometry>
+                        <sphere radius="0.015"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
+        </link>
+        <joint name="wheel_contact_${leg_num}_joint" type="fixed">
+            <parent link="wheel_${leg_num}"/>
+            <child link="wheel_contact_${leg_num}"/>
+            <origin xyz="0 ${-(0.125-0.015)} 0" rpy="0 0 0"/>    
+        </joint>
 
     </xacro:macro>
     <!-- /macro arms -->
