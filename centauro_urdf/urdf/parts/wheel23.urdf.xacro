@@ -58,22 +58,25 @@
                 <material name="black" />
             </visual>
 
-            <collision>
-                <xacro:if value="${USE_WHEEL_23_SPHERE_COLLISION}">
+            <xacro:if value="${USE_WHEEL_23_SPHERE_COLLISION}">
+                <collision>
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>
                         <sphere radius="0.125"/>
                     </geometry>
-                </xacro:if>
-                <xacro:unless value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION or USE_WHEEL_23_SPHERE_COLLISION}">
+                    <material name="black" />
+                </collision>
+            </xacro:if>
+            <xacro:unless value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION or USE_WHEEL_23_SPHERE_COLLISION}">
+                <collision>
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh   filename="package://centauro_urdf/meshes/v2/collision/mesh_wheel23.stl"
                                 scale="0.001 0.001 ${mirror*0.001}" />
-                    </geometry>
-                </xacro:unless>                    
-                <material name="black" />
-            </collision>
+                    </geometry>     
+                    <material name="black" />
+                </collision>
+            </xacro:unless>
         </link>
 
         <link name="wheel_contact_${leg_num}">
