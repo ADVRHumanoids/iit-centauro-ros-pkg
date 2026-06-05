@@ -57,13 +57,19 @@
                 </geometry>
                 <material name="black" />
             </visual>
-
             <xacro:if value="${USE_WHEEL_23_SPHERE_COLLISION}">
                 <collision>
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>
                         <sphere radius="0.125"/>
                     </geometry>
+                    <adarl>
+                        <!-- 
+                        Override collision geometry to an ellipsoid when using adarl
+                        This for example works for mujoco, which supports ellipsoids.
+                        -->
+                        <override type="ellipsoid" size="0.12 0.12 0.06"/>
+                    </adarl>
                     <material name="black" />
                 </collision>
             </xacro:if>
@@ -96,17 +102,19 @@
                 <collision name="wheel_contact_${leg_num}">
                     <origin xyz="0 0 0" rpy="0 0 0"/>
                     <geometry>
-                        <sphere radius="0.015"/>
+                        <sphere radius="0.05"/>
                     </geometry>
                 </collision>
             </xacro:if>
         </link>
         <joint name="wheel_contact_${leg_num}_joint" type="fixed">
-            <parent link="wheel_${leg_num}"/>
-            <child link="wheel_contact_${leg_num}"/>
-            <origin xyz="0 ${-(0.125-0.015)} 0" rpy="0 0 0"/>    
+            <parent link="ankle2_${leg_num}" />
+            <child link="wheel_contact_${leg_num}" />
+            <origin xyz="${Wheel23_Ox} ${mirror*Wheel23_Oy} ${Wheel23_Oz-(0.125-0.015)}"
+                rpy="${Wheel23_roll} ${Wheel23_pitch} ${Wheel23_yaw}" />
+            <axis xyz="0 0 ${mirror}" />
+            <limit effort="${motor_C_effort}" velocity="${motor_C_velocity}" />  <!-- 23 Nm, 1 rad/s-->
         </joint>
-
     </xacro:macro>
     <!-- /macro arms -->
 
