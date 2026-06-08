@@ -8,6 +8,12 @@
     </asset>
     <worldbody>
         <geom name="floor" group="1" size="0 0 .05" pos="0 0 -1.0" type="plane" material="grid" condim="3"/>
-        <light name="spotlight" mode="targetbodycom" target="pelvis" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -20 4" cutoff="10"/>
+        <light  pos="0 0 1"
+                dir="0.3 0.3 -1"
+                type="directional"
+                ambient="0.2 0.2 0.2"
+                diffuse="0.7 0.7 0.7"
+                specular="0.5 0.5 0.5"
+                castshadow="true"/>
     </worldbody>
 </mujoco>

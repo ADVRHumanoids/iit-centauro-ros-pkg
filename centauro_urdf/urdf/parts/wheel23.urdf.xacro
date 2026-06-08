@@ -57,11 +57,11 @@
                 </geometry>
                 <material name="black" />
             </visual>
-            <xacro:if value="${USE_WHEEL_23_SPHERE_COLLISION}">
+            <xacro:if value="${USE_WHEEL_23_SPHERE_OR_ELLIPSOID_COLLISION}">
                 <collision>
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>
-                        <sphere radius="0.125"/>
+                        <sphere radius="0.12"/>
                     </geometry>
                     <adarl>
                         <!-- 
@@ -73,7 +73,7 @@
                     <material name="black" />
                 </collision>
             </xacro:if>
-            <xacro:unless value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION or USE_WHEEL_23_SPHERE_COLLISION}">
+            <xacro:unless value="${USE_WHEEL_23_SMALL_SPHERE_COLLISION or USE_WHEEL_23_SPHERE_OR_ELLIPSOID_COLLISION}">
                 <collision>
                     <origin xyz="0 0 0" rpy="0 0 0" />
                     <geometry>

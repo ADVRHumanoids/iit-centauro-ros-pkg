@@ -8,7 +8,7 @@
 <!-- command line arguments -->
 <xacro:arg name="legs" default="true"/>
 <xacro:arg name="big_wheel" default="true"/>
-<xacro:arg name="sphere_wheel_collision" default="false"/>
+<xacro:arg name="sphere_or_ellipsoid_wheel_collision" default="false"/>
 <xacro:arg name="small_sphere_wheel_collision" default="false"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
@@ -56,7 +56,7 @@
 
 <xacro:property name="USE_STICKS" value="false" />
 <xacro:property name="USE_WHEEL_23" value="$(arg big_wheel)" />
-<xacro:property name="USE_WHEEL_23_SPHERE_COLLISION" value="$(arg sphere_wheel_collision)" />
+<xacro:property name="USE_WHEEL_23_SPHERE_OR_ELLIPSOID_COLLISION" value="$(arg sphere_or_ellipsoid_wheel_collision)" />
 <xacro:property name="USE_WHEEL_23_SMALL_SPHERE_COLLISION" value="$(arg small_sphere_wheel_collision)" />
 
 <xacro:property name="ADD_VELODYNE" value="$(arg velodyne)" />
