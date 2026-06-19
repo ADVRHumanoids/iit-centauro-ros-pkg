@@ -5,7 +5,7 @@
 <xacro:include filename="$(find centauro_urdf)/urdf/parts/wheel23.urdf.xacro"/>
 
 <!-- macro legs -->
-<xacro:macro name="centauro_leg" params="leg_num origin_x origin_y mirror">
+<xacro:macro name="centauro_leg" params="leg_num origin_x origin_y mirror attach_link">
 
 <link name="hip1_${leg_num}">
 
@@ -166,7 +166,7 @@
 <!-- ******************************** -->
 
 <joint name="hip_yaw_${leg_num}" type="revolute">
-	<parent link="pelvis"/>
+	<parent link="${attach_link}"/>
 	<child link="hip1_${leg_num}"/>
 	<origin xyz="${origin_x*Leg_1_Ox} ${origin_y*Leg_1_Oy} ${Leg_1_Oz}" rpy="${Leg_1_roll} ${Leg_1_pitch} ${Leg_1_yaw}"/>
 	<axis xyz="0 0 -1"/>

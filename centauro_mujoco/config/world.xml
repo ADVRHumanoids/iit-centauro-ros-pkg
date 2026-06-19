@@ -1,4 +1,11 @@
 <mujoco>
+
+    <default>
+        <default class="default_class">
+            <joint armature="0.234" frictionloss="4.68" damping="1.7"/> 
+        </default>
+    </default>
+
     <asset>
         <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="512" height="512"/>
         <texture name="body" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>

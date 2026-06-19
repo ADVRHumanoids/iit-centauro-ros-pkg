@@ -10,6 +10,7 @@
 <xacro:arg name="big_wheel" default="true"/>
 <xacro:arg name="sphere_or_ellipsoid_wheel_collision" default="false"/>
 <xacro:arg name="small_sphere_wheel_collision" default="false"/>
+<xacro:arg name="add_twisting_pelvis" default="false"/>
 <xacro:arg name="upper_body" default="true"/>
 <xacro:arg name="velodyne" default="true"/>
 <xacro:arg name="realsense" default="true"/>
@@ -46,6 +47,7 @@
 <!-- *************************************-->
 <xacro:property name="ADD_LEGS" value="$(arg legs)" />
 <xacro:property name="ADD_UPPER_BODY" value="$(arg upper_body)" />
+<xacro:property name="ADD_PELVIS_TWIST" value="$(arg add_twisting_pelvis)" />
 
 <xacro:property name="END_EFFECTOR_LEFT" value="$(arg end_effector_left)" />
 <xacro:property name="END_EFFECTOR_RIGHT" value="$(arg end_effector_right)" />
