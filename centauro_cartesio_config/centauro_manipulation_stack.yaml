@@ -1,62 +1,87 @@
 solver_options:
     regularization: 1e-2
-    back_end: "osqp"
+    back_end: osqp
     
 stack:
-    - ["Wheel_FL", "Wheel_FR", "Wheel_HR", "Wheel_HL"]
-    - ["LeftArm", "RightArm"]
-    - ["Postural", "Com"]
+    - [contact_1, contact_2, contact_3, contact_4, r_arm, l_arm, PelvisRot, Postural, Com]
+    # - [Postural, Com, PelvisRot]
 
-constraints: ["JointLimits", "VelocityLimits"]
+constraints: 
+    - jlim
+    - vlim
+    - collision
 
-JointLimits:
+jlim:
     type: JointLimits
-    
-VelocityLimits:
+
+vlim:
     type: VelocityLimits
 
-Wheel_FL:
-    type: "Cartesian"
-    distal_link: "wheel_1"
-    base_link: "world"
-    lambda: 0.1
+collision:
+    type: CollisionConstraint
+    lib_name: libcartesio_collision_support.so
+    bound_scaling: 0.1
+    distance_threshold: 0.02
+    detection_threshold: 0.10
+    max_pairs: 60
+    collision_urdf_path: $(ros2 pkg prefix --share centauro_urdf)/urdf/centauro_capsule.urdf
+    collision_srdf_path: $(ros2 pkg prefix --share centauro_srdf)/srdf/centauro_capsule.srdf
 
-Wheel_FR:
-    type: "Cartesian"
-    distal_link: "wheel_2"
-    base_link: "world"
-    lambda: 0.1
+contact_1:
+    type: Cartesian
+    distal_link: contact_1
+    base_link: world
+    indices: [0, 1, 2]
+    
+contact_2:
+    type: Cartesian
+    distal_link: contact_2
+    base_link: world
+    indices: [0, 1, 2]
+    
+contact_3:
+    type: Cartesian
+    distal_link: contact_3
+    base_link: world
+    indices: [0, 1, 2]
+    
+contact_4:
+    type: Cartesian
+    distal_link: contact_4
+    base_link: world
+    indices: [0, 1, 2]
+    
 
-Wheel_HL:
-    type: "Cartesian"
-    distal_link: "wheel_3"
-    base_link: "world"
-    lambda: 0.1
-
-Wheel_HR:
-    type: "Cartesian"
-    distal_link: "wheel_4"
-    base_link: "world"
+l_arm:
+    type: Cartesian
+    distal_link: arm1_6
+    base_link: world 
+    # indices: [0, 1, 2, 3, 5]
+    use_local_subtasks: true
     lambda: 0.1
     
-LeftArm:
-    type: "Cartesian"
-    distal_link: "arm1_8"
-    base_link: "world"
-    lambda: 0.1
 
-RightArm:
-    type: "Cartesian"
-    distal_link: "arm2_8"
-    base_link: "world"
+r_arm:
+    type: Cartesian
+    distal_link: arm2_6
+    base_link: world
+    # indices: [0, 1, 2, 3, 5]
+    use_local_subtasks: true
     lambda: 0.1
     
-Postural:
-    type: "Postural"
-    lambda: 0.01
     
 Com:
-    type: "Com"
-    lambda: 0.05
+    type: Com
     indices: [0, 1]
-    weight: 20
+    weight: 0.01
+    
+Postural:
+    type: Postural
+    lambda: 0.05
+    weight: 0.001
+    
+PelvisRot:
+    type: Cartesian
+    distal_link: pelvis
+    weight: 0.01
+    indices: [4, 5]
